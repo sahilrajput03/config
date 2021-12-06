@@ -1,0 +1,27 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+# #### sahil--notess----####
+# /dev/sdba, ~sahil, got the uuid by first mounting the desired partition and then executing the command ```df -T``` command.
+UUID=4B0D-8EC5					/boot/EFI       vfat      	rw,relatime	0 1
+
+# /dev/sdb3
+UUID=9664b533-dc4c-4785-8f96-2e0deba41b49	/         	ext4      	rw,relatime	0 1
+
+# /dev/sdb4
+UUID=aff3b2fa-2244-4717-b120-21315a15da25	/home     	ext4      	rw,relatime	0 2
+
+# /dev/sdb2
+UUID=899efccc-3a01-48bb-aa44-1de74cc9798a	none      	swap      	defaults  	0 0
+
+# --- my other drives ---
+# /dev/sda3
+UUID=5ec12f1d-f3c2-48dd-b137-a33969c60788	/mnt/sda3	ext4		nosuid,nodev,nofail,x-gvfs-show		0 0
+
+#/dev/sda4
+UUID=5AF9-31CB 					/mnt/sda4 	auto 		nosuid,nodev,nofail,x-gvfs-show		0 0
+
+#/dev/sda5
+UUID=0D1F0B250D1F0B25				/mnt/sda5	auto		nosuid,nodev,nofail,x-gvfs-show		0 0
