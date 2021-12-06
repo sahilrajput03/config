@@ -66,25 +66,25 @@ function sudo {
 }
 
 function backupConfigFiles {
-	backup_dir=/home/array/Documents/github_repos/arch-os
-
-	cp ~/.config/i3/config $backup_dir/.config_i3_config
-	echo "Backup of ~/.config/i3/config file succeeded."
-
-	cp ~/.vimrc $backup_dir/
-	echo "Backup of ~/.vimrc file succeeded."
-
-	cp ~/sahil-bash-functions $backup_dir/
-	echo "Backup of ~/sahil-bash-functions succeeded."
-
-	cp ~/.profile $backup_dir/
-	echo "Backup of ~/.profile succeeded."
+	backup_dir=/home/array/Documents/github_repos/arch_os
 
 	cp ~/.bashrc $backup_dir/
 	echo "Backup of ~/.bashrc succeeded."
 
+	cp ~/.profile $backup_dir/
+	echo "Backup of ~/.profile succeeded."
+
+	cp ~/.vimrc $backup_dir/
+	echo "Backup of ~/.vimrc file succeeded."
+
 	cp ~/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
+
+	cp ~/.config/i3/config $backup_dir/.config_i3_config
+	echo "Backup of ~/.config/i3/config file succeeded."
+
+	cp ~/functions_bash_sahil.sh $backup_dir/
+	echo "Backup of ~/functions_bash_sahil.sh succeeded."
 
 	echo
 }

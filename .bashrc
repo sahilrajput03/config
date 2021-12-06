@@ -13,7 +13,7 @@ _home=/home/array # Did coz I'll source this file in sudo as well.
 
 
 ### Sources:
-. $_home/sahil-bash-functions
+. $_home/functions_bash_sahil.sh
 . "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
 . /usr/share/nvm/init-nvm.sh
 
@@ -39,6 +39,7 @@ alias ~='cd ~'
 alias vi.bashrc='vi $_home/.bashrc'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
 alias vi.i3='vi $_home/.config/i3/config'
+alias vi.archos_notes='vi /home/array/Documents/github_repos/arch_os/archos_notes_sahil.txt'
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
