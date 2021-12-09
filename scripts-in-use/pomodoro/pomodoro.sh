@@ -71,3 +71,20 @@ do
 	br=$(( br -1 ))
 	sleep $min
 done
+
+# NOTES:
+### THE PROCES IS LIKE THIS: ###
+
+#((25 mins timer, after that
+#, play 5 mins music for 5 mins))
+
+
+#((25 mins timer, after that
+#, play 5 mins music for 5 mins))
+
+
+#((25 mins timer, after that
+#, play 5 mins music for 5 mins))
+
+#((25 mins timer, after that
+#, play 25 mins music for 25 mins and congratulates.))
