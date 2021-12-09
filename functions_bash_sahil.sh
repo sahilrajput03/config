@@ -32,6 +32,7 @@ gacp (){
 
 }
 
+alias so='sizeof'
 sizeof (){
     	echo + du -sh $@
 	du -sh $@
@@ -67,24 +68,28 @@ function sudo {
 
 function backupConfigFiles {
 	backup_dir=/home/array/Documents/github_repos/arch_os
+	_home=/home/array
 
-	cp ~/.bashrc $backup_dir/
+	cp $_home/.bashrc $backup_dir/
 	echo "Backup of ~/.bashrc succeeded."
 
-	cp ~/.profile $backup_dir/
+	cp $_home/.profile $backup_dir/
 	echo "Backup of ~/.profile succeeded."
 
-	cp ~/.vimrc $backup_dir/
+	cp $_home/.vimrc $backup_dir/
 	echo "Backup of ~/.vimrc file succeeded."
 
-	cp ~/.bash_profile $backup_dir/
+	cp $_home/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
 
-	cp ~/.config/i3/config $backup_dir/.config_i3_config
+	cp $_home/.config/i3/config $backup_dir/.config_i3_config
 	echo "Backup of ~/.config/i3/config file succeeded."
 
-	cp ~/functions_bash_sahil.sh $backup_dir/
+	cp $_home/functions_bash_sahil.sh $backup_dir/
 	echo "Backup of ~/functions_bash_sahil.sh succeeded."
+
+	cp -r $_home/scripts-in-use $backup_dir/
+	echo "Backup of ~/scripts-in-use directory succeeded."
 
 	echo
 }

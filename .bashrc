@@ -20,6 +20,7 @@ _home=/home/array # Did coz I'll source this file in sudo as well.
 
 ### Aliases:
 alias ls='ls --color=auto'
+alias l='ls'
 alias vi='vim'
 alias c='clear'
 alias e='exit'
@@ -46,3 +47,7 @@ alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
 alias cw='cargo watch -x run'
 alias co='code .'
 alias s='npm start'
+alias nr='npm run'
+alias myip='ip address show'
+alias nm='nodemon'
+alias nrd='npm run dev'
