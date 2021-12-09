@@ -1,7 +1,7 @@
 #!/bin/bash
 script_path=$(dirname $0) # This gives me the path of the this script's folder. Yo!
-_t=1		#DEFAULT=25 (i.e., 25 minutes duration of a  pomodoro)
-min=1		#DEFAULT 60 (i.e., 1m=60secs)
+_t=25		#DEFAULT=25 (i.e., 25 minutes duration of a  pomodoro)
+min=60		#DEFAULT 60 (i.e., 1m=60secs)
 
 _short=5	#DEFAULT=5 (i.e., 5 mins of break time in between pomodoros )
 _br=30		#DEFAULT=30 (i.e., 30 mins of large break after 4 rounds of pomodoros)
