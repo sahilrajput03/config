@@ -1,10 +1,14 @@
 # Static information about the filesystems.
 # See fstab(5) for details.
+# ~Sahil :: Location of this file should be: /etc/fstabs 
 
 # <file system> <dir> <type> <options> <dump> <pass>
 
 # #### sahil--notess----####
-# /dev/sdba, ~sahil, got the uuid by first mounting the desired partition and then executing the command ```df -T``` command.
+# /dev/sdba, ~sahil
+# :: Get uuid by first mounting the desired partition and run ```sudo blkid /dev/sdXY``` (For all partitions: ```sudo blkid```).
+# :: You can get uuids by ```ls -al /dev/disk/by-uuid/``` command as well.
+# :: If needed get the filesystem details by executing the command ```df -T /dev/sdXY``` command (For all partitions ```df -T```.
 UUID=4B0D-8EC5					/boot/EFI       vfat      	rw,relatime	0 1
 
 # /dev/sdb3
@@ -17,6 +21,9 @@ UUID=aff3b2fa-2244-4717-b120-21315a15da25	/home     	ext4      	rw,relatime	0 2
 UUID=899efccc-3a01-48bb-aa44-1de74cc9798a	none      	swap      	defaults  	0 0
 
 # --- my other drives ---
+# /dev/sda2
+UUID=202207CE2207A83C				/mnt/sda2	auto		nosuid,nodev,nofail,x-gvfs-show		0 0
+
 # /dev/sda3
 UUID=5ec12f1d-f3c2-48dd-b137-a33969c60788	/mnt/sda3	ext4		nosuid,nodev,nofail,x-gvfs-show		0 0
 

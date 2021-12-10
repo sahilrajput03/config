@@ -66,9 +66,10 @@ function sudo {
         fi
 }
 
+backup_dir=/home/array/Documents/github_repos/arch_os
+_home=/home/array
+
 function backupConfigFiles {
-	backup_dir=/home/array/Documents/github_repos/arch_os
-	_home=/home/array
 
 	cp $_home/.bashrc $backup_dir/
 	echo "Backup of ~/.bashrc succeeded."
@@ -92,4 +93,8 @@ function backupConfigFiles {
 	echo "Backup of ~/scripts-in-use directory succeeded."
 
 	echo
+}
+
+function bkpfstab {
+	cp /etc/fstab $backup_dir
 }
