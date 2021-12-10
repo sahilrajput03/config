@@ -9,6 +9,7 @@
 # :: Get uuid by first mounting the desired partition and run ```sudo blkid /dev/sdXY``` (For all partitions: ```sudo blkid```).
 # :: You can get uuids by ```ls -al /dev/disk/by-uuid/``` command as well.
 # :: If needed get the filesystem details by executing the command ```df -T /dev/sdXY``` command (For all partitions ```df -T```.
+# Article: https://confluence.jaytaala.com/display/TKB/Mount+drive+in+linux+and+set+auto-mount+at+boot
 UUID=4B0D-8EC5					/boot/EFI       vfat      	rw,relatime	0 1
 
 # /dev/sdb3
