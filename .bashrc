@@ -10,6 +10,7 @@
 ### Variables
 PS1='[\u@\h \W]\$ '
 _home=/home/array # Did coz I'll source this file in sudo as well.
+export PATH=$PATH:~/.local/bin
 
 
 ### Sources:
@@ -38,7 +39,9 @@ alias gr='cd $_home/Documents/github_repos'
 alias gra='cd $_home/Documents/github_repos/arch_os'
 alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
 alias ~='cd ~'
+alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias vi.bashrc='vi $_home/.bashrc'
+alias vi.profile='vi $_home/.profile'
 alias vi.fstab='sudo vi /etc/fstab'
 alias vi.pomodoro='vi $_home/scripts-in-use/pomodoro/pomodoro.sh'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
@@ -56,3 +59,4 @@ alias nm='nodemon'
 alias nrd='npm run dev'
 alias pomodoro='/home/array/scripts-in-use/pomodoro/pomodoro.sh'
 alias xrandr.default='xrandr -s 0'
+alias jn='jupyter notebook'

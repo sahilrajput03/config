@@ -98,3 +98,9 @@ function backupConfigFiles {
 function bkpfstab {
 	cp /etc/fstab $backup_dir
 }
+
+
+function cva {
+	npm init vite "$@" -- --template react
+}
+
