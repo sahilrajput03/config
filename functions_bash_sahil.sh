@@ -1,3 +1,10 @@
+alias bm=bashmon
+alias bmon=bashmon
+
+bashmon(){
+/usr/bin/nodemon -q -e sh -x "bash $*"
+}
+
 mdcd(){
 	mkdir $@
 	cd $@
@@ -93,6 +100,9 @@ function backupConfigFiles {
 	echo "Backup of ~/scripts-in-use directory succeeded."
 
 	echo
+	gra
+	gacp Update.
+	cd -
 }
 
 function bkpfstab {
