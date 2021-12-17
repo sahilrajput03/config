@@ -100,9 +100,9 @@ function backupConfigFiles {
 	echo "Backup of ~/scripts-in-use directory succeeded."
 
 	echo
-	gra
-	gacp Update.
-	cd -
+	gra 			# Navigate to archos repository.
+	gacp Update. 	# Push changes to github.
+	cd - 			# Return to previous directory.
 }
 
 function bkpfstab {
