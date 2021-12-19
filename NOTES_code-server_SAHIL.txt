@@ -1,7 +1,9 @@
 sudo systemctl stop code-server@array
 sudo systemctl start/stop/restart/disable/enable code-server@array
 
-I replied on chaging the default port used when we use systemctl to start or restart code-server to use different port than 8082 by:
+Also the password for the code-server is saved @ same file too i.e., 
+
+I replied on chaging the default port used when we use systemctl to start or restart code-server to use different port than 8082 by: `~/.config/code-server/config.yaml`
 
 ```txt
 I found the default config for starting the code-server starting which works for systemctl is at path ~/.config/code-server/config.yaml and we can change line in it there like that below:
