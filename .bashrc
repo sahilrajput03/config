@@ -8,10 +8,13 @@
 # I have sourced this file in root shell's .bashrc file as well i.e., `/root/.bashrc` ~Sahil. And that file is invoked when we login to root user i.e., `su`. It'll load all your aliases and functions in root shell as well that you enjoy in your non-root shells.
 
 ### Variables
-PS1='[\u@\h \W]\$ '
+# Original from archos.
+# PS1='[\u@\h \W]\$ ' 
+# Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)
+PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 _home=/home/array # Did coz I'll source this file in sudo as well.
 export PATH=$PATH:~/.local/bin
-
+#force_color_prompt=yes
 
 ### Sources:
 . $_home/functions_bash_sahil.sh
