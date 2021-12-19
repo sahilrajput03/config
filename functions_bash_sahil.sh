@@ -2,7 +2,7 @@ alias bm=bashmon
 alias bmon=bashmon
 
 bashmon(){
-/usr/bin/nodemon -q -e sh -x "bash $*"
+/usr/bin/nodemon -q -e sh -x "bash $@"
 }
 
 mdcd(){
@@ -59,7 +59,7 @@ ga (){
 #and above alias doesn't work good for `sudo myCustomFunction`.
 #below function works good enough!
 
-function sudo {
+function Sudo {
         local firstArg=$1
         if [ $(type -t $firstArg) = function ]
         then
@@ -114,3 +114,6 @@ function cva {
 	npm init vite "$@" -- --template react
 }
 
+function air {
+	nohup "$@" > /dev/null 2>&1 &
+}

@@ -11,7 +11,7 @@ do
 		notify-send "Battery Full - ${battery_level}%" "Please unplug the charger.\n\nHave a nice day!"
       		paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 		sleep 660 # i.e., sleep for 11 mins.
-	elif [ $battery_level -le 40 ] && [ $discharging ]; then
+	elif [ $battery_level -le 20 ] && [ $discharging ]; then
       		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
       		paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 	else
