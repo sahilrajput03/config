@@ -1,0 +1,14 @@
+set from = "sahilrajput03@gmail.com"
+set realname = "Sahil Rajput"
+# IMAP settings
+set imap_user = "sahilrajput03@gmail.com"
+set imap_pass = "PASSWORD_HERE"
+# SMTP settings
+set smtp_url = "smtps://sahilrajput03@smtp.gmail.com"
+set smtp_pass = "PASSWORD_HERE"
+# Remote Gmail folders
+set folder = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
