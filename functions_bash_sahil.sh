@@ -117,3 +117,6 @@ function cva {
 function air {
 	nohup "$@" > /dev/null 2>&1 &
 }
+function killbatteryservice {
+	kill $(pgrep -f battery-status)
+}

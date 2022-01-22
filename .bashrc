@@ -24,6 +24,8 @@ export PATH=$PATH:~/.local/bin
 
 ### Aliases:
 alias ls='ls --color=auto'
+alias inw='inotifywait'
+alias dc='docker-compose'
 alias l='ls'
 alias vi='vim'
 alias c='clear'
@@ -65,3 +67,5 @@ alias nrd='npm run dev'
 alias pomodoro='/home/array/scripts-in-use/pomodoro/pomodoro.sh'
 alias xrandr.default='xrandr -s 0'
 alias jn='jupyter notebook'
+alias d='npm run dev'
+alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
