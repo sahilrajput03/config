@@ -75,3 +75,8 @@ alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
 . "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
 . /usr/share/nvm/init-nvm.sh
 
+echo System: $(uname -a)
+echo Uptime: $(uptime)
+echo Hostname: $HOSTNAME
+echo Disk: $(df /home/array | tail -1)
+echo
