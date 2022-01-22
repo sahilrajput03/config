@@ -14,12 +14,10 @@
 PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 _home=/home/array # Did coz I'll source this file in sudo as well.
 export PATH=$PATH:~/.local/bin
+export EDITOR=/usr/bin/vim
+export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
+export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs. Source: https://www.redhat.com/sysadmin/history-command
 #force_color_prompt=yes
-
-### Sources:
-. $_home/functions_bash_sahil.sh
-. "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
-. /usr/share/nvm/init-nvm.sh
 
 
 ### Aliases:
@@ -69,3 +67,11 @@ alias xrandr.default='xrandr -s 0'
 alias jn='jupyter notebook'
 alias d='npm run dev'
 alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
+
+
+
+### Sources:
+. $_home/functions_bash_sahil.sh
+. "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
+. /usr/share/nvm/init-nvm.sh
+
