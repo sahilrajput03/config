@@ -101,6 +101,8 @@ function backupConfigFiles {
 
 	echo
 	gra 			# Navigate to archos repository.
+
+	crontab -l > crontab_entries.txt
 	gacp Update. 	# Push changes to github.
 	cd - 			# Return to previous directory.
 }

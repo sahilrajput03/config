@@ -67,6 +67,7 @@ alias xrandr.default='xrandr -s 0'
 alias jn='jupyter notebook'
 alias d='npm run dev'
 alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
+alias open='xdg-open'
 
 
 
@@ -74,9 +75,12 @@ alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
 . $_home/functions_bash_sahil.sh
 . "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
 . /usr/share/nvm/init-nvm.sh
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh #Making autojump work!
 
-echo System: $(uname -a)
-echo Uptime: $(uptime)
-echo Hostname: $HOSTNAME
-echo Disk: $(df /home/array | tail -1)
+echo "SYSTEM		: $(uname -a)"
+echo "HOSTNAME	: $HOSTNAME"
+echo "UPTIME		: $(uptime)"
+echo "DISK		: $(df /home/array | tail -1)"
+echo "HOSTNAMECTL	:"
+hostnamectl
 echo
