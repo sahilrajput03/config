@@ -87,3 +87,7 @@ echo "DISK		: $(df /home/array | tail -1)"
 echo "HOSTNAMECTL	:"
 hostnamectl
 echo
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+	  exec tmux
+fi

@@ -7,8 +7,9 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber nu
 augroup END
 
-set mouse=a
+"set mouse=a
 "         ^this enables my mouse scrollbar to scroll screen instead of moving the cursor. 
+"         FUCK (so I disabled it):: Also this disables my copy text to clipboard when selected by mouse.
 " , also mouse scroll now works identical to ctrl+e(up) and ctrl+y(down).
 
 set so=7
