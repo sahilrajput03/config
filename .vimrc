@@ -6,6 +6,7 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nu
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber nu
 augroup END
+set background=dark "I added this after I configured tmux.
 
 "set mouse=a
 "         ^this enables my mouse scrollbar to scroll screen instead of moving the cursor. 

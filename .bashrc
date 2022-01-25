@@ -88,6 +88,8 @@ echo "HOSTNAMECTL	:"
 hostnamectl
 echo
 
+# Running tmux as default shell: Source: https://unix.stackexchange.com/a/113768/504112
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 	  exec tmux
+	  # Config file @ ~/.tmux.conf
 fi
