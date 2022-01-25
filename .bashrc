@@ -17,6 +17,8 @@ export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/vim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
 export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs. Source: https://www.redhat.com/sysadmin/history-command
+export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:history:c"
+#^^^^^^ Src: https://github.com/jonhoo/configs/blob/master/shell/.bashrc
 #force_color_prompt=yes
 
 
@@ -55,7 +57,8 @@ alias vi.archos_notes='vi /home/array/Documents/github_repos/arch_os/archos_note
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
-alias cw='cargo watch -x run'
+alias cw='cargo watch -q -c -x "run -q"'
+#cargo watch --quiet --clear --exec 'run --quiet'
 alias co='code .'
 alias s='npm start'
 alias nr='npm run'

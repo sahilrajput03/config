@@ -99,6 +99,9 @@ function backupConfigFiles {
 	cp -r $_home/scripts-in-use $backup_dir/
 	echo "Backup of ~/scripts-in-use directory succeeded."
 
+	cp $_home/.tmux.conf $backup_dir/
+	echo "Backup of ~/.tmux.conf file succeeded."
+
 	echo
 	gra 			# Navigate to archos repository.
 
