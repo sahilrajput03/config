@@ -14,7 +14,7 @@
 PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 _home=/home/array # Did coz I'll source this file in sudo as well.
 export PATH=$PATH:~/.local/bin
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
 export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs. Source: https://www.redhat.com/sysadmin/history-command
 export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:history:c"
@@ -27,7 +27,6 @@ alias ls='ls --color=auto'
 alias inw='inotifywait'
 alias dc='docker-compose'
 alias l='ls'
-alias vi='vim'
 alias c='clear'
 alias e='exit'
 alias C='clear'
@@ -47,6 +46,8 @@ alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-ex
 alias ~='cd ~'
 alias mb='cd /mnt/sda3/home/array/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
+alias vi='nvim'
+# Since vi is aliased, all below will refer to nvim for vi.
 alias vi.bashrc='vi $_home/.bashrc'
 alias vi.profile='vi $_home/.profile'
 alias vi.fstab='sudo vi /etc/fstab'
