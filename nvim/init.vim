@@ -1,11 +1,13 @@
-
 "Docs: https://wiki.archlinux.org/title/Neovim
+
+"Getting text from cut register instead of copy register(i.e, p or P ):
 nnoremap ,p "0p
 nnoremap ,P "0P
 
 "Enable copying text to system clipboard, Yikes!: src: https://www.reddit.com/r/neovim/comments/3fricd/comment/ctr8t3h/?utm_source=share&utm_medium=web2x&context=3
 set clipboard+=unnamedplus 
 
+"Enable dynamically chainging relative number toggling in edit mode.
 augroup numbertoggle
    autocmd!
    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nu
