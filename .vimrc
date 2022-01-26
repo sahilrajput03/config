@@ -6,6 +6,8 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nu
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber nu
 augroup END
+"FYI: :set nu rnu will enable number and relativenumber option in vim runtime.
+"FYI: :set nu! rnu! will nonumber and norelativenumber opotion in vim runtime.
 
 "Source: https://linuxhint.com/vim_syntax_highlighting
 set background=dark "I added this after I configured tmux.

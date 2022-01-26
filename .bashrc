@@ -71,7 +71,8 @@ alias jn='jupyter notebook'
 alias d='npm run dev'
 alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
 alias open='xdg-open'
-alias killtmux='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
+alias tmuxsource='tmux source-file ~/.tmux.conf'
+alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
 
 
