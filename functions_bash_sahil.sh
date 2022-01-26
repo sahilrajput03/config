@@ -102,8 +102,8 @@ function backupConfigFiles {
 	cp $_home/.tmux.conf $backup_dir/
 	echo "Backup of ~/.tmux.conf file succeeded."
 
-	cp $_home/nvim/init.vim $backup_dir/
-	echo "Backup of ~/nvim/init.vim file succeeded."
+	cp -r $_home/nvim $backup_dir/
+	echo "Backup of ~/nvim directory succeeded."
 
 	echo
 	gra 			# Navigate to archos repository.
