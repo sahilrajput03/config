@@ -6,6 +6,8 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nu
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber nu
 augroup END
+
+"Source: https://linuxhint.com/vim_syntax_highlighting
 set background=dark "I added this after I configured tmux.
 
 "set mouse=a
