@@ -20,6 +20,8 @@ export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs
 export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:history:c"
 #^^^^^^ Src: https://github.com/jonhoo/configs/blob/master/shell/.bashrc
 #force_color_prompt=yes
+# XDG_CONFIG_HOME This is to make neovim take the nvim directory path as mentined @ https://wiki.archlinux.org/title/Neovim
+export XDG_CONFIG_HOME='/home/array'
 
 
 ### Aliases:

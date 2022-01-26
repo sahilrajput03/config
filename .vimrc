@@ -1,3 +1,4 @@
+" FYI: I AM NOW USING NEO VIM SO INSTEAD USE CONFIG FILE: ~/nvim/init.vim
 nnoremap ,p "0p
 nnoremap ,P "0P
 
