@@ -1,6 +1,6 @@
 "Docs: https://wiki.archlinux.org/title/Neovim
 
-"Getting text from cut register instead of copy register(i.e, p or P ):
+"Getting text from copy register instead of cut/copy register (i.e, p or P ):
 "I am simply remapping keys \"0p to ,p and \"0P to ,P below:
 nnoremap ,p "0p
 nnoremap ,P "0P

@@ -1,0 +1,11 @@
+ps -aux | grep -v grep | grep battery-status.sh
+echo @off
+# running this service in .bash_profile file.
+
+if ps -aux | grep -v grep | grep workrave > /dev/null 2> /dev/null; then
+	true
+	#echo workrave already running...
+else
+	 nohup workrave > /dev/null 2>&1 &
+fi
+
