@@ -25,10 +25,11 @@ export XDG_CONFIG_HOME='/home/array'
 
 
 ### Aliases:
-alias ls='ls --color=auto'
+# FYI: Use exa instead of l and ls.
+alias l='exa'
+alias ls='exa --color=auto'
 alias inw='inotifywait'
 alias dc='docker-compose'
-alias l='ls'
 alias e='exit'
 alias q='exit'
 alias c='clear; tmux clear-history'
@@ -52,6 +53,7 @@ alias mb='cd /mnt/sda3/home/array/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias vi='nvim'
 # Since vi is aliased, all below will refer to nvim for vi.
+alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
 alias vi.bashrc='vi $_home/.bashrc'
 alias vi.profile='vi $_home/.profile'
 alias vi.fstab='sudo vi /etc/fstab'
@@ -101,3 +103,5 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 	  exec tmux
 	  # Config file @ ~/.tmux.conf
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

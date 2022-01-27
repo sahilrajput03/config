@@ -105,6 +105,9 @@ function backupConfigFiles {
 	cp -r $_home/nvim $backup_dir/
 	echo "Backup of ~/nvim directory succeeded."
 
+	cp -r $_home/nvim-sahil $backup_dir/
+	echo "Backup of ~/nvim-sahil directory succeeded."
+
 	echo
 	gra 			# Navigate to archos repository.
 
