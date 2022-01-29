@@ -9,12 +9,14 @@ do
 	if [ $battery_level -ge 95 ]; then
 		echo 'yoyoy'
 		notify-send "Battery Full - ${battery_level}%" "Please unplug the charger.\n\nHave a nice day!"
-      		paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+		for i in {1..2}; do ~/scripts-in-use/beepSound.sh; done
+      		# paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 		sleep 660 # i.e., sleep for 11 mins.
 	elif [ $battery_level -le 20 ] && [ $discharging ]; then
 		# LOG:01: This code only executed if battery is discharging ( not plugged in).
       		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
-      		paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
+		for i in {1..3}; do ~/scripts-in-use/beepSound.sh; done
+      		# paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 			# LOG:01: This code only executed if battery is discharging ( not plugged in).
 			# Hibernate if battery drops 14%.
 			if [ $battery_level -le 14 ] ; then

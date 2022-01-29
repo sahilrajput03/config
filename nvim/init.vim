@@ -1,4 +1,11 @@
 " Fish doesn't play all that well with others
+" ~SAHIL: Read the shortcuts of language server usage below:
+" My notes: C-n/p to search down and up in the autocomplete suggestions list.
+" Exit lsp definitions with ctrl+o ~with Ratanjeet.
+" Enable completion triggered by <c-x><c-o>
+" :h lsp
+" :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
+"..CODE STARTS HERE..
 set shell=/bin/bash
 let mapleader = "\<Space>"
 
