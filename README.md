@@ -1,6 +1,6 @@
 ## Readme
 
-- **Archlinux Notes:** [sahilrajput03/sahilrajput03/blob/master/arch-notes.md]
+- **Archlinux Notes:** [sahilrajput03/sahilrajput03-file:arch-notes.md](https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md)
 
 #### Old Setups
 
