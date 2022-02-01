@@ -26,7 +26,7 @@ export XDG_CONFIG_HOME='/home/array'
 
 ### Aliases:
 # FYI: Use exa instead of l and ls.
-alias l='exa'
+alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias ls='exa --color=auto'
 alias inw='inotifywait'
 alias dc='docker-compose'
@@ -63,6 +63,7 @@ alias vi.pomodoro='vi $_home/scripts-in-use/pomodoro/pomodoro.sh'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
 alias vi.i3='vi $_home/.config/i3/config'
 alias vi.archos_notes='vi /home/array/Documents/github_repos/arch_os/archos_notes_sahil.txt'
+alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*' 
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609

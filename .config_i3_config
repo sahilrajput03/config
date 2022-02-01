@@ -53,7 +53,11 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
+# bindsym $mod+Shift+q exec "tmux kill-window"
+# ^^THIS DOESN"T WORK YET.
+# bindsym $mod+Shift+q kill && exec tmux kill-window # THIS DOESN"T WORK CURRENTLY.
 bindsym $mod+Shift+q kill
+# Original ^^^^
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run

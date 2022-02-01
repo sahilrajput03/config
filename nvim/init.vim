@@ -1,12 +1,18 @@
 " Fish doesn't play all that well with others
 " ~SAHIL: Read the shortcuts of language server usage below:
 " My notes: C-n/p to search down and up in the autocomplete suggestions list.
-" Exit lsp definitions with ctrl+o ~with Ratanjeet.
+" EXIT LSP DEFINITIONS WITH ctrl+o ~with Ratanjeet.
 " Enable completion triggered by <c-x><c-o>
 " :h lsp
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
+
+
 set shell=/bin/bash
+"
+"Enable copying text to system clipboard ~SAHIL, Yikes!: src: https://www.reddit.com/r/neovim/comments/3fricd/comment/ctr8t3h/?utm_source=share&utm_medium=web2x&context=3
+set clipboard+=unnamedplus 
+
 let mapleader = "\<Space>"
 
 " =============================================================================
@@ -264,7 +270,9 @@ let g:localvimrc_ask = 0
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
-let g:rust_clip_command = 'xclip -selection clipboard'
+"let g:rust_clip_command = 'xclip -selection clipboard'
+" ~SAHIL, commenting above line and now I get clipboard and buffer connected
+" in rust files as well, Yikes!
 
 " Completion
 " Better completion
@@ -419,7 +427,8 @@ inoremap <C-f> :sus<cr>
 vnoremap <C-f> :sus<cr>
 nnoremap <C-f> :sus<cr>
 
-" Jump to start and end of line using the home row keys
+" Jump to start and end of line using the home row keys ~SAHIL ~SUPERB FROM
+" JONHOO.
 map H ^
 map L $
 
