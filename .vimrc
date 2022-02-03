@@ -2,6 +2,11 @@
 nnoremap ,p "0p
 nnoremap ,P "0P
 
+" Left and right can switch buffers
+" So ~SAHIL, we can use :bp and :bn to switch between previous and next opned files (buffers) yikes!!
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nu

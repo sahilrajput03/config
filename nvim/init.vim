@@ -7,18 +7,51 @@
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
 
+"THIS DIDN"T WORK WHEN I OPEN THE backend folder in vim, it gets cwd as `learning_rust` folder only, no matter what i do...? TODO: Ask for help on this..
+"Getting current file's path current directory in vim: ~Sahil, src: https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+"set autochdir
+
+"Tetsing map commands from vim fandom: Source: https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)#:~:text=Key%20mapping%20refers%20to%20creating,define%20your%20own%20Vim%20commands.
+" MY LEARNINGS: 
+"The ':map' command creates a key map that works in normal, visual, select and operator pending modes.
+"The ':map!' command creates a key map that works in insert and command-line mode.
+"THOUGH: A better alternative than using the 'map' and 'map!' commands is to use mode-specific map commands
+:map <F2> :echo 'Current time is ' . strftime('%c')<CR>
+:map! <F3> <C-R>=strftime('%c')<CR>
+
 " Map c-s to save a file. ~Sahil, Source: https://stackoverflow.com/a/3448551/10012446
+" LEARN: read below acronym as: "no re-map" meaning that mapping can't be changed or say in real terms its non recursive (source: https://stackoverflow.com/a/10272179/10012446).
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
 
 set shell=/bin/bash
-"
+
+
 "Enable copying text to system clipboard ~SAHIL, Yikes!: src: https://www.reddit.com/r/neovim/comments/3fricd/comment/ctr8t3h/?utm_source=share&utm_medium=web2x&context=3
 set clipboard+=unnamedplus 
 
+"Setting background color, source: https://stackoverflow.com/a/1117532/10012446
+highlight Normal ctermfg=grey ctermbg=black
+
 let mapleader = "\<Space>"
+
+"ADDING RENAMING A FILE FUNCTIONALITY; src: https://vi.stackexchange.com/a/307, also, david pedersen using same below code though.
+map <leader>ren :call RenameFile()<cr>
+"Usage: Use <space>ren to get the renaming prompt.
+"FYI: If you feel restricted, you can use another plugin that helps in couple
+"of other similar features like renaming as well. Find it here: https://github.com/tpope/vim-eunuch , source: https://vi.stackexchange.com/a/306
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
 
 " =============================================================================
 " # PLUGINS
@@ -34,6 +67,13 @@ filetype off
 " FYI: Use command :PlugInstall to install all below plugins from inside neovim.
 call plug#begin()
 " Load plugins
+" Sahil (from David Pedersen's ```dotfiles``` repository): Github: https://github.com/tpope/vim-commentary
+Plug 'tpope/vim-commentary'
+"Usage: You need to select lines and use gc to toggle commenting lines.
+"Usage: To comment current line only, then use gc l
+"Usage: To comment all lines inside braces, use gc i{
+"Usage: To comment all lines including(around) braces, use gc a{
+
 " VIM enhancements
 Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
@@ -475,6 +515,7 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " Left and right can switch buffers
+" So ~SAHIL, we can use :bp and :bn to switch between previous and next opned files (buffers) yikes!!
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 
@@ -488,8 +529,12 @@ nnoremap <leader><leader> <c-^>
 " <leader>, shows/hides hidden characters
 nnoremap <leader>, :set invlist<cr>
 
-" <leader>q shows stats
-nnoremap <leader>q g<c-g>
+" <leader>b shows stats (~Sahil, I modified it, originally <leader>q ).
+nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
+
+" <leader>q closes current buffer, ~Sahil (NEWLY ADDED)
+" LEARN: <CR> anywhere in this file means <Carriage Return> key.
+nnoremap <leader>q :bw<CR>
 
 " Keymap for replacing up to next _ or -
 noremap <leader>m ct_
