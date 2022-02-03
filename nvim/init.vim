@@ -7,7 +7,7 @@
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
 
-" Map c-s to save a file. ~Sahil
+" Map c-s to save a file. ~Sahil, Source: https://stackoverflow.com/a/3448551/10012446
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
