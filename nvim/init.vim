@@ -532,9 +532,12 @@ nnoremap <leader>, :set invlist<cr>
 " <leader>b shows stats (~Sahil, I modified it, originally <leader>q ).
 nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
 
-" <leader>q closes current buffer, ~Sahil (NEWLY ADDED)
+" ~Sahil (NEWLY ADDED) :: <leader>e closes current buffer.
 " LEARN: <CR> anywhere in this file means <Carriage Return> key.
-nnoremap <leader>q :bw<CR>
+nnoremap <leader>e :bw<CR>
+
+" ~Sahil (NEWLY ADDED) :: <leader>E closes current buffer FORCELY.
+nnoremap <leader>E :bw!<CR>
 
 " Keymap for replacing up to next _ or -
 noremap <leader>m ct_
@@ -584,3 +587,6 @@ autocmd Filetype html,xml,xsl,php source ~/nvim/scripts/closetag.vim
 if has('nvim')
 	runtime! plugin/python_setup.vim
 endif
+
+" ~SAHIL: Source: https://stackoverflow.com/a/1117532/10012446
+highlight Normal ctermfg=grey ctermbg=black
