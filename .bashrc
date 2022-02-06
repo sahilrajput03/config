@@ -67,6 +67,7 @@ alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
 alias cw='cargo watch -q -c -x "run -q"'
+alias cwn='cargo watch -c -x run'
 alias ct='cargo watch -c -x test'
 #cargo watch --quiet --clear --exec 'run --quiet'
 alias co='code .'
