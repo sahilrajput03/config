@@ -78,6 +78,9 @@ _home=/home/array
 
 function backupConfigFiles {
 
+	cp $_home/nodemon.json $backup_dir/
+	echo "Backup of ~/nodemon.json succeeded."
+
 	cp $_home/.bashrc $backup_dir/
 	echo "Backup of ~/.bashrc succeeded."
 
