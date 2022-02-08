@@ -117,6 +117,9 @@ function backupConfigFiles {
 	crontab -l > crontab_entries.txt
 	gacp Update. 	# Push changes to github.
 	cd - 			# Return to previous directory.
+
+	echo "INFO:: sources ~/.bashrc file."
+	source ~/.bashrc
 }
 
 function bkpfstab {
