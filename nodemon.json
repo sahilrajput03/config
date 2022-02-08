@@ -1,6 +1,7 @@
 {
     "events": {
-        "start": "clear; tmux clear-history",
+        "start": "clear; tmux clear-history 2> /dev/null",
+	"comment": "Above command is tmux safe, i.e., if tmux is not there then it won't throw error, YIKES!",
         "comment:start": "clear"
     }
 }
