@@ -111,10 +111,10 @@ function backupConfigFiles {
 	cp -r $_home/nvim-sahil $backup_dir/
 	echo "Backup of ~/nvim-sahil directory succeeded."
 
-	cp -r $_home/Code/User/keybindings.json $backup_dir/
+	cp -r $_home/Code/User/keybindings.json $backup_dir/Code/User/
 	echo "Backup of ~/Code/User/keybindings.json file succeeded."
 
-	cp -r $_home/Code/User/settings.json $backup_dir/
+	cp -r $_home/Code/User/settings.json $backup_dir/Code/User/
 	echo "Backup of ~/Code/User/settings.json file succeeded."
 
 	echo
