@@ -1,0 +1,6 @@
+{
+    "events": {
+        "start": "clear; tmux clear-history",
+        "comment:start": "clear"
+    }
+}
