@@ -73,7 +73,7 @@ function Sudo {
         fi
 }
 
-backup_dir=/home/array/Documents/github_repos/arch_os
+backup_dir=/home/array/Documents/github_repos/config
 _home=/home/array
 
 function backupConfigFiles {
