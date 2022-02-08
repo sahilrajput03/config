@@ -75,6 +75,10 @@ alias s='npm start'
 alias nr='npm run'
 alias myip='ip address show'
 alias nm='nodemon'
+# nma: This is useful when you want to use debugger (i.e., runtime code control with vscode).
+alias nma='nodemon --inspect'
+# nmas: This is useful when you want to use debugger from the very first line of execution (i.e., runtime code control with vscode).
+alias nmas='nodemon --inspect-brk'
 alias nrd='npm run dev'
 alias pomodoro='/home/array/scripts-in-use/pomodoro/pomodoro.sh'
 alias xrandr.default='xrandr -s 0'
