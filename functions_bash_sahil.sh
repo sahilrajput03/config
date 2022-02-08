@@ -112,7 +112,7 @@ function backupConfigFiles {
 	echo "Backup of ~/nvim-sahil directory succeeded."
 
 	echo
-	gra 			# Navigate to archos repository.
+	grc 			# Navigate to config repository.
 
 	crontab -l > crontab_entries.txt
 	gacp Update. 	# Push changes to github.
