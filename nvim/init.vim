@@ -542,11 +542,11 @@ nnoremap <leader>, :set invlist<cr>
 " <leader>b shows stats (~Sahil, I modified it, originally <leader>q ).
 nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
 
-" ~Sahil (NEWLY ADDED) :: <leader>e closes current buffer.
+" ~Sahil (NEWLY ADDED) :: <leader>z closes current buffer.
 " LEARN: <CR> anywhere in this file means <Carriage Return> key.
 nnoremap <leader>z :bw<CR>
 
-" ~Sahil (NEWLY ADDED) :: <leader>E closes current buffer FORCELY.
+" ~Sahil (NEWLY ADDED) :: <leader>Z closes current buffer FORCELY.
 nnoremap <leader>Z :bw!<CR>
 
 " Keymap for replacing up to next _ or -
