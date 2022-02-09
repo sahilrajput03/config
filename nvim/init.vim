@@ -86,10 +86,21 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
 
 " Fuzzy finder
-Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+"FYI SAHIL: You must have proximity-sort package on your linux as well coz
+"that might be a problem to search functionality implemented by fzf vim library
+"for search functionality. So make sure you have it installed: Source of
+"```proximity-sort```: https://aur.archlinux.org/packages/proximity-sort
+"~SAHIL, I AM NOT ABLE TO FUZZY FIND FILES WITH ``CTRL+P`` COZ I HAVE THIS
+"issue active @fzf.vim github repo: https://github.com/junegunn/fzf.vim/issues/1296
+"PAY ATTENTION >>><<< PLEASE!!!!
 
+" Set project root directory with ``vim-rooter``
+" FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute.
+Plug 'airblade/vim-rooter' "rooter identifies the root directory in any project, yikes!
+let g:rooter_patterns = ['=src', 'package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root.
+"
 " Semantic language support
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -341,8 +352,7 @@ let g:go_bin_path = expand("~/dev/go/bin")
 " =============================================================================
 filetype plugin indent on
 set autoindent
-set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
-set encoding=utf-8
+set timeoutlen=1500 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line set encoding=utf-8
 set scrolloff=2
 set noshowmode
 set hidden
@@ -534,10 +544,10 @@ nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
 
 " ~Sahil (NEWLY ADDED) :: <leader>e closes current buffer.
 " LEARN: <CR> anywhere in this file means <Carriage Return> key.
-nnoremap <leader>e :bw<CR>
+nnoremap <leader>z :bw<CR>
 
 " ~Sahil (NEWLY ADDED) :: <leader>E closes current buffer FORCELY.
-nnoremap <leader>E :bw!<CR>
+nnoremap <leader>Z :bw!<CR>
 
 " Keymap for replacing up to next _ or -
 noremap <leader>m ct_

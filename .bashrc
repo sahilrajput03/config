@@ -89,6 +89,7 @@ alias open='xdg-open'
 alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
+alias vinvim='vi ~/nvim/init.vim'
 
 
 
@@ -107,9 +108,12 @@ hostnamectl
 echo
 
 # Running tmux as default shell: Source: https://unix.stackexchange.com/a/113768/504112
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-	  exec tmux
-	  # Config file @ ~/.tmux.conf
-fi
+function enableTmux() {
+  if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  	  exec tmux
+  	  # Config file @ ~/.tmux.conf
+  fi
+}
+enableTmux
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
