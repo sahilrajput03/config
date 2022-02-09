@@ -90,6 +90,7 @@ alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
 alias vinvim='vi ~/nvim/init.vim'
+alias cl='clear && l'
 
 
 

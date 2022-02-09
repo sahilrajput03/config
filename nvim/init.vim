@@ -7,10 +7,6 @@
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
 
-"THIS DIDN"T WORK WHEN I OPEN THE backend folder in vim, it gets cwd as `learning_rust` folder only, no matter what i do...? TODO: Ask for help on this..
-"Getting current file's path current directory in vim: ~Sahil, src: https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
-"set autochdir
-
 "Tetsing map commands from vim fandom: Source: https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)#:~:text=Key%20mapping%20refers%20to%20creating,define%20your%20own%20Vim%20commands.
 " MY LEARNINGS: 
 "The ':map' command creates a key map that works in normal, visual, select and operator pending modes.
@@ -81,8 +77,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'chriskempson/base16-vim' " ~Sahil so that base16 colors can be accessed.
 
 " GUI enhancements
-Plug 'itchyny/lightline.vim'
-Plug 'machakann/vim-highlightedyank'
+Plug 'itchyny/lightline.vim' "This is the green/blue line in the bottom of nvim you. ~Sahil
+Plug 'machakann/vim-highlightedyank' "This shows colour for the yanked text for a second.
 Plug 'andymass/vim-matchup'
 
 " Fuzzy finder
@@ -96,11 +92,9 @@ Plug 'junegunn/fzf.vim'
 "issue active @fzf.vim github repo: https://github.com/junegunn/fzf.vim/issues/1296
 "PAY ATTENTION >>><<< PLEASE!!!!
 
-" Set project root directory with ``vim-rooter``
-" FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute.
 Plug 'airblade/vim-rooter' "rooter identifies the root directory in any project, yikes!
-let g:rooter_patterns = ['=src', 'package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root.
-"
+let g:rooter_patterns = ['=src', 'package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root. Set project root directory with ``vim-rooter``. FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute. Rooter works too great for fzf coz it allows fzf to search only in the current project folder i.e., with the help of searching in the path of project.
+
 " Semantic language support
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -142,7 +136,7 @@ if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
 endif
 set background=dark
 let base16colorspace=256
-let g:base16_shell_path="~/nvim/base16-gruvbox-scheme"
+let g:base16_shell_path="~/nvim/base16-gruvbox-scheme" "THIS IS NOT WORKING IMO ~NEED HELP ON THIS. ~SAHIL.
 "colorscheme base16-gruvbox-light-soft
 "Lost of themes @ https://github.com/chriskempson/base16
 syntax on
@@ -376,7 +370,9 @@ set secure
 set splitright
 set splitbelow
 
-" Permanent undo
+" Permanent undo "This helps in retaining the undo history even after you
+" close the file, so its helpful like when you need to undo things in a file
+" that you changed weeks ago(say a system config file).
 set undodir=~/.vimdid
 set undofile
 
