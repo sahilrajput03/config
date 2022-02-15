@@ -22,6 +22,7 @@ export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:hi
 #force_color_prompt=yes
 # XDG_CONFIG_HOME This is to make neovim take the nvim directory path as mentined @ https://wiki.archlinux.org/title/Neovim
 export XDG_CONFIG_HOME='/home/array'
+#export XDG_CONFIG_HOME='~' #BEWARE: This causes blunder.
 
 
 ### Aliases:
@@ -91,6 +92,10 @@ alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubunt
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
 alias vinvim='vi ~/nvim/init.vim'
 alias cl='clear && l'
+alias restartadb='sudo adb kill-server; sudo adb start-server'
+alias listInstalledPacmanPackages='pacman -Q'
+alias kernelname='uname -r'
+alias generatesshkeypair='ssh-keygen'
 
 
 

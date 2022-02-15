@@ -17,10 +17,15 @@
 
 " Map c-s to save a file. ~Sahil, Source: https://stackoverflow.com/a/3448551/10012446
 " LEARN: read below acronym as: "no re-map" meaning that mapping can't be changed or say in real terms its non recursive (source: https://stackoverflow.com/a/10272179/10012446).
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
-
+" Originally: ~sahil, from source of above SO link.
+" noremap <silent> <C-S>          :update<CR>
+" vnoremap <silent> <C-S>         <C-C>:update<CR>
+" inoremap <silent> <C-S>         <C-O>:update<CR>
+"
+" I mapped the hotkey to actual save command now, i.e, ```:w```:
+noremap <silent> <C-S>          :w<CR>
+vnoremap <silent> <C-S>         <C-C>:w<CR>
+inoremap <silent> <C-S>         <C-O>:w<CR>
 
 set shell=/bin/bash
 
@@ -473,10 +478,11 @@ tnoremap <C-k> <Esc>
 vnoremap <C-h> :nohlsearch<cr>
 nnoremap <C-h> :nohlsearch<cr>
 
-" Suspend with Ctrl+f
-inoremap <C-f> :sus<cr>
-vnoremap <C-f> :sus<cr>
-nnoremap <C-f> :sus<cr>
+" Suspend with Ctrl+f, I don't know what suspend is for so I am commenting it
+" for now. ~Sahil
+" inoremap <C-f> :sus<cr>
+" vnoremap <C-f> :sus<cr>
+" nnoremap <C-f> :sus<cr>
 
 " Jump to start and end of line using the home row keys ~SAHIL ~SUPERB FROM
 " JONHOO.
