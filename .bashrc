@@ -28,11 +28,10 @@ export XDG_CONFIG_HOME='/home/array'
 
 # Function to show/hide folder paths in terminal:
 function hidepath_in_terminal(){
-	# hpath means hide path.
+	# source: https://askubuntu.com/a/1158624/702911
 	export PS1='$ '
 }
 function showpath_in_terminal(){
-	# spath means show path.
 	export PS1=$ps1_format
 }
 
