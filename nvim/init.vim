@@ -135,6 +135,7 @@ Plug 'prettier/vim-prettier', {
   \ 'branch': 'release/0.x'
   \ }
 " USE BELOW CONFIGURATION INSTEAD IF YOU WANT TO ENABLE FORMATTING FOR ONLY
+" CERTAIN FILE TYPES SAY .js and .ts FILES ONLY.
 " AND DON"T FORGET TO COMMENT ABOVE PLUGIN AND DOING ```:PlugInstall!```. Note
 " the ending ! which says force install coz thats IMPORTANT to make it function.
 " Source: https://github.com/prettier/vim-prettier#install
