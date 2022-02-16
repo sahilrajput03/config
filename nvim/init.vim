@@ -7,6 +7,9 @@
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
 
+" Here I am setting one tab width equals to 4 spaces width, ~Sahil. Src: https://stackoverflow.com/a/1878987/10012446
+set sw=4
+
 "Tetsing map commands from vim fandom: Source: https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)#:~:text=Key%20mapping%20refers%20to%20creating,define%20your%20own%20Vim%20commands.
 " MY LEARNINGS: 
 "The ':map' command creates a key map that works in normal, visual, select and operator pending modes.
@@ -117,13 +120,35 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
+" Read what is vim-clang-format ~sahil @ https://github.com/rhysd/vim-clang-format
 Plug 'rhysd/vim-clang-format'
 "Plug 'fatih/vim-go'
 Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
+" prettier support for js/ts formatting ~Sahil: source: https://github.com/prettier/vim-prettier
+
+" Need to test this...:
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
+" USE BELOW CONFIGURATION INSTEAD IF YOU WANT TO ENABLE FORMATTING FOR ONLY
+" AND DON"T FORGET TO COMMENT ABOVE PLUGIN AND DOING ```:PlugInstall!```. Note
+" the ending ! which says force install coz thats IMPORTANT to make it function.
+" Source: https://github.com/prettier/vim-prettier#install
+" certain fileypes.
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install --frozen-lockfile --production',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+
 call plug#end()
+
+" Allow auto formatting for files without "@format" or "@prettier" tag
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 if has('nvim')
     set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -387,7 +412,9 @@ set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
 " Use wide tabs
-set shiftwidth=8
+" I am setting shiftwidth to 4 spaces wide now! ~Sahil. Src: https://stackoverflow.com/a/1878987/10012446
+set shiftwidth=4
+" set shiftwidth=8 "Originally.
 set softtabstop=8
 set tabstop=8
 set noexpandtab
