@@ -9,9 +9,11 @@
 
 ### Variables
 # Original from archos.
-# PS1='[\u@\h \W]\$ ' 
+# export PS1='[\u@\h \W]\$ ' 
 # ~Sahil: For colouring the username and hostname in cli: Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)
-PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
+# BACKUP # export PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
+ps1_format='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
+export PS1=$ps1_format
 _home=/home/array # Did coz I'll source this file in sudo as well.
 export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
@@ -24,6 +26,15 @@ export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:hi
 export XDG_CONFIG_HOME='/home/array'
 #export XDG_CONFIG_HOME='~' #BEWARE: This causes blunder.
 
+# Function to show/hide folder paths in terminal:
+function hidepath_in_terminal(){
+	# hpath means hide path.
+	export PS1='$ '
+}
+function showpath_in_terminal(){
+	# spath means show path.
+	export PS1=$ps1_format
+}
 
 ### Aliases:
 # FYI: Use exa instead of l and ls.

@@ -48,4 +48,4 @@
   rbi = rebase -i
   rh = reset --hard
   unstage = reset
-	undo = revert
+  undo = revert
