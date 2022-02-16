@@ -147,8 +147,9 @@ Plug 'prettier/vim-prettier', {
 
 call plug#end()
 
-" Allow auto formatting for files without "@format" or "@prettier" tag
+" Enable autoformatting. (FYI: Autoformatting is done for file with "@format" or "@prettier" tag at top will only be formatted.
 let g:prettier#autoformat = 1
+" Allow auto formatting for files without "@format" or "@prettier" tag
 let g:prettier#autoformat_require_pragma = 0
 
 if has('nvim')
