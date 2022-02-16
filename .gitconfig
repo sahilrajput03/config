@@ -1,0 +1,51 @@
+[user]
+	email = sahilrajput03@gmail.com
+	name = Sahil Rajput
+[init]
+	defaultBranch = main
+[push]
+	default = current
+[pull]
+	rebase = false
+[core]
+	editor = vim
+[alias]
+  a = add
+  aa = add --all #Note this is absolutely 100% same as ```git add .```, tested 100% ~Sahil.
+  c = commit --verbose
+  ch = checkout
+  chb = checkout -b
+  amend = commit --amend --verbose
+  l = log --decorate --graph --oneline -20
+  ll = log --decorate --graph --oneline
+  sla = log --all --decorate --graph --oneline
+  p = push
+  pll = pull
+  s = status -sb
+
+  # Haven't explored much below aliases yet! Source of this file: https://github.com/davidpdrsn/dotfiles/blob/master/git/gitconfig.symlink
+
+  af = !git add `s | regex -v "^(M|##)" | sed "s/...//" | fzf`
+  ap = add -p
+  apf = !git add -p `s | regex -v "^(M|##)" | sed "s/...//" | fzf`
+  b = branch
+  bco = checkout -b
+  ca = commit --amend --verbose
+  count = !git rev-list --all | wc -l
+  d = diff
+  dc = diff --word-diff --color-words --cached
+  incoming = log --all --decorate --graph --oneline origin/master ^master
+  rl = reflog -20
+  rll = reflog
+  m = merge
+  mf = merge --ff-only
+  mn = merge --no-ff
+  outgoing = log --all --decorate --graph --oneline master ^origin/master
+  r = reset
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase -i
+  rh = reset --hard
+  unstage = reset
+	undo = revert

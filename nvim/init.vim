@@ -7,8 +7,10 @@
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
 
-" Here I am setting one tab width equals to 4 spaces width, ~Sahil. Src: https://stackoverflow.com/a/1878987/10012446
-set sw=4
+" Loading nvim/init.vim config file without reloading neovim(should also works
+" vim as well). SRC: https://vi.stackexchange.com/a/26627
+" TESTED:: THIS WORKS GOOD!
+nnoremap <leader>l :source $MYVIMRC<CR>
 
 "Tetsing map commands from vim fandom: Source: https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)#:~:text=Key%20mapping%20refers%20to%20creating,define%20your%20own%20Vim%20commands.
 " MY LEARNINGS: 
@@ -413,13 +415,18 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
+
+" Here I am setting one tab width equals to 4 spaces width, ~Sahil. Src: https://stackoverflow.com/a/1878987/10012446
+" set sw=4 "sw is just alias of shiftwidth, though which I am setting below.
+
 " Use wide tabs
 " I am setting shiftwidth to 4 spaces wide now! ~Sahil. Src: https://stackoverflow.com/a/1878987/10012446
 set shiftwidth=4
-" set shiftwidth=8 "Originally.
 set softtabstop=8
-set tabstop=8
+set tabstop=4 "This works good to set the size of the tab! ~Sahil.
 set noexpandtab
+" set shiftwidth=8 "Originally.
+" set softtabstop=8 "Originally.
 
 " Wrapping options
 set formatoptions=tc " wrap text and comments using textwidth

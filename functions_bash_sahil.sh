@@ -120,6 +120,9 @@ function backupConfigFiles {
 	cp $_home/.prettierrc.js $backup_dir/
 	echo "Backup of ~/.prettierrc.js file succeeded."
 
+	cp $_home/.gitconfig $backup_dir/
+	echo "Backup of ~/.gitconfig file succeeded."
+
 	echo
 	grc 			# Navigate to config repository.
 

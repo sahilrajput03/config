@@ -27,6 +27,7 @@ export XDG_CONFIG_HOME='/home/array'
 
 ### Aliases:
 # FYI: Use exa instead of l and ls.
+alias g='git'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias ls='exa --color=auto'
 alias inw='inotifywait'
@@ -58,7 +59,10 @@ alias vi='nvim'
 # Since vi is aliased, all below will refer to nvim for vi.
 alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
 alias vi.bashrc='vi $_home/.bashrc'
+alias vi.functions='vi $_home/functions_bash_sahil.sh'
+alias vi.gitconfig='vi $_home/.gitconfig'
 alias vi.profile='vi $_home/.profile'
+alias vi.nvim='vi $_home/nvim/init.vim'
 alias vi.fstab='sudo vi /etc/fstab'
 alias vi.pomodoro='vi $_home/scripts-in-use/pomodoro/pomodoro.sh'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'

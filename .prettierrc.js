@@ -1,6 +1,8 @@
 // prettier.config.js or .prettierrc.js
 module.exports = {
 	// printWidth: 80,
+	printWidth: 1000,
+	// ^^ Default is 80 characters per line.
 	requirePragma: false,
 	// ^ That is defautl false though. Read about it @ https://prettier.io/docs/en/options.html#insert-pragma
 	trailingComma: 'es5',
@@ -21,6 +23,4 @@ module.exports = {
 	braceStyle: '1tbs',
 	//  ^^ this sets the brace style for php formatting like to put on same line.
 	//  Read more about php formatting @ https://github.com/prettier/plugin-php
-	printWidth: 1000,
-	// ^^ Default is 80 characters per line.
 }
