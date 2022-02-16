@@ -105,7 +105,10 @@ function backupConfigFiles {
 	cp $_home/.tmux.conf $backup_dir/
 	echo "Backup of ~/.tmux.conf file succeeded."
 
-	cp -r $_home/nvim $backup_dir/
+
+	# FOR TESTING COMMAND: I.e., for fail incident for the copying of certian items by cp program:
+	# cp -r ~/nvim ~/Documents/github_repos/config/ 2> /dev/null
+	cp -r $_home/nvim $backup_dir/ 2> /dev/null
 	echo "Backup of ~/nvim directory succeeded."
 
 	cp -r $_home/nvim-sahil $backup_dir/
