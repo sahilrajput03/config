@@ -149,3 +149,38 @@ function air {
 function killbatteryservice {
 	kill $(pgrep -f battery-status)
 }
+
+# todo.sh aliases:
+function td(){
+	# This is fun...
+	#What i want is if no arguments passed then it should act as todo.sh ls, but when arguments passed arguments should be passed to todo.sh like todo.sh $argv.
+	# if test "$argv" = "" # I did this in fish in popos.
+	if [ $# -eq 0 ]
+	then
+	 todo.sh ls
+	# echo "YOU DIDN'T PASS ARGUMENTS ~ SAHIL"
+	else
+	#Note: You can use ``td -h`` to execute ``todo.sh -h`` as well.
+	# echo DEBUGGING::ARGUMETNS PASSED: SAHIL "$@"
+	todo.sh "$@"
+		#echo "You passed arguments ~ Sahil"
+	fi
+}
+
+function tda(){
+    todo.sh add "$argv"			# Add task
+}
+
+function tds(){ 
+		 todo.sh ls				# Show tasks
+}
+
+function tdsa(){
+		 todo.sh listall		# This command show all tasks (incompleted as well as completed):
+}
+
+function tdd(){
+	# todo.sh do 4				# This_command_will_mark_task4_as_done.
+    todo.sh do $argv			# Works same as above command.
+}
+

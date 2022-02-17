@@ -8,6 +8,7 @@
 # I have sourced this file in root shell's .bashrc file as well i.e., `/root/.bashrc` ~Sahil. And that file is invoked when we login to root user i.e., `su`. It'll load all your aliases and functions in root shell as well that you enjoy in your non-root shells.
 
 ### Variables
+alias visudo='sudo EDITOR=nvim visudo'
 # Original from archos.
 # export PS1='[\u@\h \W]\$ ' 
 # ~Sahil: For colouring the username and hostname in cli: Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)
@@ -58,6 +59,7 @@ alias lsmnt='ls /mnt/*'
 alias rmrf='rm -rf'
 alias ..='cd ..'
 alias ...='source $_home/.bashrc'
+alias ...c='source $_home/.bashrc; clear'
 alias gr='cd $_home/Documents/github_repos'
 alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
 alias grc='cd $_home/Documents/github_repos/config'
@@ -119,13 +121,18 @@ alias generatesshkeypair='ssh-keygen'
 . /usr/share/nvm/init-nvm.sh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh #Making autojump work!
 
-echo "SYSTEM		: $(uname -a)"
-echo "HOSTNAME	: $HOSTNAME"
-echo "UPTIME		: $(uptime)"
-echo "DISK		: $(df /home/array | tail -1)"
-echo "HOSTNAMECTL	:"
-hostnamectl
-echo
+function show_custom_info() {
+	echo "SYSTEM		: $(uname -a)"
+	echo "HOSTNAME	: $HOSTNAME"
+	echo "UPTIME		: $(uptime)"
+	echo "DISK		: $(df /home/array | tail -1)"
+	echo "HOSTNAMECTL	:"
+	hostnamectl
+	echo
+}
+# show_custom_info
+# I am using neofetch to display general os info now:
+neofetch
 
 # Running tmux as default shell: Source: https://unix.stackexchange.com/a/113768/504112
 function enableTmux() {
@@ -135,5 +142,9 @@ function enableTmux() {
   fi
 }
 enableTmux
+
+# Enable tmux based clear screen with ctrl+l in shell: (This is free from non-tmux errors too).
+# Source: https://unix.stackexchange.com/a/29239/504112
+bind -x '"\C-l": clear; tmux clear-history'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
