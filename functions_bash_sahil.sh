@@ -34,8 +34,8 @@ gacp (){
     echo + git commit -m \'$@\'
     git commit -m "$*"
 
-    echo + git push
-    git push
+    echo + git push -u
+    git push -u
 
 }
 

@@ -112,6 +112,7 @@ alias restartadb='sudo adb kill-server; sudo adb start-server'
 alias listInstalledPacmanPackages='pacman -Q'
 alias kernelname='uname -r'
 alias generatesshkeypair='ssh-keygen'
+alias nf='neofetch'
 
 
 
@@ -132,7 +133,7 @@ function show_custom_info() {
 }
 # show_custom_info
 # I am using neofetch to display general os info now:
-neofetch
+# neofetch
 
 # Running tmux as default shell: Source: https://unix.stackexchange.com/a/113768/504112
 function enableTmux() {

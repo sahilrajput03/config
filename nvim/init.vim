@@ -12,6 +12,12 @@
 " TESTED:: THIS WORKS GOOD!
 nnoremap <leader>l :source $MYVIMRC<CR>
 
+" Set ctrl+/ to comment code simply
+" Commenting using `c+/` hotkey. Src: https://github.com/tpope/vim-commentary/issues/36#issuecomment-60329227
+" map <C-_> <Plug>Commentary
+map <C-_> gcl0
+"		  ^^^^ This is a clever hack of my own hit and tria method, so now simple ctrl+/ work phenomenally.
+
 "Tetsing map commands from vim fandom: Source: https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)#:~:text=Key%20mapping%20refers%20to%20creating,define%20your%20own%20Vim%20commands.
 " MY LEARNINGS: 
 "The ':map' command creates a key map that works in normal, visual, select and operator pending modes.
