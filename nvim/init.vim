@@ -524,6 +524,10 @@ nnoremap <C-h> :nohlsearch<cr>
 " vnoremap <C-f> :sus<cr>
 " nnoremap <C-f> :sus<cr>
 
+" Instead I am using my old ,p and ,P to get copy register contents.
+nnoremap ,p "0p
+nnoremap ,P "0P
+
 " Jump to start and end of line using the home row keys ~SAHIL ~SUPERB FROM
 " JONHOO. #h and l
 " map H ^ "Originally.
@@ -533,8 +537,8 @@ map L $
 " Neat X clipboard integration
 " ,p will paste clipboard into buffer
 " ,c will copy entire buffer into clipboard
-noremap <leader>p :read !xsel --clipboard --output<cr>
-noremap <leader>c :w !xsel -ib<cr><cr>
+" noremap <leader>p :read !xsel --clipboard --output<cr>
+" noremap <leader>c :w !xsel -ib<cr><cr>
 
 " <leader>s for Rg search
 noremap <leader>s :Rg
