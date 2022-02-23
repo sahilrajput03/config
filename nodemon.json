@@ -1,7 +1,12 @@
 {
-    "events": {
-        "start": "clear; tmux clear-history 2> /dev/null",
-	"comment": "Above command is tmux safe, i.e., if tmux is not there then it won't throw error, YIKES!",
-        "comment:start": "clear"
-    }
+	"events": {
+		"start": "clear; tmux clear-history -t $TMUX_PANE 2> /dev/null;",
+		"Above simply rocks with tmux": "...",
+		"startEarlierLittleFaulty": "clear; tmux clear-history 2> /dev/null;",
+		"restart": "",
+		"comment": "'''IMPORTANT:TMUX:clear-history''':There is problem with tmux-clear history as it can only clear the history of the running terminal pane only if that pane was last selected or currently in focus, i.e., whenever tmux receives the clear-history command it only clears history for the pane that is last selected i.e., when it receives the signal via nodemon's script. SO SIMPLE FIX IS TO USE another i3's terminal, thats IT! NO QUESTIONS ASKED! YO!!",
+		"comment:other": "Above start command is tmux safe, i.e., if tmux is not there then it won't throw error, YIKES!",
+		"comment:start": "clear",
+		"comment:start vs. restart": "start runs on the first and all following runs, but restart only runs after the first run. ALSO, start runs after every restart commands."
+	}
 }

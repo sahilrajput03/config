@@ -676,3 +676,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" I might WORK THIS SOME OTHER DAY.
+" Mapping getting out of terminal in vim via ctrl+n (BELOW DID'T work for now):
+" None of below worked!
+" map <C-n> <C-Bslash> <C-n>
+" map <C-n> <C-\><C-n>
+" map <C-n> <C-\> <C-n>

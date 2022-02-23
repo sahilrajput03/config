@@ -53,9 +53,6 @@ alias inw='inotifywait'
 alias dc='docker-compose'
 alias e='exit'
 # alias q='exit' # This isn't any good IMO ~Sahil
-alias c='clear; tmux clear-history'
-alias C='clear; tmux clear-history'
-alias clear='clear; tmux clear-history'
 alias ca='cargo'
 alias r='ranger'
 alias sus='systemctl suspend'
@@ -123,7 +120,15 @@ alias kernelname='uname -r'
 alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
 
-
+alias c='clear'
+alias C='clear'
+if [[ $TMUX ]]; then
+	# ^^^^^^ Source: https://stackoverflow.com/a/70177699/10012446
+	alias c='clear; tmux clear-history'
+	alias C='clear; tmux clear-history'
+	alias clear='clear; tmux clear-history'
+	# alias clear='clear && tmux clear-history'
+fi
 
 ### Sources:
 . $_home/functions_bash_sahil.sh
