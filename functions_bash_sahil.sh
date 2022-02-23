@@ -18,6 +18,10 @@ rustmon(){
 	/usr/bin/nodemon -q -e rs -x "rustc $* -o .binary && ./.binary"
 }
 
+alias gl='git log --decorate --graph --oneline -10'
+# Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
+alias garchive='git archive --format zip --output'
+# alias gl='git log'
 gac (){
     echo + git add .
     git add .

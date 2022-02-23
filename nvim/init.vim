@@ -7,11 +7,6 @@
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
 
-" Loading nvim/init.vim config file without reloading neovim(should also works
-" vim as well). SRC: https://vi.stackexchange.com/a/26627
-" TESTED:: THIS WORKS GOOD!
-nnoremap <leader>l :source $MYVIMRC<CR>
-
 " Set ctrl+/ to comment code simply
 " Commenting using `c+/` hotkey. Src: https://github.com/tpope/vim-commentary/issues/36#issuecomment-60329227
 " map <C-_> <Plug>Commentary
@@ -98,6 +93,9 @@ Plug 'machakann/vim-highlightedyank' "This shows colour for the yanked text for 
 Plug 'andymass/vim-matchup'
 
 " Fuzzy finder
+" NOTE: ~Sahil, if you are getting node_modules folder in the ctrl-p dialog
+" boz then you can simply get rid of it by simly making the current folder a
+" git repo via ```git init``` or making any of its parent folder simply.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "FYI SAHIL: You must have proximity-sort package on your linux as well coz
@@ -527,8 +525,9 @@ nnoremap <C-h> :nohlsearch<cr>
 " nnoremap <C-f> :sus<cr>
 
 " Jump to start and end of line using the home row keys ~SAHIL ~SUPERB FROM
-" JONHOO.
-map H ^
+" JONHOO. #h and l
+" map H ^ "Originally.
+map H 0 "~Sahil
 map L $
 
 " Neat X clipboard integration
@@ -588,10 +587,11 @@ nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
 
 " ~Sahil (NEWLY ADDED) :: <leader>z closes current buffer.
 " LEARN: <CR> anywhere in this file means <Carriage Return> key.
-nnoremap <leader>z :bw<CR>
+nnoremap <leader>z :bw!<CR> "originally working.
+" nnoremap <C-W> :bw<CR> " Trying to map ctrl+w to close buffer.
 
 " ~Sahil (NEWLY ADDED) :: <leader>Z closes current buffer FORCELY.
-nnoremap <leader>Z :bw!<CR>
+" nnoremap <leader>Z :bw!<CR>
 
 " Keymap for replacing up to next _ or -
 noremap <leader>m ct_
@@ -644,3 +644,10 @@ endif
 
 " ~SAHIL: Source: https://stackoverflow.com/a/1117532/10012446
 highlight Normal ctermfg=grey ctermbg=black
+
+" Set vim bracket highlighting colors, ~Sahil: Src: https://stackoverflow.com/a/10746829/10012446
+hi MatchParen cterm=none ctermbg=green ctermfg=blue
+"
+" Loading nvim/init.vim config file without reloading neovim(should also works
+" vim as well). SRC: https://vi.stackexchange.com/a/26627
+nnoremap <leader>l :source $MYVIMRC<CR>

@@ -38,6 +38,14 @@ function showpath_in_terminal(){
 
 ### Aliases:
 # FYI: Use exa instead of l and ls.
+alias explorer='pcmanfm'
+alias fm='pcmanfm'
+
+
+alias paste_from_clipboard='xsel'
+alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(date +%c).png"'
+# Source: https://unix.stackexchange.com/a/145134/504112
+alias open-pdf='llpp'
 alias g='git'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias ls='exa --color=auto'
@@ -67,6 +75,7 @@ alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-ex
 alias ~='cd ~'
 alias mb='cd /mnt/sda3/home/array/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
+alias resume='cd /mnt/sda3/home/array/my_bin/resume'
 alias vi='nvim'
 # Since vi is aliased, all below will refer to nvim for vi.
 alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
