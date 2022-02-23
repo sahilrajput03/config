@@ -161,7 +161,8 @@ let g:prettier#autoformat_require_pragma = 0
 if has('nvim')
     set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
     set inccommand=nosplit
-    noremap <C-q> :confirm qall<CR>
+    " noremap <C-q> :confirm qall<CR> "ORIGINALLY FROM jonhoo.
+    noremap <leader>z :confirm qall<CR>
 end
 
 " deal with colors
@@ -591,11 +592,14 @@ nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
 
 " ~Sahil (NEWLY ADDED) :: <leader>z closes current buffer.
 " LEARN: <CR> anywhere in this file means <Carriage Return> key.
-nnoremap <leader>z :bw!<CR> "originally working.
-" nnoremap <C-W> :bw<CR> " Trying to map ctrl+w to close buffer.
+" nnoremap <leader>z :bw!<CR> "originally working.
+" nnoremap <C-W> :bw<CR> " Trying to map ctrl+w to close buffer. ( NOT USING
+" ^^^^COZ C-W is reserved for window management in vim.
+nnoremap <c-q> :bw!<CR> "My new binding so don't quit vim that often.
 
 " ~Sahil (NEWLY ADDED) :: <leader>Z closes current buffer FORCELY.
 " nnoremap <leader>Z :bw!<CR>
+" nnoremap <c-Q> :bw!<CR>
 
 " Keymap for replacing up to next _ or -
 noremap <leader>m ct_
@@ -655,3 +659,20 @@ hi MatchParen cterm=none ctermbg=green ctermfg=blue
 " Loading nvim/init.vim config file without reloading neovim(should also works
 " vim as well). SRC: https://vi.stackexchange.com/a/26627
 nnoremap <leader>l :source $MYVIMRC<CR>
+
+" Buffer navigation with alt+h and alt+l keys.
+" I can use these command to switch to buffers to but currently using alt key
+" to do that.
+" map gn :bn<cr>
+" map gp :bp<cr>
+" map gd :bd<cr>  
+" ---
+map <M-h> :bp<cr>
+map <M-l> :bn<cr>
+" I made above bindings by refering to docs of nvim, i.e., `:help key-notation`
+
+" Trying to switch to windows using ctrl+hjkl
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
