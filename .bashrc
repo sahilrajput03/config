@@ -162,4 +162,11 @@ enableTmux
 # Source: https://unix.stackexchange.com/a/29239/504112
 bind -x '"\C-l": clear; tmux clear-history'
 
+
+# I added the FZF_DEFAULT_COMMAND myself by seeing it in the stackoverfow question: https://stackoverflow.com/q/61865932/10012446
+# So, it'll ignore the node_modules and .git directories.
+# export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+# NOTE I CHANGED THE quote mechanism to single quote inside the command and double quote to wrap the whole rg command.
+export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -1,6 +1,7 @@
 {
 	"events": {
 		"start": "clear; tmux clear-history -t $TMUX_PANE 2> /dev/null;",
+		"Inspiration of above tmux-clearhisotry with tmux_pane": "1: https://github.com/tmux/tmux/issues/1543#issuecomment-439347492, 2: https://stackoverflow.com/a/25341292/10012446",
 		"Above simply rocks with tmux": "...",
 		"startEarlierLittleFaulty": "clear; tmux clear-history 2> /dev/null;",
 		"restart": "",
