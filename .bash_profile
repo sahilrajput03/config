@@ -11,3 +11,5 @@
 # echo from ~/.bash_profile
 # echo
 . "$HOME/.cargo/env"
+
+source /home/array/broot/launcher/bash/br

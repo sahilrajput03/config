@@ -375,3 +375,5 @@ default_border pixel 2
 # View help of brightnessctl via: `brightnessctl -h` command or via man pages: `man brightnessctl`.
 bindsym XF86MonBrightnessUp exec brightnessctl s +10% # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%- # decrease screen brightness
+
+bindsym Print exec /usr/bin/flameshot gui

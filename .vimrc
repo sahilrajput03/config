@@ -2,6 +2,10 @@
 nnoremap ,p "0p
 nnoremap ,P "0P
 
+" To enable showing that file has some changes made which aren't saved yet( FYI: + means
+" file has some unsaved changes). Src: https://stackoverflow.com/a/31938320/10012446
+set laststatus=2
+
 " Left and right can switch buffers
 " So ~SAHIL, we can use :bp and :bn to switch between previous and next opned files (buffers) yikes!!
 nnoremap <left> :bp<CR>

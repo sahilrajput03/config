@@ -14,7 +14,10 @@ alias visudo='sudo EDITOR=nvim visudo'
 # ~Sahil: For colouring the username and hostname in cli: Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)
 # BACKUP # export PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 ps1_format='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
+# Source of below PS1: https://superuser.com/a/60563/776589
+ps1_format_show_current_dir_only='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$'
 export PS1=$ps1_format
+# export PS1=$ps1_format_show_current_dir_only
 _home=/home/array # Did coz I'll source this file in sudo as well.
 export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
@@ -170,3 +173,9 @@ bind -x '"\C-l": clear; tmux clear-history'
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /home/array/broot/launcher/bash/br
+
+# Enable vim mode for terminal as well:
+# Src: https://dev.to/brandonwallace/how-to-use-vim-mode-on-the-command-line-in-bash-fnn
+# set -o vi
