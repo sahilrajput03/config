@@ -376,4 +376,5 @@ default_border pixel 2
 bindsym XF86MonBrightnessUp exec brightnessctl s +10% # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%- # decrease screen brightness
 
+#Setting flameshot to capture screen on PrintScreen keypress. Src: https://unix.stackexchange.com/a/564211/504112
 bindsym Print exec /usr/bin/flameshot gui
