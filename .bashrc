@@ -179,3 +179,10 @@ source /home/array/broot/launcher/bash/br
 # Enable vim mode for terminal as well:
 # Src: https://dev.to/brandonwallace/how-to-use-vim-mode-on-the-command-line-in-bash-fnn
 # set -o vi
+#
+
+# Enable case-insensitive approach when doing tab complete in bash: src: https://askubuntu.com/a/1081444/702911
+bind "set completion-ignore-case on"
+
+# Force doing the course:
+cd /home/array/test/missing-semester
