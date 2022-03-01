@@ -131,11 +131,11 @@ function backupConfigFiles {
 	cp $_home/.gitconfig $backup_dir/
 	echo "Backup of ~/.gitconfig file succeeded."
 
-	cp $_home/.config/qutebrowser/autoconfig.yml $backup_dir/.config/qutebrowser
-	cp $_home/.config/qutebrowser/config.yml $backup_dir/.config/qutebrowser
-	cp $_home/.config/qutebrowser/quickmarks $backup_dir/.config/qutebrowser
-	echo "Backup of ~/.qutebrowser/autoconfig.ymll file succeeded."
-	echo "Backup of ~/.qutebrowser/config.yml file succeeded."
+	cp $_home/.config/qutebrowser/autoconfig.yml $backup_dir/.config/qutebrowser/
+	cp $_home/.config/qutebrowser/config.py $backup_dir/.config/qutebrowser/
+	cp $_home/.config/qutebrowser/quickmarks $backup_dir/.config/qutebrowser/
+	echo "Backup of ~/.qutebrowser/autoconfig.yml file succeeded."
+	echo "Backup of ~/.qutebrowser/config.py file succeeded."
 	echo "Backup of ~/.qutebrowser/quickmarks file succeeded."
 
 	echo
