@@ -89,6 +89,7 @@ alias vi.pomodoro='vi $_home/scripts-in-use/pomodoro/pomodoro.sh'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
 alias vi.i3='vi $_home/.config/i3/config'
 alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*' 
+alias vi.qm='vi ~/.config/qutebrowser/quickmarks'
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
@@ -122,6 +123,17 @@ alias listInstalledPacmanPackages='pacman -Q'
 alias kernelname='uname -r'
 alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
+# Below aliases helps in searching current directory. -a means to include hidden files as well.
+alias lsg='ls -a | grep -i'
+# Another searching utility with simple ls
+lss(){
+	# Below example is when you are searching for file that has text json in it. I have second entry starting with .* so that i can search in dot files as well(hidden files).
+	ls -a -d *$@* .*$@*
+	# FYI: -a means list all files(including hidden files), -d means to list the content of current directory(not the contentes of directory supplied as argument).
+	# Example of searching json in a directory for files and folders.
+	# ls -a -d *json* .*json*
+	# FYI: This throw error when there are no files matching with dot files, todo: fix that error. ~Sahil.
+}
 
 alias c='clear'
 alias C='clear'

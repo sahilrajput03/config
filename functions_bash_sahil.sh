@@ -31,7 +31,7 @@ gac (){
     git commit -m "$*" # gac life is amazing
 }
 
-# Usage: gacp life is super amazing.
+# Usage: gacp life is super amazing. Usage: `gacps Added life to project.`
 gacp (){
     echo + git add .
     git add .
@@ -42,6 +42,12 @@ gacp (){
     echo + git push -u
     git push -u
 
+}
+# gacp Silent: Tested: Works good: Usage: `gacps Added life to project.`
+gacps (){
+    git add . 1> /dev/null 2> /dev/null
+    git commit -m "$*" 1> /dev/null 2> /dev/null
+    git push -u 1> /dev/null 2> /dev/null
 }
 
 alias so='sizeof'

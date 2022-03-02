@@ -532,7 +532,8 @@ nnoremap ,P "0P
 " Jump to start and end of line using the home row keys ~SAHIL ~SUPERB FROM
 " JONHOO. #h and l
 " map H ^ "Originally.
-map H 0 "~Sahil
+map H 0
+"^^^ I made it to use 0 instead, ~Sahil
 map L $
 
 " Neat X clipboard integration

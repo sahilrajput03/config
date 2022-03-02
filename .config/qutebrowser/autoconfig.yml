@@ -6,10 +6,48 @@
 
 config_version: 2
 settings:
+  backend:
+    global: webengine
+  bindings.commands:
+    global:
+      normal:
+        M: hint links spawn mpv {hint-url}
+        Z: hint links spawn st -e youtube-dl {hint-url}
+        t: set-cmd-text -s :open -t
+        xb: config-cycle statusbar.show always never
+        xt: config-cycle tabs.show always never
+        xx: config-cycle statusbar.show always never;; config-cycle tabs.show always
+          never
+  bindings.key_mappings:
+    global:
+      <Ctrl+6>: <Ctrl+^>
+      <Ctrl+Enter>: <Ctrl+Return>
+      <Ctrl+[>: <Escape>
+      <Ctrl+i>: <Tab>
+      <Ctrl+j>: <Return>
+      <Ctrl+m>: <Return>
+      <Enter>: <Return>
+      <Shift+Enter>: <Return>
+      <Shift+Return>: <Return>
+  changelog_after_upgrade:
+    global: minor
+  colors.webpage.darkmode.enabled:
+    global: true
+  completion.open_categories:
+    global:
+    - searchengines
+    - quickmarks
+    - bookmarks
+    - history
+    - filesystem
   content.notifications.enabled:
     https://www.youtube.com: false
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
+  statusbar.show:
+    global: never
+  tabs.show:
+    global: never
   url.default_page:
     global: https://google.in
   url.searchengines:
