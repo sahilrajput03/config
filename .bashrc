@@ -57,7 +57,8 @@ alias dc='docker-compose'
 alias e='exit'
 # alias q='exit' # This isn't any good IMO ~Sahil
 alias ca='cargo'
-alias r='ranger'
+# alias r='ranger'
+# coz i need to use r for r language now.
 alias sus='systemctl suspend'
 alias hib='systemctl hibernate'
 alias md='mkdir'
@@ -182,7 +183,7 @@ bind -x '"\C-l": clear; tmux clear-history'
 # So, it'll ignore the node_modules and .git directories.
 # export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 # NOTE I CHANGED THE quote mechanism to single quote inside the command and double quote to wrap the whole rg command.
-export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
+export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*, **/.yarn.lock}'"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -197,4 +198,4 @@ source /home/array/broot/launcher/bash/br
 bind "set completion-ignore-case on"
 
 # Force doing the course:
-cd /home/array/test/missing-semester
+cd /home/array/Documents/github_repos/sahilrajput03/missing-semester/
