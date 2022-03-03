@@ -551,7 +551,7 @@ let g:fzf_layout = { 'down': '~20%' }
 " you hv shortcut to it with ```<space>s``` as well.
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always -g "!{node_modules/**,**/yarn.lock}" '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always -g "!{**/package-lock.json,**/node_modules/**,**/yarn.lock}" '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
