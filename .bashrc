@@ -183,7 +183,14 @@ bind -x '"\C-l": clear; tmux clear-history'
 # So, it'll ignore the node_modules and .git directories.
 # export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 # NOTE I CHANGED THE quote mechanism to single quote inside the command and double quote to wrap the whole rg command.
+# export FZF_DEFAULT_COMMAND="rg --files -g '!node_modules'"
+# export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{node_modules/**,.git/**, **/.yarn.lock}'"
+# export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/**,**/.git/**, **/.yarn.lock}'"
 export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*, **/.yarn.lock}'"
+#
+# Below command is when we do a ctrl+t in terminal. # src: https://github.com/junegunn/fzf/issues/763#issuecomment-266176437
+export FZF_CTRL_T_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*, **/.yarn.lock}'"
+
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

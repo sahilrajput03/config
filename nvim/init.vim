@@ -96,15 +96,16 @@ Plug 'andymass/vim-matchup'
 " NOTE: ~Sahil, if you are getting node_modules folder in the ctrl-p dialog
 " boz then you can simply get rid of it by simly making the current folder a
 " git repo via ```git init``` or making any of its parent folder simply.
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Earlier I used to use ^^^ but now following official docs, I am using below:
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" From docs ~Sahil.
+" export FZF_CTRL_T_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*, **/.yarn.lock}'"
 "FYI SAHIL: You must have proximity-sort package on your linux as well coz
 "that might be a problem to search functionality implemented by fzf vim library
 "for search functionality. So make sure you have it installed: Source of
 "```proximity-sort```: https://aur.archlinux.org/packages/proximity-sort
-"~SAHIL, I AM NOT ABLE TO FUZZY FIND FILES WITH ``CTRL+P`` COZ I HAVE THIS
-"issue active @fzf.vim github repo: https://github.com/junegunn/fzf.vim/issues/1296
-"PAY ATTENTION >>><<< PLEASE!!!!
 
 Plug 'airblade/vim-rooter' "rooter identifies the root directory in any project, yikes!
 let g:rooter_patterns = ['package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root. Set project root directory with ``vim-rooter``. FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute. Rooter works too great for fzf coz it allows fzf to search only in the current project folder i.e., with the help of searching in the path of project.
@@ -546,22 +547,33 @@ map L $
 " <leader>s for Rg search
 noremap <leader>s :Rg<space>
 let g:fzf_layout = { 'down': '~20%' }
+" ~Sahil, below command WORKS GOOD and it is executed only when you type Rg in the command(you
+" you hv shortcut to it with ```<space>s``` as well.
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always -g "!{**/yarn.lock}" '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always -g "!{node_modules/**,**/yarn.lock}" '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 
 function! s:list_cmd()
   let base = fnamemodify(expand('%'), ':h:.:S')
-  return base == '.' ? 'fd --type file --follow' : printf('fd --type file --follow | proximity-sort %s', shellescape(expand('%')))
+  " FYI: Sahil, The first case in below ternary executes when no file is
+  " opened and you try to use :Files, and second is obvious(i.e., any files is
+  " already open).
+  return base == '.' ? 'fd --type file --follow --exclude "node_modules"' : printf('fd --type file --follow --exclude "node_modules" | proximity-sort %s', shellescape(expand('%')))
+  " Originally node_modules was not ignored so now I am ignoring it.
+  " return base == '.' ? 'fd --type file --follow' : printf('fd --type file --follow | proximity-sort %s', shellescape(expand('%')))
 endfunction
+" ~Sahil, what does proximity-sort does? Ans. https://github.com/jonhoo/proximity-sort
 
+" SAHIL: FYI:(Below is called when you type `:Files` or uses your <c-p> to get a
+" fuzzy search) SAHIL, I am calling s:list_cmd function which which is defined above^^^.
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, {'source': s:list_cmd(),
   \                               'options': '--tiebreak=index'}, <bang>0)
-
+  " ~Sahil,experiments below!
+  " \ call fzf#vim#files(<q-args>, <bang>0)
 
 " Open new file adjacent to current file
 nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
