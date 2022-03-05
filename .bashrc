@@ -8,7 +8,6 @@
 # I have sourced this file in root shell's .bashrc file as well i.e., `/root/.bashrc` ~Sahil. And that file is invoked when we login to root user i.e., `su`. It'll load all your aliases and functions in root shell as well that you enjoy in your non-root shells.
 
 ### Variables
-alias visudo='sudo EDITOR=nvim visudo'
 # Original from archos.
 # export PS1='[\u@\h \W]\$ ' 
 # ~Sahil: For colouring the username and hostname in cli: Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)
@@ -40,7 +39,9 @@ function showpath_in_terminal(){
 }
 
 ### Aliases:
+alias visudo='sudo EDITOR=nvim visudo'
 # FYI: Use exa instead of l and ls.
+alias tree='tree -I node_modules'
 alias explorer='pcmanfm'
 alias fm='pcmanfm'
 
@@ -50,6 +51,8 @@ alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(dat
 # Source: https://unix.stackexchange.com/a/145134/504112
 alias open-pdf='llpp'
 alias g='git'
+alias gpul='git pull'
+alias gpus='git push'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias ls='exa --color=auto'
 alias inw='inotifywait'
@@ -117,7 +120,7 @@ alias open='xdg-open'
 alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
-alias vinvim='vi ~/nvim/init.vim'
+alias vi.nvim='vi ~/nvim/init.vim'
 alias cl='clear && l'
 alias restartadb='sudo adb kill-server; sudo adb start-server'
 alias listInstalledPacmanPackages='pacman -Q'
@@ -205,4 +208,4 @@ source /home/array/broot/launcher/bash/br
 bind "set completion-ignore-case on"
 
 # Force doing the course:
-cd /home/array/Documents/github_repos/sahilrajput03/missing-semester/
+echo "Aim: Do it!! ~/Documents/github_repos/sahilrajput03/missing-semester/"

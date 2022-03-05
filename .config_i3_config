@@ -352,12 +352,29 @@ mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eboot, sh[u]tdown
 
   bindsym Escape mode "default"
   bindsym Return mode "default"
-
 }
 
 bindsym $mod+x mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eboot, sh[u]tdown, [H]ibernate, [S]uspend, Loc[k]"
 # <<<<<<<<<<<<<<<< 
 
+
+
+# >>>>>>>>>>>>>>> Setting up list of my common useful apps to be opened by hotkeys.
+# Adding mod+a binding to open up the menu of apps.
+# src: same above source for """"Making Setting up logout, suspend, .. """
+mode "Open: [q]utebrowser, [c]hrome, [f]irefox." {
+
+  bindsym q exec qutebrowser; mode "default"
+  bindsym c exec google-chrome-stable; mode "default"
+  bindsym f exec firefox; mode "default"
+
+  # Below are to get back to default mode:
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+
+bindsym $mod+o mode "Open: [q]utebrowser, [c]hrome, [f]irefox."
+# <<<<<<<<<<<<<<<< 
 
 
 # >>>>>>> Managing the color of focussed window in i3.

@@ -33,7 +33,12 @@ noremap <silent> <C-S>          :w<CR>
 vnoremap <silent> <C-S>         <C-C>:w<CR>
 inoremap <silent> <C-S>         <C-O>:w<CR>
 
-set shell=/bin/bash
+
+" ORIGINALLY FROM JOHNHOO.
+" set shell=/bin/bash
+" USING ABOVE ONLY,,,, WAS(some error log conflict with tmux can't assign terminal group shit...) USING BELOW TO SOURCE INTERACTIVE SHELL SO THAT I CAN USE ALIASES DEFINED IN
+" .bashrc file simply, src: https://stackoverflow.com/a/8946710/10012446
+set shell=/bin/bash\ -i
 
 
 "Enable copying text to system clipboard ~SAHIL, Yikes!: src: https://www.reddit.com/r/neovim/comments/3fricd/comment/ctr8t3h/?utm_source=share&utm_medium=web2x&context=3
@@ -690,6 +695,12 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+
+" To unhighlight after search, you need to do :noh or :nohighlight Src: https://stackoverflow.com/a/99182/10012446
+map gs :noh<CR>
+" To update github repo.
+map gu :!gacp Update.<CR>
 
 " I might WORK THIS SOME OTHER DAY.
 " Mapping getting out of terminal in vim via ctrl+n (BELOW DID'T work for now):
