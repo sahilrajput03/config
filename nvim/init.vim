@@ -396,7 +396,8 @@ set timeoutlen=1500 " http://stackoverflow.com/questions/2158516/delay-before-o-
 set scrolloff=2
 set noshowmode
 set hidden
-set nowrap
+" To enable/disable wrap, #unwrap, #wrap
+" set nowrap
 set nojoinspaces
 let g:sneak#s_next = 1
 let g:vim_markdown_new_list_item_indent = 0
@@ -483,7 +484,10 @@ set diffopt+=iwhite " No whitespace in vimdiff
 " Make diffing better: https://vimways.org/2018/the-power-of-diff/
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
-set colorcolumn=80 " and give me a colored column
+" Show linewidth color line @ 80, 100, 120, etc, WITH ```set cc=```, I am disabling colorcolumn.
+" set colorcolumn=100 " and give me a colored column
+set cc=
+"
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
 set shortmess+=c " don't give |ins-completion-menu| messages.
@@ -647,7 +651,7 @@ endif
 
 " Follow Rust code style rules
 au Filetype rust source ~/nvim/scripts/spacetab.vim
-au Filetype rust set colorcolumn=100
+" au Filetype rust set colorcolumn=100
 
 " Help filetype detection
 autocmd BufRead *.plot set filetype=gnuplot
@@ -701,6 +705,8 @@ map <C-l> <C-w>l
 map gs :noh<CR>
 " To update github repo.
 map gu :!gacp Update.<CR>
+" To show recent files ~Sahil
+map gh :His<CR>
 
 " I might WORK THIS SOME OTHER DAY.
 " Mapping getting out of terminal in vim via ctrl+n (BELOW DID'T work for now):
@@ -708,3 +714,8 @@ map gu :!gacp Update.<CR>
 " map <C-n> <C-Bslash> <C-n>
 " map <C-n> <C-\><C-n>
 " map <C-n> <C-\> <C-n>
+"
+
+" This disables spellbad highlights from nvimlsp, you can get help on this
+" via: ```:h hi```
+:hi clear spellbad

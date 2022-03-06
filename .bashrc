@@ -81,6 +81,8 @@ alias mb='cd /mnt/sda3/home/array/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
 alias vi='nvim'
+# Load nvim with on config: Source: https://vi.stackexchange.com/a/16981
+alias vifresh='vim --clean'
 # Since vi is aliased, all below will refer to nvim for vi.
 alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
 alias vi.bashrc='vi $_home/.bashrc'
