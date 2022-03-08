@@ -218,7 +218,8 @@ booz(){
 
 	###### TASK:: GET A RANDOM THOUGHT:
 	get_thought(){
-		shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.' # With grep '.' I am implying don't empty line output if the output is empty.
+		shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.'
+		# With grep '.' I am implying don't empty line output if the output is empty.
 		# print something in cyan color: 
 		# tput setaf 6; echo hell; tput sgr0
 	}
@@ -230,7 +231,8 @@ booz(){
 	###### TASK:: GET LIST OF ALL WHAT I CAM CURRENTLY FOCUSSING ON:
 	echo -ne $WHITE
 	echo -n "FOCUSSING "
-	grep '\- !' $_home/scripts-in-use/td/must-can # Any thing that starts with `- !` in todo list.
+	# Any thing that starts with `- !` in todo list and SHOW ONLY ONE OF THEM.
+	grep '\- !' $_home/scripts-in-use/td/must-can | shuf -n1
 
 	###### TASK:: GET TODO LIST:
 	echo # Need emtpy line space: INTENTIONAL:

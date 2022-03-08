@@ -1,28 +1,12 @@
 Must do
-- ! missing-semester-lecture 5
-- ! missing-semester-lecture 7
-- Do Figma more tutorials
-- 1 Do course missing-semester
-- 2 Do course missing-semester
-- 3 Do course missing-semester
-- 4 Do course !missing-semester
-- 5 Do course missing-semester
-- 6 Do course missing-semester
-- 7 Do course missing-semester
-- 8 Do course missing-semester
+- ! Figma's todo in learn-figma file
+- ! missing-semester L5
+- Do FSO part 12 - Containers
+- Do FSO part 13 - Using relational databases
+- Devops with Kubernetes course
+- Make twitter clone with nextjs deploy to rapberrypi.
 // this is a comment.
-- 9 last item in must do
 -------------
 Can do
-- Do course FSO Part 12
-- 11 Do course FSO Part 13
-- 22 Do kubernetes course
-- 33 Do kubernetes course
-- 44 Do kubernetes course
-- 55 Do kubernetes course
-- 66 kubernetes course
-- 77 kubernetes course
-- 88 kubernetes course
-- 99 kubernetes course
-- 00 kubernetes course
-- Last item in can do
+- Blockchain course from tekipeps
+- Solidity course from tekipeps
