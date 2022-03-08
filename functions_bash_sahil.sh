@@ -93,6 +93,8 @@ function Sudo {
 backup_dir=/home/array/Documents/github_repos/config
 _home=/home/array
 
+# Notice the extra s in the backupConfigFiless <- here.
+alias backupConfigFiless='backupConfigFiles 1> /dev/null 2> /dev/null'
 function backupConfigFiles {
 
 	cp $_home/nodemon.json $backup_dir/
