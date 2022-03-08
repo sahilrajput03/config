@@ -487,6 +487,7 @@ set diffopt+=indent-heuristic
 " Show linewidth color line @ 80, 100, 120, etc, WITH ```set cc=```, I am disabling colorcolumn.
 " set colorcolumn=100 " and give me a colored column
 set cc=
+"Src: https://vi.stackexchange.com/a/6989
 "
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals

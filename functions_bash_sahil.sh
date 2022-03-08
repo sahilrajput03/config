@@ -2,12 +2,17 @@ alias bm=bashmon
 alias bmon=bashmon
 
 bashmon(){
-/usr/bin/nodemon -q -e sh -x "bash $@"
+/usr/bin/nodemon -q -e sh -x "bash $@ || exit 0"
 }
 
 mdcd(){
 	mkdir $@
 	cd $@
+}
+
+# Watch over fortran program:
+fm(){
+	nodemon -e f90 -x "gfortran $@ -o program && ./program"
 }
 
 rmon(){
@@ -201,4 +206,51 @@ function tdd(){
 	# todo.sh do 4				# This_command_will_mark_task4_as_done.
     todo.sh do $argv			# Works same as above command.
 }
+alias vi.td='vi .todo/todo.txt'
+
+# ColouredEcho
+function cecho(){
+	# Usage:
+	# coloredEcho "This text is green" green
+	# coloredEcho "This text is green" 2
+	# colouredEcho "This text is yellow" 3
+	# colouredEcho "This text is red" 1
+
+    local exp=$1;
+    local color=$2;
+    if ! [[ $color =~ ^[0-9]$ ]] ; then
+       case $(echo $color | tr '[:upper:]' '[:lower:]') in
+        black) color=0 ;;
+        red) color=1 ;;
+        green) color=2 ;;
+        yellow) color=3 ;;
+        blue) color=4 ;;
+        magenta) color=5 ;;
+        cyan) color=6 ;;
+        white|*) color=7 ;; # white or invalid color
+       esac
+    fi
+    tput setaf $color;
+    echo "$exp";
+    tput sgr0;
+}
+
+# Exporting ce functions so I can use it in scripts directly.
+export -f cecho 
+alias ce='cecho'
+# Src: https://unix.stackexchange.com/a/22867/504112
+
+# Usage
+# coloredEcho "This text is green" green
+
+# Much easier way:
+# echoc "This text is red" 1
+# echoc "This text is green" 2
+# echoc "This text is yellow" 3
+# echoc "This text is blue" 4
+# echoc "This text is magenta" 5
+# echoc "This text is cyan" 6
+# echoc "This text is white" 7
+# echoc "Default text will be white as well."
+
 

@@ -53,6 +53,7 @@ alias open-pdf='llpp'
 alias g='git'
 alias gpul='git pull'
 alias gpus='git push'
+alias gcl='git clone'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias ls='exa --color=auto'
 alias inw='inotifywait'
@@ -209,5 +210,4 @@ source /home/array/broot/launcher/bash/br
 # Enable case-insensitive approach when doing tab complete in bash: src: https://askubuntu.com/a/1081444/702911
 bind "set completion-ignore-case on"
 
-# Force doing the course:
-echo "Aim: Do it!! ~/Documents/github_repos/sahilrajput03/missing-semester/"
+/home/array/test/td/s.sh
