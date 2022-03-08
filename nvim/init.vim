@@ -113,7 +113,7 @@ Plug 'junegunn/fzf.vim'
 "```proximity-sort```: https://aur.archlinux.org/packages/proximity-sort
 
 Plug 'airblade/vim-rooter' "rooter identifies the root directory in any project, yikes!
-let g:rooter_patterns = ['package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root. Set project root directory with ``vim-rooter``. FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute. Rooter works too great for fzf coz it allows fzf to search only in the current project folder i.e., with the help of searching in the path of project.
+let g:rooter_patterns = ['vimrooter', 'package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root. Set project root directory with ``vim-rooter``. FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute. Rooter works too great for fzf coz it allows fzf to search only in the current project folder i.e., with the help of searching in the path of project.
 " I don't want src to be included so amending this...>>> let g:rooter_patterns = ['=src', 'package.json'] "This sets any nearest parent folder which has src named folder (searched breadfirst) as project root. Set project root directory with ``vim-rooter``. FYI: vim-rooter uses ``:cd folderPathHere`` to set the ``pwd`` folder in nvim it can be relative or absolute. Rooter works too great for fzf coz it allows fzf to search only in the current project folder i.e., with the help of searching in the path of project.
 
 " Semantic language support

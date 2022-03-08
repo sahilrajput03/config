@@ -3,6 +3,7 @@ alias bmon=bashmon
 
 bashmon(){
 /usr/bin/nodemon -q -e sh -x "bash $@ || exit 0"
+# /usr/bin/nodemon -q -e sh -x "./$@|| exit 0"
 }
 
 mdcd(){
@@ -12,7 +13,7 @@ mdcd(){
 
 # Watch over fortran program:
 fm(){
-	nodemon -e f90 -x "gfortran $@ -o program && ./program"
+	nodemon -e "f90" -x "gfortran $@ -o binary && ./binary"
 }
 
 rmon(){
@@ -244,13 +245,13 @@ alias ce='cecho'
 # coloredEcho "This text is green" green
 
 # Much easier way:
-# echoc "This text is red" 1
-# echoc "This text is green" 2
-# echoc "This text is yellow" 3
-# echoc "This text is blue" 4
-# echoc "This text is magenta" 5
-# echoc "This text is cyan" 6
-# echoc "This text is white" 7
-# echoc "Default text will be white as well."
+# ce "This text is red" 1
+# ce "This text is green" 2
+# ce "This text is yellow" 3
+# ce "This text is blue" 4
+# ce "This text is magenta" 5
+# ce "This text is cyan" 6
+# ce "This text is white" 7
+# ce "Default text will be white as well."
 
 
