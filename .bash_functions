@@ -1,3 +1,4 @@
+# 
 alias bm=bashmon
 alias bmon=bashmon
 
@@ -131,8 +132,8 @@ function backupConfigFiles {
 	cp $_home/.config/i3/config $backup_dir/.config_i3_config
 	echo "Backup of ~/.config/i3/config file succeeded."
 
-	cp $_home/functions_bash_sahil.sh $backup_dir/
-	echo "Backup of ~/functions_bash_sahil.sh succeeded."
+	cp $_home/.bash_functions $backup_dir/
+	echo "Backup of ~/.bash_functions succeeded."
 
 	cp -r $_home/scripts-in-use $backup_dir/
 	echo "Backup of ~/scripts-in-use directory succeeded."
