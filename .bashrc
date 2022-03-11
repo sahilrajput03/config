@@ -14,9 +14,9 @@
 # BACKUP # export PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 ps1_format='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 # Source of below PS1: https://superuser.com/a/60563/776589
-ps1_format_show_current_dir_only='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$'
-export PS1=$ps1_format
-# export PS1=$ps1_format_show_current_dir_only
+ps1_format_show_current_dir_only='[\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]] \$'
+# export PS1=$ps1_format
+export PS1=$ps1_format_show_current_dir_only
 _home=/home/array # Did coz I'll source this file in sudo as well.
 export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
@@ -39,6 +39,9 @@ function hidepath_in_terminal2(){
 }
 function hidepath_in_terminal3(){
 	export PS1='\w > '
+}
+function showpath_last_folder_only(){
+	export PS1='\W > '
 }
 function showpath_in_terminal(){
 	export PS1=$ps1_format

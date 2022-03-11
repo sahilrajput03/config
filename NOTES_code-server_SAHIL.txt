@@ -1,18 +1,21 @@
+# Learn code-server
+
+```bash
 sudo systemctl stop code-server@array
 sudo systemctl start/stop/restart/disable/enable code-server@array
+```
 
-Also the password for the code-server is saved @ same file too i.e., 
+Also the password for the `code-server` is saved @ same file too i.e., 
 
 I replied on chaging the default port used when we use systemctl to start or restart code-server to use different port than 8082 by: `~/.config/code-server/config.yaml`
 
-```txt
-I found the default config for starting the code-server starting which works for systemctl is at path ~/.config/code-server/config.yaml and we can change line in it there like that below:
-
-bind-addr: 127.0.0.1:8082
+```yaml
+# File: ~/.config/code-server/config.yaml
+bind-addr: 127.0.0.1:8083
+# bind-addr: 192.168.18.3:8083			# USE THIS TO SHARE OVER NETWORK.
 auth: password
 password: 9de9bb96df2c98d1a7074879
 cert: false
-So as you can see I modified the port number in line 1 from 8080 (default) to 8082 so now when system boots up it'll use that port number.
-
-Also you can use below command to start using new port number right away: sudo systemctl restart code-server@$USER as well.
 ```
+
+**Also you can use below command to start using new port number right away: sudo systemctl restart code-server@$USER as well.**

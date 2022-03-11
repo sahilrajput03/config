@@ -2,3 +2,4 @@ shopt -s expand_aliases
 source ~/.bash_aliases
 source ~/.bash_functions
 # solution source: https://unix.stackexchange.com/a/550626/504112
+# This file is used in nvim/init.vim file.
