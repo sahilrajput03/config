@@ -132,3 +132,12 @@ enable_bash_git_prompt(){
 }
 # UNCOMMENT BELOW LINE TOGLLE ENABLE/DISABLE BASH-GIT-PROMPT
 # enable_bash_git_prompt
+
+
+# autocd was introduced into bash with version 4. So, a general cross-platform solution should be: src: https://unix.stackexchange.com/a/124432/504112
+# This enabled to cd to folders without cd command:
+[ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
+
+# To supress cd verbose command i can do like:
+exec {BASH_XTRACEFD}>/dev/null
+# src: https://www.reddit.com/r/linuxquestions/comments/cn1i20/suppressing_output_from_autocd_on_bash/?utm_source=share&utm_medium=web2x&context=3
