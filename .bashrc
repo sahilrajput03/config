@@ -44,12 +44,10 @@ function showpath_in_terminal(){
 	export PS1=$ps1_format
 }
 
-
-# Aliases
-source $_home/.bash_aliases
-
 ### Sources:
-. $_home/functions_bash_sahil.sh
+source $_home/.bash_aliases
+source $_home/.bash_functions
+# Other sources
 . "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
 . /usr/share/nvm/init-nvm.sh
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh #Making autojump work!

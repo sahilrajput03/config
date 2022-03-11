@@ -48,7 +48,7 @@ alias vifresh='vim --clean'
 # Since vi is aliased, all below will refer to nvim for vi.
 alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
 alias vi.bashrc='vi $_home/.bashrc'
-alias vi.functions='vi $_home/functions_bash_sahil.sh'
+alias vi.functions='vi $_home/.bash_functions'
 alias vi.gitconfig='vi $_home/.gitconfig'
 alias vi.profile='vi $_home/.profile'
 alias vi.nvim='vi $_home/nvim/init.vim'
