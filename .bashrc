@@ -46,6 +46,7 @@ function showpath_in_terminal(){
 
 
 ### Aliases:
+alias sha='sha1sum'
 # Usage: use y for overwrite and n for not do it.
 alias mv='mv -i'
 # This allows me know whenever I am accidentally overwriting any existing file, so it'll prompt me before actually doing that. Yo! ~ Missing semester!
@@ -61,9 +62,6 @@ alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(dat
 # Source: https://unix.stackexchange.com/a/145134/504112
 alias open-pdf='llpp'
 alias g='git'
-alias gpul='git pull'
-alias gpus='git push'
-alias gcl='git clone'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias ls='exa --color=auto'
 alias inw='inotifywait'
@@ -81,6 +79,7 @@ alias wifi='nmtui'
 alias lsmnt='ls /mnt/*'
 alias rmrf='rm -rf'
 alias ..='cd ..'
+alias up='cd ..'
 alias ...='source $_home/.bashrc'
 alias ...c='source $_home/.bashrc; clear'
 alias gr='cd $_home/Documents/github_repos'
@@ -256,3 +255,33 @@ booz
 alias bz='booz'
 alias bzc='clear; booz'
 alias mc='vi $_home/scripts-in-use/td/must-can'
+
+
+
+# bash-git-prompt
+# source(AUR): https://aur.archlinux.org/packages/bash-git-prompt
+enable_bash_git_prompt(){
+	# NOTE: To use bash-git-prompt, you should add the following to your
+	#       /etc/bash.bashrc or ~/.bashrc:
+
+	if [ -f /usr/lib/bash-git-prompt/gitprompt.sh ]; then
+	   # To only show the git prompt in or under a repository directory
+	   # GIT_PROMPT_ONLY_IN_REPO=1
+	   # To use upstream's default theme
+	   # GIT_PROMPT_THEME=Default
+	   # To use upstream's default theme, modified by arch maintainer
+	   GIT_PROMPT_THEME=Default_Arch
+	   source /usr/lib/bash-git-prompt/gitprompt.sh
+	fi
+
+	# NOTE: To have the colors shown by 'git status' match the Default_Arch theme,
+	#       add the following to your ~/.gitconfig:
+
+	[color "status"]
+	   branch = magenta
+	   untracked = cyan
+	   unmerged = yellow
+		# And if you want boilerplate to be less prominent, also:
+	   header = bold black
+}
+# enable_bash_git_prompt

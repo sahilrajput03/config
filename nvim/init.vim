@@ -38,7 +38,8 @@ inoremap <silent> <C-S>         <C-O>:w<CR>
 " set shell=/bin/bash
 " USING ABOVE ONLY,,,, WAS(some error log conflict with tmux can't assign terminal group shit...) USING BELOW TO SOURCE INTERACTIVE SHELL SO THAT I CAN USE ALIASES DEFINED IN
 " .bashrc file simply, src: https://stackoverflow.com/a/8946710/10012446
-set shell=/bin/bash\ -i
+" DONT ENABLE THIS AS THIS CAUSES CRITICAL trouble with Prettier autoformatting.
+" set shell=/bin/bash\ -i
 
 
 "Enable copying text to system clipboard ~SAHIL, Yikes!: src: https://www.reddit.com/r/neovim/comments/3fricd/comment/ctr8t3h/?utm_source=share&utm_medium=web2x&context=3
@@ -143,19 +144,19 @@ Plug 'plasticboy/vim-markdown'
 " prettier support for js/ts formatting ~Sahil: source: https://github.com/prettier/vim-prettier
 
 " Need to test this...:
-" Plug 'prettier/vim-prettier', {
-"   \ 'do': 'yarn install --frozen-lockfile --production',
-"   \ 'branch': 'release/0.x'
-"   \ }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
 " USE BELOW CONFIGURATION INSTEAD IF YOU WANT TO ENABLE FORMATTING FOR ONLY
 " CERTAIN FILE TYPES SAY .js and .ts FILES ONLY.
 " AND DON"T FORGET TO COMMENT ABOVE PLUGIN AND DOING ```:PlugInstall!```. Note
 " the ending ! which says force install coz thats IMPORTANT to make it function.
 " Source: https://github.com/prettier/vim-prettier#install
 " certain fileypes.
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install --frozen-lockfile --production',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 
 call plug#end()
@@ -729,3 +730,4 @@ map gz :set wrap!<cr>
 " Use command like: verbose set colorcolumn
 " WHERE colorcolumn is the setting i want to check, like what is the
 " effectively line thats getting used in current setting.
+

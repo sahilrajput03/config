@@ -10,6 +10,7 @@ mdcd(){
 	mkdir $@
 	cd $@
 }
+alias mdc='mdcd'
 
 # Watch over fortran program:
 fm(){
@@ -24,7 +25,13 @@ rustmon(){
 	/usr/bin/nodemon -q -e rs -x "rustc $* -o .binary && ./.binary"
 }
 
+
+# alias g='git' # This alias is there in .bashrc file as well.
 alias gl='git log --decorate --graph --oneline -10'
+alias gch='git checkout'
+alias gpul='git pull'
+alias gpus='git push'
+alias gcl='git clone'
 # Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
 alias gsh='git show'
 alias gpp='git pull; git push'
@@ -64,8 +71,16 @@ sizeof (){
 }
 
 gs (){
-	echo + git status
-	git status
+	echo + git status $@
+	git status $@
+}
+gi (){
+	echo + git init $@
+	git init $@
+}
+gb (){
+	echo + git branch $@
+	git branch $@
 }
 ga (){
 	echo + git add .
