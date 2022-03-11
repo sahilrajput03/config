@@ -292,39 +292,3 @@ lss(){
 	# ls -a -d *json* .*json*
 	# FYI: This throw error when there are no files matching with dot files, todo: fix that error. ~Sahil.
 }
-
-
-
-booz(){
-	WHITE='\e[97m'
-	BOLD='\e[1m'
-	CYAN='\033[0;36m'
-	RESET_ALL_FORMATTING='\e[0m'
-
-	###### TASK:: GET A RANDOM THOUGHT:
-	get_thought(){
-		shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.'
-		# With grep '.' I am implying don't empty line output if the output is empty.
-		# print something in cyan color: 
-		# tput setaf 6; echo hell; tput sgr0
-	}
-	echo -ne $CYAN$BOLD
-	# ce "Thought:" 6
-	echo -n "THOUGHT "
-	while ! get_thought ; do true; done
-
-	###### TASK:: GET LIST OF ALL WHAT I CAM CURRENTLY FOCUSSING ON:
-	echo -ne $WHITE
-	echo -n "FOCUSSING "
-	# Any thing that starts with `- !` in todo list and SHOW ONLY ONE OF THEM.
-	grep '\- !' $_home/scripts-in-use/td/must-can | shuf -n1
-
-	###### TASK:: GET TODO LIST:
-	echo # Need emtpy line space: INTENTIONAL:
-	$_home/scripts-in-use/td/s.sh
-}
-# Toggle comment/uncommment to enable/disable booz
-booz
-alias bz='booz'
-alias bzc='clear; booz'
-alias mc='vi $_home/scripts-in-use/td/must-can'
