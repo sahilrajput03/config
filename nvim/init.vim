@@ -36,6 +36,7 @@ inoremap <silent> <C-S>         <C-O>:w<CR>
 
 " ORIGINALLY FROM JOHNHOO.
 " set shell=/bin/bash
+let $BASH_ENV = "~/.vim_bash_env"
 " USING ABOVE ONLY,,,, WAS(some error log conflict with tmux can't assign terminal group shit...) USING BELOW TO SOURCE INTERACTIVE SHELL SO THAT I CAN USE ALIASES DEFINED IN
 " .bashrc file simply, src: https://stackoverflow.com/a/8946710/10012446
 " DONT ENABLE THIS AS THIS CAUSES CRITICAL trouble with Prettier autoformatting.
