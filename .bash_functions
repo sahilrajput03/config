@@ -11,10 +11,11 @@ mdcd(){
 	mkdir $@
 	cd $@
 }
-alias mdc='mdcd'
+# alias mdc='mdcd'
 
 # Watch over fortran program:
-fm(){
+# conflict with fm coz I have same alias for filemanager, i.e., pcmanfm
+fmon(){
 	nodemon -e "f90" -x "gfortran $@ -o binary && ./binary"
 }
 
@@ -144,6 +145,8 @@ function backupConfigFiles {
 	cp $_home/.tmux.conf $backup_dir/
 	echo "Backup of ~/.tmux.conf file succeeded."
 
+	cp $_home/.zshrc $backup_dir/
+	echo "Backup of ~/.zshrc file succeeded."
 
 	# FOR TESTING COMMAND: I.e., for fail incident for the copying of certian items by cp program:
 	# cp -r ~/nvim ~/Documents/github_repos/config/ 2> /dev/null
@@ -265,7 +268,10 @@ function cecho(){
 }
 
 # Exporting ce functions so I can use it in scripts directly.
-export -f cecho 
+
+# Below export causes error when imported with zsh.
+# export -f cecho 
+
 alias ce='cecho'
 # Src: https://unix.stackexchange.com/a/22867/504112
 
