@@ -34,11 +34,21 @@ function hidepath_in_terminal(){
 	# source: https://askubuntu.com/a/1158624/702911
 	export PS1='$ '
 }
+function hidepath_in_terminal2(){
+	export PS1='> '
+}
+function hidepath_in_terminal3(){
+	export PS1='\w > '
+}
 function showpath_in_terminal(){
 	export PS1=$ps1_format
 }
 
+
 ### Aliases:
+# Usage: use y for overwrite and n for not do it.
+alias mv='mv -i'
+# This allows me know whenever I am accidentally overwriting any existing file, so it'll prompt me before actually doing that. Yo! ~ Missing semester!
 alias visudo='sudo EDITOR=nvim visudo'
 # FYI: Use exa instead of l and ls.
 alias tree='tree -I node_modules'
@@ -81,6 +91,7 @@ alias ~='cd ~'
 alias mb='cd /mnt/sda3/home/array/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
+alias v='nvim'
 alias vi='nvim'
 # Load nvim with on config: Source: https://vi.stackexchange.com/a/16981
 alias vifresh='vim --clean'
@@ -120,6 +131,8 @@ alias jn='jupyter notebook'
 alias d='npm run dev'
 alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
 alias open='xdg-open'
+alias o='xdg-open'
+alias tx='tmux'
 alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions

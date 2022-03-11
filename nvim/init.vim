@@ -143,19 +143,19 @@ Plug 'plasticboy/vim-markdown'
 " prettier support for js/ts formatting ~Sahil: source: https://github.com/prettier/vim-prettier
 
 " Need to test this...:
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'branch': 'release/0.x'
-  \ }
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install --frozen-lockfile --production',
+"   \ 'branch': 'release/0.x'
+"   \ }
 " USE BELOW CONFIGURATION INSTEAD IF YOU WANT TO ENABLE FORMATTING FOR ONLY
 " CERTAIN FILE TYPES SAY .js and .ts FILES ONLY.
 " AND DON"T FORGET TO COMMENT ABOVE PLUGIN AND DOING ```:PlugInstall!```. Note
 " the ending ! which says force install coz thats IMPORTANT to make it function.
 " Source: https://github.com/prettier/vim-prettier#install
 " certain fileypes.
-" Plug 'prettier/vim-prettier', {
-"   \ 'do': 'yarn install --frozen-lockfile --production',
-"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 
 call plug#end()
@@ -186,7 +186,7 @@ let g:base16_shell_path="~/nvim/base16-gruvbox-scheme" "THIS IS NOT WORKING IMO 
 "colorscheme base16-gruvbox-light-soft
 "Lost of themes @ https://github.com/chriskempson/base16
 syntax on
-hi Normal ctermbg=NONE
+" hi Normal ctermbg=NONE
 
 " Customize the highlight a bit.
 " Make comments more prominent -- they are important.
@@ -311,10 +311,10 @@ let g:secure_modelines_allowed_items = [
                 \ "filetype",    "ft",
                 \ "foldmethod",  "fdm",
                 \ "readonly",    "ro",   "noreadonly", "noro",
-                \ "rightleft",   "rl",   "norightleft", "norl",
-                \ "colorcolumn"
+                \ "rightleft",   "rl",   "norightleft", "norl"
                 \ ]
-
+                " Removing default color column setting from above:
+				" \ "colorcolumn",
 " Lightline
 let g:lightline = {
       \ 'active': {
@@ -486,7 +486,7 @@ set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 " Show linewidth color line @ 80, 100, 120, etc, WITH ```set cc=```, I am disabling colorcolumn.
 " set colorcolumn=100 " and give me a colored column
-set cc=
+" set cc=
 "Src: https://vi.stackexchange.com/a/6989
 "
 set showcmd " Show (partial) command in status line.
@@ -679,7 +679,11 @@ highlight Normal ctermfg=grey ctermbg=black
 
 " Set vim bracket highlighting colors, ~Sahil: Src: https://stackoverflow.com/a/10746829/10012446
 hi MatchParen cterm=none ctermbg=green ctermfg=blue
-"
+
+" This disables spellbad highlights from nvimlsp, you can get help on this
+" via: ```:h hi```
+hi clear spellbad
+
 " Loading nvim/init.vim config file without reloading neovim(should also works
 " vim as well). SRC: https://vi.stackexchange.com/a/26627
 nnoremap <leader>l :source $MYVIMRC<CR>
@@ -717,6 +721,11 @@ map gh :His<CR>
 " map <C-n> <C-\> <C-n>
 "
 
-" This disables spellbad highlights from nvimlsp, you can get help on this
-" via: ```:h hi```
-:hi clear spellbad
+" To toggle wrapping, src: https://stackoverflow.com/a/248165/10012446
+map gz :set wrap!<cr>
+
+" IMPORTANT: TO know what setting is getting overridden from anywhere?
+"https://stackoverflow.com/a/37528484/10012446
+" Use command like: verbose set colorcolumn
+" WHERE colorcolumn is the setting i want to check, like what is the
+" effectively line thats getting used in current setting.
