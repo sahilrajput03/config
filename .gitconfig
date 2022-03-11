@@ -9,8 +9,9 @@
 	rebase = false
 [core]
 	editor = vim
+	excludesfile = /home/array/.gitignore_global
 [alias]
-  a = add
+  graph = log --all --graph --decorate --oneline
   aa = add --all #Note this is absolutely 100% same as ```git add .```, tested 100% ~Sahil.
   c = commit --verbose
   ch = checkout

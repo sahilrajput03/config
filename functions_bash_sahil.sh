@@ -161,6 +161,9 @@ function backupConfigFiles {
 	cp $_home/.gitconfig $backup_dir/
 	echo "Backup of ~/.gitconfig file succeeded."
 
+	cp $_home/.gitignore_global $backup_dir/
+	echo "Backup of ~/.gitignore_global file succeeded."
+
 	cp $_home/.config/qutebrowser/autoconfig.yml $backup_dir/.config/qutebrowser/
 	cp $_home/.config/qutebrowser/config.py $backup_dir/.config/qutebrowser/
 	cp $_home/.config/qutebrowser/quickmarks $backup_dir/.config/qutebrowser/
