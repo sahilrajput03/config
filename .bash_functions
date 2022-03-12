@@ -11,6 +11,7 @@ mdcd(){
 	mkdir $@
 	cd $@
 }
+# BELOW ALIAS throws error for zsh, that is alias can't refer to functions.
 # alias mdc='mdcd'
 
 # Watch over fortran program:
@@ -269,8 +270,9 @@ function cecho(){
 
 # Exporting ce functions so I can use it in scripts directly.
 
-# Below export causes error when imported with zsh.
+# Both of below export causes error when imported with zsh.
 # export -f cecho 
+# export cecho 
 
 alias ce='cecho'
 # Src: https://unix.stackexchange.com/a/22867/504112

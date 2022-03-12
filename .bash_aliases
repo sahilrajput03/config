@@ -1,4 +1,5 @@
 ### Aliases:
+alias vi.aliases='vi ~/.bash_aliases'
 alias sha='sha1sum'
 # Usage: use y for overwrite and n for not do it.
 alias mv='mv -i'

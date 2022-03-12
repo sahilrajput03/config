@@ -20,5 +20,5 @@ prompt walters
 # You can list the prompt available themes by `prompt -l` command.
 #
 
-source .bash_functions
-source .bash_aliases
+source ~/.bash_functions
+source ~/.bash_aliases

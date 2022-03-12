@@ -48,6 +48,10 @@ function showpath_in_terminal(){
 }
 
 ### Sources:
+# source: https://unix.stackexchange.com/a/1498/504112
+# shopt -s expand_aliases source ~/.bash_aliases
+# shopt -s expand_aliases
+# so shopt will expand your aliases in any shell script as well.
 source $_home/.bash_aliases
 source $_home/.bash_functions
 # Other sources
@@ -61,6 +65,7 @@ function show_custom_info() {
 	echo "UPTIME		: $(uptime)"
 	echo "DISK		: $(df /home/array | tail -1)"
 	echo "HOSTNAMECTL	:"
+	echo "Architecture	:" $(getconf LONG_BIT) BIT
 	hostnamectl
 	echo
 }

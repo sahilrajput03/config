@@ -1,5 +1,9 @@
 #!/bin/bash
 
+source ~/.bash_aliases
+source ~/.bash_functions
+shopt -s expand_aliases
+
 ln=$(grep -n '\-\-\-' $(dirname $0)/must-can | sed -E 's/:.+//')		# Line number at which ---	
 lines=$(wc -l $(dirname $0)/must-can |  awk '{print $1}')				# Total lines
 # FYI: For randomization, shuf is built in purmutation utility tool in linux.
