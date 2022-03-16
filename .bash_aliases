@@ -1,8 +1,20 @@
 ### Aliases:
+alias bz='booz'
+alias bzc='clear; booz'
+alias mc='vi $_home/scripts-in-use/td/must-can'
+
+alias kc='kubectl'
+alias dk='docker'
+alias pd='kc get po,deploy'
+# ^^^ newly added, on testing...
+
+alias virsh='sudo virsh'
+alias virt-manager='sudo virt-manager'
 alias vi.aliases='vi ~/.bash_aliases'
 alias sha='sha1sum'
 # Usage: use y for overwrite and n for not do it.
 alias mv='mv -i'
+alias cp='cp -i'
 # This allows me know whenever I am accidentally overwriting any existing file, so it'll prompt me before actually doing that. Yo! ~ Missing semester!
 alias visudo='sudo EDITOR=nvim visudo'
 # FYI: Use exa instead of l and ls.

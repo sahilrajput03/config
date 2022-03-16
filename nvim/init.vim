@@ -46,6 +46,10 @@ let $BASH_ENV = "~/.vim_bash_env"
 "Enable copying text to system clipboard ~SAHIL, Yikes!: src: https://www.reddit.com/r/neovim/comments/3fricd/comment/ctr8t3h/?utm_source=share&utm_medium=web2x&context=3
 set clipboard+=unnamedplus 
 
+" Keep clipboard text even after exiting vim/nvim: src: https://stackoverflow.com/a/9381778/10012446
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+
+
 "Setting background color, source: https://stackoverflow.com/a/1117532/10012446
 highlight Normal ctermfg=grey ctermbg=black
 

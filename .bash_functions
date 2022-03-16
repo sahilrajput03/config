@@ -115,69 +115,74 @@ _home=/home/array
 # Notice the extra s in the backupConfigFiless <- here.
 alias backupConfigFiless='backupConfigFiles 1> /dev/null 2> /dev/null'
 function backupConfigFiles {
+# LEARN: Never append any comment in the alias comment, it would just SUCK!
+# so that `-i` flag is removed in here!
+	# unlias cp
+	# alias cp='/usr/bin/cp'
+	# Using \ before cp to disable alias expansion. src: https://www.cyberciti.biz/faq/bash-shell-temporarily-disable-an-alias/
 
-	cp $_home/nodemon.json $backup_dir/
+	\cp $_home/nodemon.json $backup_dir/
 	echo "Backup of ~/nodemon.json succeeded."
 
-	cp $_home/.bashrc $backup_dir/
+	\cp $_home/.bashrc $backup_dir/
 	echo "Backup of ~/.bashrc succeeded."
 
-	cp $_home/.profile $backup_dir/
+	\cp $_home/.profile $backup_dir/
 	echo "Backup of ~/.profile succeeded."
 
-	cp $_home/.vimrc $backup_dir/
+	\cp $_home/.vimrc $backup_dir/
 	echo "Backup of ~/.vimrc file succeeded."
 
-	cp $_home/.bash_profile $backup_dir/
+	\cp $_home/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
 
-	cp $_home/.config/i3/config $backup_dir/.config_i3_config
+	\cp $_home/.config/i3/config $backup_dir/.config_i3_config
 	echo "Backup of ~/.config/i3/config file succeeded."
 
-	cp $_home/.bash_functions $backup_dir/
+	\cp $_home/.bash_functions $backup_dir/
 	echo "Backup of ~/.bash_functions succeeded."
 
-	cp $_home/.vim_bash_env $backup_dir/
+	\cp $_home/.vim_bash_env $backup_dir/
 	echo "Backup of ~/.vim_bash_env succeeded."
 
-	cp -r $_home/scripts-in-use $backup_dir/
+	\cp -r $_home/scripts-in-use $backup_dir/
 	echo "Backup of ~/scripts-in-use directory succeeded."
 
-	cp $_home/.tmux.conf $backup_dir/
+	\cp $_home/.tmux.conf $backup_dir/
 	echo "Backup of ~/.tmux.conf file succeeded."
 
-	cp $_home/.zshrc $backup_dir/
+	\cp $_home/.zshrc $backup_dir/
 	echo "Backup of ~/.zshrc file succeeded."
 
 	# FOR TESTING COMMAND: I.e., for fail incident for the copying of certian items by cp program:
 	# cp -r ~/nvim ~/Documents/github_repos/config/ 2> /dev/null
-	cp -r $_home/nvim $backup_dir/ 2> /dev/null
+	\cp -r $_home/nvim $backup_dir/ 2> /dev/null
 	echo "Backup of ~/nvim directory succeeded."
 
-	cp -r $_home/nvim-sahil $backup_dir/
+	\cp -r $_home/nvim-sahil $backup_dir/
 	echo "Backup of ~/nvim-sahil directory succeeded."
 
-	cp $_home/Code/User/keybindings.json $backup_dir/Code/User/
+	\cp $_home/Code/User/keybindings.json $backup_dir/Code/User/
 	echo "Backup of ~/Code/User/keybindings.json file succeeded."
 
-	cp $_home/Code/User/settings.json $backup_dir/Code/User/
+	\cp $_home/Code/User/settings.json $backup_dir/Code/User/
 	echo "Backup of ~/Code/User/settings.json file succeeded."
 
-	cp $_home/.prettierrc.js $backup_dir/
+	\cp $_home/.prettierrc.js $backup_dir/
 	echo "Backup of ~/.prettierrc.js file succeeded."
 
-	cp $_home/.gitconfig $backup_dir/
+	\cp $_home/.gitconfig $backup_dir/
 	echo "Backup of ~/.gitconfig file succeeded."
 
-	cp $_home/.gitignore_global $backup_dir/
+	\cp $_home/.gitignore_global $backup_dir/
 	echo "Backup of ~/.gitignore_global file succeeded."
 
-	cp $_home/.bash_aliases $backup_dir/
+	\cp $_home/.bash_aliases $backup_dir/
 	echo "Backup of ~/.bash_aliases file succeeded."
 
-	cp $_home/.config/qutebrowser/autoconfig.yml $backup_dir/.config/qutebrowser/
-	cp $_home/.config/qutebrowser/config.py $backup_dir/.config/qutebrowser/
-	cp $_home/.config/qutebrowser/quickmarks $backup_dir/.config/qutebrowser/
+	\cp $_home/.config/qutebrowser/autoconfig.yml $backup_dir/.config/qutebrowser/
+	\cp $_home/.config/qutebrowser/config.py $backup_dir/.config/qutebrowser/
+	\cp $_home/.config/qutebrowser/quickmarks $backup_dir/.config/qutebrowser/
 	echo "Backup of ~/.qutebrowser/autoconfig.yml file succeeded."
 	echo "Backup of ~/.qutebrowser/config.py file succeeded."
 	echo "Backup of ~/.qutebrowser/quickmarks file succeeded."

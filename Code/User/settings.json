@@ -69,5 +69,6 @@
   },
   "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "redhat.telemetry.enabled": false
 }

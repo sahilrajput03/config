@@ -14,10 +14,14 @@
 # BACKUP # export PS1='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 ps1_format='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
 # Source of below PS1: https://superuser.com/a/60563/776589
-ps1_format_show_current_dir_only='{\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]} \$'
-export PS1=$ps1_format
-# export PS1=$ps1_format_show_current_dir_only
+ps1_format_show_current_dir_only='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\$ '
+
+#This is pretty good though
+# export PS1=$ps1_format 
+
+export PS1=$ps1_format_show_current_dir_only
 _home=/home/array # Did coz I'll source this file in sudo as well.
+
 export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
@@ -34,18 +38,26 @@ function hidepath_in_terminal(){
 	# source: https://askubuntu.com/a/1158624/702911
 	export PS1='$ '
 }
+
 function hidepath_in_terminal2(){
 	export PS1='> '
 }
+
 function hidepath_in_terminal3(){
 	export PS1='\w > '
 }
+
 function showpath_last_folder_only(){
-	export PS1='\W > '
+	# export PS1='\W > '
+	# Using colored one now: src: https://linuxhostsupport.com/blog/how-to-change-the-color-of-your-linux-prompt/
+	export PS1="\e[0;33;1m[\u@\h \W]\$ \e[m"
+	# ^^ issue i.e., command text rolls over same line when command text is too large, so its yucky!
 }
+
 function showpath_in_terminal(){
 	export PS1=$ps1_format
 }
+# showpath_last_folder_only
 
 ### Sources:
 # source: https://unix.stackexchange.com/a/1498/504112
@@ -182,6 +194,43 @@ booz(){
 }
 # Toggle comment/uncommment to enable/disable booz
 booz
+
 alias bz='booz'
 alias bzc='clear; booz'
 alias mc='vi $_home/scripts-in-use/td/must-can'
+
+alias kc='kubectl'
+alias dc='docker'
+alias pd='kc get po,deploy'
+
+##### Enable autocomplete for kubectl alias
+# complete -F _complete_alias kc # Using something like this we can autocomplete for aliases as well. src: https://unix.stackexchange.com/a/332522/504112
+source <(kubectl completion bash)
+complete -F __start_kubectl kc # src: https://stackoverflow.com/a/52907262/10012446
+
+
+# Mapping docker completion to dk as well:
+complete -F _docker dk
+# src: https://brbsix.github.io/2015/11/23/perform-tab-completion-for-aliases-in-bash/
+
+
+# Read todo.txt file if present in directory:
+if [ -f "todo.txt" ] ; then
+	# display its contents
+	cat todo.txt
+fi
+
+
+# cd /home/array/Documents/github_repos/devopswithkubernetes
+#
+
+# Read todo.txt file if present in current directory, src: https://superuser.com/a/283365/776589
+function cd {
+    # actually change the directory with all args passed to the function
+    builtin cd "$@"
+    # if there's a regular file named "todo.txt"...
+    if [ -f "todo.txt" ] ; then
+        # display its contents
+        cat todo.txt
+    fi
+}

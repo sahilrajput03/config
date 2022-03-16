@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source ~/.bash_aliases
-source ~/.bash_functions
+source /home/array/.bash_aliases
+source /home/array/.bash_functions
 shopt -s expand_aliases
 
 ln=$(grep -n '\-\-\-' $(dirname $0)/must-can | sed -E 's/:.+//')		# Line number at which ---	
