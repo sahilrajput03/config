@@ -6,6 +6,6 @@ if ps -aux | grep -v grep | grep "battery-status.sh"; then
 	echo Yes running already, so no need to run again.;
 else
 	echo Not running so running battery-status script now..;
-	sh /home/array/scripts-in-use/battery-status.sh &
+	sh /home/array/scripts-in-use/battery-alert/battery-status.sh &
 fi
 

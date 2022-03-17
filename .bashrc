@@ -64,8 +64,8 @@ function showpath_in_terminal(){
 # shopt -s expand_aliases source ~/.bash_aliases
 # shopt -s expand_aliases
 # so shopt will expand your aliases in any shell script as well.
-source $_home/.bash_aliases
-source $_home/.bash_functions
+[[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
+[[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
 # Other sources
 . "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
 . /usr/share/nvm/init-nvm.sh
@@ -164,13 +164,7 @@ exec {BASH_XTRACEFD}>/dev/null
 #
 
 
-booz(){
-	WHITE='\e[97m'
-	BOLD='\e[1m'
-	CYAN='\033[0;36m'
-	RESET_ALL_FORMATTING='\e[0m'
-
-	###### TASK:: GET A RANDOM THOUGHT:
+thought(){
 	get_thought(){
 		shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.'
 		# With grep '.' I am implying don't empty line output if the output is empty.
@@ -179,12 +173,23 @@ booz(){
 	}
 	echo -ne $CYAN$BOLD
 	# ce "Thought:" 6
-	echo -n "THOUGHT "
+	echo -n "Thought - "
 	while ! get_thought ; do true; done
+}
+
+
+booz(){
+	WHITE='\e[97m'
+	BOLD='\e[1m'
+	CYAN='\033[0;36m'
+	RESET_ALL_FORMATTING='\e[0m'
+
+	###### TASK:: GET A RANDOM THOUGHT:
+	thought
 
 	###### TASK:: GET LIST OF ALL WHAT I CAM CURRENTLY FOCUSSING ON:
 	echo -ne $WHITE
-	echo -n "FOCUSSING "
+	echo -n "Focussing "
 	# Any thing that starts with `- !` in todo list and SHOW ONLY ONE OF THEM.
 	grep '\- !' $_home/scripts-in-use/td/must-can | shuf -n1
 
@@ -195,21 +200,14 @@ booz(){
 # Toggle comment/uncommment to enable/disable booz
 booz
 
-alias bz='booz'
-alias bzc='clear; booz'
-alias mc='vi $_home/scripts-in-use/td/must-can'
-
-alias kc='kubectl'
-alias dc='docker'
-alias pd='kc get po,deploy'
-
 ##### Enable autocomplete for kubectl alias
 # complete -F _complete_alias kc # Using something like this we can autocomplete for aliases as well. src: https://unix.stackexchange.com/a/332522/504112
 source <(kubectl completion bash)
 complete -F __start_kubectl kc # src: https://stackoverflow.com/a/52907262/10012446
 
 
-# Mapping docker completion to dk as well:
+###### Mapping docker bash-completion to dk as well: (using TAB):
+[[ -f /usr/share/bash-completion/completions/docker ]] && source /usr/share/bash-completion/completions/docker
 complete -F _docker dk
 # src: https://brbsix.github.io/2015/11/23/perform-tab-completion-for-aliases-in-bash/
 
@@ -234,3 +232,5 @@ function cd {
         cat todo.txt
     fi
 }
+
+alias lens='/usr/share/lens/lens'
