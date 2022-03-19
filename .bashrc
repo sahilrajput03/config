@@ -27,6 +27,20 @@ export EDITOR=/usr/bin/nvim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
 export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs. Source: https://www.redhat.com/sysadmin/history-command
 export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:history:c"
+# Write every command to $HISTFILE on every run of command (don't loose your command history):
+# DEFAULT $HISTFILE is `~/.bash_history`.
+### Append command history to $HISTFILE after each command:
+PROMPT_COMMAND="${PROMPT_COMMAND:-:} ; history -a"
+### Append command hisotry to $HISTFILE after each command and also clean and reload history in current shell: src: https://askubuntu.com/a/339925/702911
+# HELP: This helps in sharing command history across different shell (i.e., pressing up/ctrl+p to see previous command will show command from different shell, FYI:IMPORTANT: You need to make a command to reload from the history file which was modified by other shell at latest, so you can simply press ENTER key to fetch history file again for that sake. YIKES! )::
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+################ TIP: echo $PROMPT_COMMAND to know its value in bash.##############
+### Avoid duplicates in $HISTFILE: (works good, but it helps to see repeated command to see the chronological order):
+# export HISTCONTROL=ignoredups:erasedups
+### Appent to $HISTFILE as soon any command is run:
+shopt -s histappend
+# src(histappend, prompt_command): https://askubuntu.com/a/339925/702911
+
 #^^^^^^ Src: https://github.com/jonhoo/configs/blob/master/shell/.bashrc
 #force_color_prompt=yes
 # XDG_CONFIG_HOME This is to make neovim take the nvim directory path as mentined @ https://wiki.archlinux.org/title/Neovim

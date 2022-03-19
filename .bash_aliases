@@ -4,18 +4,40 @@ alias bzc='clear; booz'
 alias mc='vi $_home/scripts-in-use/td/must-can'
 
 alias kc='kubectl'
-alias dk='docker'
+alias ka='kubectl apply -f'
+alias kam='kubectl apply -f manifests/'
+alias kd='kubectl delete -f'
+alias kdm='kubectl delete -f manifests/'
+alias kResetCluster='k3d cluster delete; k3d cluster create --port 8082:30080@agent:0 -p 8081:80@loadbalancer --agents 2'
+
 alias pd='kc get po,deploy'
 alias pds='kc get po,deploy,svc'
+alias pdsi='kc get po,deploy,svc,ing'
+alias pdsic='kc get po,deploy,svc,ing,ingressclass'
+
+alias dk='docker'
 # ^^^ newly added, on testing...
 
+# Get rid of all sideeffects in current shell (i.e, any aliases, any sourced files, etc):
+# src: https://stackoverflow.com/a/8760728/10012446
+alias fresh='exec bash'
+alias vi.hosts='sudo nvim /etc/hosts'
+alias h='history'
+# Reload history from $HISTFILE, i.e., `hr` will load all the commands that were made by all other shells running/closed at current moment: FYI: See `history --help`
+alias hr='history -r'
+alias catl='lolcat'
+# Make watch command to recognise all aliases:
+# src: https://unix.stackexchange.com/a/25329/504112
+alias watch='watch '
 alias virsh='sudo virsh'
 alias virt-manager='sudo virt-manager'
 alias vi.aliases='vi ~/.bash_aliases'
+alias vi.tmux='vi $_home/.tmux.conf'
 alias sha='sha1sum'
 # Usage: use y for overwrite and n for not do it.
 alias mv='mv -i'
 alias cp='cp -i'
+# I accidentally important files :( once, so its important to use -i for me now on!
 # This allows me know whenever I am accidentally overwriting any existing file, so it'll prompt me before actually doing that. Yo! ~ Missing semester!
 alias visudo='sudo EDITOR=nvim visudo'
 # FYI: Use exa instead of l and ls.

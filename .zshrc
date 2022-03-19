@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=999999999999
 SAVEHIST=999999999999
 # bindkey -v # This enables vim like keybindings

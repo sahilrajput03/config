@@ -170,6 +170,8 @@ call plug#end()
 let g:prettier#autoformat = 1
 " Allow auto formatting for files without "@format" or "@prettier" tag
 let g:prettier#autoformat_require_pragma = 0
+" Enable async formatting by default: ~Sahil, from official docs @ https://github.com/prettier/vim-prettier
+let g:prettier#exec_cmd_async = 1
 
 if has('nvim')
     set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -403,7 +405,7 @@ set scrolloff=2
 set noshowmode
 set hidden
 " To enable/disable wrap, #unwrap, #wrap
-" set nowrap
+set nowrap
 set nojoinspaces
 let g:sneak#s_next = 1
 let g:vim_markdown_new_list_item_indent = 0
@@ -692,6 +694,9 @@ hi clear spellbad
 
 " Loading nvim/init.vim config file without reloading neovim(should also works
 " vim as well). SRC: https://vi.stackexchange.com/a/26627
+" FYI: mapping it to <leader>r causes to wait for 1 whole second, which is
+" abusrd, TODO: fix it some day, coz i have `C-t r` to reload config in tmux
+" as well so it would be good if i use `<leader>r` to reload in vim as well.
 nnoremap <leader>l :source $MYVIMRC<CR>
 
 " Buffer navigation with alt+h and alt+l keys.
@@ -736,3 +741,30 @@ map gz :set wrap!<cr>
 " WHERE colorcolumn is the setting i want to check, like what is the
 " effectively line thats getting used in current setting.
 
+
+" Zoom current window and restore back to all window equal width:
+" src: https://medium.com/@vinodkri/zooming-vim-window-splits-like-a-pro-d7a9317d40
+" Original, (mapping Zz and Zo)
+" noremap Zz <c-w>_ \| <c-w>\|
+" noremap Zo <c-w>=
+" My mapping with ,
+noremap <leader>i <c-w>_ \| <c-w>\|
+noremap <leader>o <c-w>=
+
+
+
+
+" AMAZING:: Map [ to { and ] to }
+" src: https://vi.stackexchange.com/a/36531
+set langmap=[{,]}
+
+
+" Remove <C-w>n binding:
+map <C-w>n <Nop>
+
+" Enable creating new window with `<C-w>c` instead of default `<C-w>n`:
+nmap <C-w>c :wincmd n<CR>
+" FYI: I couldn't map `<C-w>c` to `<C-w>n` coz i nullified that binding in a previously
+" above in this config file.
+
+" learned about :wincmd from :: https://vim.fandom.com/wiki/Switch_between_Vim_window_splits_easily
