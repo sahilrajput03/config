@@ -25,7 +25,7 @@ alias vi.hosts='sudo nvim /etc/hosts'
 alias h='history'
 # Reload history from $HISTFILE, i.e., `hr` will load all the commands that were made by all other shells running/closed at current moment: FYI: See `history --help`
 alias hr='history -r'
-alias catl='lolcat'
+alias lcat='lolcat'
 # Make watch command to recognise all aliases:
 # src: https://unix.stackexchange.com/a/25329/504112
 alias watch='watch '
