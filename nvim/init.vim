@@ -627,7 +627,7 @@ nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
 " nnoremap <leader>z :bw!<CR> "originally working.
 " nnoremap <C-W> :bw<CR> " Trying to map ctrl+w to close buffer. ( NOT USING
 " ^^^^COZ C-W is reserved for window management in vim.
-"My new binding so don't quit vim that often.
+"My new binding works super cool! Yikes!!
 nnoremap <c-q> :bw!<CR>
 
 " ~Sahil (NEWLY ADDED) :: <leader>Z closes current buffer FORCELY.
