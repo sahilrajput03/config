@@ -1,14 +1,47 @@
 ### Aliases:
+
+# ---
+# manual yaml checking
+yqDeploymentContainerNames() {
+	echo .spec.template.spec.containers[].name
+	yq .spec.template.spec.containers[].name $@
+
+
+	echo .spec.selector.matchLabels.app
+	yq .spec.selector.matchLabels.app $@
+	
+	echo .spec.template.spec.volumes[].name
+	yq .spec.template.spec.containers[].name $@
+
+	echo .spec.template.spec.volumes[].persistentVolumeClaim.claimName
+	yq .spec.template.spec.volumes[].persistentVolumeClaim.claimName $@
+}
+# Usage: yq .spec.template.spec.containers[].name deployment-persistent.yaml
+
+
+# ---
 alias bz='booz'
 alias bzc='clear; booz'
 alias mc='vi $_home/scripts-in-use/td/must-can'
 
 alias kc='kubectl'
+# ---
 alias ka='kubectl apply -f'
 alias kam='kubectl apply -f manifests/'
+
 alias kd='kubectl delete -f'
 alias kdm='kubectl delete -f manifests/'
-alias kResetCluster='k3d cluster delete; k3d cluster create --port 8082:30080@agent:0 -p 8081:80@loadbalancer --agents 2'
+# ---
+kr(){
+	kd $@
+	ka $@
+}
+krm(){
+	kdm $@
+	kam $@
+}
+
+alias kResetCluster='k3d cluster delete; k3d cluster create --port 8082:30080@agent:0 -p 8081:80@loadbalancer --agents 2; docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube'
 
 alias pd='kc get po,deploy'
 alias pds='kc get po,deploy,svc'

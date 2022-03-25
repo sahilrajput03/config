@@ -16,5 +16,6 @@ augroup filetypedetect
   autocmd Filetype tex let b:coc_enabled = 0
   autocmd Filetype text let b:coc_enabled = 0
   autocmd Filetype markdown let b:coc_enabled = 0
+  autocmd Filetype javascript set foldmethod=indent
 
 augroup END

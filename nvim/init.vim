@@ -768,3 +768,23 @@ nmap <C-w>c :wincmd n<CR>
 " above in this config file.
 
 " learned about :wincmd from :: https://vim.fandom.com/wiki/Switch_between_Vim_window_splits_easily
+"
+"
+" Enabel indented folding in vim:
+" HEY>> BELOW WON"T WORK COZ AS I CHECKED WITH `:verbose set foldmethod`
+" command the settings are comming from syntax file of javascript from nvim
+" internals and to overwrite that we must use autocmd. src: https://stackoverflow.com/a/68813146/10012446
+" SO, I added set foldmethod=indent to my `~/nvim/filetype.vim` file, yikes,
+" it works!!
+" set foldmethod=indent   
+" set foldnestmax=10
+" set nofoldenable
+" set foldlevel=2
+" USAGE:
+" zR Opens all folds at once.
+" zM Closes all folds at once.
+" zo opens current fold only.
+" zc close current fold only.(this was performing buggy for me coz I wasn't
+" using foldlevel=1, src: https://stackoverflow.com/a/5786588/10012446!)
+"
+set foldlevel=1
