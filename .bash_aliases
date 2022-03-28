@@ -51,7 +51,12 @@ alias pdsi='kc get po,deploy,svc,ing'
 alias pdsic='kc get po,deploy,svc,ing,ingressclass'
 alias kcwatch='kc get all'
 # autocomplte for this doesn't work:
-# alias ke='kubectl exec -it'
+alias ke='kubectl exec -it'
+complete -F _complete_alias ke
+# ^^^^ Auto complete any alias now: src: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#autocomplete-any-alias-now
+alias kgp='kc get po'
+complete -F _complete_alias kgp
+
 
 alias dk='docker'
 # ^^^ newly added, on testing...
@@ -106,8 +111,9 @@ alias lsmnt='ls /mnt/*'
 alias rmrf='rm -rf'
 alias ..='cd ..'
 alias up='cd ..'
-alias ...='source $_home/.bashrc'
-alias ...c='source $_home/.bashrc; clear'
+# alias ...='source $_home/.bashrc'
+alias ...='exec bash'
+# alias ...c='exec bash'
 alias gr='cd $_home/Documents/github_repos'
 alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
 alias grc='cd $_home/Documents/github_repos/config'

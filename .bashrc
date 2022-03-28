@@ -219,8 +219,15 @@ booz
 # complete -F _complete_alias kc # Using something like this we can autocomplete for aliases as well. src: https://unix.stackexchange.com/a/332522/504112
 source <(kubectl completion bash)
 complete -F __start_kubectl kc # src: https://stackoverflow.com/a/52907262/10012446
-complete -F _kubectl_exec ke
 # src: WOW! OFFICIAL DOCS: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+####TETSING WITH EXEC ALIASING!!
+# ko() {
+# 	kubectl exec $@
+# }
+# complete -F ko kp
+# complete -F _kubectl_exec ke
+#####
 
 
 ###### Mapping docker bash-completion to dk as well: (using TAB):

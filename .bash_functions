@@ -180,6 +180,9 @@ function backupConfigFiles {
 	\cp $_home/.bash_aliases $backup_dir/
 	echo "Backup of ~/.bash_aliases file succeeded."
 
+	\cp $_home/.bash_completion $backup_dir/
+	echo "Backup of ~/.bash_completion file succeeded."
+
 	\cp $_home/.config/qutebrowser/autoconfig.yml $backup_dir/.config/qutebrowser/
 	\cp $_home/.config/qutebrowser/config.py $backup_dir/.config/qutebrowser/
 	\cp $_home/.config/qutebrowser/quickmarks $backup_dir/.config/qutebrowser/
