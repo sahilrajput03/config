@@ -22,6 +22,7 @@ ps1_format_show_current_dir_only='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m
 export PS1=$ps1_format_show_current_dir_only
 _home=/home/array # Did coz I'll source this file in sudo as well.
 
+# TIP: Move any executable file to `~/.local/bin/` directory, we can use it as a cli tool.
 export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
@@ -218,6 +219,8 @@ booz
 # complete -F _complete_alias kc # Using something like this we can autocomplete for aliases as well. src: https://unix.stackexchange.com/a/332522/504112
 source <(kubectl completion bash)
 complete -F __start_kubectl kc # src: https://stackoverflow.com/a/52907262/10012446
+complete -F _kubectl_exec ke
+# src: WOW! OFFICIAL DOCS: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 
 ###### Mapping docker bash-completion to dk as well: (using TAB):

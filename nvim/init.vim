@@ -721,7 +721,8 @@ map <C-l> <C-w>l
 " To unhighlight after search, you need to do :noh or :nohighlight Src: https://stackoverflow.com/a/99182/10012446
 map gs :noh<CR>
 " To update github repo.
-map gu :!gacp Update.<CR>
+map gu :!gac Update.<CR>
+" map gu :!gacp Update.<CR>
 " To show recent files ~Sahil
 map gh :His<CR>
 
@@ -782,10 +783,57 @@ nmap <C-w>c :wincmd n<CR>
 " set nofoldenable
 " set foldlevel=2
 " USAGE:
-" zR Opens all folds at once.
+" zR Reveal all folds at once.
 " zM Closes all folds at once.
 " zo opens current fold only.
 " zc close current fold only.(this was performing buggy for me coz I wasn't
-" using foldlevel=1, src: https://stackoverflow.com/a/5786588/10012446!)
+" using foldlevel=10, src: https://stackoverflow.com/a/5786588/10012446!)
 "
-set foldlevel=1
+set foldlevel=10
+" src: https://stackoverflow.com/a/5786588/10012446
+"
+
+" Renaming multiple variables occurences very fast!!
+" LEARN: gdcgn<enter_new_varirable_name><ESC> and now press . to do it multiple times.
+" LEARN: gdcdn<enter_new_varirable_name><ESC> and now type :%norm.
+" src: https://vi.stackexchange.com/questions/18004/renaming-variables
+"
+"
+" LEARN: 
+" :%norm.
+" ^^^ What does this do??
+" Actually it runs the command which you just did to the whole file!! Yikes!!!
+
+
+" Search the visually selected text:
+" NATIVE APPROACH IS TO USE IT LIKE: yank some text, then press /CTRL+r 0
+" SRC^^^^: https://stackoverflow.com/a/363125/10012446
+" ALSO THIS TEACHES HOW TO PASTE TEXT FROM BUFFER TO COMMAND MODE WHENEVER YOU
+" NEED TO DO THAT!!
+"
+" Usage: Select some text and type // to do search, and navigate with n to
+" search forward and N to search backward.
+" src: https://vim.fandom.com/wiki/Search_for_visually_selected_text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+"
+"
+" Fyi: * search forward and # searchs backward for a variable definition.
+"
+"
+"
+
+" HIGHLIGHT the search items when you are circling on them beautifully:
+" src: https://vi.stackexchange.com/a/2770/41399
+" Damian Conway's Die Blinkënmatchen: highlight matches
+nnoremap <silent> n n:call HLNext(0.1)<cr>
+nnoremap <silent> N N:call HLNext(0.1)<cr>
+
+function! HLNext (blinktime)
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('ErrorMsg', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction

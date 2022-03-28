@@ -41,8 +41,8 @@ alias gpp='git pull; git push'
 alias garchive='git archive --format zip --output'
 # alias gl='git log'
 gac (){
-    echo + git add .
-    git add .
+    echo + git add -A
+    git add -A
 
     echo + git commit -m \'$@\'
     git commit -m "$*" # gac life is amazing
@@ -50,8 +50,8 @@ gac (){
 
 # Usage: gacp life is super amazing. Usage: `gacps Added life to project.`
 gacp (){
-    echo + git add .
-    git add .
+    echo + git add -A
+    git add -A
 
     echo + git commit -m \'$@\'
     git commit -m "$*"

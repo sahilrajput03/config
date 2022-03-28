@@ -1,5 +1,6 @@
 ### Aliases:
 
+# ------------------------ >>>> cloud aliases >>>>> --------------
 # ---
 # manual yaml checking
 yqDeploymentContainerNames() {
@@ -18,8 +19,9 @@ yqDeploymentContainerNames() {
 }
 # Usage: yq .spec.template.spec.containers[].name deployment-persistent.yaml
 
-
 # ---
+alias kns='kubens'
+
 alias bz='booz'
 alias bzc='clear; booz'
 alias mc='vi $_home/scripts-in-use/td/must-can'
@@ -47,9 +49,13 @@ alias pd='kc get po,deploy'
 alias pds='kc get po,deploy,svc'
 alias pdsi='kc get po,deploy,svc,ing'
 alias pdsic='kc get po,deploy,svc,ing,ingressclass'
+alias kcwatch='kc get all'
+# autocomplte for this doesn't work:
+# alias ke='kubectl exec -it'
 
 alias dk='docker'
 # ^^^ newly added, on testing...
+# ------------------------ ^^^^ cloud aliases ^^^ --------------
 
 # Get rid of all sideeffects in current shell (i.e, any aliases, any sourced files, etc):
 # src: https://stackoverflow.com/a/8760728/10012446

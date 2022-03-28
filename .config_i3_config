@@ -111,7 +111,9 @@ bindsym $mod+p layout toggle split
 #######################bindsym $mod+w layout tabbed
 ####################### ^^ that was original ~sahil
 
+# LEARN:
 # toggle tiling / floating
+# make a window float, make window floating, float a window:
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -395,3 +397,16 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%- # decrease screen bright
 
 #Setting flameshot to capture screen on PrintScreen keypress. Src: https://unix.stackexchange.com/a/564211/504112
 bindsym Print exec /usr/bin/flameshot gui
+
+
+##### MAKING zoom's chat window float by default.
+# WM_CLASS(STRING) = "zoom ", "zoom "
+# WM_NAME(STRING) = "Chat"
+# LEARNING: I got above properties from running `xprop` on the "zoom chat" window and then used them in i3 as below.
+# IT WORKED GOOD!
+for_window [class="zoom " title="Chat"] floating enable
+# FETCHING VALUES FROM `xprop`
+# Source: https://www.reddit.com/r/i3wm/comments/3h94t9/how_to_find_a_name_of_a_program_to_use_for/
+# FOR SETTING VALUES in the ```for_window function``` in i3, one must use suggested options as i3 suggested in below message when I use wrong property in that:
+##### for the property values to be passed one of below should be used to identify the window:
+# ERROR: CONFIG: Expected one of these tokens: 'class', 'instance', 'window_role', 'con_id', 'id', 'window_type', 'con_mark', 'title', 'urgent', 'workspace', 'machine', 'floating_from', 'tiling_from', 'tiling', 'floating', 'all', ']'
