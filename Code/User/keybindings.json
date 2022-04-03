@@ -49,5 +49,9 @@
     "key": "ctrl+shift+alt+enter",
     "command": "github.copilot.generate",
     "when": "editorTextFocus && github.copilot.activated"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.tasks.runTask"
   }
 ]

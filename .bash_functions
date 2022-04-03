@@ -69,8 +69,8 @@ gacps (){
 
 alias so='sizeof'
 sizeof (){
-    	echo + du -sh $@
-	du -sh $@
+	echo + du -sh $@
+	du -sh "$@"
 }
 
 gs (){

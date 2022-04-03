@@ -49,14 +49,16 @@ alias pd='kc get po,deploy'
 alias pds='kc get po,deploy,svc'
 alias pdsi='kc get po,deploy,svc,ing'
 alias pdsic='kc get po,deploy,svc,ing,ingressclass'
-alias kcwatch='kc get all'
-# autocomplte for this doesn't work:
+alias kcwatch='watch kc get all'
 alias ke='kubectl exec -it'
-complete -F _complete_alias ke
-# ^^^^ Auto complete any alias now: src: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#autocomplete-any-alias-now
 alias kgp='kc get po'
-complete -F _complete_alias kgp
+alias kl='kc logs -f'
+alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
 
+# Auto complete any alias now: src: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#autocomplete-any-alias-now
+complete -F _complete_alias ke
+complete -F _complete_alias kgp
+complete -F _complete_alias kl
 
 alias dk='docker'
 # ^^^ newly added, on testing...
@@ -119,7 +121,7 @@ alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
 alias grc='cd $_home/Documents/github_repos/config'
 alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
 alias ~='cd ~'
-alias mb='cd /mnt/sda3/home/array/my_bin'
+alias mb='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
 alias v='nvim'
@@ -177,6 +179,11 @@ alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
 # Below aliases helps in searching current directory. -a means to include hidden files as well.
 alias lsg='ls -a | grep -i'
+alias adbinfo="echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'"
+# haven't tried it yet though!
+adbPush(){
+	adb push "$@" /storage/self/primary/DCIM/
+}
 alias c='clear'
 alias C='clear'
 if [[ $TMUX ]]; then
@@ -186,3 +193,15 @@ if [[ $TMUX ]]; then
 	alias clear='clear; tmux clear-history'
 	# alias clear='clear && tmux clear-history'
 fi
+
+
+# amazing: https://stackoverflow.com/a/43561012/10012446
+alias findNodeModules='sudo find . -name 'node_modules' -type d -prune'
+alias deleteNestedNodeModules="sudo find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+
+alias findNextCache="sudo find . -name '.next' -type d -prune"
+alias deleteNestedNextCache="sudo find . -name '.next' -type d -prune -exec rm -rf '{}' +"
+
+
+alias findCache="sudo find . -name '.cache' -type d -prune"
+alias deleteNestedCache="sudo find . -name '.cache' -type d -prune -exec rm -rf '{}' +"

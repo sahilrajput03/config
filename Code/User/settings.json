@@ -70,5 +70,10 @@
   "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
   "window.menuBarVisibility": "toggle",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "editor.minimap.maxColumn": 160,
+  "editor.wordWrapColumn": 120,
+  "task.problemMatchers.neverPrompt": {
+    "shell": true
+  }
 }
