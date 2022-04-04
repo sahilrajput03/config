@@ -172,6 +172,8 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 " Enable async formatting by default: ~Sahil, from official docs @ https://github.com/prettier/vim-prettier
 let g:prettier#exec_cmd_async = 1
+" By default we auto focus on the quickfix when there are errors but can also be disabled, src: https://github.com/prettier/vim-prettier#usage
+let g:prettier#quickfix_auto_focus = 0
 
 if has('nvim')
     set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
