@@ -13,6 +13,10 @@ mdcd(){
 }
 # BELOW ALIAS throws error for zsh, that is alias can't refer to functions.
 # alias mdc='mdcd'
+mdc(){
+	mkdir $@
+	cd $@
+}
 
 # Watch over fortran program:
 # conflict with fm coz I have same alias for filemanager, i.e., pcmanfm

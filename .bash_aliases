@@ -1,5 +1,8 @@
 ### Aliases:
 
+alias pretty='prettier --write'
+# Usage: pretty myFile
+
 # ------------------------ >>>> cloud aliases >>>>> --------------
 # ---
 # manual yaml checking
@@ -33,6 +36,8 @@ alias kam='kubectl apply -f manifests/'
 
 alias kd='kubectl delete -f'
 alias kdm='kubectl delete -f manifests/'
+alias kdel='kubectl delete'
+
 # ---
 kr(){
 	kd $@
@@ -50,15 +55,28 @@ alias pds='kc get po,deploy,svc'
 alias pdsi='kc get po,deploy,svc,ing'
 alias pdsic='kc get po,deploy,svc,ing,ingressclass'
 alias kcwatch='watch kc get all'
+# FYI: kc get deploy,po --watch # >>  throws error i.e., `error: you may only specify a single resource type`
 alias ke='kubectl exec -it'
 alias kgp='kc get po'
 alias kl='kc logs -f'
 alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
+# port-forward
+alias kp='kubectl port-forward'
+# sytax:`kp POD_NAME port` or `kp POD_NAME hostPort:containerPort`.
+
+#  To get the image used by the deployment.
+# Usage: `kds my-deployment-name | grep Image`
+alias kds='kubectl describe deployment'
+alias kge='kubectl get events'
 
 # Auto complete any alias now: src: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#autocomplete-any-alias-now
 complete -F _complete_alias ke
 complete -F _complete_alias kgp
 complete -F _complete_alias kl
+complete -F _complete_alias kp
+complete -F _complete_alias kds
+complete -F _complete_alias kge
+complete -F _complete_alias kdel
 
 alias dk='docker'
 # ^^^ newly added, on testing...

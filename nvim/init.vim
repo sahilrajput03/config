@@ -166,10 +166,13 @@ Plug 'prettier/vim-prettier', {
 
 call plug#end()
 
+" I AM DISABLING FORMATTTING ON FILE ON SAVE, FROM NOW ON! 8 APRIL, 2022
 " Enable autoformatting. (FYI: Autoformatting is done for file with "@format" or "@prettier" tag at top will only be formatted.
-let g:prettier#autoformat = 1
+" let g:prettier#autoformat = 1
 " Allow auto formatting for files without "@format" or "@prettier" tag
-let g:prettier#autoformat_require_pragma = 0
+" let g:prettier#autoformat_require_pragma = 0
+
+
 " Enable async formatting by default: ~Sahil, from official docs @ https://github.com/prettier/vim-prettier
 let g:prettier#exec_cmd_async = 1
 " By default we auto focus on the quickfix when there are errors but can also be disabled, src: https://github.com/prettier/vim-prettier#usage
@@ -839,3 +842,10 @@ function! HLNext (blinktime)
   call matchdelete(ring)
   redraw
 endfunction
+
+
+" Enable linebreaking so that if I have turned on line wrap the lines will
+" break at whitespaces(i.e., words will not fit like how many in the screen
+" can fit in real), yikes!
+set linebreak
+" src: https://stackoverflow.com/a/19624717/10012446
