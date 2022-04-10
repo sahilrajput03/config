@@ -1,0 +1,15 @@
+if [ -z "$1" ]; then
+# -z check if the length of the string is zero
+  echo "No command number passed"
+  exit 2
+fi
+
+exists=$(fc -l -1000 | grep ^$1 -- 2>/dev/null)
+
+if [ -n "$exists" ]; then
+# -n check if the length of string is non-zero
+  fc -s -- "$1"
+else
+  echo "Command with number $1 was not found in recent history"
+  exit 2
+fi

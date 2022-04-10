@@ -22,3 +22,4 @@ Can do
 - Blockchain course from tekipeps
 - Solidity course from tekipeps
 - https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial
+- Write a autocomplete function or script with which you can do like: `kes <TAB>` for actual execution of `ke fetcher-dep-55d666d454-96qv4 -- sh`.

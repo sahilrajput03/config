@@ -61,7 +61,15 @@ alias pdsi='kc get po,deploy,svc,ing'
 alias pdsic='kc get po,deploy,svc,ing,ingressclass'
 alias kcwatch='watch kc get all'
 # FYI: kc get deploy,po --watch # >>  throws error i.e., `error: you may only specify a single resource type`
+
+alias keinfo='echo -e "You can use -n option to point to specific container i.e.,\nkc exec -it my-pod -c containerName -- sh"'
 alias ke='kc exec -it'
+kes(){
+	# kes is autocompleted with my custom made autocompletion script.
+	echo +kc exec -it "$@" -- sh
+	kc exec -it "$@" -- sh
+}
+
 alias kgp='kc get po'
 alias kl='kc logs -f'
 # STATIC: alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
@@ -100,6 +108,9 @@ autoCompleteScripts(){
 	complete -F _complete_alias kdel
 	complete -F _complete_alias krd
 	complete -F _complete_alias krs
+
+	# My custom made autocomplete script
+	complete -W "$(kc get po | tail -n+2 | awk '{print $1}')" kes
 }
 
 # Debug only:
