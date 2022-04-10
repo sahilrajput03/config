@@ -74,13 +74,18 @@ function showpath_in_terminal(){
 }
 # showpath_last_folder_only
 
-### Sources:
+######################### SOURCES:
 # source: https://unix.stackexchange.com/a/1498/504112
 # shopt -s expand_aliases source ~/.bash_aliases
 # shopt -s expand_aliases
 # so shopt will expand your aliases in any shell script as well.
 [[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
+##### Import environment variables from /etc/environment file on new bash session.
+# This helps to reload environment variables from /etc/environment file to be loaded without logout->login event.
+# FYI: Its alwayt good to define variables for bash or any environment to be interpreted by cli program
+# (say nodejs server) to be added by `export myvar='myvalue'` in this `.bashrc` file format simply.
+# But still importing /etc/environment file still doesn't hurt any.
 [[ -f /etc/environment ]] && source /etc/environment
 
 # Other sources
