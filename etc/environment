@@ -7,6 +7,5 @@
 # Error: status_command process exited unexpectedly (exit 1)' in i3bar, so below fixes that!.
 LC_ALL="en_US.UTF-8"
 ss="sahil rajput"
-sa='bhoot'
 sb="freakstarrocks"
 ANDROID_SDK_ROOT='/opt/android-sdk'

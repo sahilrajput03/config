@@ -12,10 +12,10 @@ mdcd(){
 	cd $@
 }
 # BELOW ALIAS throws error for zsh, that is alias can't refer to functions.
+# SO AS A HACK I AM MAKING ANOTHER FUNCTION WHICH CALLS mdcd internally and not it works for both bash and zsh.
 # alias mdc='mdcd'
 mdc(){
-	mkdir $@
-	cd $@
+	mdcd "$@"
 }
 
 # Watch over fortran program:

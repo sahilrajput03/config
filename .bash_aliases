@@ -75,15 +75,22 @@ alias kds='kubectl describe deployment'
 alias kge='kubectl get events'
 alias ken='ke -n default my-nats-box-d6bd784b-txccl -- sh -l'
 # Auto complete any alias now: src: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#autocomplete-any-alias-now
-complete -F _complete_alias ke
-complete -F _complete_alias kgp
-complete -F _complete_alias kl
-complete -F _complete_alias kp
-complete -F _complete_alias kds
-complete -F _complete_alias kge
-complete -F _complete_alias kdel
-complete -F _complete_alias krd
-complete -F _complete_alias krs
+
+# Since complete is throwing errors when this file in sourced, I am using condition check to disable them in zsh:
+# echo $0 => bash, or zsh depending upon the version.
+# https://unix.stackexchange.com/a/3647/504112
+
+if [[ $0 = bash ]]; then
+	complete -F _complete_alias ke
+	complete -F _complete_alias kgp
+	complete -F _complete_alias kl
+	complete -F _complete_alias kp
+	complete -F _complete_alias kds
+	complete -F _complete_alias kge
+	complete -F _complete_alias kdel
+	complete -F _complete_alias krd
+	complete -F _complete_alias krs
+fi
 
 alias dk='docker'
 # ^^^ newly added, on testing...
@@ -155,7 +162,9 @@ alias vi='nvim'
 alias vifresh='vim --clean'
 # Since vi is aliased, all below will refer to nvim for vi.
 alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
+alias vi.environment='sudo nvim /etc/environment'
 alias vi.bashrc='vi $_home/.bashrc'
+alias vi.history='vi $_home/.bash_history'
 alias vi.functions='vi $_home/.bash_functions'
 alias vi.gitconfig='vi $_home/.gitconfig'
 alias vi.profile='vi $_home/.profile'

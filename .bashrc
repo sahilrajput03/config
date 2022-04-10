@@ -81,6 +81,8 @@ function showpath_in_terminal(){
 # so shopt will expand your aliases in any shell script as well.
 [[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
+[[ -f /etc/environment ]] && source /etc/environment
+
 # Other sources
 . "$_home/.cargo/env" # From cargo docs: . "$HOME/.cargo/env" 
 . /usr/share/nvm/init-nvm.sh
