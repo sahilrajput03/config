@@ -1,5 +1,7 @@
 ### Aliases:
 
+# shopt -s expand_aliases
+
 alias pretty='prettier --write'
 # Usage: pretty myFile
 
@@ -31,16 +33,16 @@ alias mc='vi $_home/scripts-in-use/td/must-can'
 
 alias kc='kubectl'
 # ---
-alias ka='kubectl apply -f'
-alias kam='kubectl apply -f manifests/'
+alias ka='kc apply -f'
+alias kam='kc apply -f manifests/'
 
-alias kd='kubectl delete -f'
-alias kdm='kubectl delete -f manifests/'
-alias kdel='kubectl delete'
+alias kd='kc delete -f'
+alias kdm='kc delete -f manifests/'
+alias kdel='kc delete'
 
 # src: https://stackoverflow.com/a/55914480 (Msc. Paskula did recommended this to pull the same image tag again, yikes!!). So this helps to avoid killing deployment and applying it again. Yikes!!
-alias krd='kubectl rollout restart deploy'
-alias krs='kubectl rollout restart statefulset'
+alias krd='kc rollout restart deploy'
+alias krs='kc rollout restart statefulset'
 # ---
 kr(){
 	kd $@
@@ -59,15 +61,23 @@ alias pdsi='kc get po,deploy,svc,ing'
 alias pdsic='kc get po,deploy,svc,ing,ingressclass'
 alias kcwatch='watch kc get all'
 # FYI: kc get deploy,po --watch # >>  throws error i.e., `error: you may only specify a single resource type`
-alias ke='kubectl exec -it'
+alias ke='kc exec -it'
 alias kgp='kc get po'
 alias kl='kc logs -f'
 # STATIC: alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
-alias startGrafana="kubectl -n prometheus port-forward $(kc -n prometheus get po | grep grafana | awk '{print $1}') 3000"
-alias startPrometheus="kp -n lens-metrics prometheus-0 9090"
+alias startGrafana="kubectl -n prometheus port-forward $(kubectl -n prometheus get po | grep grafana | awk '{print $1}') 3000"
+
 # port-forward
-alias kp='kubectl port-forward'
+alias kp='kc port-forward'
 # syntax:`kp POD_NAME port` or `kp POD_NAME hostPort:containerPort`.
+
+# NOTE: PREFER prometheus from prometheus-stack coz fso uses same iteration for its course so its easy to reference from there at any time.
+prometheusPod=$(kubectl -n prometheus get po | grep prometheus-0 | awk '{print $1}')
+# I am calling it managed coz I get the prometheusPod name dynamically, yikes!
+alias startPrometheusManaged="kp -n prometheus $prometheusPod 9090"
+# 
+# fyi: lens-metrics namespace is managed by lens and is created at the time when you chose ot install prometheus from lens itself.
+alias startLensMetricsPrometheus="kp -n lens-metrics prometheus-0 9090"
 
 #  To get the image used by the deployment.
 # Usage: `kds my-deployment-name | grep Image`
@@ -80,7 +90,7 @@ alias ken='ke -n default my-nats-box-d6bd784b-txccl -- sh -l'
 # echo $0 => bash, or zsh depending upon the version.
 # https://unix.stackexchange.com/a/3647/504112
 
-if [[ $0 = bash ]]; then
+autoCompleteScripts(){
 	complete -F _complete_alias ke
 	complete -F _complete_alias kgp
 	complete -F _complete_alias kl
@@ -90,6 +100,14 @@ if [[ $0 = bash ]]; then
 	complete -F _complete_alias kdel
 	complete -F _complete_alias krd
 	complete -F _complete_alias krs
+}
+
+# Debug only:
+# echo $0
+if  [[ $0 = bash ]] || [[ $0 = -bash ]] ; then
+	# The reason i am using bash and -bash text coz when the terminal is fist launched it is launched with -bash but if you run `exec bash` then $0 becomes simply bash, idk why though.
+	# Learn bash: https://sahilrajput03.ml/learn-bash.html
+	autoCompleteScripts
 fi
 
 alias dk='docker'
