@@ -1,0 +1,12 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+# Fix the LC_ALL used by i3status binary, it was throwing error like 
+# Error: status_command process exited unexpectedly (exit 1)' in i3bar, so below fixes that!.
+LC_ALL="en_US.UTF-8"
+ss="sahil rajput"
+sa='bhoot'
+sb="freakstarrocks"
+ANDROID_SDK_ROOT='/opt/android-sdk'

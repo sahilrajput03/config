@@ -38,6 +38,9 @@ alias kd='kubectl delete -f'
 alias kdm='kubectl delete -f manifests/'
 alias kdel='kubectl delete'
 
+# src: https://stackoverflow.com/a/55914480 (Msc. Paskula did recommended this to pull the same image tag again, yikes!!). So this helps to avoid killing deployment and applying it again. Yikes!!
+alias krd='kubectl rollout restart deploy'
+alias krs='kubectl rollout restart statefulset'
 # ---
 kr(){
 	kd $@
@@ -59,16 +62,18 @@ alias kcwatch='watch kc get all'
 alias ke='kubectl exec -it'
 alias kgp='kc get po'
 alias kl='kc logs -f'
-alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
+# STATIC: alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
+alias startGrafana="kubectl -n prometheus port-forward $(kc -n prometheus get po | grep grafana | awk '{print $1}') 3000"
+alias startPrometheus="kp -n lens-metrics prometheus-0 9090"
 # port-forward
 alias kp='kubectl port-forward'
-# sytax:`kp POD_NAME port` or `kp POD_NAME hostPort:containerPort`.
+# syntax:`kp POD_NAME port` or `kp POD_NAME hostPort:containerPort`.
 
 #  To get the image used by the deployment.
 # Usage: `kds my-deployment-name | grep Image`
 alias kds='kubectl describe deployment'
 alias kge='kubectl get events'
-
+alias ken='ke -n default my-nats-box-d6bd784b-txccl -- sh -l'
 # Auto complete any alias now: src: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#autocomplete-any-alias-now
 complete -F _complete_alias ke
 complete -F _complete_alias kgp
@@ -77,6 +82,8 @@ complete -F _complete_alias kp
 complete -F _complete_alias kds
 complete -F _complete_alias kge
 complete -F _complete_alias kdel
+complete -F _complete_alias krd
+complete -F _complete_alias krs
 
 alias dk='docker'
 # ^^^ newly added, on testing...
@@ -197,7 +204,9 @@ alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
 # Below aliases helps in searching current directory. -a means to include hidden files as well.
 alias lsg='ls -a | grep -i'
-alias adbinfo="echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'"
+alias adbinfo="echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'
+echo adb shell # To execute shell in mobile.
+"
 # haven't tried it yet though!
 adbPush(){
 	adb push "$@" /storage/self/primary/DCIM/
