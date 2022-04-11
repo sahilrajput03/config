@@ -72,21 +72,26 @@ kes(){
 
 alias kgp='kc get po'
 alias kl='kc logs -f'
-# STATIC: alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
-alias startGrafana="kubectl -n prometheus port-forward $(kubectl -n prometheus get po | grep grafana | awk '{print $1}') 3000"
 
 # port-forward
 alias kp='kc port-forward'
 # syntax:`kp POD_NAME port` or `kp POD_NAME hostPort:containerPort`.
 
+### PROMETHEUS
 # NOTE: PREFER prometheus from prometheus-stack coz fso uses same iteration for its course so its easy to reference from there at any time.
 prometheusPod=$(kubectl -n prometheus get po | grep prometheus-0 | awk '{print $1}')
 # I am calling it managed coz I get the prometheusPod name dynamically, yikes!
 alias startPrometheusManaged="kp -n prometheus $prometheusPod 9090"
-# 
 # fyi: lens-metrics namespace is managed by lens and is created at the time when you chose ot install prometheus from lens itself.
-alias startLensMetricsPrometheus="kp -n lens-metrics prometheus-0 9090"
-
+alias startPrometheusFromLensMetrics="kp -n lens-metrics prometheus-0 9090"
+### NATS
+alias startNats='kp my-nats-0 7777'
+### GRAFANA
+# STATIC: alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
+alias startGrafana="kubectl -n prometheus port-forward $(kubectl -n prometheus get po | grep grafana | awk '{print $1}') 3000"
+# default login credentials: admin:prom-operator
+# 
+### 
 #  To get the image used by the deployment.
 # Usage: `kds my-deployment-name | grep Image`
 alias kds='kubectl describe deployment'
@@ -110,7 +115,9 @@ autoCompleteScripts(){
 	complete -F _complete_alias krs
 
 	# My custom made autocomplete script
-	complete -W "$(kc get po | tail -n+2 | awk '{print $1}')" kes
+	# complete -W "$(kc get po | tail -n+2 | awk '{print $1}')" kes
+	# ^^ this is actually faulty coz it doesn't fetch pods dynamically but caches at the time of start of the bash session.
+	source /home/array/Documents/github_repos/config/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
 }
 
 # Debug only:
