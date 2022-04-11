@@ -2,6 +2,8 @@
 # complete -W "now tomorrow never" dothis
 # we used the -W (wordlist) option to provide a list of words for completion.
 
+# USAGE: kes my-nats-0 -c nats
+
 # dynamic
 _dothis_completions()
 {
