@@ -1,3 +1,5 @@
+# Debug:
+# set -x
 #
 # ~/.bashrc, `realpath .bashrc` ouputs `/home/array/.bashrc`.
 #sahil: `rc` as suffix of .bashrc file name means `run commands`.
@@ -81,6 +83,7 @@ function showpath_in_terminal(){
 # so shopt will expand your aliases in any shell script as well.
 [[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
+[[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets
 ##### Import environment variables from /etc/environment file on new bash session.
 # This helps to reload environment variables from /etc/environment file to be loaded without logout->login event.
 # FYI: Its alwayt good to define variables for bash or any environment to be interpreted by cli program
@@ -183,22 +186,20 @@ enable_bash_git_prompt(){
 # To supress cd verbose command i can do like:
 exec {BASH_XTRACEFD}>/dev/null
 # src: https://www.reddit.com/r/linuxquestions/comments/cn1i20/suppressing_output_from_autocd_on_bash/?utm_source=share&utm_medium=web2x&context=3
-#
 
-
+# print something in cyan color: 
+# tput setaf 6; echo hell; tput sgr0
 thought(){
-	get_thought(){
-		shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.'
-		# With grep '.' I am implying don't empty line output if the output is empty.
-		# print something in cyan color: 
-		# tput setaf 6; echo hell; tput sgr0
-	}
 	echo -ne $CYAN$BOLD
 	# ce "Thought:" 6
 	echo -n "Thought - "
-	while ! get_thought ; do true; done
-}
 
+	while [[ -z $text ]] ; do
+		text=$(shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.')
+	# 	# With grep '.' I am implying don't output empty line output if the output is empty.
+	done
+	echo $text
+}
 
 booz(){
 	WHITE='\e[97m'

@@ -45,6 +45,9 @@ alias krd='kc rollout restart deploy'
 alias krs='kc rollout restart statefulset'
 # ---
 kr(){
+	####  hack to restart, :LOL:
+	# FYI: YOU should ideally use, krd or krs aliases to redeploy the same image tag so as to pull that.
+	# This is also ^^^ also a production best practises to roll a image with same tag so the till the new deployment is the older deployment is still up. Thanks to `readinessProbe` feature via the READY flag, yikes!
 	kd $@
 	ka $@
 }
@@ -65,9 +68,14 @@ alias kcwatch='watch kc get all'
 alias keinfo='echo -e "You can use -n option to point to specific container i.e.,\nkc exec -it my-pod -c containerName -- sh"'
 alias ke='kc exec -it'
 kes(){
-	# kes is autocompleted with my custom made autocompletion script.
-	echo +kc exec -it "$@" -- sh
-	kc exec -it "$@" -- sh
+	if [[ -z "$2" ]]; then
+		# kes is autocompleted with my custom made autocompletion script.
+		echo +kc exec -it $1 -- sh
+		kc exec -it $1 -- sh
+	else
+		echo +kc exec -it $1 -c $2 -- sh
+		kc exec -it $1 -c $2 -- sh
+	fi
 }
 
 alias kgp='kc get po'
@@ -79,7 +87,7 @@ alias kp='kc port-forward'
 
 ### PROMETHEUS
 # NOTE: PREFER prometheus from prometheus-stack coz fso uses same iteration for its course so its easy to reference from there at any time.
-prometheusPod=$(kubectl -n prometheus get po | grep prometheus-0 | awk '{print $1}')
+prometheusPod=$(kubectl -n prometheus get po 2> /dev/null | grep prometheus-0 | awk '{print $1}')
 # I am calling it managed coz I get the prometheusPod name dynamically, yikes!
 alias startPrometheusManaged="kp -n prometheus $prometheusPod 9090"
 # fyi: lens-metrics namespace is managed by lens and is created at the time when you chose ot install prometheus from lens itself.
@@ -88,7 +96,7 @@ alias startPrometheusFromLensMetrics="kp -n lens-metrics prometheus-0 9090"
 alias startNats='kp my-nats-0 7777'
 ### GRAFANA
 # STATIC: alias startGrafana='kubectl -n prometheus port-forward kube-prometheus-stack-1648576649-grafana-6c4c68c495-6n4m8 3000'
-alias startGrafana="kubectl -n prometheus port-forward $(kubectl -n prometheus get po | grep grafana | awk '{print $1}') 3000"
+alias startGrafana="kubectl -n prometheus port-forward $(kubectl -n prometheus get po 2> /dev/null | grep grafana | awk '{print $1}') 3000"
 # default login credentials: admin:prom-operator
 # 
 ### 
@@ -277,3 +285,6 @@ alias deleteNestedNextCache="sudo find . -name '.next' -type d -prune -exec rm -
 
 alias findCache="sudo find . -name '.cache' -type d -prune"
 alias deleteNestedCache="sudo find . -name '.cache' -type d -prune -exec rm -rf '{}' +"
+
+# asterisk usage:
+alias asteriskrv='sudo asterisk -rvvvv'
