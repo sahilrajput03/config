@@ -315,3 +315,11 @@ lss(){
 	# ls -a -d *json* .*json*
 	# FYI: This throw error when there are no files matching with dot files, todo: fix that error. ~Sahil.
 }
+
+# Enabling colors for grep by default
+alias grep='grep --color=auto'
+
+# Search text in files recursively (src: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-bash.md)
+searchTextInFilesRecursively(){
+	grep -r --exclude-dir={node_modules,.idea,.git} "$@" .
+}
