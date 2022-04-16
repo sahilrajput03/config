@@ -1,0 +1,11 @@
+const clipboardy = require('clipboardy')
+// ``npm install clipboardy`` (I have installed it globally though)
+// src: https://github.com/sindresorhus/clipboardy , src: https://stackoverflow.com/questions/7778539/copy-to-clipboard-in-node-js
+
+clipboardy.writeSync('🦄 abc.')
+// This copies to clipboard.
+
+console.log(clipboardy.readSync())
+//           ^^^  This gets text from clipboard.
+//=> '🦄'
+

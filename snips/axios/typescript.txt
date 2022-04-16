@@ -1,0 +1,13 @@
+import axios, {AxiosRequestConfig} from 'axios'
+
+const fn = async () => {
+  const config: AxiosRequestConfig = {
+    method: 'get',
+    url: `url`,
+    headers: {Authorization: `Bearer myToken`},
+  }
+
+  let res = await axios(config)
+}
+
+fn()

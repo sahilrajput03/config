@@ -1,0 +1,4 @@
+axios
+  .get('RISKY_OR_STABLE_URL')
+  .then((res) => log(res.data))
+  .catch((e) => log('#got error#', e));

@@ -1,0 +1,5 @@
+@url1 = http://localhost:3000/
+@url2 = https://www.google.com/
+
+get {{url1}}
+

@@ -1,0 +1,9 @@
+if test "$argv" = ""
+      echo "you didn't pass arguments ~ Sahil"
+			#More commands here...
+    else
+      echo "You passed arguments ~ Sahil"
+			#More commands here...
+end
+#FYI: test is a builtin function from fish shell.
+#src: https://unix.stackexchange.com/a/595583

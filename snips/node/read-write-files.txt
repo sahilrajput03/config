@@ -1,0 +1,9 @@
+const fs = require('fs')
+
+let file_text = fs.readFileSync('./file.txt', 'utf8')
+console.log(file_text)
+
+file_text += ', added lately.'
+
+fs.writeFileSync('output.txt', file_text)
+

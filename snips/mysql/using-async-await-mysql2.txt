@@ -1,0 +1,2 @@
+- Mysql2 docs: https://github.com/sidorares/node-mysql2
+- https://stackoverflow.com/questions/44004418/node-js-async-await-using-with-mysql/47262445#47262445

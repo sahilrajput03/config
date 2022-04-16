@@ -1,0 +1,14 @@
+const elementRef = useRef<any>() // give this ref to any html element.
+
+useEffect(() => {
+  elementRef.current.style.position = 'static'
+
+  let el: any = window.document.querySelector('.MuiAppBar-positionFixed')
+  el.style.position = 'static'
+
+}, [])
+
+
+
+
+

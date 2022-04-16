@@ -1,0 +1,15 @@
+// amazing quokkajs
+let a = 1
+let b = 's'
+let c = true
+let d = {name: 'Sahil'}
+let f = [1, 2, 3]
+a
+b
+c
+d
+e = a + b // ? ONLY WORKS WITH QUOKKA PREMIUM.
+e
+f.push(4)
+f
+e

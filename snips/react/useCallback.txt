@@ -1,0 +1,2 @@
+let myFunc = useCallback(() => {}, []);
+// This func wil only be created at the first load of the component.

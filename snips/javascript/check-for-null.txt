@@ -1,0 +1,4 @@
+if(myNullVariable === null){
+	console.log("yes variable is null")
+}
+//https://stackoverflow.com/a/27550756

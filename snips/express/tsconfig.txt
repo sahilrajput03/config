@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"rootDir": "./",
+		"outDir": "./build",
+		"esModuleInterop": true,
+		"strict": true,
+		"noImplicitAny": false
+// Turn ^^ this to true anytime you want types for everything.
+	}
+}
+

@@ -1,0 +1,2 @@
+tables in react are just like table in html.
+You must browse the links in html/table-magic.txt snippet, yikes🤑︎🤑︎.

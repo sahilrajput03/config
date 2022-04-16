@@ -1,0 +1,3 @@
+console.log(await fetch("").then(res => res.text()))
+
+await fetch("").then(res => res.text()).then(data => console.log(data))

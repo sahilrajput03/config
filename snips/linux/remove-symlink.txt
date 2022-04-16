@@ -1,0 +1,1 @@
+rm symlink_to_remove

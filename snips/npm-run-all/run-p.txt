@@ -1,0 +1,4 @@
+"dev": "run-p _dev**",
+"_dev1": "echo dev server 1.",
+"_dev2": "echo dev server 2.",
+"_dev3": "echo dev server 3."

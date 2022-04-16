@@ -1,0 +1,2 @@
+<script src="script.js" defer></script>
+<!-- Note defer only works when you supply the src, i.e., giving javascript inside the script tags would just make javascript to run BEFORE the dom is loaded which we 🛑︎ don't want. -->

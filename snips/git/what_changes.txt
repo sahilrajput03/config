@@ -1,0 +1,1 @@
+git whatchanged --since='2 weeks ago'

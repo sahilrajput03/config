@@ -1,0 +1,24 @@
+import "./styles.css";
+import PropTypes from "prop-types";
+// You are supposed to install prop-types package as with react v15, reactjs removed propTypes package from the bundle.
+
+export default function App({ name, age }) {
+  return (
+    <div className="App">
+      <h1>Hello {name}</h1>
+      You are {age} years old.
+    </div>
+  );
+}
+
+App.propTypes = {
+  age: PropTypes.number
+  // There are bunch of types available from prop-types package @ https://www.npmjs.com/package/prop-types#usage
+  // that does't throw any runtime error, but throws error in browser console though.
+};
+
+App.defaultProps = {
+  name: "Sahil Rajput",
+  age: 23
+};
+

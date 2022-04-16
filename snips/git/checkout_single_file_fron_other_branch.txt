@@ -1,0 +1,1 @@
+git checkout other-branch path/to/required_file

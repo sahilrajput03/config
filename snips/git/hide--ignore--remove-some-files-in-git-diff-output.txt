@@ -1,0 +1,1 @@
+git diff ':(exclude)package-lock.json' # Or probably: gd ':(exclude)package-lock.json'

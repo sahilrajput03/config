@@ -1,0 +1,11 @@
+const idInt = +req.body.id
+// true will 1, false will be 0, "a" will be Nan, "1" will be 1, -2 would be -2
+// NaN will be Nan, null would be 0, undefined will be NaN.
+
+const idString = req.params.id + "" //Also, "" + req.params.id will be equally good.
+// true will be "true", false will be "false"
+// NaN will be "NaN", null would be "null", undefined will be "undefined"
+
+const isId = !!req.query.id
+// '0' will be true, '' will be false, -1 and -2 will be true.
+// NaN will be false, null will be false, undefined is false

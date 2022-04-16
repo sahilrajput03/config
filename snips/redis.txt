@@ -1,0 +1,17 @@
+const {promisify} = require("util");
+const redis = require("redis");
+
+export const client = redis.createClient();
+
+exports.client = client;
+// Exported `client` as `named export`.
+client.getAsync = promisify(client.get.bind(client));
+
+client.on("error", function (error) {
+	console.error(error);
+});
+
+
+client.get("myKey")
+client.set("myKey")
+await client.getAsync("myKey")

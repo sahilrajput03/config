@@ -1,0 +1,4 @@
+Homepage.getInitialProps = ({ req }) => {
+    const isServer = !!req
+    const isBrowser = !req
+}

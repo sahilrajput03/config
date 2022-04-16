@@ -1,0 +1,14 @@
+/* 600px or bigger, this way of designing is known as 'mobile first' as we are worrying for mobile size screens in default css styling styles and providing explicit desktop size designs under this min-width media query section. */
+@media (min-width: 600px) {
+  
+}
+
+/* 600px or smaller, this way of designing is known as 'desktop first' as we are worrying for desktop size screens in default css styling styles and providing explicit mobile designs under this max-width media query section. */
+@media (max-width: 600px) {
+
+}
+
+/* between 600px and 900px  */
+@media (min-width: 600px) and (max-width: 900px) {
+  
+}

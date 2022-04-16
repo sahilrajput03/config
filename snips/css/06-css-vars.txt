@@ -1,0 +1,11 @@
+:root {
+  --bg-clr: #23424a;
+  --bg-clr2: skyblue;
+  --ff: Geneva, Verdana, sans-serif;
+}
+
+.container {
+  font-family: var(--ff);
+  color: var(--bg-clr);
+  background-color: var(--bg-clr2);
+}

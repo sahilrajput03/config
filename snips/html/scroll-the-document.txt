@@ -1,0 +1,3 @@
+document.documentElement.scrollTop = 0 // this will scroll to top.
+// src: https://www.geeksforgeeks.org/how-to-get-the-position-of-scrollbar-using-javascript/
+// other src: https://stackoverflow.com/questions/2481350/how-to-get-scrollbar-position-with-javascript

@@ -1,0 +1,2 @@
+console.time('h')
+console.timeEnd('h')

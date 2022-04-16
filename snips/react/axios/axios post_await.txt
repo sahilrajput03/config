@@ -1,0 +1,9 @@
+const func = async () => {
+  try {
+    const res = await axios.post('RISKY_OR_STABLE_URL', objectToSend);
+    log(res.data);
+  } catch (error) {
+    log('#got error#', e)
+  }
+};
+func();

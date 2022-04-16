@@ -1,0 +1,15 @@
+Please refer and read wholly: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+#Source of below things ^^^
+
+#Primitive Data Types(total 6) i.e., undefined, Boolean, Number, String, BigInt, and Symbol.
+Six Data Types that are primitives, checked by typeof operator:
+    undefined : typeof instance === "undefined"
+    Boolean : typeof instance === "boolean"
+    Number : typeof instance === "number"
+    String : typeof instance === "string"
+    BigInt : typeof instance === "bigint"
+    Symbol : typeof instance === "symbol"
+
+
+#Structural Types: Object.
+		typeof instance === "object".

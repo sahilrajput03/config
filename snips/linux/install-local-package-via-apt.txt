@@ -1,0 +1,1 @@
+sudo apt install ./my-file-with-extension-deb

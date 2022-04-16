@@ -1,0 +1,13 @@
+# Disable: "Preview Response Panel Take Focus" for REST Client in vscode settings, makes life lot easier with request testing.
+# Use shortcut ctrl+r to make request to the backend.(I remapped the ctrl+alt+r to ctrl+r). Yo!
+# Use snippet from snips to make request in .rest files, simply.
+
+# //todo, add request snippet for authorization header with application/json thing in your snips.
+
+# Pro tip: Notice the time-taken by the request to know if the result is updated when you make request.
+# Pro tip: You don't nee to save .rest file to make a request, you can just make request without saving the file.
+# Pro tip: Use lower right corner Rest Client environment settings or simply use hotkey ``ctrl+alt+e`` to change the environment mode for REST Client extension, also you must have `.vscode/settings.json` file which would contain the environment variables syntax provided in snips/vsocde/rest-client/environment-variables.txt snip, yo!!
+
+
+# Pro tip_setup: Use "Preview option" as 'exchange' for REST Client extension, and now you'll see the request sent and received both, yikes!
+# Pro tip_setup: Use "Preview Column" as 'current' so you'll see the log for the reqest and response in current editor only instead of a side window, yo!

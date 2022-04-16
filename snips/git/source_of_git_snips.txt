@@ -1,0 +1,8 @@
+Amazing list of short read to use commands of git:
+https://git.io/git-tips
+
+Checkout a single file from another branch:
+https://stackoverflow.com/a/10025425/10012446
+
+Set up git to pull and push all branches:
+https://stackoverflow.com/a/10479068/10012446

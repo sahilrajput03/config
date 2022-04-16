@@ -1,0 +1,7 @@
+kyle.printName?.()
+// here the code won't throw error even when the printName doesn't exist on the kyle object.
+// also above code checks if printName is function if yes, then only call it, so you are saved from the runtime error of js.
+// You can try document.someFun() and document.someFun?.() in browser console to test the behaviour.
+
+let arr = [1,2]
+arr?.[5] // can also be used too.

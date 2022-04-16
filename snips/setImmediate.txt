@@ -1,0 +1,13 @@
+let m = new Promise((res, rej) => {
+  setTimeout(() => res(2), 1000)
+})
+
+// ? setImmediate is equal to setTimeout with no time give or say 0 ms.
+setImmediate(async () => {
+  let val = await m
+  console.log({val})
+})
+
+// FYI: According to MDN, no browser supports setImmediate but IE🤾︎.
+// ? Instead of using setImmediate, you could definitely have used setTimeout as well with nothing passed as second param and it would be have in same manner🧸︎.
+

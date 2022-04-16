@@ -1,0 +1,10 @@
+const fs = require('fs')
+
+const read = (fileName) => {
+	return fs.readFileSync(fileName, 'utf8')
+}
+
+const write = (fileName, data) => {
+	fs.writeFileSync(fileName, JSON.stringify(data))
+}
+

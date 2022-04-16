@@ -1,0 +1,4 @@
+const id = req.body.id
+const id = req.params.id // say, "/stocks/:id"
+const id = req.query.id // say, "/stocks" but with request url as "/stocks?id=99"
+// query variables are basically what is after the `?`

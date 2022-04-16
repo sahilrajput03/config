@@ -1,0 +1,5 @@
+export const SlideStarter = ({ name }) => (
+  <SlideTemplate name={name}>
+    <h1>Lorem ipsum</h1>
+  </SlideTemplate>
+)

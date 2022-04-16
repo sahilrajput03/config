@@ -1,0 +1,2 @@
+console.log("%ccars %cbars","font-size: 3rem;color: red","color: green; font-size: 1.5rem"  )
+// src: 5 must know javascript features ~ kyle

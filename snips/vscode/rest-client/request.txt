@@ -1,0 +1,5 @@
+### Request at /api/
+get http://localhost:8080/api/
+Content-Type: application/json
+
+{}

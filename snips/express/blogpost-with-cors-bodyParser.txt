@@ -1,0 +1,42 @@
+var cors = require('cors');
+const express = require('express');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+let log = console.log;
+
+app.get('/', (req, res) => {
+  return res.send('My blog app');
+  // return res.status(201).send('If you want to send custom status code.');
+});
+
+app.get('/posts', (req, res) => {
+  log("posts route")
+  return res.send('YOU ARE ON POSTS ROUTE');
+});
+
+app.get('/posts/:id', (req, res) => {
+  let id = parseInt(req.params.id);
+  log('You sent ', id);
+  return res.send('You sent ' + id);
+});
+
+app.post('/posts', (req, res) => {
+  const {title, content} = req.body;
+  log('#mylog', req.body);
+  // if (!title || !content) {
+  //   return res.status(404).send("title");
+  // }
+
+  return res.send({
+    id: 3,
+    title: title || 'Default title',
+    content: content || 'Default content'
+  });
+});
+
+app.listen(8080, function () {
+  console.log('server running on 8080');
+}); //the server object listens on port 8080

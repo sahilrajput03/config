@@ -1,0 +1,4 @@
+axios
+  .post('RISKY_OR_STABLE_URL', objectToSend)
+  .then((res) => log(res.data))
+  .catch((e) => log('#got error#', e));
