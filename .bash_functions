@@ -90,7 +90,7 @@ function backupConfigFiles {
 	\cp $_home/.config/i3/config $backup_dir/.config_i3_config
 	echo "Backup of ~/.config/i3/config file succeeded."
 
-	\cp $_home/.config/.i3status.conf $backup_dir/.config_i3_config
+	\cp $_home/.i3status.conf $backup_dir/.config_i3_config
 	echo "Backup of ~/.config/.i3status.conf file succeeded."
 
 	\cp $_home/.bash_functions $backup_dir/
