@@ -1,0 +1,87 @@
+
+# PLEASE refer to ~/.gitconfig file for your git internal config, settings and other aliases.
+alias vi.gitconfig='vi ~/.gitconfig'
+
+# ALIASES
+alias g='git'
+alias gcr='git hubCreate'
+alias gco='git commit -m'
+alias gch='git checkout'
+alias gd='git diff'
+# alias gl='git log'
+alias gl='git log --decorate --graph --oneline -10'
+alias gch='git checkout'
+alias gpul='git pull'
+alias gpus='git push'
+alias gcl='git clone'
+alias gsh='git show'
+alias gpp='git pull; git push'
+# LEARN: ARCHIVING A GIT REPO:
+# Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
+alias garchive='git archive --format zip --output'
+
+# FUNCTIONS
+gi(){
+	git init && create.gitignore && create.prettierrc.yaml
+}
+
+gac (){
+    echo + git add -A
+    git add -A
+
+    echo + git commit -m \'$@\'
+    git commit -m "$*" # gac life is amazing
+}
+
+# Usage: gacp life is super amazing. Usage: `gacps Added life to project.`
+gacp (){
+    echo + git add -A
+    git add -A
+
+    echo + git commit -m \'$@\'
+    git commit -m "$*"
+
+    echo + git push -u
+    git push -u
+
+}
+#
+# gacp Silent: Tested: Works good: Usage: `gacps Added life to project.`
+gacps (){
+    git add . 1> /dev/null 2> /dev/null
+    git commit -m "$*" 1> /dev/null 2> /dev/null
+    git push -u 1> /dev/null 2> /dev/null
+}
+
+gs (){
+	# echo + git status $@
+	# git status $@
+
+	if [ -z "$1" ]; then
+		# -z will send 0 (TRUE) return code if string is zero length, check `man test` for info.
+		echo + git status .
+		git status
+	else
+		echo + git status $1
+		git status $1
+	fi
+
+}
+gi (){
+	echo + git init $@
+	git init $@
+}
+gb (){
+	echo + git branch $@
+	git branch $@
+}
+ga (){
+	if [ -z "$1" ]; then
+		# -z will send 0 (TRUE) return code if string is zero length, check `man test` for info.
+		echo + git add .
+		git add .
+	else
+		echo + git add $1
+		git add $1
+	fi
+}
