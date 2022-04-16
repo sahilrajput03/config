@@ -414,17 +414,13 @@ for_window [class="Characters"] floating enable
 # ERROR: CONFIG: Expected one of these tokens: 'class', 'instance', 'window_role', 'con_id', 'id', 'window_type', 'con_mark', 'title', 'urgent', 'workspace', 'machine', 'floating_from', 'tiling_from', 'tiling', 'floating', 'all', ']'
 #
 
-
-# Below for copyq (to make it float and add a hotkey)
+# BELOW FOR COPYQ (TO MAKE IT FLOAT AND ADD A HOTKEY)
 for_window [class="copyq" instance="copyq"] floating enable
-# bindsym $mod+comma exec "/usr/bin/copyq -e 'toggle()'"
-# bindsym $mod+comma exec "/usr/bin/copyq -e 'toggle()'"
-# bindsym $mod+comma exec copyq toggle
-# bindsym $mod+comma exec /usr/bin/copyq -e "toggle()"
-# ISSUE BEING RESOLVED ON https://github.com/hluk/CopyQ/issues/1886
+bindsym $mod+comma exec copyq toggle
+# ^^ This required system restart to make it work!, src: https://github.com/hluk/CopyQ/issues/1886
 
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
 # # TESTING # #
-bindsym $mod+comma exec "notify-send Hello, i3"
+# bindsym $mod+comma exec "notify-send Hello, i3"
