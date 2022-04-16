@@ -19,6 +19,7 @@ alias gpp='git pull; git push'
 # LEARN: ARCHIVING A GIT REPO:
 # Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
 alias garchive='git archive --format zip --output'
+alias gitCleanResetHard='git clean -f && git reset --hard'
 
 # FUNCTIONS
 gi(){
@@ -84,4 +85,20 @@ ga (){
 		echo + git add $1
 		git add $1
 	fi
+}
+
+gitFetchWithoutCheckout () {
+	echo git fetch . source:target
+	echo Here, source is same in style as git merge source, but you get to specify to which branch you want it to get merged using branch specified after colon.
+}
+
+
+gFetchAll () {
+	echo FYI: The 'pull' command is fetch+merge.
+	git fetch --all
+}
+
+gpulAll () {
+	#git pull --all #Note << that script won't merge any change to the local branch.
+	hub sync ## Note, << that script will automatically merge if no local commits are made to the branches thats changed on origin, yikes!!! Also, it notifies that local commits to that branch were made and thus didn't merge the branch from the origin, yikes!!
 }

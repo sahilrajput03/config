@@ -273,3 +273,13 @@ alias grep='grep --color=auto'
 searchTextInFilesRecursively(){
 	grep -r --exclude-dir={node_modules,.idea,.git} "$@" .
 }
+
+
+# heroku
+# PLEASE SET APP via `heroku_app=my_app`
+alias h_createProcfile='echo "web: npm start" > Procfile'
+alias ha='heroku apps'
+alias hl='heroku logs -a $heroku_app'
+alias hlo='heroku login'
+alias hre='heroku releases -a $heroku_app'
+alias hro='heroku rollback $@ -a $heroku_app'

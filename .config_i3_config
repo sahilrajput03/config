@@ -410,3 +410,8 @@ for_window [class="zoom " title="Chat"] floating enable
 # FOR SETTING VALUES in the ```for_window function``` in i3, one must use suggested options as i3 suggested in below message when I use wrong property in that:
 ##### for the property values to be passed one of below should be used to identify the window:
 # ERROR: CONFIG: Expected one of these tokens: 'class', 'instance', 'window_role', 'con_id', 'id', 'window_type', 'con_mark', 'title', 'urgent', 'workspace', 'machine', 'floating_from', 'tiling_from', 'tiling', 'floating', 'all', ']'
+#
+
+
+#### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
+bindsym $mod+period exec ~/Documents/github_repos/config/snippy

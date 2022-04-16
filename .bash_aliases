@@ -322,3 +322,23 @@ alias asteriskrv='sudo asterisk -rvvvv'
 alias cat.xmodPossibilities='cat /usr/share/X11/xkb/rules/base.lst'
 alias vi.xmod='sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf'
 alias vi.notes='vi /tmp/notes'
+
+# FROM POPOS'S OLD (TO BE RENEWED/RECYCLED)
+# alias fishbashrc_vi='vi ~/.config/fish/config.fish'
+# alias fishbashrc_cat='cat ~/.config/fish/config.fish'
+#
+# FYI (FOR FISH): . ~/.config/fish/config.fish
+
+# alias n='run_nautilus' # This does work fine now!!
+# alias sp='cd /c/Users/chetan/AppData/Roaming/code/User/snippets/' #vscode snipeets folder for windows :Todo: to bereplaced by linux's path.
+#
+
+alias rustbook='rustup doc --book'
+# I am not using nano editor for now
+alias backupNanorc='cp ~/.nanorc ~/my_bin/files/.nanorc'
+
+alias sshMyPc='ssh localhost'
+
+# Snippy (Use mod+. to launch snippy anytime, configured with i3)
+alias cd.snips='cd ~/Documents/github_repos/config/snips'
+
