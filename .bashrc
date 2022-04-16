@@ -31,7 +31,8 @@ export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
 export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs. Source: https://www.redhat.com/sysadmin/history-command
-export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:history:c"
+# export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll:history:c"
+# ^^ commented coz NOW I dont want to ignore ANYTHING FOR .history file.
 # Write every command to $HISTFILE on every run of command (don't loose your command history):
 # DEFAULT $HISTFILE is `~/.bash_history`.
 ### Append command history to $HISTFILE after each command:
@@ -84,6 +85,7 @@ function showpath_in_terminal(){
 # shopt -s expand_aliases
 # so shopt will expand your aliases in any shell script as well.
 [[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
+[[ -f $_home/.bash_git ]] && source $_home/.bash_git
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
 [[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets
 ##### Import environment variables from /etc/environment file on new bash session.

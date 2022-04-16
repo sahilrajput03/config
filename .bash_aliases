@@ -2,6 +2,20 @@
 
 # shopt -s expand_aliases
 
+##### THIS ALIAS IS HELPFUL TO MAKE OTHER ALIASES ACCESSIBLE VIA SUDO TOO, YIKES.
+# alias sudo='sudo '
+
+
+# alias yi='yarn init -y && create.gitignore && create.prettierrc.yaml'
+# alias ni='npm init -y && create.gitignore && create.prettierrc.yaml'
+# Refer ~/.gitconfig for understanding `git hubCreate`
+
+
+#SHOW SIZES OF DRIVES IN gigabytes
+alias df='df -BG'
+
+alias loginasroot='sudo -i'
+# source: Diff b/w su and sudo: https://tinyurl.com/ybdz9n9y
 alias pretty='prettier --write'
 # Usage: pretty myFile
 
@@ -145,6 +159,7 @@ alias dk='docker'
 # src: https://stackoverflow.com/a/8760728/10012446
 alias fresh='exec bash'
 alias vi.hosts='sudo nvim /etc/hosts'
+alias vi.git='nvim ~/.bash_git'
 alias h='history'
 # Reload history from $HISTFILE, i.e., `hr` will load all the commands that were made by all other shells running/closed at current moment: FYI: See `history --help`
 alias hr='history -r'
@@ -167,12 +182,25 @@ alias visudo='sudo EDITOR=nvim visudo'
 alias tree='tree -I node_modules'
 alias explorer='pcmanfm'
 alias fm='pcmanfm'
-alias paste_from_clipboard='xsel'
+
+# CLIPBOARD HACKS
+alias copyFileToClipboard='xclip -sel clip'
+alias pasteFromClipboard='xsel'
+alias pasteFromClipboard2='xclip -o'
 alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(date +%c).png"'
 # Source: https://unix.stackexchange.com/a/145134/504112
+
+####NERDY##NOTES####	COPY TO CLIPBOARD WITH: 
+######### WAY 0 (via piping)	######
+# echo SomeText | xclip -sel clip
+######### WAY 1
+# xclip pathToFile				######
+######### WAY 2					######
+# xclip -sel clip pathToFile 
+# WAY2: With Way2 be able to paste via ctrl+shift+v and right-click context
+# menus as well, src: https://opensource.com/article/19/7/xclip
+
 alias open-pdf='llpp'
-alias g='git'
-alias gd='git diff'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
 alias lsa='ls -a'
 alias ls='exa --color=auto'
@@ -213,7 +241,6 @@ alias vi.environment='sudo nvim /etc/environment'
 alias vi.bashrc='vi $_home/.bashrc'
 alias vi.history='vi $_home/.bash_history'
 alias vi.functions='vi $_home/.bash_functions'
-alias vi.gitconfig='vi $_home/.gitconfig'
 alias vi.profile='vi $_home/.profile'
 alias vi.nvim='vi $_home/nvim/init.vim'
 alias vi.thoughts='vi $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md'
@@ -291,3 +318,7 @@ alias deleteNestedCache="sudo find . -name '.cache' -type d -prune -exec rm -rf 
 
 # asterisk usage:
 alias asteriskrv='sudo asterisk -rvvvv'
+
+alias cat.xmodPossibilities='cat /usr/share/X11/xkb/rules/base.lst'
+alias vi.xmod='sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf'
+alias vi.notes='vi /tmp/notes'

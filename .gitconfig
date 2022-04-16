@@ -5,12 +5,39 @@
 	defaultBranch = main
 [push]
 	default = current
+	# From my popos's config:
+	# default = simple
 [pull]
 	rebase = false
 [core]
-	editor = vim
+	# Global ignore file
 	excludesfile = /home/array/.gitignore_global
+
+	editor = vim
+	### For setting vscode for editing files:
+	# editor = code --wait
+
+	# Usefule only in windows coz it prevents error prone eol conversions(when `autocrl=true`) from crlf to lf: https://stackoverflow.com/a/21046682/10012446
+	safecrlf = true
+	
+	# From docs: IF set set true, then eol will have CRLF line endings in your working directory and the repository has LF line endings.
+	autocrlf = false
+
 [alias]
+
+  edit = !nvim ~/.gitconfig
+
+  # hub related (these autocomplete too, yo!)
+  hubCreate = !hub create
+  hubBrowse = !hub browse
+  hubCopyUrl = !hub browse -c
+  hubGetUrl = !hub browse -u
+  # Hub Docs: https://hub.github.com/
+
+  unstage = reset
+  last = log -1 HEAD
+  lastFive = log -5 HEAD
+
   graph = log --all --graph --decorate --oneline
   aa = add --all #Note this is absolutely 100% same as ```git add .```, tested 100% ~Sahil.
   c = commit --verbose
@@ -19,6 +46,12 @@
   amend = commit --amend --verbose
   l = log --decorate --graph --oneline -20
   ll = log --decorate --graph --oneline
+  
+  #  My pop's old aliases
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
   sla = log --all --decorate --graph --oneline
   p = push
   pll = pull
@@ -48,5 +81,6 @@
   rbc = rebase --continue
   rbi = rebase -i
   rh = reset --hard
-  unstage = reset
   undo = revert
+[hub]
+	protocol = ssh

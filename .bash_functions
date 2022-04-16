@@ -3,8 +3,11 @@ alias bm=bashmon
 alias bmon=bashmon
 
 bashmon(){
-/usr/bin/nodemon -q -e sh -x "bash $@ || exit 0"
-# /usr/bin/nodemon -q -e sh -x "./$@|| exit 0"
+	nodemon -q -e sh -x "bash $@ || exit 0"
+	# nodemon -q -e sh -x "./$@|| exit 0"
+
+	# From popos's OLD:
+	# nodemon -q -e sh -x "bash $*"
 }
 
 mdcd(){
@@ -32,66 +35,10 @@ rustmon(){
 	/usr/bin/nodemon -q -e rs -x "rustc $* -o .binary && ./.binary"
 }
 
-
-# alias g='git' # This alias is there in .bashrc file as well.
-alias gl='git log --decorate --graph --oneline -10'
-alias gch='git checkout'
-alias gpul='git pull'
-alias gpus='git push'
-alias gcl='git clone'
-# Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
-alias gsh='git show'
-alias gpp='git pull; git push'
-alias garchive='git archive --format zip --output'
-# alias gl='git log'
-gac (){
-    echo + git add -A
-    git add -A
-
-    echo + git commit -m \'$@\'
-    git commit -m "$*" # gac life is amazing
-}
-
-# Usage: gacp life is super amazing. Usage: `gacps Added life to project.`
-gacp (){
-    echo + git add -A
-    git add -A
-
-    echo + git commit -m \'$@\'
-    git commit -m "$*"
-
-    echo + git push -u
-    git push -u
-
-}
-# gacp Silent: Tested: Works good: Usage: `gacps Added life to project.`
-gacps (){
-    git add . 1> /dev/null 2> /dev/null
-    git commit -m "$*" 1> /dev/null 2> /dev/null
-    git push -u 1> /dev/null 2> /dev/null
-}
-
 alias so='sizeof'
 sizeof (){
 	echo + du -sh $@
 	du -sh "$@"
-}
-
-gs (){
-	echo + git status $@
-	git status $@
-}
-gi (){
-	echo + git init $@
-	git init $@
-}
-gb (){
-	echo + git branch $@
-	git branch $@
-}
-ga (){
-	echo + git add .
-	git add .
 }
 
 #source: https://unix.stackexchange.com/a/438712
@@ -183,6 +130,9 @@ function backupConfigFiles {
 
 	\cp $_home/.bash_aliases $backup_dir/
 	echo "Backup of ~/.bash_aliases file succeeded."
+
+	\cp $_home/.bash_git $backup_dir/
+	echo "Backup of ~/.bash_git file succeeded."
 
 	\cp $_home/.bash_completion $backup_dir/
 	echo "Backup of ~/.bash_completion file succeeded."
