@@ -335,10 +335,12 @@ alias vi.notes='vi /tmp/notes'
 
 alias rustbook='rustup doc --book'
 # I am not using nano editor for now
-alias backupNanorc='cp ~/.nanorc ~/my_bin/files/.nanorc'
+# alias backupNanorc='cp ~/.nanorc ~/my_bin/files/.nanorc'
 
 alias sshMyPc='ssh localhost'
 
 # Snippy (Use mod+. to launch snippy anytime, configured with i3)
 alias cd.snips='cd ~/Documents/github_repos/config/snips'
 
+# Setup second display
+alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
