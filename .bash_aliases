@@ -125,7 +125,8 @@ autoCompleteScripts(){
 	# My custom made autocomplete script
 	# complete -W "$(kc get po | tail -n+2 | awk '{print $1}')" kes
 	# ^^ this is actually faulty coz it doesn't fetch pods dynamically but caches at the time of start of the bash session.
-	source /home/array/Documents/github_repos/config/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
+	# source /home/array/Documents/github_repos/config/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
+	source /home/array/scripts-in-use/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
 }
 
 # Debug only:
@@ -171,7 +172,9 @@ alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(dat
 # Source: https://unix.stackexchange.com/a/145134/504112
 alias open-pdf='llpp'
 alias g='git'
+alias gd='git diff'
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
+alias lsa='ls -a'
 alias ls='exa --color=auto'
 alias inw='inotifywait'
 alias dc='docker-compose'
