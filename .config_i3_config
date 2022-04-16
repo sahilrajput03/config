@@ -405,6 +405,8 @@ bindsym Print exec /usr/bin/flameshot gui
 # LEARNING: I got above properties from running `xprop` on the "zoom chat" window and then used them in i3 as below.
 # IT WORKED GOOD!
 for_window [class="zoom " title="Chat"] floating enable
+# Below for gnome-characters
+for_window [class="Characters"] floating enable
 # FETCHING VALUES FROM `xprop`
 # Source: https://www.reddit.com/r/i3wm/comments/3h94t9/how_to_find_a_name_of_a_program_to_use_for/
 # FOR SETTING VALUES in the ```for_window function``` in i3, one must use suggested options as i3 suggested in below message when I use wrong property in that:
@@ -413,5 +415,16 @@ for_window [class="zoom " title="Chat"] floating enable
 #
 
 
+# Below for copyq (to make it float and add a hotkey)
+for_window [class="copyq" instance="copyq"] floating enable
+# bindsym $mod+comma exec "/usr/bin/copyq -e 'toggle()'"
+# bindsym $mod+comma exec "/usr/bin/copyq -e 'toggle()'"
+# bindsym $mod+comma exec copyq toggle
+# bindsym $mod+comma exec /usr/bin/copyq -e "toggle()"
+# ISSUE BEING RESOLVED ON https://github.com/hluk/CopyQ/issues/1886
+
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
+
+# # TESTING # #
+bindsym $mod+comma exec "notify-send Hello, i3"

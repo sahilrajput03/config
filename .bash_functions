@@ -286,3 +286,18 @@ alias hl='heroku logs -a $heroku_app'
 alias hlo='heroku login'
 alias hre='heroku releases -a $heroku_app'
 alias hro='heroku rollback $@ -a $heroku_app'
+
+
+# .eslintrc.js
+create.eslintrc.jsExpressjs () {
+	cp ~/Documents/github_repos/config/files/eslint-config-express/.eslintrc.js .
+}
+
+create.eslitrc.jsReactjs () {
+	cp ~/Documents/github_repos/config/files/eslint-config-react/.eslintrc.js .
+}
+
+# jsconfig.json
+createJsconfig.json () {
+	cp ~/my_bin/files/jsconfig.json .
+}
