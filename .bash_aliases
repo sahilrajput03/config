@@ -167,8 +167,21 @@ alias lcat='lolcat'
 # Make watch command to recognise all aliases:
 # src: https://unix.stackexchange.com/a/25329/504112
 alias watch='watch '
+
+# -----------
+# TAGS: #libvirt, #kvm, #qemu
 alias virsh='sudo virsh'
+alias startUbuntu='virsh start ubuntu20.04'
+alias startDebian='virsh start debian11'
+alias shutdownDebian='virsh shutdown debian11'
+alias shutdownUbuntu='virsh shutdown ubuntu20.04'
 alias virt-manager='sudo virt-manager'
+# ssh to my machines (using ssh profiles)
+alias sshDeb='ssh deb'
+alias sshDeb='ssh ubu'
+#-------------
+
+echo "HERE>>>>>virt-manager"
 alias vi.aliases='vi ~/.bash_aliases'
 alias vi.tmux='vi $_home/.tmux.conf'
 alias sha='sha1sum'
@@ -341,6 +354,15 @@ alias sshMyPc='ssh localhost'
 
 # Snippy (Use mod+. to launch snippy anytime, configured with i3)
 alias cd.snips='cd ~/Documents/github_repos/config/snips'
+alias cd.sr='cd ~/Documents/github_repos/sahilrajput03/'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
+
+alias sc='sudo systemctl'
+complete -F _complete_alias sc
+
+alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
+
+# src: https://stackoverflow.com/a/2990533/10012446
+echoerr() { echo "$@" 1>&2; }

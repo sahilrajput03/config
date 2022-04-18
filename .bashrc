@@ -10,8 +10,16 @@
 # I have sourced this file in root shell's .bashrc file as well i.e., `/root/.bashrc` ~Sahil. And that file is invoked when we login to root user i.e., `su`. It'll load all your aliases and functions in root shell as well that you enjoy in your non-root shells.
 
 ### Variables
+# --------
 # Used when encrypting (list of public keys separated by comma)
 export SOPS_AGE_RECIPIENTS="age1g6g3ych2qzwzqgn3kj4hzpwwhhsqw47jmycy9vhf5j8d8jq483usdl2qgl"
+# AGE FILE FOR ABOBE PUBLIC KEY @ ~/sops/age/keys.txt, and ALSO saved to keepass, yo!
+# USED @ sahilrajput03/telegram-bot-requests, sahilrajput03/devopswithkubernetes
+# ENCRYPTION:
+# FOR ENV FILES: sops -e .env > enc.env
+# FOR NAMED ENV FILES: sops -e secrets.env > secrets.enc.env
+# FOR YAML FILES: sops -e secret.yaml > secret.enc.yaml
+# -------
 # Original from archos.
 # export PS1='[\u@\h \W]\$ ' 
 # ~Sahil: For colouring the username and hostname in cli: Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)

@@ -13,12 +13,12 @@
 	# Global ignore file
 	excludesfile = /home/array/.gitignore_global
 
+	# Editing files
 	editor = vim
-	### For setting vscode for editing files:
 	# editor = code --wait
 
 	# Usefule only in windows coz it prevents error prone eol conversions(when `autocrl=true`) from crlf to lf: https://stackoverflow.com/a/21046682/10012446
-	safecrlf = true
+	safecrlf = false
 	
 	# From docs: IF set set true, then eol will have CRLF line endings in your working directory and the repository has LF line endings.
 	autocrlf = false

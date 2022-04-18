@@ -301,3 +301,12 @@ create.eslitrc.jsReactjs () {
 createJsconfig.json () {
 	cp ~/my_bin/files/jsconfig.json .
 }
+
+configSearch () {
+	# -i option for case insensitive matches
+	# -n for show line numbers
+	grep -inH "$@" ~/.bashrc
+	grep -inH "$@" ~/.bash_aliases
+	grep -inH "$@" ~/.bash_git
+	grep -inH "$@" ~/.bash_functions
+}
