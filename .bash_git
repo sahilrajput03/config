@@ -4,9 +4,18 @@ alias vi.gitconfig='vi ~/.gitconfig'
 
 # ALIASES
 alias g='git'
-alias gcr='git hubCreate'
+
+## from file ~/.gitconfig:
+alias gcr='git create'
+alias gbr='git browse'
+alias gcu='git copyUrl'
+alias ggu='git getUrl'
+
 alias gco='git commit -m'
 alias gch='git checkout'
+# Add autocompletion for gch <TAB> command, yo
+complete -F _complete_alias gch
+
 alias gd='git diff'
 # alias gl='git log'
 alias gl='git log --decorate --graph --oneline -10'

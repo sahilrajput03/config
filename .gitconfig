@@ -28,10 +28,10 @@
   edit = !nvim ~/.gitconfig
 
   # hub related (these autocomplete too, yo!)
-  hubCreate = !hub create
-  hubBrowse = !hub browse
-  hubCopyUrl = !hub browse -c
-  hubGetUrl = !hub browse -u
+  create = !hub create
+  browse = !hub browse
+  copyUrl = !hub browse -c
+  getUrl = !hub browse -u
   # Hub Docs: https://hub.github.com/
 
   unstage = reset

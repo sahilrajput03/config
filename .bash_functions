@@ -283,9 +283,25 @@ searchTextInFilesRecursively(){
 alias h_createProcfile='echo "web: npm start" > Procfile'
 alias ha='heroku apps'
 alias hl='heroku logs -a $heroku_app'
+alias hlt='heroku logs --tail'
 alias hlo='heroku login'
 alias hre='heroku releases -a $heroku_app'
 alias hro='heroku rollback $@ -a $heroku_app'
+
+hinfo(){
+	type h_createProcfile
+	type ha
+	type hl
+	type hlt
+	echo "# USAGE: hro some-version"
+	type hlo
+	type hre
+	type hro
+	echo "
+# LEARN: To set nodejs as buildpacks for heroku -
+heroku buildpacks:set heroku/nodejs
+# FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
+}
 
 
 # .eslintrc.js

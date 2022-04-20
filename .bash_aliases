@@ -168,20 +168,36 @@ alias lcat='lolcat'
 # src: https://unix.stackexchange.com/a/25329/504112
 alias watch='watch '
 
-# -----------
+# ----------- kvm  ------------
+# ----------- qemu ------------
 # TAGS: #libvirt, #kvm, #qemu
 alias virsh='sudo virsh'
+
 alias startUbuntu='virsh start ubuntu20.04'
 alias startDebian='virsh start debian11'
+
 alias shutdownDebian='virsh shutdown debian11'
 alias shutdownUbuntu='virsh shutdown ubuntu20.04'
-alias virt-manager='sudo virt-manager'
+
+alias virtManager='sudo virt-manager'
 # ssh to my machines (using ssh profiles)
 alias sshDeb='ssh deb'
-alias sshDeb='ssh ubu'
-#-------------
+alias sshUbu='ssh ubu'
+kvminfo(){
+	type virtManager
 
-echo "HERE>>>>>virt-manager"
+	type startUbuntu
+	type startDebian
+
+	type shutdownDebian
+	type shutdownUbuntu
+
+	type sshDeb
+	type sshUbu
+}
+#----------------------------
+#----------------------------
+
 alias vi.aliases='vi ~/.bash_aliases'
 alias vi.tmux='vi $_home/.tmux.conf'
 alias sha='sha1sum'
@@ -273,6 +289,8 @@ alias ct='cargo watch -c -x test'
 alias co='code .'
 alias s='npm start'
 alias nr='npm run'
+# autocomplete `nr`
+complete -F _complete_alias nr
 alias myip='ip address show'
 alias nm='nodemon'
 # nma: This is useful when you want to use debugger (i.e., runtime code control with vscode).
