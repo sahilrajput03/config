@@ -43,7 +43,7 @@ alias kns='kubens'
 
 alias bz='booz'
 alias bzc='clear; booz'
-alias mc='vi $_home/scripts-in-use/td/must-can'
+alias mc='vi $_home/scripts/td/must-can'
 
 alias kc='kubectl'
 # ---
@@ -140,7 +140,7 @@ autoCompleteScripts(){
 	# complete -W "$(kc get po | tail -n+2 | awk '{print $1}')" kes
 	# ^^ this is actually faulty coz it doesn't fetch pods dynamically but caches at the time of start of the bash session.
 	# source /home/array/Documents/github_repos/config/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
-	source /home/array/scripts-in-use/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
+	source /home/array/scripts/autocomplte-tut/eg-kes-dynamic/kesCompletion.sh
 }
 
 # Debug only:
@@ -274,7 +274,7 @@ alias vi.profile='vi $_home/.profile'
 alias vi.nvim='vi $_home/nvim/init.vim'
 alias vi.thoughts='vi $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md'
 alias vi.fstab='sudo vi /etc/fstab'
-alias vi.pomodoro='vi $_home/scripts-in-use/pomodoro/pomodoro.sh'
+alias vi.pomodoro='vi $_home/scripts/pomodoro/pomodoro.sh'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
 alias vi.i3='vi $_home/.config/i3/config'
 alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*' 
@@ -298,11 +298,11 @@ alias nma='nodemon --inspect'
 # nmas: This is useful when you want to use debugger from the very first line of execution (i.e., runtime code control with vscode).
 alias nmas='nodemon --inspect-brk'
 alias nrd='npm run dev'
-alias pomodoro='/home/array/scripts-in-use/pomodoro/pomodoro.sh'
+alias pomodoro='/home/array/scripts/pomodoro/pomodoro.sh'
 alias xrandr.default='xrandr -s 0'
 alias jn='jupyter notebook'
 alias d='npm run dev'
-alias bp='paplay ~/scripts-in-use/beep-sound-8333.wav'
+alias bp='paplay ~/scripts/beep-sound-8333.wav'
 alias open='xdg-open'
 alias o='xdg-open'
 alias tx='tmux'
@@ -353,6 +353,7 @@ alias asteriskrv='sudo asterisk -rvvvv'
 alias cat.xmodPossibilities='cat /usr/share/X11/xkb/rules/base.lst'
 alias vi.xmod='sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf'
 alias vi.notes='vi /tmp/notes'
+alias vi.wi='vi ~/scripts/wi'
 
 # FROM POPOS'S OLD (TO BE RENEWED/RECYCLED)
 # alias fishbashrc_vi='vi ~/.config/fish/config.fish'

@@ -25,6 +25,10 @@ Bypass cache
 		return
 	fi
 
+	#DEBUG: (NOT USING THIS ANYWHERE THOUGH):
+	# [ "${USER:0:1}" = "a" ]; echo $?
+	# we are checking that value starts with a above.
+
 	if ! [ -d /tmp/wi ]; then
 		# Remove if its a file coz -d checks only if its a directory.
 		rm -f /tmp/wi 
@@ -41,7 +45,7 @@ Bypass cache
 		echo "================"
 		cat /tmp/wi/$1.txt
 	else
-		echo ">>> FRESH DOWNLOAD <<<"
+		echo ">>> FETCHING FRESH <<<"
 		echo "======================"
 	
 		URL="https://raw.githubusercontent.com/sahilrajput03/sahilrajput03/master/wi"

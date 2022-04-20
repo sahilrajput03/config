@@ -99,8 +99,8 @@ function backupConfigFiles {
 	\cp $_home/.vim_bash_env $backup_dir/
 	echo "Backup of ~/.vim_bash_env succeeded."
 
-	\cp -r $_home/scripts-in-use $backup_dir/
-	echo "Backup of ~/scripts-in-use directory succeeded."
+	\cp -r $_home/scripts $backup_dir/
+	echo "Backup of ~/scripts directory succeeded."
 
 	\cp $_home/.tmux.conf $backup_dir/
 	echo "Backup of ~/.tmux.conf file succeeded."

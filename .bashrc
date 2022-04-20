@@ -95,7 +95,7 @@ function showpath_in_terminal(){
 [[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
 [[ -f $_home/.bash_git ]] && source $_home/.bash_git
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
-[[ -f $_home/scripts-in-use/wi ]] && source $_home/scripts-in-use/wi
+[[ -f $_home/scripts/wi ]] && source $_home/scripts/wi
 [[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets
 ##### Import environment variables from /etc/environment file on new bash session.
 # This helps to reload environment variables from /etc/environment file to be loaded without logout->login event.
@@ -227,11 +227,11 @@ booz(){
 	echo -ne $WHITE
 	echo -n "Focussing "
 	# Any thing that starts with `- !` in todo list and SHOW ONLY ONE OF THEM.
-	grep '\- !' $_home/scripts-in-use/td/must-can | shuf -n1
+	grep '\- !' $_home/scripts/td/must-can | shuf -n1
 
 	###### TASK:: GET TODO LIST:
 	echo # Need emtpy line space: INTENTIONAL:
-	$_home/scripts-in-use/td/s.sh
+	$_home/scripts/td/s.sh
 }
 # Toggle comment/uncommment to enable/disable booz
 booz
