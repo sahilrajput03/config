@@ -289,6 +289,7 @@ alias hre='heroku releases -a $heroku_app'
 alias hro='heroku rollback $@ -a $heroku_app'
 
 hinfo(){
+	# src: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5
 	type h_createProcfile
 	type ha
 	type hl
@@ -325,4 +326,60 @@ configSearch () {
 	grep -inH "$@" ~/.bash_aliases
 	grep -inH "$@" ~/.bash_git
 	grep -inH "$@" ~/.bash_functions
+}
+
+wi () {
+	_help () {
+		echo "Help:
+====
+  You can get help this help by either of below commands:
+  $ ti
+  $ ti -h
+  $ ti --help
+
+Usage:
+======
+  You can use ti with any commands like wget, tar or more.
+  $ ti wget
+  $ ti tar
+
+Bypass cache
+============
+  By providing - in the end of the command
+  $ ti wget -
+"
+}
+	if [ -z $1 ] || [ $1 = "-h" ] || [ $1 = "--help" ]; then
+		_help
+		return
+	fi
+
+	if ! [ -d /tmp/wi ]; then
+		# Remove if its a file coz -d checks only if its a directory.
+		rm -f /tmp/wi 
+		mkdir /tmp/wi
+	fi
+
+	# DEBUGGING:
+	# Usage: `wi tar -`
+	# [ "$2" = "-" ] && echo provided a dash..
+
+	# Use cache if file already exists but skip if second argument is `-` (to force refetch):
+	if [ -f "/tmp/wi/$1.txt" ] && [ "$2" != "-" ]; then
+		echo "->>> USING CACHE"
+		echo "================"
+		cat /tmp/wi/$1.txt
+	else
+		echo ">>> FRESH DOWNLOAD <<<"
+		echo "======================"
+	
+		URL="https://raw.githubusercontent.com/sahilrajput03/sahilrajput03/master/wi"
+		wget --quiet "$URL/$1.txt" -O "/tmp/wi/$1.txt" && cat "/tmp/wi/$1.txt"
+
+		# LEARN wget
+		# --quiet
+		# -nv means no-verbose bcoz default is verbose on.
+		# --debug to show debugging via wget
+		# -O means overwrite existing file if already present bcoz by default it append incremental number to the output file name if the file is already present.
+	fi
 }
