@@ -14,7 +14,7 @@ I replied on chaging the default port used when we use systemctl to start or res
 bind-addr: 127.0.0.1:8083
 # bind-addr: 192.168.18.3:8083			# USE THIS TO SHARE OVER NETWORK.
 auth: password
-password: 9de9bb96df2c98d1a7074879
+password: YOUR_PASSWORD_HERE
 cert: false
 ```
 
