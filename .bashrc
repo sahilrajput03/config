@@ -206,12 +206,10 @@ thought(){
 	echo -ne $CYAN$BOLD
 	# ce "Thought:" 6
 	echo -n "Thought - "
-
-	while [[ -z $text ]] ; do
-		text=$(shuf $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md -n1 | grep '.')
-	# 	# With grep '.' I am implying don't output empty line output if the output is empty.
-	done
-	echo $text
+	cat $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md | grep -v -e '^$' | shuf -n1
+	# GREP TIP:
+	# grep -v -e '^$' my_file	# ENSURES THAT ALL EMPTY LINES ARE REMOVED.
+	# grep '.' my_file			# I CAN IMPLY THAT DON'T OUTPUT EMPTY LINE OUTPUT IF THE OUTPUT IS EMPTY.
 }
 
 booz(){
