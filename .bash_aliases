@@ -20,6 +20,7 @@ alias pretty='prettier --write'
 # Usage: pretty myFile
 
 # ------------------------ >>>> cloud aliases >>>>> --------------
+alias watchFluxLogs='flux logs -f'
 # ---
 # manual yaml checking
 yqDeploymentContainerNames() {
@@ -354,6 +355,8 @@ alias cat.xmodPossibilities='cat /usr/share/X11/xkb/rules/base.lst'
 alias vi.xmod='sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf'
 alias vi.notes='vi /tmp/notes'
 alias vi.wi='vi ~/scripts/wi'
+alias pw='pwd'
+alias cpw='pwd | xclip -sel clip'
 
 # FROM POPOS'S OLD (TO BE RENEWED/RECYCLED)
 # alias fishbashrc_vi='vi ~/.config/fish/config.fish'

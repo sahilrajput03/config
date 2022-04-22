@@ -1,0 +1,22 @@
+# Usage: 
+# timer 0 Tea time # This will set 0 seconds timer.
+# source: https://unix.stackexchange.com/a/411094/504112
+tm () {
+	i=$1
+	timer=$1
+	while [ $i -gt 0 ]; 
+	do 
+	  # printf "$i seconds remaining       " && printf '\r\033[1B'
+	  echo -ne "\r$i seconds remaining "
+	  i=`expr $i - 1`
+	  sleep 1
+	done
+	echo
+
+	# We're removing first argument from the argument list so we can pass rest to message parameter to notify-send binary.
+	shift 1
+
+	# $* gives all arguments in single string.
+	# Timeout (-t) is set to 15 minutes i.e., 900*1000
+	notify-send -t 900000 "Timer ($timer seconds)" "$*"
+}

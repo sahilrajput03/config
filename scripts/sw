@@ -1,0 +1,9 @@
+sw (){
+# Stopwatch
+	s=0
+	while [ true ]; do
+		echo -ne "\r$s Seconds "
+		sleep 1
+		s=$((s+1))
+	done
+}

@@ -96,7 +96,9 @@ function showpath_in_terminal(){
 [[ -f $_home/.bash_git ]] && source $_home/.bash_git
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
 [[ -f $_home/scripts/wi ]] && source $_home/scripts/wi
-[[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets
+[[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets.env ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets.env
+[ -f ~/scripts/sw ] && source ~/scripts/sw
+[ -f ~/scripts/tm ] && source ~/scripts/tm
 ##### Import environment variables from /etc/environment file on new bash session.
 # This helps to reload environment variables from /etc/environment file to be loaded without logout->login event.
 # FYI: Its alwayt good to define variables for bash or any environment to be interpreted by cli program

@@ -27,3 +27,6 @@ Can do
 - Write a autocomplete function or script with which you can do like: `kes <TAB>` for actual execution of `ke fetcher-dep-55d666d454-96qv4 -- sh`.
 - Read about `nc` network utility: https://linuxize.com/post/netcat-nc-command-with-examples/
 - Read what got changed tailwind so awesome by Adam Wathan(src: official site -> tailwindcss.com): https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
+- Checkout gitpod based this project from kentcdodds: https://github.com/kentcdodds/miami-demo
+- Read Fluxcd's FAQ: https://fluxcd.io/legacy/flux/faq/
+- Fluxcd Garbage collector: https://fluxcd.io/legacy/flux/references/garbagecollection/
