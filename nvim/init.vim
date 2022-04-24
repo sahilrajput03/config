@@ -551,8 +551,36 @@ nnoremap <C-h> :nohlsearch<cr>
 " nnoremap <C-f> :sus<cr>
 
 " Instead I am using my old ,p and ,P to get copy register contents.
+" Why thes? story: You copied something, then cut something, but you want get
+" what you copied earlier but thats now possible now, coz you cut's content is
+" in default copy register.
+" But why 0 register?? ~Sahil.
+" Ans. Try yanking anything and try pasting with p and "0p, you'll notice that
+" both the registers will have your yanked text. And anytime you delete or cut
+" anything that'll copy to default register(p) but won't edit 0 register. So
+" thats why this "0p works!!
 nnoremap ,p "0p
 nnoremap ,P "0P
+"^ first n means normal mode, then nore means non recursive.
+"vim is a modal text editor. Read more about it @ https://stackoverflow.com/a/3776182/10012446
+
+" Make ,p and ,P bindings work in visual mode as well, ROCKS, WORKS AMAZING!
+xnoremap ,p "0p
+xnoremap ,P "0P
+" vim is modal text editor, and it rocks,, read about different type of
+" bindings above @ ^^^^^ stackoverflow question. Yo!
+
+" map p to "0p ()
+" nnoremap p "0p
+
+"Map x to simply delete i.e., don't put it to default clipboard
+"register but use _ register
+" nnoremap x "_x
+
+" Map d to simply delete (not cut), so now we can use x to use cut
+" functionality thogh. Yikes!
+" nnoremap d "_d
+" what is "_ in above??  AWESOME READ @ https://stackoverflow.com/a/20922502/10012446
 
 " Jump to start and end of line using the home row keys ~SAHIL ~SUPERB FROM
 " JONHOO. #h and l
@@ -849,3 +877,4 @@ endfunction
 " can fit in real), yikes!
 set linebreak
 " src: https://stackoverflow.com/a/19624717/10012446
+

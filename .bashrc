@@ -11,15 +11,6 @@
 
 ### Variables
 # --------
-# Used when encrypting (list of public keys separated by comma)
-export SOPS_AGE_RECIPIENTS="age1g6g3ych2qzwzqgn3kj4hzpwwhhsqw47jmycy9vhf5j8d8jq483usdl2qgl"
-# AGE FILE FOR ABOBE PUBLIC KEY @ ~/sops/age/keys.txt, and ALSO saved to keepass, yo!
-# USED @ sahilrajput03/telegram-bot-requests, sahilrajput03/devopswithkubernetes
-# ENCRYPTION:
-# FOR ENV FILES: sops -e .env > enc.env
-# FOR NAMED ENV FILES: sops -e secrets.env > secrets.enc.env
-# FOR YAML FILES: sops -e secret.yaml > secret.enc.yaml
-# -------
 # Original from archos.
 # export PS1='[\u@\h \W]\$ ' 
 # ~Sahil: For colouring the username and hostname in cli: Source: https://askubuntu.com/a/123306/702911 (simply direct copy paste)
@@ -96,7 +87,27 @@ function showpath_in_terminal(){
 [[ -f $_home/.bash_git ]] && source $_home/.bash_git
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
 [[ -f $_home/scripts/wi ]] && source $_home/scripts/wi
+
+####### for kubernetes vvvv ####
+# Used when encrypting (list of public keys separated by comma)
+export SOPS_AGE_RECIPIENTS="age1g6g3ych2qzwzqgn3kj4hzpwwhhsqw47jmycy9vhf5j8d8jq483usdl2qgl"
+# AGE FILE FOR ABOBE PUBLIC KEY @ ~/sops/age/age.agekey, and ALSO saved to keepass, yo!
+# USED @ sahilrajput03/telegram-bot-requests, sahilrajput03/devopswithkubernetes
+# -------
+export SOPS_AGE_KEY_FILE=~/sops/age/age.agekey # I RENAMED key.txt to age.agekey
+# Why not wrap with single or double quotes? Source: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-bash.md#never-use-quotes-around-possble-exapansions-coz-it-prevents-that
 [[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets.env ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets.env
+####### for kubernetes ^^^^ ####
+
+learnSops () {
+echo "
+# ENCRYPTION:
+# FOR ENV FILES: sops -e .env > enc.env
+# FOR NAMED ENV FILES: sops -e secrets.env > secrets.enc.env
+# FOR YAML FILES: sops -e secret.yaml > secret.enc.yaml
+"
+}
+
 [ -f ~/scripts/sw ] && source ~/scripts/sw
 [ -f ~/scripts/tm ] && source ~/scripts/tm
 ##### Import environment variables from /etc/environment file on new bash session.
