@@ -65,6 +65,8 @@
         // Our .env file is loaded simply (no need of cross-env), also the terminal would pick the values of `.env` file once you attach the debugger. Yikes!
       },
       {
+        // FYI: ~Sahil, I have put belo configuration in my settings.json file so I don't neet to put this manually in any project though.
+        // BUT ^^ Since the remote root could be different so its better recommendation to have project's own launch.json file so it won't mess with other globally editing practises and workdir is mostly project dependent.
         "name": "Docker: AutoAttacher to Node ~Sahil WORKS WITH NODEMON VERY WELL with same commands we used without docker.",
         "type": "node",
         "request": "attach",
