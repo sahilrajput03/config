@@ -1,5 +1,6 @@
 ### Aliases:
 
+alias p3='python3'
 # shopt -s expand_aliases
 
 ##### THIS ALIAS IS HELPFUL TO MAKE OTHER ALIASES ACCESSIBLE VIA SUDO TOO, YIKES.
@@ -258,7 +259,7 @@ alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
 alias grc='cd $_home/Documents/github_repos/config'
 alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
 alias ~='cd ~'
-alias mb='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
+alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
 alias v='nvim'
@@ -377,6 +378,7 @@ alias sshMyPc='ssh localhost'
 # Snippy (Use mod+. to launch snippy anytime, configured with i3)
 alias cd.snips='cd ~/Documents/github_repos/config/snips'
 alias cd.sr='cd ~/Documents/github_repos/sahilrajput03/'
+alias cd.wi='cd ~/Documents/github_repos/sahilrajput03/wi/'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"

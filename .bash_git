@@ -22,6 +22,8 @@ alias gl='git log --decorate --graph --oneline -10'
 alias gch='git checkout'
 alias gpul='git pull'
 alias gpus='git push'
+# gpulpus
+alias gpulpus='git pull; git push'
 alias gcl='git clone'
 alias gsh='git show'
 alias gpp='git pull; git push'

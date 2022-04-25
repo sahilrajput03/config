@@ -158,6 +158,10 @@ function backupConfigFiles {
 	cd - 			# Return to previous directory.
 }
 
+# Vscode special
+alias backup.vsCodeSettings='cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias whatVscodeSettingsChanged='diff ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+
 function bkpfstab {
 	cp /etc/fstab $backup_dir
 }
@@ -274,7 +278,7 @@ alias grep='grep --color=auto'
 
 # Search text in files recursively (src: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-bash.md)
 searchTextInFilesRecursively(){
-	grep -r --exclude-dir={node_modules,.idea,.git} "$@" .
+	grep -r --exclude-dir={node_modules,.idea,.git} --exclude={package-lock.json,yarn.lock,yarn-error.log} "$@" .
 }
 
 
