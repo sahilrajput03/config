@@ -269,11 +269,23 @@ complete -F _docker dk
 
 
 # Read todo.txt file if present in directory:
-if [ -f "todo.txt" ] ; then
-	# display its contents
-	cat todo.txt
-fi
+readTodoFile () {
+	if [ -f "todo.txt" ] ; then
+		# display its contents
+		cat todo.txt
+	fi
+}
 
+# RUN BY DEFAULT
+readTodoFile
+
+nvmUse () {
+	if [ -f ".nvmrc" ]; then
+		nvm use
+	fi
+}
+# I am not sure if running nvmUse on terminal launch is a good idea or not, so i am keeping it pending. 
+# nvmUse
 
 # cd /home/array/Documents/github_repos/devopswithkubernetes
 #
@@ -283,10 +295,16 @@ function cd {
     # actually change the directory with all args passed to the function
     builtin cd "$@"
     # if there's a regular file named "todo.txt"...
-    if [ -f "todo.txt" ] ; then
-        # display its contents
-        cat todo.txt
-    fi
+
+	readTodoFile
+	nvmUse
 }
 
 alias lens='/usr/share/lens/lens'
+
+# FOR MY SSL CERT (www.fixedlife.ml, www.servicelife.ml, www.lostlife.ml):
+cert=/etc/letsencrypt/live/www.fixedlife.ml/fullchain.pem
+key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
+# Now you may browse: https://www.fixedlife.ml/
+# using below command and ssl should work fine!
+# sudo serve -l 443 --ssl-cert $cert --ssl-key $key

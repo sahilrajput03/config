@@ -390,3 +390,6 @@ alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
 
 # src: https://stackoverflow.com/a/2990533/10012446
 echoerr() { echo "$@" 1>&2; }
+
+# Generate ssl certificate
+alias certbotGenerate='sudo certbot certonly --standalone'

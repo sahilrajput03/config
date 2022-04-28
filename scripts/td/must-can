@@ -13,18 +13,17 @@ Must do
 - MAKE A PIPELINE TO DEPLOY ALL YOUR PROJECTS for all the domains in a single cluster! Make a cluster on your rasberry pi and host all your applications there.
 - Do cnfc's kubernetes certification, told by Vyom Yadav
 - Do use firebase's db usage example.
-- MAKE THIS TODO TO SHOW UP ON ONLY 4TH TIME OF EVERY BASH OPENING.(HELP: YOU TRACT THE OPENING COUNT IN A FILE THOUGH!)
 - Watch machine learning- pratham prasoon and friends: https://www.youtube.com/watch?v=ns2sFsF91gs
 // this is a comment.
 // - Figma's todo in learn-figma file
 // - missing-semester L5
+// - Make the login flow diagram for login process you used via the jwt token in figma in the fso course and save the offline file to github repo i.e, figma_files.
 -------------
 Can do
 - Read The psychology of money book with ShiftReader, wow!!
 - Blockchain course from tekipeps
 - Solidity course from tekipeps
 - https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial
-- Write a autocomplete function or script with which you can do like: `kes <TAB>` for actual execution of `ke fetcher-dep-55d666d454-96qv4 -- sh`.
 - Read about `nc` network utility: https://linuxize.com/post/netcat-nc-command-with-examples/
 - Read what got changed tailwind so awesome by Adam Wathan(src: official site -> tailwindcss.com): https://adamwathan.me/css-utility-classes-and-separation-of-concerns/
 - Checkout gitpod based this project from kentcdodds: https://github.com/kentcdodds/miami-demo

@@ -4,6 +4,7 @@ alias vi.gitconfig='vi ~/.gitconfig'
 
 # ALIASES
 alias g='git'
+complete -F _complete_alias g
 
 ## from file ~/.gitconfig:
 alias gcr='git create'

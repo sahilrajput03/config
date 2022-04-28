@@ -387,3 +387,10 @@ Bypass cache
 		# -O means overwrite existing file if already present bcoz by default it append incremental number to the output file name if the file is already present.
 	fi
 }
+
+
+cmon () {
+	t=${*%??}
+	# nodemon -q -e c -x "gcc $* -o binary; ./binary"
+	nodemon -q -e c -x "gcc $* -o binary && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
+}
