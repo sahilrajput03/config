@@ -6,6 +6,14 @@
 " :h lsp
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
 "..CODE STARTS HERE..
+"
+"
+
+" ------- ALERT ALERT ALERT ALERT ALERT ALERT -------
+" WHILE INSTALLING ON SOME OTHER SYSTEM, you may need to copy nvim directory
+" to ~/.config directory instead of ~ directory to make it work and simply
+" :PlugInstall should work !!
+
 
 " Set ctrl+/ to comment code simply
 " Commenting using `c+/` hotkey. Src: https://github.com/tpope/vim-commentary/issues/36#issuecomment-60329227
