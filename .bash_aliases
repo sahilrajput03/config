@@ -393,3 +393,5 @@ echoerr() { echo "$@" 1>&2; }
 
 # Generate ssl certificate
 alias certbotGenerate='sudo certbot certonly --standalone'
+
+alias vi.ssh='vi ~/.ssh/config'

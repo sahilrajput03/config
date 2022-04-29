@@ -58,8 +58,6 @@ set clipboard+=unnamedplus
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 
 
-"Setting background color, source: https://stackoverflow.com/a/1117532/10012446
-highlight Normal ctermfg=grey ctermbg=black
 
 let mapleader = "\<Space>"
 
@@ -729,6 +727,14 @@ highlight Normal ctermfg=grey ctermbg=black
 
 " Set vim bracket highlighting colors, ~Sahil: Src: https://stackoverflow.com/a/10746829/10012446
 hi MatchParen cterm=none ctermbg=green ctermfg=blue
+
+"Setting background color, source: https://stackoverflow.com/a/1117532/10012446
+hi Normal ctermfg=grey ctermbg=black
+" Hint: try changing ctrembg to red and reload config to see what it does ~Sahil.
+
+" Using this will allow you to see selcted text in color even in ubuntu-server
+" like operating system.
+hi Visual cterm=reverse ctermbg=NONE
 
 " This disables spellbad highlights from nvimlsp, you can get help on this
 " via: ```:h hi```
