@@ -25,6 +25,7 @@ alias gpul='git pull'
 alias gpus='git push'
 # gpulpus
 alias gpulpus='git pull; git push'
+alias gpp='gpulpus'
 alias gcl='git clone'
 alias gsh='git show'
 alias gpp='git pull; git push'
