@@ -33,7 +33,7 @@ do
 
 	if (( p < 5 )) #We skip running the break in the end of round 4.
 	then
-		vlc $script_path/5_minutes_break_music.mp4 > /dev/null 2>&1 &
+		vlc ~/scripts-media/5_minutes_break_music.mp4 > /dev/null 2>&1 &
 		#google-chrome-stable https://www.youtube.com/watch?v=aynkFJdXF_M > /dev/null 2>&1
 
 		# Adding 5 min break here
@@ -52,7 +52,7 @@ done
 
 
 br=_br
-vlc $script_path/30_minutes_break_music.mp4 > /dev/null 2>&1 &
+vlc ~/scripts-media/30_minutes_break_music.mp4 > /dev/null 2>&1 &
 while (( br > 0 ))
 do
 	clear
