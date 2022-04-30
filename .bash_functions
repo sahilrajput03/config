@@ -110,7 +110,9 @@ function backupConfigFiles {
 
 	# FOR TESTING COMMAND: I.e., for fail incident for the copying of certian items by cp program:
 	# cp -r ~/nvim ~/Documents/github_repos/config/ 2> /dev/null
-	\cp -r $_home/nvim $backup_dir/ 2> /dev/null
+	# \cp -r $_home/nvim $backup_dir/ 2> /dev/null
+	# Now to prevent unnecessary copying of plugged folder I am using below tactic: src: https://stackoverflow.com/a/12968671/10012446
+	cd ~/nvim; \cp -r `\ls -A | grep -v "plugged"` $backup_dir/nvim
 	echo "Backup of ~/nvim directory succeeded."
 
 	\cp -r $_home/nvim-sahil $backup_dir/

@@ -1,5 +1,5 @@
 " Fish doesn't play all that well with others
-" ~SAHIL: Read the shortcuts of language server usage below:
+" ~ SAHIL: Read the shortcuts of language server usage below:
 " My notes: C-n/p to search down and up in the autocomplete suggestions list.
 " EXIT LSP DEFINITIONS WITH ctrl+o ~with Ratanjeet.
 " Enable completion triggered by <c-x><c-o>
