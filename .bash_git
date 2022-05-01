@@ -33,6 +33,8 @@ alias gpp='git pull; git push'
 # Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
 alias garchive='git archive --format zip --output'
 alias gitCleanResetHard='git clean -f && git reset --hard'
+alias removeSubmodules='git rm'
+# Usage: removeSubmodules pathToSubmodule
 
 # FUNCTIONS
 gi(){
@@ -115,3 +117,4 @@ gpulAll () {
 	#git pull --all #Note << that script won't merge any change to the local branch.
 	hub sync ## Note, << that script will automatically merge if no local commits are made to the branches thats changed on origin, yikes!!! Also, it notifies that local commits to that branch were made and thus didn't merge the branch from the origin, yikes!!
 }
+

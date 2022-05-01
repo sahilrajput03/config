@@ -14,5 +14,3 @@ alias vi='vim'
 
 # FYI: UNIT TEST: This is to check if workrave is already running and don't run it again if it is. (in some extreme use cases reloading .profile would rerun workrave, and workrave will then throw warning)
 # [ -z "$(pgrep workrave)" ] && echo program is not running
-
-

@@ -163,8 +163,8 @@ function backupConfigFiles {
 }
 
 # Vscode special
-alias backup.vsCodeSettings='cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
-alias whatVscodeSettingsChanged='diff ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias backupVsCodeSettings='cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias backupVsCodeSettingsDryDiff='diff ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
 
 function bkpfstab {
 	cp /etc/fstab $backup_dir
@@ -336,61 +336,61 @@ configSearch () {
 	grep -inH "$@" ~/.bash_functions
 }
 
-wi () {
-	_help () {
-		echo "Help:
-====
-  You can get help this help by either of below commands:
-  $ ti
-  $ ti -h
-  $ ti --help
+# wi () {
+# 	_help () {
+# 		echo "Help:
+# ====
+#   You can get help this help by either of below commands:
+#   $ ti
+#   $ ti -h
+#   $ ti --help
 
-Usage:
-======
-  You can use ti with any commands like wget, tar or more.
-  $ ti wget
-  $ ti tar
+# Usage:
+# ======
+#   You can use ti with any commands like wget, tar or more.
+#   $ ti wget
+#   $ ti tar
 
-Bypass cache
-============
-  By providing - in the end of the command
-  $ ti wget -
-"
-}
-	if [ -z $1 ] || [ $1 = "-h" ] || [ $1 = "--help" ]; then
-		_help
-		return
-	fi
+# Bypass cache
+# ============
+#   By providing - in the end of the command
+#   $ ti wget -
+# "
+# }
+# 	if [ -z $1 ] || [ $1 = "-h" ] || [ $1 = "--help" ]; then
+# 		_help
+# 		return
+# 	fi
 
-	if ! [ -d /tmp/wi ]; then
-		# Remove if its a file coz -d checks only if its a directory.
-		rm -f /tmp/wi 
-		mkdir /tmp/wi
-	fi
+# 	if ! [ -d /tmp/wi ]; then
+# 		# Remove if its a file coz -d checks only if its a directory.
+# 		rm -f /tmp/wi 
+# 		mkdir /tmp/wi
+# 	fi
 
-	# DEBUGGING:
-	# Usage: `wi tar -`
-	# [ "$2" = "-" ] && echo provided a dash..
+# 	# DEBUGGING:
+# 	# Usage: `wi tar -`
+# 	# [ "$2" = "-" ] && echo provided a dash..
 
-	# Use cache if file already exists but skip if second argument is `-` (to force refetch):
-	if [ -f "/tmp/wi/$1.txt" ] && [ "$2" != "-" ]; then
-		echo "->>> USING CACHE"
-		echo "================"
-		cat /tmp/wi/$1.txt
-	else
-		echo ">>> FRESH DOWNLOAD <<<"
-		echo "======================"
+# 	# Use cache if file already exists but skip if second argument is `-` (to force refetch):
+# 	if [ -f "/tmp/wi/$1.txt" ] && [ "$2" != "-" ]; then
+# 		echo "->>> USING CACHE"
+# 		echo "================"
+# 		cat /tmp/wi/$1.txt
+# 	else
+# 		echo ">>> FRESH DOWNLOAD <<<"
+# 		echo "======================"
 	
-		URL="https://raw.githubusercontent.com/sahilrajput03/sahilrajput03/master/wi"
-		wget --quiet "$URL/$1.txt" -O "/tmp/wi/$1.txt" && cat "/tmp/wi/$1.txt"
+# 		URL="https://raw.githubusercontent.com/sahilrajput03/sahilrajput03/master/wi"
+# 		wget --quiet "$URL/$1.txt" -O "/tmp/wi/$1.txt" && cat "/tmp/wi/$1.txt"
 
-		# LEARN wget
-		# --quiet
-		# -nv means no-verbose bcoz default is verbose on.
-		# --debug to show debugging via wget
-		# -O means overwrite existing file if already present bcoz by default it append incremental number to the output file name if the file is already present.
-	fi
-}
+# 		# LEARN wget
+# 		# --quiet
+# 		# -nv means no-verbose bcoz default is verbose on.
+# 		# --debug to show debugging via wget
+# 		# -O means overwrite existing file if already present bcoz by default it append incremental number to the output file name if the file is already present.
+# 	fi
+# }
 
 
 cmon () {
@@ -398,3 +398,4 @@ cmon () {
 	# nodemon -q -e c -x "gcc $* -o binary; ./binary"
 	nodemon -q -e c -x "gcc $* -o binary && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
 }
+

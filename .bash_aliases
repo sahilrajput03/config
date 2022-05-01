@@ -395,3 +395,18 @@ echoerr() { echo "$@" 1>&2; }
 alias certbotGenerate='sudo certbot certonly --standalone'
 
 alias vi.ssh='vi ~/.ssh/config'
+
+alias cra='npx create-react-app'
+# Usage: `cra my-react-app`
+## FYI: If above command fails then try executing `sudo npm i -g create-react-app` first (it solved my issue~Sahil). Src: https://stackoverflow.com/a/55566960/10012446
+
+alias cna='npx create-next-app@latest'
+alias cna_with_typescript='npx create-next-app@latest --ts'
+
+##### Jest ####
+alias t='npm run test --'
+alias tw='npm run test:watch --'
+alias twa='npm run test:watchAll --'
+
+# For debugging
+alias twd='npm run test:watch:debug --'
