@@ -410,3 +410,5 @@ alias twa='npm run test:watchAll --'
 
 # For debugging
 alias twd='npm run test:watch:debug --'
+
+alias ni='npm init -y'

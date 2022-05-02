@@ -90,6 +90,9 @@ function backupConfigFiles {
 	\cp $_home/.config/i3/config $backup_dir/.config/i3/config
 	echo "Backup of ~/.config/i3/config file succeeded."
 
+	\cp -r $_home/.config/flameshot $backup_dir/.config
+	echo "Backup of ~/.config/flameshot/ directory succeeded."
+
 	\cp $_home/.i3status.conf $backup_dir/
 	echo "Backup of ~/.i3status.conf file succeeded."
 
