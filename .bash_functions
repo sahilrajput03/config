@@ -118,7 +118,7 @@ function backupConfigFiles {
 	cd ~/nvim # MOVING TO DIRECTORY IS IMPORTANT.
 	\cp -r `\ls -A | grep -v "plugged"` $backup_dir/nvim
 	echo "Backup of ~/nvim directory succeeded."
-	cd - # MOVING BACK ORIGINAL TO DIRECTORY IS IMPORTANT TOO.
+	cd - > /dev/null # MOVING BACK ORIGINAL TO DIRECTORY IS IMPORTANT TOO.
 
 	\cp -r $_home/nvim-sahil $backup_dir/
 	echo "Backup of ~/nvim-sahil directory succeeded."
