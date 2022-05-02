@@ -87,8 +87,8 @@ function backupConfigFiles {
 	\cp $_home/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
 
-	\cp $_home/.config/i3/config $backup_dir/.config/i3/config
-	echo "Backup of ~/.config/i3/config file succeeded."
+	\cp -r $_home/.config/i3 $backup_dir/.config
+	echo "Backup of ~/.config/i3 directory succeeded."
 
 	\cp -r $_home/.config/flameshot $backup_dir/.config
 	echo "Backup of ~/.config/flameshot/ directory succeeded."
