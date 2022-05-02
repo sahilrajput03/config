@@ -255,6 +255,8 @@ alias up='cd ..'
 alias ...='exec bash'
 # alias ...c='exec bash'
 alias gr='cd $_home/Documents/github_repos'
+gr="$_home/Documents/github_repos"
+# Usage: echo $gr, ls $gr
 alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
 alias grc='cd $_home/Documents/github_repos/config'
 alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
