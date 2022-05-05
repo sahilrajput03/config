@@ -72,6 +72,9 @@ function backupConfigFiles {
 	# alias cp='/usr/bin/cp'
 	# Using \ before cp to disable alias expansion. src: https://www.cyberciti.biz/faq/bash-shell-temporarily-disable-an-alias/
 
+	crontab -l > $backup_dir/Backup_crontab.txt
+	echo "Backup of crontab entries succeeded."
+
 	\cp $_home/nodemon.json $backup_dir/
 	echo "Backup of ~/nodemon.json succeeded."
 

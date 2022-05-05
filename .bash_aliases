@@ -285,6 +285,7 @@ alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*'
 alias vi.qm='vi ~/.config/qutebrowser/quickmarks'
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
+alias cd.portableHardDisk='cd /mnt/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
 alias cw='cargo watch -q -c -x "run -q"'
 alias cwn='cargo watch -c -x run'
@@ -414,3 +415,15 @@ alias twa='npm run test:watchAll --'
 alias twd='npm run test:watch:debug --'
 
 alias ni='npm init -y'
+
+alias diskUsage='df -h'
+
+alias zipalign=/opt/android-sdk/build-tools/29.0.3/zipalign
+alias apksigner=/opt/android-sdk/build-tools/29.0.3/apksigner
+
+alias adb.log='adb logcat | grep -e OriginVerifier -e digital_asset_links'
+
+
+alias playRawFile='ffplay -f s16le -ar 44.1k -ac 1'
+# Usage: playRawFile myFile.raw
+

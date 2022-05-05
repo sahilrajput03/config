@@ -91,6 +91,7 @@ gb (){
 	echo + git branch $@
 	git branch $@
 }
+
 ga (){
 	if [ -z "$1" ]; then
 		# -z will send 0 (TRUE) return code if string is zero length, check `man test` for info.
@@ -101,6 +102,19 @@ ga (){
 		git add $1
 	fi
 }
+
+# dry run
+gad (){
+	if [ -z "$1" ]; then
+		# -z will send 0 (TRUE) return code if string is zero length, check `man test` for info.
+		echo + git add . --dry-run
+		git add . --dry-run
+	else
+		echo + git add $1 --dry-run
+		git add $1 --dry-run
+	fi
+}
+
 
 gitFetchWithoutCheckout () {
 	echo git fetch . source:target
