@@ -428,3 +428,11 @@ alias playRawFile='ffplay -f s16le -ar 44.1k -ac 1'
 # Usage: playRawFile myFile.raw
 
 alias cd.flash='cd /home/array/Documents/github_repos/flash'
+
+# FYI; This is not directly usage though:
+function clearnTmuxHistoryOfActivePane () {
+	 tmux clear-history -t $(tmux display -pt "${TMUX_PANE:?}" "#{pane_index}")
+		# for implementation usage: checkout: 
+	# src: https://unix.stackexchange.com/a/212315/504112
+	# and got help from `man tmux` directly for `clear-history` option to have pane parameter using `-t` flag, yo!
+ }
