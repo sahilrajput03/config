@@ -892,3 +892,8 @@ endfunction
 set linebreak
 " src: https://stackoverflow.com/a/19624717/10012446
 
+
+" Run build command via `gb`
+" map gb :!node ./main.js <CR>
+map gb :!node % <CR>
+" src: https://unix.stackexchange.com/a/7853/504112

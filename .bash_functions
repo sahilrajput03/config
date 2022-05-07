@@ -169,8 +169,8 @@ function backupConfigFiles {
 }
 
 # Vscode special
-alias backupVsCodeSettings='cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
-alias backupVsCodeSettingsDryDiff='diff ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias backupVSCODESettings='cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias backupVSCODESettingsDryDiff='diff ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
 
 function bkpfstab {
 	cp /etc/fstab $backup_dir
@@ -403,5 +403,12 @@ cmon () {
 	t=${*%??}
 	# nodemon -q -e c -x "gcc $* -o binary; ./binary"
 	nodemon -q -e c -x "gcc $* -o binary && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
+}
+
+
+pmon () {
+	nodemon -q -e py -x "python $*"
+	#Usage: pythonmon filename.py
+	#Also, you can use `pmon filename.py` as pmon is subscript of pythonmon.
 }
 

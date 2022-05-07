@@ -27,6 +27,9 @@ alias gpus='git push'
 alias gpulpus='git pull; git push'
 alias gpp='gpulpus'
 alias gcl='git clone'
+alias gclWithSubmodules='git clone --recurse-submodules -j8'
+#src: https://stackoverflow.com/a/4438292
+
 alias gsh='git show'
 alias gpp='git pull; git push'
 # LEARN: ARCHIVING A GIT REPO:
@@ -131,4 +134,3 @@ gpulAll () {
 	#git pull --all #Note << that script won't merge any change to the local branch.
 	hub sync ## Note, << that script will automatically merge if no local commits are made to the branches thats changed on origin, yikes!!! Also, it notifies that local commits to that branch were made and thus didn't merge the branch from the origin, yikes!!
 }
-
