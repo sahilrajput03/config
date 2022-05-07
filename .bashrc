@@ -149,6 +149,10 @@ enableTmux
 # Source: https://unix.stackexchange.com/a/29239/504112
 bind -x '"\C-l": clear; tmux clear-history'
 
+# // Clearn tmux-scroll history
+# const {execSync} = require('child_process')
+# execSync('tmux clear-history', {stdio: 'pipe'})
+
 
 # I added the FZF_DEFAULT_COMMAND myself by seeing it in the stackoverfow question: https://stackoverflow.com/q/61865932/10012446
 # So, it'll ignore the node_modules and .git directories.

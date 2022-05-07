@@ -427,3 +427,4 @@ alias adb.log='adb logcat | grep -e OriginVerifier -e digital_asset_links'
 alias playRawFile='ffplay -f s16le -ar 44.1k -ac 1'
 # Usage: playRawFile myFile.raw
 
+alias cd.flash='cd /home/array/Documents/github_repos/flash'
