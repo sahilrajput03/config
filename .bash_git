@@ -18,6 +18,17 @@ alias gch='git checkout'
 complete -F _complete_alias gch
 
 alias gd='git diff'
+#
+### gds (git diff staging area i.e., for files which are added to staging area), src: https://stackoverflow.com/a/3527985/10012446
+alias gds='git diff --staged'
+# fyi: --staged is an alias for --cached
+# Usage 1: gds myFile
+# Usage 2: gds			# To get diff of compelte directory
+# Usage 3: gds | vi		# To open diff in vim
+
+# A gui tool for viewing git diff (really good as compared to git-cli for viewing diff and commit history - imo ~Sahil)
+alias gitk='gitk'
+
 # alias gl='git log'
 alias gl='git log --decorate --graph --oneline -10'
 alias gch='git checkout'

@@ -169,8 +169,8 @@ function backupConfigFiles {
 }
 
 # Vscode special
-alias backupVSCODESettings='cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
-alias backupVSCODESettingsDryDiff='diff ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias backupVSCODESettings='\cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+alias backupVSCODESettingsDryDiff='diff ~/Documents/github_repos/config/Code/User/settings.json ~/Code/User/settings.json '
 
 function bkpfstab {
 	cp /etc/fstab $backup_dir

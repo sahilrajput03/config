@@ -94,5 +94,10 @@
   "task.problemMatchers.neverPrompt": {
     "shell": true
   },
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.tabCompletion": "on",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly"
 }
