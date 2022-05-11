@@ -84,3 +84,10 @@
   undo = revert
 [hub]
 	protocol = ssh
+
+[color "diff"]
+  # https://news.ycombinator.com/item?id=4132501
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
