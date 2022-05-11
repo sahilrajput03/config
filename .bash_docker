@@ -31,45 +31,26 @@ d-c-removeAllGracefully(){
 		echo "#My Log: There are no containers."
 	fi
 }
-<<comment
-# Using multipline comments in bash, src: https://www.geeksforgeeks.org/multi-line-comment-in-shell-script/
 d-c-killRunning(){
-	# only fish scripts has bug that we need to use _docker which is aliased to original /c/Program Files/Docker Toolbox/docker daemon, BUT BASH SCRIPTS WORK GREATLY AS IT IS.
-	# SO BASH ROCKS FOR NOW!! THOUGH BASH SCRIPTS HANGS IIRC AT WHEN <tab> after the script name(if the scripts as $* passed to it).
-	if _docker ps -q | grep "" > /dev/null # This is interesting to know how it works but I don't know really . LOL
-		docker kill (_docker ps -q)
-		echo #My Log:  Killed above running containers.
-	else
-		echo "#My Log: No containers are running right now. ~ Unknown Guy"
-	end
-	#BACKUP LINE: docker kill $(docker ps -q) 
-	#Note: this file doesn't work with git-bash idk why!!
-	#This file works good as it is like above.
-	#For fish shell (if you are executing it from cli, you must use it like below)
-	# docker kill (docker ps -q)
-	# https://stackoverflow.com/questions/19211855/fish-equivalent-of-bash-command-notation
-}
-d-c-stopRunning(){
-	if _docker ps -q | grep "" > /dev/null
-		docker stop (_docker ps -q)
+	if [ $(docker ps -q) ]; then
+		docker kill $(docker ps -q)
 	else
 		echo "#My Log: No containers are running right now. ~ Unknown guy"
-	end
+	fi
 }
 d-i-removeAllForcefully(){
-	if docker images | grep \\n > /dev/null
-		docker rmi -f (docker images -q)
+	if [ "$(docker images -q)" ]; then
+		docker rmi -f $(docker images -q)
 		echo "#My Log: Removed all above images."
 	else
 		echo "#My Log: No images are present locally. ~ Unknown Guy"
-	end
+	fi
 }
 d-i-removeAllGracefully(){
-	if _docker images | grep \\n > /dev/null
-		docker rmi (_docker images -q)
+	if [ "$(docker images -q)" ]; then
+		docker rmi $(docker images -q)
 		echo "#My Log: Removed all above images."
 	else
 		echo "#My Log: No images are present locally. ~ Unknown Guy"
-	end
+	fi
 }
-comment
