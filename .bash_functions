@@ -150,6 +150,9 @@ function backupConfigFiles {
 	\cp $_home/.bash_git $backup_dir/
 	echo "Backup of ~/.bash_git file succeeded."
 
+	\cp $_home/git/gitk $backup_dir/git/
+	echo "Backup of ~/git/gitk file succeeded."
+
 	\cp $_home/.bash_completion $backup_dir/
 	echo "Backup of ~/.bash_completion file succeeded."
 
