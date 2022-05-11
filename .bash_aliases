@@ -263,29 +263,31 @@ alias v='nvim'
 alias vi='nvim'
 # Load nvim with on config: Source: https://vi.stackexchange.com/a/16981
 alias vifresh='vim --clean'
-# Since vi is aliased, all below will refer to nvim for vi.
-alias vi.nvimsahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
-alias vi.environment='sudo nvim /etc/environment'
+
+# LEARN: Since vi is aliased, all below will refer to nvim for vi.
+alias vi.aliases='vi ~/.bash_aliases'
 alias vi.bashrc='vi $_home/.bashrc'
-alias vi.history='vi $_home/.bash_history'
-alias vi.functions='vi $_home/.bash_functions'
-alias vi.profile='vi $_home/.profile'
-alias vi.nvim='vi $_home/nvim/init.vim'
-alias vi.thoughts='vi $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md'
+alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
+alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*'
+alias vi.environment='sudo nvim /etc/environment'
 alias vi.fstab='sudo vi /etc/fstab'
-alias vi.pomodoro='vi $_home/scripts/pomodoro/pomodoro.sh'
+alias vi.functions='vi $_home/.bash_functions'
+alias vi.git='nvim ~/.bash_git'
+alias vi.history='vi $_home/.bash_history'
+alias vi.hosts='sudo nvim /etc/hosts'
 alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
 alias vi.i3='vi $_home/.config/i3/config'
-alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*' 
-alias vi.qm='vi ~/.config/qutebrowser/quickmarks'
 alias vi.notes='vi /tmp/notes'
-alias vi.wi='vi ~/scripts/wi'
-alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
+alias vi.nvimsahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
+alias vi.nvim='vi $_home/nvim/init.vim'
+alias vi.pomodoro='vi $_home/scripts/pomodoro/pomodoro.sh'
+alias vi.profile='vi $_home/.profile'
+alias vi.qm='vi ~/.config/qutebrowser/quickmarks'
 alias vi.ssh='vi ~/.ssh/config'
-alias vi.hosts='sudo nvim /etc/hosts'
-alias vi.git='nvim ~/.bash_git'
-alias vi.aliases='vi ~/.bash_aliases'
+alias vi.thoughts='vi $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md'
 alias vi.tmux='vi $_home/.tmux.conf'
+alias vi.wi='vi ~/scripts/wi'
+
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
@@ -386,6 +388,7 @@ alias cd.config='~/Documents/github_repos/config'
 alias cd.flash='cd /home/array/Documents/github_repos/flash'
 alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
 alias cd.portableHardDisk='cd /mnt/sdc2'
+alias cd.additionalPath='cd ~/Documents/github_repos/additionalPath/'
 
 
 # Setup second display
