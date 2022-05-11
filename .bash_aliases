@@ -212,7 +212,7 @@ alias visudo='sudo EDITOR=nvim visudo'
 # FYI: Use exa instead of l and ls.
 alias tree='tree -I node_modules'
 alias explorer='pcmanfm'
-alias fm='pcmanfm'
+alias fm='air pcmanfm'
 
 # CLIPBOARD HACKS
 alias copyFileToClipboard='xclip -sel clip'
@@ -292,6 +292,7 @@ alias cwn='cargo watch -c -x run'
 alias ct='cargo watch -c -x test'
 #cargo watch --quiet --clear --exec 'run --quiet'
 alias co='code .'
+alias cor='code -r'
 alias s='npm start'
 alias nr='npm run'
 # autocomplete `nr`
@@ -436,3 +437,40 @@ function clearnTmuxHistoryOfActivePane () {
 	# src: https://unix.stackexchange.com/a/212315/504112
 	# and got help from `man tmux` directly for `clear-history` option to have pane parameter using `-t` flag, yo!
  }
+
+
+# amazing
+alias watchSystemDService='journalctl -fu'
+# Usage: watchSystemDService lemon
+
+# Usage(using bare ls command): You may add -l flag to get long list format as well.
+# alias lsAccessed='\ls -t'
+
+# Using exa (although ls is aliased as exa)
+# Usage: ls- -l  to list in long format:
+alias ls-='exa --sort modified --across -r'
+# -r means reverse order, to see more options of sorting use: `exa --sort` command
+
+
+#### Clear cace of pacman
+## Cleared 10G of disk space for my usage of less than 6 months ~ 10 May, 2022. ~ Sahil
+alias removeAllPacmanCache='sudo pacman -Sc'
+
+## Clear user cache
+alias removeUserCache='rm -rf ~/.cache/*'
+
+# SRC: https://averagelinuxuser.com/clean-arch-linux/#8-clean-systemd-journal
+## Limit journalctl logs size: ``
+alias getJournalctlLogsSize='journalctl --disk-usage'
+alias cleanAndKeepLatestJournalctlLogs='sudo journalctl --vacuum-size=50M'
+alias cleanAndKeepLast4WeeksLogs='sudo journalctl --vacuum-time=4weeks'
+### LEARN: HEYYY, I don't need to above to clean logs manually coz I have set limit of logs in file conf file of journalctl daemon. Src: https://averagelinuxuser.com/clean-arch-linux/#8-clean-systemd-journal
+# sudo nvim /etc/systemd/journald.conf; and putting below line in it!!
+# ADD BELOW LINE TO THE FILE.
+# SystemMaxUse=50M
+
+
+# Sizes of currently used in /home disk: (check via `diskUsage` alias to `du h`)
+# 1.8G    blulabs
+# 15G     Documents
+# 58G     Downloads

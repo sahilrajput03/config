@@ -1,0 +1,73 @@
+d-c-removeAllForcefully(){
+	if docker ps -aq | grep ""
+	then
+		docker rm -f $(docker ps -aq)
+		echo "#My log: Successfully removed containers with above listed ids."
+	else
+		echo "#My Log: There are no containers."
+	fi
+}
+d-c-removeAllGracefully(){
+	if docker ps -aq | grep ""
+	then
+		docker rm $(docker ps -aq)
+		echo "#My log: Successfully removed containers with above listed ids."
+	else
+		echo "#My Log: There are no containers."
+	fi
+}
+alias d-c-removeOne_with_id_or_name='docker rm'
+alias d-c-removeOneForcefully_with_id_or_name='docker rm --force'
+alias d-c-runCommandInside='docker exec'
+alias d-c-stopOne_with_id_or_na='docker stop'
+alias d-i-removeOne_with_RepoNames_or_ImageIds='docker rmi'
+alias d-i-removeOneForcefully_with_RepoNames_or_ImageIds='docker rmi -f'
+alias d-i-run_with_id_or_name='docker run'
+alias d-i-run_with_id_or_name-Detached='docker run -d'
+alias d-i-listAll='docker images'
+alias d-c-listAll='docker ps -as'
+alias d-c-listAll_Only_Ids='docker ps -aq'
+alias d-c-listRunning='docker ps -s'
+
+<<comment
+# Using multipline comments in bash, src: https://www.geeksforgeeks.org/multi-line-comment-in-shell-script/
+d-c-killRunning(){
+	# only fish scripts has bug that we need to use _docker which is aliased to original /c/Program Files/Docker Toolbox/docker daemon, BUT BASH SCRIPTS WORK GREATLY AS IT IS.
+	# SO BASH ROCKS FOR NOW!! THOUGH BASH SCRIPTS HANGS IIRC AT WHEN <tab> after the script name(if the scripts as $* passed to it).
+	if _docker ps -q | grep "" > /dev/null # This is interesting to know how it works but I don't know really . LOL
+		docker kill (_docker ps -q)
+		echo #My Log:  Killed above running containers.
+	else
+		echo "#My Log: No containers are running right now. ~ Unknown Guy"
+	end
+	#BACKUP LINE: docker kill $(docker ps -q) 
+	#Note: this file doesn't work with git-bash idk why!!
+	#This file works good as it is like above.
+	#For fish shell (if you are executing it from cli, you must use it like below)
+	# docker kill (docker ps -q)
+	# https://stackoverflow.com/questions/19211855/fish-equivalent-of-bash-command-notation
+}
+d-c-stopRunning(){
+	if _docker ps -q | grep "" > /dev/null
+		docker stop (_docker ps -q)
+	else
+		echo "#My Log: No containers are running right now. ~ Unknown guy"
+	end
+}
+d-i-removeAllForcefully(){
+	if docker images | grep \\n > /dev/null
+		docker rmi -f (docker images -q)
+		echo "#My Log: Removed all above images."
+	else
+		echo "#My Log: No images are present locally. ~ Unknown Guy"
+	end
+}
+d-i-removeAllGracefully(){
+	if _docker images | grep \\n > /dev/null
+		docker rmi (_docker images -q)
+		echo "#My Log: Removed all above images."
+	else
+		echo "#My Log: No images are present locally. ~ Unknown Guy"
+	end
+}
+comment

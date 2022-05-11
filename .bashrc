@@ -105,6 +105,9 @@ echo "
 # FOR ENV FILES: sops -e .env > enc.env
 # FOR NAMED ENV FILES: sops -e secrets.env > secrets.enc.env
 # FOR YAML FILES: sops -e secret.yaml > secret.enc.yaml
+
+# Direct editing sops encrypted files ? Yikes!!
+# sops enc.env
 "
 }
 

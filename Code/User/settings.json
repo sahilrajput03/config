@@ -97,7 +97,7 @@
   "workbench.activityBar.visible": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "editor.tabCompletion": "on",
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly"
+  "emmet.triggerExpansionOnTab": true
 }

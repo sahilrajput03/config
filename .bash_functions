@@ -144,6 +144,9 @@ function backupConfigFiles {
 	\cp $_home/.bash_aliases $backup_dir/
 	echo "Backup of ~/.bash_aliases file succeeded."
 
+	\cp $_home/.bash_docker $backup_dir/
+	echo "Backup of ~/.bash_docker file succeeded."
+
 	\cp $_home/.bash_git $backup_dir/
 	echo "Backup of ~/.bash_git file succeeded."
 
@@ -355,3 +358,10 @@ pmon () {
 	#Also, you can use `pmon filename.py` as pmon is subscript of pythonmon.
 }
 
+
+listAllUsers () {
+	awk -F: '{ print $1}' /etc/passwd | xargs
+	# We can't use pipe thing with aliases, so I have to use it as a function only. ~IMO~ Sahil.
+}
+# LEARN: Here -F is field separator and we set it to :
+# LEARN: With xargs we convert multiple line output to a single line output.
