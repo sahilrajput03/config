@@ -269,6 +269,7 @@ alias vi.aliases='vi ~/.bash_aliases'
 alias vi.bashrc='vi $_home/.bashrc'
 alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
 alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*'
+alias vi.docker='vi $_home/.bash_docker'
 alias vi.environment='sudo nvim /etc/environment'
 alias vi.fstab='sudo vi /etc/fstab'
 alias vi.functions='vi $_home/.bash_functions'
@@ -320,20 +321,25 @@ alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
 alias cl='clear && l'
-alias restartadb='sudo adb kill-server; sudo adb start-server'
 alias listInstalledPacmanPackages='pacman -Q'
 alias kernelname='uname -r'
 alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
 # Below aliases helps in searching current directory. -a means to include hidden files as well.
 alias lsg='ls -a | grep -i'
-alias adbinfo="echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'
-echo adb shell # To execute shell in mobile.
-"
-# haven't tried it yet though!
+adbInfo(){
+	echo Some adb commands and aliases ~Sahil
+	echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'
+	echo adb shell # To execute shell in mobile.
+	echo adbRestart # To fix common adb connection error you face every fucking time.
+	echo adbDebug # 
+}
+alias adbRestart='sudo adb kill-server; sudo adb start-server'
 adbPush(){
 	adb push "$@" /storage/self/primary/DCIM/
 }
+# Debug over air. LEARN: You would need to install Wifi ADB from playstore to connect to device probably ~Sahil
+adbDebug='adb connect 192.168.18.4:5555'
 alias c='clear'
 alias C='clear'
 if [[ $TMUX ]]; then
