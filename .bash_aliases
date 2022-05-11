@@ -160,8 +160,6 @@ alias dk='docker'
 # Get rid of all sideeffects in current shell (i.e, any aliases, any sourced files, etc):
 # src: https://stackoverflow.com/a/8760728/10012446
 alias fresh='exec bash'
-alias vi.hosts='sudo nvim /etc/hosts'
-alias vi.git='nvim ~/.bash_git'
 alias h='history'
 # Reload history from $HISTFILE, i.e., `hr` will load all the commands that were made by all other shells running/closed at current moment: FYI: See `history --help`
 alias hr='history -r'
@@ -200,8 +198,6 @@ kvminfo(){
 #----------------------------
 #----------------------------
 
-alias vi.aliases='vi ~/.bash_aliases'
-alias vi.tmux='vi $_home/.tmux.conf'
 alias sha='sha1sum'
 # Usage: use y for overwrite and n for not do it.
 alias mv='mv -i'
@@ -268,7 +264,7 @@ alias vi='nvim'
 # Load nvim with on config: Source: https://vi.stackexchange.com/a/16981
 alias vifresh='vim --clean'
 # Since vi is aliased, all below will refer to nvim for vi.
-alias visahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
+alias vi.nvimsahil='vi -u nvim-sahil/init.vim' #Loading nvim-sahil folder as config folder for testing my original configs.
 alias vi.environment='sudo nvim /etc/environment'
 alias vi.bashrc='vi $_home/.bashrc'
 alias vi.history='vi $_home/.bash_history'
@@ -282,6 +278,14 @@ alias vi.i3old='vi /mnt/sda3/home/array/.config/i3/config'
 alias vi.i3='vi $_home/.config/i3/config'
 alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*' 
 alias vi.qm='vi ~/.config/qutebrowser/quickmarks'
+alias vi.notes='vi /tmp/notes'
+alias vi.wi='vi ~/scripts/wi'
+alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
+alias vi.ssh='vi ~/.ssh/config'
+alias vi.hosts='sudo nvim /etc/hosts'
+alias vi.git='nvim ~/.bash_git'
+alias vi.aliases='vi ~/.bash_aliases'
+alias vi.tmux='vi $_home/.tmux.conf'
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
@@ -313,7 +317,6 @@ alias tx='tmux'
 alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
-alias vi.nvim='vi ~/nvim/init.vim'
 alias cl='clear && l'
 alias restartadb='sudo adb kill-server; sudo adb start-server'
 alias listInstalledPacmanPackages='pacman -Q'
@@ -356,8 +359,6 @@ alias asteriskrv='sudo asterisk -rvvvv'
 
 alias cat.xmodPossibilities='cat /usr/share/X11/xkb/rules/base.lst'
 alias vi.xmod='sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf'
-alias vi.notes='vi /tmp/notes'
-alias vi.wi='vi ~/scripts/wi'
 alias pw='pwd'
 alias cpw='pwd | xclip -sel clip'
 
@@ -393,7 +394,6 @@ alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
 alias sc='sudo systemctl'
 complete -F _complete_alias sc
 
-alias vi.chan_mobile='sudo nvim /etc/asterisk/chan_mobile.conf'
 
 # src: https://stackoverflow.com/a/2990533/10012446
 echoerr() { echo "$@" 1>&2; }
@@ -401,7 +401,6 @@ echoerr() { echo "$@" 1>&2; }
 # Generate ssl certificate
 alias certbotGenerate='sudo certbot certonly --standalone'
 
-alias vi.ssh='vi ~/.ssh/config'
 
 alias cra='npx create-react-app'
 # Usage: `cra my-react-app`
