@@ -261,7 +261,6 @@ alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
 alias grc='cd $_home/Documents/github_repos/config'
 alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
 alias ~='cd ~'
-alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
 alias v='nvim'
@@ -285,7 +284,6 @@ alias vi.cleanAllSwap='rm ~/.local/share/nvim/swap/*'
 alias vi.qm='vi ~/.config/qutebrowser/quickmarks'
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
-alias cd.portableHardDisk='cd /mnt/sdc2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
 alias cw='cargo watch -q -c -x "run -q"'
 alias cwn='cargo watch -c -x run'
@@ -383,6 +381,11 @@ alias sshMyPc='ssh localhost'
 alias cd.snips='cd ~/Documents/github_repos/config/snips'
 alias cd.sr='cd ~/Documents/github_repos/sahilrajput03/'
 alias cd.wi='cd ~/Documents/github_repos/sahilrajput03/wi/'
+alias cd.config='~/Documents/github_repos/config'
+alias cd.flash='cd /home/array/Documents/github_repos/flash'
+alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
+alias cd.portableHardDisk='cd /mnt/sdc2'
+
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -428,7 +431,6 @@ alias adb.log='adb logcat | grep -e OriginVerifier -e digital_asset_links'
 alias playRawFile='ffplay -f s16le -ar 44.1k -ac 1'
 # Usage: playRawFile myFile.raw
 
-alias cd.flash='cd /home/array/Documents/github_repos/flash'
 
 # FYI; This is not directly usage though:
 function clearnTmuxHistoryOfActivePane () {
