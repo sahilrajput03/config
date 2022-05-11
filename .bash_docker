@@ -1,3 +1,18 @@
+
+# Aliases from my back old windows days..
+alias d-c-removeOne_with_id_or_name='docker rm'
+alias d-c-removeOneForcefully_with_id_or_name='docker rm --force'
+alias d-c-runCommandInside='docker exec'
+alias d-c-stopOne_with_id_or_na='docker stop'
+alias d-i-removeOne_with_RepoNames_or_ImageIds='docker rmi'
+alias d-i-removeOneForcefully_with_RepoNames_or_ImageIds='docker rmi -f'
+alias d-i-run_with_id_or_name='docker run'
+alias d-i-run_with_id_or_name-Detached='docker run -d'
+alias d-i-listAll='docker images'
+alias d-c-listAll='docker ps -as'
+alias d-c-listAll_Only_Ids='docker ps -aq'
+alias d-c-listRunning='docker ps -s'
+
 d-c-removeAllForcefully(){
 	if docker ps -aq | grep ""
 	then
@@ -16,19 +31,6 @@ d-c-removeAllGracefully(){
 		echo "#My Log: There are no containers."
 	fi
 }
-alias d-c-removeOne_with_id_or_name='docker rm'
-alias d-c-removeOneForcefully_with_id_or_name='docker rm --force'
-alias d-c-runCommandInside='docker exec'
-alias d-c-stopOne_with_id_or_na='docker stop'
-alias d-i-removeOne_with_RepoNames_or_ImageIds='docker rmi'
-alias d-i-removeOneForcefully_with_RepoNames_or_ImageIds='docker rmi -f'
-alias d-i-run_with_id_or_name='docker run'
-alias d-i-run_with_id_or_name-Detached='docker run -d'
-alias d-i-listAll='docker images'
-alias d-c-listAll='docker ps -as'
-alias d-c-listAll_Only_Ids='docker ps -aq'
-alias d-c-listRunning='docker ps -s'
-
 <<comment
 # Using multipline comments in bash, src: https://www.geeksforgeeks.org/multi-line-comment-in-shell-script/
 d-c-killRunning(){

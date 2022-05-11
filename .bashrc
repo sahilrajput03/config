@@ -86,6 +86,7 @@ function showpath_in_terminal(){
 [[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
 [[ -f $_home/.bash_git ]] && source $_home/.bash_git
 [[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
+[[ -f $_home/.bash_docker ]] && source $_home/.bash_docker
 [[ -f $_home/scripts/wi ]] && source $_home/scripts/wi
 
 ####### for kubernetes vvvv ####
