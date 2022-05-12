@@ -1,0 +1,13 @@
+$TTL 1D
+netmax.com.	IN SOA	ns1.netmax.com. root.netmax.com. (
+					0	; serial
+					1D	; refresh
+					1H	; retry
+					1W	; expire
+					3H )	; minimum
+netmax.com.	IN	NS	ns1.netmax.com.
+ns1		IN	A	192.168.1.48
+netmax.com.	IN	MX 10 	mail
+mail		IN	A	192.168.1.61
+www		IN	A	192.168.1.33
+@		IN	A	192.168.1.33

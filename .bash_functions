@@ -1,15 +1,5 @@
-# 
-alias bm=bashmon
-alias bmon=bashmon
 
-bashmon(){
-	nodemon -q -e sh -x "bash $@ || exit 0"
-	# nodemon -q -e sh -x "./$@|| exit 0"
-
-	# From popos's OLD:
-	# nodemon -q -e sh -x "bash $*"
-}
-
+#
 mdcd(){
 	mkdir $@
 	cd $@
@@ -348,23 +338,112 @@ configSearch () {
 	grep -inH "$@" ~/.bash_functions
 }
 
-cmon () {
-	t=${*%??}
-	# nodemon -q -e c -x "gcc $* -o binary; ./binary"
-	nodemon -q -e c -x "gcc $* -o binary && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
-}
-
-
-pmon () {
-	nodemon -q -e py -x "python $*"
-	#Usage: pythonmon filename.py
-	#Also, you can use `pmon filename.py` as pmon is subscript of pythonmon.
-}
-
-
 listAllUsers () {
 	awk -F: '{ print $1}' /etc/passwd | xargs
 	# We can't use pipe thing with aliases, so I have to use it as a function only. ~IMO~ Sahil.
 }
 # LEARN: Here -F is field separator and we set it to :
 # LEARN: With xargs we convert multiple line output to a single line output.
+
+
+# --------- monitors ---------------
+# Below aliases to function causes error with zsh, so mapping function to bm, etc.
+# alias bmon=bashmon
+
+bashmon(){
+	nodemon -q -e sh -x "bash $@ || exit 0"
+	# nodemon -q -e sh -x "./$@ || exit 0"
+
+	# From popos's OLD:
+	# nodemon -q -e sh -x "bash $*"
+}
+bmon (){
+	bashmon $*
+}
+
+cmon (){
+	# with dhanur.. (works on windows using git-bash).
+	# nodemon -q -e c -x "gcc $* -o binary && binary || exit 0"
+
+	# with dhanur.. (works on linux on ubuntu as well).
+	nodemon -q -e c -x "gcc $* -o binary && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
+}
+javamon() {
+	# Strip last five characters (i.e., to get rid of .java from the filename).
+	file=${*%?????}
+	nodemon -q -e java -x "javac $* && java $file"
+}
+pythonmon() {
+	nodemon -q -e py -x "python $*"
+}
+rustmon() {
+	#Usage: rmon filename.rs
+	nodemon -q -e rs -x "rustc $* -o .binary.exe -Clink-arg=/DEBUG:NONE && .binary.exe"
+
+	# 1. Deprecated below command coz it creates too many things like fileName.exe and fileName.pdb file so it gets difficult to find the my program file. :(
+	# nodemon -q -e rs -x "rustc $* && $t" 
+	# 2. Deprecated below command coz it creates unnecessary pdb file which i don't want, so usig below command instead that used flag -> -Clink-arg=/DEBUG:NONE and thus no pdb file is generated now!
+	# nodemon -q -e rs -x "rustc $* -o binary.exe && binary.exe" 
+}
+jmon() {
+	javamon $*
+}
+pmon() {
+	pythonmon $*
+}
+rmon() {
+	rustmon $*
+}
+alias cw='cargo watch -x run -c -q'
+# -x is for providing command i.e., `run`.
+# -c is clear screen after each execution.
+# -q is for suppressing output from cargo-watch itself
+# READ ABOUT `cargo watch`: https://docs.rs/crate/cargo-watch/3.2.0/source/README.md
+# Learn more about cargo watch via: `cargo watch -h`
+#
+ts (){
+	tsnd --respawn --clear --quiet $*
+	# Tip: Thought you don't need --respawn tag for scripts like express server.
+	# This file will only execute with npmBackup executable.
+}
+
+
+# Blazepack
+alias bp='blazepack'
+alias bpc='blazepack create $* --template=react'
+#INFO: https://github.com/ameerthehacker/blazepack
+setupTypeForBlazepack (){
+	#INFO: by => blazeyarn
+	#usage: bp add @types/react @types/react-dom
+	rm -rf .codesandbox/blazepack/node_modules/ #deletes any residues of any previous node_modules
+	mkdir .codesandbox/blazepack 2> /dev/null
+
+	cp -r node_modules .codesandbox/blazepack/ 2> /dev/null
+	rm -rf node_modules
+
+	cd .codesandbox/blazepack
+	if [ ! -f "package.json" ]; then #This then block executes only if file doesn't exist.
+		yarn init -y 1> /dev/null 2> /dev/null
+	fi
+
+	yarn $* 1> /dev/null 2> /dev/null
+	cp -r node_modules ../../
+
+	rm -rf node_modules
+}
+
+# Learn symbol creation with alt
+getSymbols () {
+# Learn: Do not rename the fuction as symbols, easteregg errors LOL!
+	echo "
+Empty space - 0160
+Bullet - 0149
+Epsilot - 232
+α  alpha        Alt 224;      Γ  gamma        Alt 226
+δ  delta        Alt 235;      ε  epsilon      Alt 238
+Θ  theta        Alt 233;      π  pi           Alt 227
+Σ  sigma upper  Alt 228;      σ  sigma lower  Alt 229
+τ  tau          Alt 231;      Φ  phi upper    Alt 232
+φ  phi lower    Alt 237;      Ω  omega        Alt 234
+"
+}

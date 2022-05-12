@@ -50,6 +50,8 @@ alias gitCleanResetHard='git clean -f && git reset --hard'
 alias removeSubmodules='git rm'
 # Usage: removeSubmodules pathToSubmodule
 
+alias grv='git remote -v'
+
 # FUNCTIONS
 gi(){
 	git init && create.gitignore && create.prettierrc.yaml
@@ -145,3 +147,14 @@ gpulAll () {
 	#git pull --all #Note << that script won't merge any change to the local branch.
 	hub sync ## Note, << that script will automatically merge if no local commits are made to the branches thats changed on origin, yikes!!! Also, it notifies that local commits to that branch were made and thus didn't merge the branch from the origin, yikes!!
 }
+
+alias gitarchive='git archive -o latest.zip HEAD'
+#src: https://git-scm.com/docs/git-archive
+
+gitf() {
+	fetcher --alwaysUseAuth --file="~/gitf_config.json" --url=$*
+	# https://github.com/Gyumeijie/github-files-fetcher#authentication
+	# Using --alwaysUseAuth coz: https://github.com/Gyumeijie/github-files-fetcher#behavior
+	# *IMPORTANT: CONFIG FILE IS SAVED @ ~/gitf_config.json
+}
+

@@ -1,0 +1,997 @@
+> > indicator-multiload
+> > indicator-netspeed-unity >> nice>> prefix as binary
+
+    {https://askubuntu.com/questions/847791/how-to-install-indicator-netspeed-in-ubuntu-16-10
+
+paste the below two commands to terminal-
+
+wget http://ppa.launchpad.net/fixnix/netspeed/ubuntu/pool/main/i/indicator-netspeed-unity/indicator-netspeed-unity_1.04-yakkety0_amd64.deb
+sudo dpkg -i indicator-netspeed-unity_1.04-yakkety0_amd64.deb
+
+    }
+
+keyboard>>
+ctrl+shift+w > close current tab in terminal
++q > close entire terminal
+alt+ 1,2, > shuffle tabs in terminal
+
+move a window just press
+alt+drag(pressing and holding)
+
+    	---
+
+INSTALLING WINE::
+
+1. For 64-bit system, run command to enable 32 bit architecture:
+
+- sudo dpkg --add-architecture i386
+
+2 - sudo add-apt-repository ppa:wine/wine-builds
+
+3 - sudo apt-get update
+
+4 - sudo apt-get install --install-recommends winehq-devel
+
+5 - winecfg
+---
+
+installing java
+https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
+
+sudo su
+sudo -i
+su
+
+> > these all do same work
+> > to exit root user >>
+> > exit
+
+use touch to create file like
+sudo touch file.extention
+
+---
+
+ServerAdmin webmaster@localhost
+DocumentRoot /var/www/html
+
+---
+
+1>>sudo servicec apache2 start
+stop
+2>>sudo systemctl reload apache2
+--
+
+systemctl - Control the system and service manager
+--
+
+ARTICLE: How To Move an Apache Web Root to a New Location on Ubuntu 16.04
+https://www.digitalocean.com/community/tutorials/how-to-move-an-apache-web-root-to-a-new-location-on-ubuntu-16-04 -
+
+> > CONCLUSIONNN.
+> > YOU HAVE TO EDIT THREE PLACES::
+> > TWICE TIMES IN >> /etc/apache2/sites-available/000-default.conf
+> > ONCE IN >> default0ssl.conf
+
+    	--
+
+https://askubuntu.com/questions/174872/how-do-i-install-truecrypt
+
+    	--
+
+task manager: gnome-system-monitor
+--
+
+The syntax to open any file in its default application is
+xdg-open <file_name>
+
+    	---
+
+xinput list
+xinput float 9 > to disable
+xinput reattach 9 3 > to enable
+
+sudo wondershaper interface wlp3s0 downloadspeed uploadspeed
+speed in kilobits onlyy..
+
+Linux's file permissions system mainly consists of 3 parts
+1.read/write/execute privileges
+2.user/group ownership
+3.acls
+
+who
+chvt
+w
+evince <<the document viewer
+
+ln << linking a file
+
+A; B Run A and then B, regardless of success of A
+A && B Run B if A succeeded
+A || B Run B if A failed
+A & Run A in background.
+
+ps -au : show processes for all users
+ps -15 _id_ soft kill > cannot kill bash windows
+ps -9 _id_ hard kill
+fg %<job number>
+find / -name <text to search in filename or folder name>
+
+    	--
+
+tar xvfz file.tar.gz
+^this is only for file with >> .gz
+./configure
+make
+make install
+
+x=extract
+v=feedback
+f=filename
+z=compressed file
+
+sudo apt-get install gdebi
+{gdebi can install the .deb files easily, and one can install the .deb file by right clicking and opening with gdebi}
+
+sudo apt-get <> <> <> <> -y
+
+> > {this implies auto yes to all the confirmations to be asked during the execution of apt-get}
+> > also
+> > yes | sudo apt-get
+> > can also be used to force yes to all the confirmations to apt-get.
+
+---
+
+**************************\_\_\_**************************-
+help: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7
+
+firewalld, ip-tables
+delimetrized zone
+configuring firewalld >>
+firewalld
+firewall-cmd --get-services
+firewall-cmd >> configure via command line
+firewall-config >> configure via graphical interface
+firewall-cmd --get-zones
+firewall-cmd
+firewall-cmd --list-all
+firewall-cmd --get-default-zone
+systemctl restart firewalld.service reload firewall
+firewall-cmd reload reload firewall
+icmp listall
+fi rewal l -cmd --zo ne= publ i c --ad d -po rt= 59 0 4 /tcp
+
+qemu installing > iso error>> https://github.com/jedi4ever/veewee/issues/996
+
+FOR SHOWING UP THE AVAILABLE WIFIS
+nmcli dev wifi
+
+INSTALL REDSHIFT STRAIGHT FORWARD
+http://www.linux-magazine.com/Online/Features/Avoiding-Eye-Strain
+sudo apt install redhift
+sudo apt install gtk-redshift
+redshift -O 4000 > set temp to 4000
+redshift -x > to normal
+.>> root domain
+.com, .in, .org, .edu >> top level domain, Root Dns
+
+Dns search for one of the
+A record >> address record >> name to ip
+MX record >> mail server record >> smtp query
+
+work of DNS SERVER OF COMPANY:
+1.resolve dns queries
+2.records of internal network ip's
+
+bind>> FOR DNS SERVER:
+yum install bind
+/etc/named.com
+
+for permanent entry of any mount : enter in /etc/fstab
+**************************************\_\_**************************************---
+CONFIGURING DNS SERVER-- CACHING ONLY DNS SERVER:-
+1.yum install bind bind-utils -y
+2.check via >> systemctl status named.service, if named service is running or not.
+3.nano /etc/named.conf >> this named service provides dns service to the inteface of the ip's mentioned in it.
+edit 127.0.0.1; >> 127.0.0.1; 192.168.1.1; <other  interfaces ip address_to which dns service to  be provided>
+save the file.
+3.nano /etc/resolv.conf >> this facilitates the dns server address to the interfaces mentioned in the named.conf service.
+edit the file >> nameserver 127.0.0.1
+save the file.
+
+**************************\_\_\_\_**************************--
+tcp is used to transfer files b/w different servers.
+udp is used at transport layer
+udp is used for dns query.
+
+---
+
+firewall-cmd --zone=public --add-port=53/tcp
+firewall-cmd --permanent
+
+read >> nfs server
+
+---
+
+INSTALLING GOOGLE AUTHENTICATOR:
+sudo apt-get install -y libpam-google-authenticator
+google-authenticator
+for activating google-authenticator for ohter users do as >>
+sudo su <username>
+google-authenticator
+
+main configuration in file that activates the settings in the system.
+sudo nano /etc/pam.d/common-auth
+
+and add the line given below ,before the line >>{ auth [success=1 default=ignore] pam_unix.so nullok_secure}
+auth required pam_google_authenticator.so
+TO REMOVE ALL THIS:
+just comment the line we added in the above file.
+
+to create zone:
+sudo nano /etc/named.conf
+
+SOA = START OF AUTHORITY
+IN = INTERNET RECORD
+@ = web server
+
+commands to look for ip:-
+nslookup
+dig
+
+---
+
+vsftp server:
+service name: vsftpd
+port no. used: 20,21
+
+netstat -an |grep :20
+
+chroot
+
+default directory of anonymous: /var/ftp
+
+change
+sudo chmod /home/chetan 555
+also change the line in /etc/vsftpd.conf
+i.e., chroot_local_user=YES
+
+> > installing veracrypt
+> > downwload and run the file directly (after extracting only)
+
+> > installing keepassx
+> > sudo apt-get install keepassx -y
+
+> > extracting compressed files> .tar , .tar.gz , .tar.bz2
+
+    tar -xvf file.tar
+    tar -xzvf file.tar.gz
+    tar -xjvf file.tar.bz2
+
+Where,
+-x : Extract a tar ball.
+-v : Verbose output or show progress while extracting files.
+-f : Specify an archive or a tarball filename.
+-j : Decompress and extract the contents of the compressed archive created by bzip2 program (tar.bz2 extension).
+-z : Decompress and extract the contents of the compressed archive created by gzip program (tar.gz extension).
+
+> > extracting single file/folder from the file
+> > just specify the file/folder path in the zip file after the command i.e., tar -xzvf file.tar.gz <file/folder>
+
+---
+
+> > Copy a complete folder to another folder using cp command:
+> > cp -R source destination/
+> > \*If destination doesn't exist, it will be created.
+
+echo $PATH
+{dispalys the value of $PATH environment variable in the system }
+
+> > Adding path of a program to $PATH environment variable
+export PATH=$PATH:/path/to/my/program
+
+---
+
+\*\*jdk include jre inside, so need of installing jre if you are installing jdk.
+
+---
+
+Installing java (JRE): search "download java" in google.
+https://www.java.com/en/download/
+1.download and extract the .tar.gz file to any location but prefer > /urs/java/ 2. add the path of the commands to the $PATH environment variable i.e 	/usr/java/jre1.X.XX.XX/bin
+with the command 
+						export PATH=$PATH:/usr/java/jre1.X.XX.XX/bin
+verification: java -version
+
+---
+
+Installing java (JDK): search "download jdk" in google.
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+1.download and extract the .tar.gz file to any location but prefer > /urs/java/ 2. add the path of the commands to the $PATH environment variable i.e 	/usr/java/jdk1.X.XX.XX/bin
+with the command 
+						export PATH=$PATH:/usr/java/jdk1.X.XX.XX/bin
+verification: javac -version
+
+---
+
+Installing netbeans
+1.Download netbeans for ALL
+2.Give executing permission to the file via
+chmod +x <file-name>
+3.execute via command
+./<file-name>
+
+---
+
+rmdir \*
+{removes all the empty folders in the current working directory}
+
+******\_\_\_\_******-
+
+rm -r <folder-name>
+{removes the folder /folders along with the contents in it.}
+rm <file-name>
+{remove the file/files }
+\*with -i option we can make shell to ask for every file before deleting it.
+e.g., rm -ri <folder/file>
+**********\_\_\_**********-
+Unzipping a .zip file
+unzip file.zip -d destination_folder
+
+---
+
+by default python is installed on ubuntu as
+python2, python3
+
+**********************\_**********************-
+ssh in ubuntu
+sudo apt-get install openssh-server
+sudo service ssh status
+sudo nano /etc/ssh/sshd_config
+sudo service ssh restart
+
+******************************************************************\_******************************************************************-
+
+setfacl -m u:exp2:rw /file1
+getfacl
+setfacl 0m m:r /file1
+at now +2min
+atq
+atrm
+crontab -e
+fdisk -l
+cat /etc/fstab >> show root directory in the disk
+pkill chrome
+pkill vm
+
+    crontab::
+
+ls /var/spool/cron/ >> location where jobs are stored
+vi /etc/crontab
+
+watch -n 1 date
+watch -n <seconds to update result> <command>
+
+links for browsing internet.
+
+backup using tar
+
+sudo tar -cvpzf wwwbackup.tar.gz .
+^ <file name> ^ content <folder name/filename / \* for the content of the pwd>
+
+Linux to Linux LVM
+using system id>> 8e
+Physical_Volume > Volume_Group > Logical_Volume
+
+physical volume = partitions
+lvremove <partitions> << for removing partition removing
+mvremove <disks> << for removing volume group
+pvremove <partitions> << for wiping a partition
+pvcreate <partitions> << for creating physical volume
+vgcreate <volume-group-name> <partitionS> << for creating volume group with given name
+
+vgscan
+vgdisplay <volume-group-name>
+vgreduce <volume-group-name> << for removing volume-group
+
+lvcreate -n <logical-name> -L +400 <volume-group-name> << for creating logical volume of size ^^ in volume ^^.
+
+lvextend -L +500M /dev/netm/lvl << extends logical volume by 500 mb
+lsblk
+pvdisplay | more
+init 6
+
+lvremove /dev/remove/<volume-group-name> << deletes all logical in volume
+vgremove /dev/<>volume-group-name> << delete volume group
+pvremove /dev/sda5 /dev/sda6 /dev/sda7 << wjpes physical volumes
+
+mkfs 0t xfs /dev/sahil/l1 << creating filesystem for l1 in sahil(volume group)
+
+mount /dev/sahil/l1 <directory> << mount to directory
+df -h << show the mount point of the logical of volume group
+xfs_growfs /dev/sahil/l1 << for creating filesystem for newly
+extended in l1
+
+nano /etc/fstab
+/dev/mapper/sahil-l1 root/newfolder xfs defaults 0 0
+
+init 6 << restarting
+
+> > Server is the computer to which we are connecting.
+> > And we are client if we're connecting.
+
+> CONNCECT USING SSH:
+> ssh ip-address <commands not compulsory> :
+> {secure shell}
+
+>     for copying a file:
+>
+> scp <source> <target>
+> scp root@<ip-address-of-server>:/<file-in-server> <local directory-in-client>
+
+>     for copying a complete folder:
+>
+> scp -r <source-folder> <target>
+> scp -r root@<ip-address-of-server>:/<folder-in-server> <local directory-in-client>
+> {secure copy}
+
+---
+
+rsync > do not stall(get stopped ) like scp
+syntax:
+rsync -avz --progress <source> <target>
+
+> > Vice-versa for copy to the server i.e., scp root@<ip-address-of-server>:<local directory-in-client> /<file-in-server>
+
+ifconfig <network-interface> <ipaddress> netmask 255.255.255.0
+/etc/resolv.conf
+
+subscription-manager register- --username admin-example
+
+> > A service is a true-blooded Windows process, no difference there. The only thing that's special about a service is that it is started by the operating system and runs in a separate session. An isolated one that keeps it from interfering with the desktop session. Traditionally named a daemon.
+
+> > An application is a program which you interact with on the desktop.
+
+A process is an instance of a particular executable (.exe program file) running.
+
+A service is a process which runs in the background and does not interact with the desktop. In Windows, services almost always run as an instance of the svchost.exe process, the windows service host process; however there are sometimes exceptions to this.
+
+Sometimes, processes may run in the background without interacting with the desktop, but without being installed as a service.
+
+Antivirus programs usually employ a service so they can continue running even when the user is not logged in.
+
+Processes usually exit when an application is closed, however this is not always the case. Some programs, particularly download and backup programs, may continue to run in the background without displaying any windows. Antivirus is also an example of this - in addition to using a service, many antivirus applications run a process silently in the background which only displays an application to the user when action is required.
+
+Please give me better information about service. Thanks.
+
+> > Modern tar recognizes the format by itself! One command works with any supported compression method.
+
+tar xf archive.tar.xz
+tar xf archive.tar.gz
+tar xf archive.tar
+
+---
+
+installing pip3 for python3
+sudo apt-get install python3-pip
+call it by pip3
+
+---
+
+./configure
+make \* make test >> not used everywhere
+su root
+make install >>to install in /usr/local
+****************************************\_\_\_****************************************-
+
+make is a utility for building and maintaining groups of programs (and other types of files) from source code.
+The purpose of the make utility is to determine automatically which pieces of a large program need to be re-compiled, and issue the commands necessary to recompile them.
+
+---
+
+To extract rar files with 7-zip:
+
+sudo apt-get install p7zip-full
+7z x some.rar
+
+---
+
+sudo apt-get install gparted
+
+> > in terminal > parted
+> > sudo apt-get install unetbootin
+
+---
+
+formatting usb into fat32
+
+fdisk -l
+umount /dev/sdb
+sudo mkfs.vfat /dev/sdb
+Extended2 File System and others::
+mkfs.ext2 <USB-device-mount-point>
+mkfs.ext3 <USB-device-mount-point>
+mkfs.ext4 <USB-device-mount-point>
+mkfs.jfs <USB-device-mount-point>
+mkfs.ntfs <USB-device-mount-point>
+mkfs.xfs <USB-device-mount-point>
+mkfs.reiserfs <USB-device-mount-point>
+
+---
+
+WINDOWS SETUP ON UBS:
+sudo add-apt-repository ppa:colingille/freshlight
+sudo apt-get update
+sudo apt-get install winusb
+
+launch via gui > winusb
+single line : sudo add-apt-repository ppa:colingille/freshlight -y ; sudo apt-get update; sudo apt-get install winusb -y
+
+---
+
+<command><space>#<space doesn't matter>this is not valuable yoyo hooney siing!!
+
+---
+
+sudo apt-get install yum
+
+IN RHEL: making iso file as repo for rhed because you cannot donwnload using yum as it requires registration from the official website.
+so iso file works here.
+
+IN CENT-OS: we can install packages using yum as there is no restriction for the use of yum in it.(where as there is in rhel)
+************************\_\_************************-
+
+file system changes to cifs in vmware:
+mount -t cifs -o username=<username-windows>,password=<password-windows> //<windows-paddress>/<shared-folder> <location-in-linux>
+e.g.,
+mount -t cifs -o username=sahil@microsoft.com,password=my_password //**_._**.122.1/rhel-os-folder /media/
+
+---
+
+BRIDGE MEANS VMWARE OS WILL ACT AS INDEPENDENT OS.
+BRIDGE MEANS PARALLEL IWITH THE WINDOWS.
+NAT NETWORK:
+
+> NETWORKING : VMWARE OS AND HOST-OS:
+
+    1.VMNET8 ADAPTER  assigns the ip to the linux-os when we do
+    Network settings > change to NAT in vmware' s os settings (no need of restart the vmware-os)
+    2.NOW GO TO WIRED CONNECTION and set the ip configuration to AUTOMATIC and then disconnect and connect the wired conn. again.
+    3.you'll see the ip assigned to the vmware-os (note the ip > in it the last two sets like 122.145)
+    4.now the host-os and vmware-os are connected using vmnet-network-adapter.
+    5.we can verify the connection to the host-os via ping command like ***.***.122.1(see the ip-series relation in last set of bitsi.e., 145 and 1)
+
+> share the os in the windows itself
+
+---
+
+unmounting the mounted windows network folder: umount <local-directory>
+^^ where mounted
+
+---
+
+mount -o loop <iso-name> <local-path-vmware-os>
+
+yum install bind > creates dns server
+
+---
+
+yum group install server with gui
+
+---
+
+yum install vnc > help in remote desktop connection
+
+---
+
+# vi /etc/yum.repos.d/CentOS-Media.repo
+
+Make sure enabled is set to 1:
+enabled=1
+--
+
+INSTALLING PAKCAGES DIRECTLY FROM THE ISO IMAGE/ CD-ROM
+1.mkdir /media/CentOS
+2.mount -t iso9600 -o loop /dev/cdrom /media/CentOS {for cd} || mount -o loop <iso-name> <local-path-vmware-os> {for iso-file}
+{disc must be mounted to the directory /media/CentOS AND IF NOT FOLLOW THE \*\*.}
+3.yum --disablerepo=\* --enablerepo=c6-media << THIS COMMAND Enable Media repo and disable all others.
+^ NOW THE 6 REPRESENTS THE CENTOS'6'
+4.yum install <package-name>
+5.Yum --enablerepo=\* --disablerepo=c6-media << THIS COMMAND Disable Media repo and enable all others.
+
+\*\*If the DVD is mounted to a mount point specified in the baseurl property, then ignore this step. Otherwise, create a symbolic link at a location specified in the baseurl property with the mount point as its target. An example follows.
+ln -s /media/CentOS_6.4_Final /media/CentOS
+
+---
+
+service for vnc= xvc
+sudo netstat -tulpn | grep vnc
+
+---
+
+SETTING UP NFS SERVER:
+services = nfs-server, nfs-lock, nfs-idmap,rpcbind,nfs-util
+nano /etc/exports  
+<path-to-be-shared><press tab>\*(ro) #ro =for read only, rw=read and write
+SAVE AND EXIT FILE.
+exportfs -v
+mount -t nfs <ip-address>:<directory-name> #mount -t nfs <ip-address>:<directory-name>
+
+disabling ports in firewall
+rpcinfo -p
+
+---
+
+for installing gui on cli on redhat
+yum group install "server with gui"
+init 6
+
+---
+
+rpcinfo
+
+firewall -
+
+nfs(network file server) server: accessing filesystem of any system
+for linux and unix.(not for win, mac)
+
+****************************\_****************************-
+rtl8723be card bugging - just run the command below this will unload and reload the module for the wifi card..
+rmmod rtl8723be && modprobe rtl8723be
+
+---
+
+---
+
+---
+
+help: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7
+
+firewalld, ip-tables
+delimetrized zone
+configuring firewalld >>
+firewalld
+firewall-cmd --get-services
+firewall-cmd >> configure via command line
+firewall-config >> configure via graphical interface
+firewall-cmd --get-zones
+firewall-cmd
+firewall-cmd --list-all
+firewall-cmd --get-default-zone
+systemctl restart firewalld.service reload firewall
+firewall-cmd reload reload firewall
+icmp listall
+fi rewal l -cmd --zo ne= publ i c --ad d -po rt= 59 0 4 /tcp
+
+qemu installing > iso error>> https://github.com/jedi4ever/veewee/issues/996
+
+FOR SHOWING UP THE AVAILABLE WIFIS
+nmcli dev wifi
+
+INSTALL REDSHIFT STRAIGHT FORWARD
+http://www.linux-magazine.com/Online/Features/Avoiding-Eye-Strain
+sudo apt install redhift
+sudo apt install gtk-redshift
+redshift -O 4000 > set temp to 4000
+redshift -x > to normal
+.>> root domain
+.com, .in, .org, .edu >> top level domain, Root Dns
+
+Dns search for one of the
+A record >> address record >> name to ip
+MX record >> mail server record >> smtp query
+
+work of DNS SERVER OF COMPANY:
+1.resolve dns queries
+2.records of internal network ip's
+
+bind>> FOR DNS SERVER:
+yum install bind
+/etc/named.com
+
+for permanent entry of any mount : enter in /etc/fstab
+**************************************\_\_**************************************---
+CONFIGURING DNS SERVER-- CACHING ONLY DNS SERVER:-
+1.yum install bind bind-utils -y
+2.check via >> systemctl status named.service, if named service is running or not.
+3.nano /etc/named.conf >> this named service provides dns service to the inteface of the ip's mentioned in it.
+edit 127.0.0.1; >> 127.0.0.1; 192.168.1.1; <other  interfaces ip address_to which dns service to  be provided>
+save the file.
+3.nano /etc/resolv.conf >> this facilitates the dns server address to the interfaces mentioned in the named.conf service.
+edit the file >> nameserver 127.0.0.1
+save the file.
+
+**************************\_\_\_\_**************************--
+tcp is used to transfer files b/w different servers.
+udp is used at transport layer
+udp is used for dns query.
+
+---
+
+firewall-cmd --zone=public --add-port=53/tcp
+firewall-cmd --permanent
+
+read >> nfs server
+
+---
+
+INSTALLING GOOGLE AUTHENTICATOR:
+sudo apt-get install -y libpam-google-authenticator
+google-authenticator
+for activating google-authenticator for ohter users do as >>
+sudo su <username>
+google-authenticator
+
+main configuration in file that activates the settings in the system.
+sudo nano /etc/pam.d/common-auth
+
+and add the line given below ,before the line >>{ auth [success=1 default=ignore] pam_unix.so nullok_secure}
+auth required pam_google_authenticator.so
+TO REMOVE ALL THIS:
+just comment the line we added in the above file.
+
+to create zone:
+sudo nano /etc/named.conf
+
+SOA = START OF AUTHORITY
+IN = INTERNET RECORD
+@ = web server
+
+commands to look for ip:-
+nslookup
+dig
+
+---
+
+vsftp server:
+service name: vsftpd
+port no. used: 20,21
+
+netstat -an |grep :20
+
+chroot
+
+default directory of anonymous: /var/ftp
+
+change
+sudo chmod /home/chetan 555
+also change the line in /etc/vsftpd.conf
+i.e., chroot_local_user=YES
+
+PHPADMIN, PHP INSTALLATION, PHP CONFIGURATION
+sudo servie apache2 restart
+stop
+start
+reconfiguring phpmyadmin:
+sudo dpkg-reconfigure phpmyadmin
+
+changing password policy:
+
+First you login with mysql -u root -p and check the current policy rules by:
+
+# SHOW VARIABLES LIKE 'validate_password%';
+
++--------------------------------------+--------+
+| Variable_name | Value |
++--------------------------------------+--------+
+| validate_password_dictionary_file | |
+| validate_password_length | 5 |
+| validate_password_mixed_case_count | 1 |
+| validate_password_number_count | 1 |
+| validate_password_policy | MEDIUM |
+| validate_password_special_char_count | 1 |
++--------------------------------------+--------+
+Then you can change any of the above variables at your will:
+
+# SET GLOBAL validate_password_length = 5;
+
+# SET GLOBAL validate_password_number_count = 0;
+
+# SET GLOBAL validate_password_mixed_case_count = 0;
+
+# SET GLOBAL validate_password_special_char_count = 0;
+
+Finally you can create a database and a user accessing it with a simpler password:
+
+# CREATE USER 'laravel'@'localhost' IDENTIFIED BY 'laravel';
+
+# GRANT ALL PRIVILEGES ON _._ TO 'laravel'@'localhost' WITH GRANT OPTION;
+
+# CREATE DATABASE laravel;
+
+# FLUSH PRIVILEGES;
+
+After that you can login with mysql -u user1 -p laravel using password laravel
+
+user:
+mohit
+philipsP123!
+
+CREATE NFS SERVER CENTOS 7.2 {https://www.howtoforge.com/tutorial/setting-up-an-nfs-server-and-client-on-centos-7/}
+
+> CONFIGURE FIREWALL: yum -y install firewalld
+> systemctl start firewalld.service
+> systemctl enable firewalld.service
+> firewall-cmd --permanent --zone=public --add-service=ssh
+> firewall-cmd --permanent --zone=public --add-service=nfs
+> firewall-cmd --reload
+
+> INSTALLING NFS SERVER:
+> yum -y install nfs-utils
+> systemctl enable nfs-server.service
+> systemctl start nfs-server.service
+
+> configuring exports file
+> nano /etc/exports
+
+    /home           192.168.1.101(rw,sync,no_root_squash,no_subtree_check) 	#paste this line the file
+    ^^ this folder will be shared and accessed as root while the one below will not be accessed as root rights
+
+e.g., /var/nfs 192.168.1.101(rw,sync,no_subtree_check)
+exportfs -a #Whenever we modify /etc/exports, we must run to make the changes effective. Also # systemctl restart nfs-server.service
+
+> mounting on client side
+> mount 192.168.1.100:/home /mnt/nfs/home
+
+    								^^ path where to mount
+
+> to check if mounted
+> df -h
+> or try
+> mount
+
+> unmount
+> umount /mnt/nfs/home
+> umount -f /mnt/nfs/home #if above doesn't run
+> umount -l /mnt/nfs/home #if above doesn't run
+
+---
+
+setfacl -m u:exp2:rw /file1
+getfacl
+setfacl 0m m:r /file1
+at now +2min
+atq
+atrm
+crontab -e
+fdisk -l
+cat /etc/fstab >> show root directory in the disk
+pkill chrome
+pkill vm
+
+    crontab::
+
+ls /var/spool/cron/ >> location where jobs are stored
+vi /etc/crontab
+
+watch -n 1 date
+watch -n <seconds to update result> <command>
+
+links for browsing internet.
+
+backup using tar
+
+sudo tar -cvpzf wwwbackup.tar.gz .
+^ <file name> ^ content <folder name/filename / \* for the content of the pwd>
+
+Linux to Linux LVM
+using system id>> 8e
+Physical_Volume > Volume_Group > Logical_Volume
+
+physical volume = partitions
+lvremove <partitions> << for removing partition removing
+mvremove <disks> << for removing volume group
+pvremove <partitions> << for wiping a partition
+pvcreate <partitions> << for creating physical volume
+vgcreate <volume-group-name> <partitionS> << for creating volume group with given name
+
+vgscan
+vgdisplay <volume-group-name>
+vgreduce <volume-group-name> << for removing volume-group
+
+lvcreate -n <logical-name> -L +400 <volume-group-name> << for creating logical volume of size ^^ in volume ^^.
+
+lvextend -L +500M /dev/netm/lvl << extends logical volume by 500 mb
+lsblk
+pvdisplay | more
+init 6
+
+lvremove /dev/remove/<volume-group-name> << deletes all logical in volume
+vgremove /dev/<>volume-group-name> << delete volume group
+pvremove /dev/sda5 /dev/sda6 /dev/sda7 << wjpes physical volumes
+
+mkfs 0t xfs /dev/sahil/l1 << creating filesystem for l1 in sahil(volume group)
+
+mount /dev/sahil/l1 <directory> << mount to directory
+df -h << show the mount point of the logical of volume group
+xfs_growfs /dev/sahil/l1 << for creating filesystem for newly
+extended in l1
+
+nano /etc/fstab
+/dev/mapper/sahil-l1 root/newfolder xfs defaults 0 0
+
+init 6 << restarting
+
+> > Server is the computer to which we are connecting.
+> > And we are client if we're connecting.
+
+ssh ip-address <commands not compulsory> :
+{secure shell}
+
+scp root@<ip-address-of-server>:/<file-in-server> <local directory-in-client>
+{secure copy}
+
+> > Vice-versa for copy to the server i.e., scp root@<ip-address-of-server>:<local directory-in-client> /<file-in-server>
+
+ifconfig <network-interface> <ipaddress> netmask 255.255.255.0
+/etc/resolv.conf
+
+subscription-manager register- --username admin-example
+
+**************************************\_**************************************-
+READ ACCESS ONLY TO THE FOLDER{ the folder may be owned by the root, just get the permissions back
+change ownership of a folder along with the files and subfolders
+This is usually helpful when we dont have the write access to the partiton.
+
+chown -R owner:group /dirname #to change both owner and group owner
+chown -R owner: /dev/sda4 #to change only owner
+chown -R :group /dev/sda4 #to change only group owner
+chown -R owner:group /dev/sda4
+chown -R $USER:$USER /dev/sda4
+
+-R (recursive chown)
+
+ntfsfux /dev/sda3
+USEFUL: when we have a read only situation in ubuntu, due to the hibernated fuddupanti of windows fast startfup.
+
+LINUX ON USB, USB BOOT
+
+sudo unmount /dev/sdb
+sudo dd if=<iso-file> of=<drive> bs=4M && sync
+sudo dd if=any-linux-iso.iso of=/dev/sdb bs=4M && sync
+
+sudo mount -o loop <iso-file> <mount-point>
+cp -a <mount-point>/. /media/pendrive
+sudo syslinux -s /dev/sdb1
+:>cd IN /media/pendrive/
+mv isolinux syslinux
+:>cd IN SYSLINUX FOLDER::
+mv isolinux.cfg syslinux.cfg
+
+SSH USING PUBLIC PRIVATE KEY::
+
+sudo service ssh start
+systemctl status ssh
+ststemctl start ssh
+
+METHOD 1
+ssh-keygen
+file_name>> <blank>
+passphrase>> <optional>
+ssh-copy-id <target_user>@<target_ip>
+ssh <target_user>@<target_ip>
+
+METHOD 2 (with defined file-name)
+ssh-keygen
+file_name>> sk1
+passphrase>> <optional>
+ssh-copy-id -i ~/.ssh/sk1.pub <target_user>@<target_ip> #this uses the public key with name sk1.pub
+ssh -i ~/.ssh/sk1 <target_user>@<target_ip> #this uses the private key with name sk1
+
+##ssh-copy-id > basically copies the content of the public key <specified> to the file authorized_keys in the target pc i.e., </home/user/.ssh/authorized_keys>
+
+sudo arp-scan --interface=wlp3s0 --localnet
+arp -n
+sudo apt-get install nmap
+sudo nmap -sP 192.168.1.0/24
+
+which command find the location of the command
+
+sudo apt install cmus #music player
+c for pausing, :a <target song_to add to the playlist>
+
+cal -y #current year calendar
+cal #current month calendar
+cal 1996 #calendar of 1996
+cal nov 1996 #calendar of particular month
+
+sib registered. ref.no is 0403000374

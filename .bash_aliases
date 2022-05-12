@@ -484,3 +484,32 @@ alias cleanAndKeepLast4WeeksLogs='sudo journalctl --vacuum-time=4weeks'
 # 1.8G    blulabs
 # 15G     Documents
 # 58G     Downloads
+
+# AWS ec commands: From my old windows's additionalPath repo
+alias sshInstance1='ssh -i /e/mysshkeys/aws-instance1-indialife123.pem ubuntu@3.139.35.20'
+alias startInstance1='aws ec2 start-instances --instance-ids i-0634f170159defdc4'
+alias stopIinstance1='aws ec2 stop-instances --instance-ids i-0634f170159defdc4'
+
+alias showWifiNetworks='nmcli dev wifi'
+
+# Updating ip @ cloudns.net
+# LEARN: Updating dns address @ cloudns.net
+# wget -q --read-timeout=0.0 --waitretry=5 --tries=400 --background https://ipv4.cloudns.net/api/dynamicURL/?q=MzE2MTk0ODoyMjUxMzk2MTI6MDcwNTZkNDViNjE2MmZmOTY5ZTE5YWViYjY0YmRlMDJhMzg4NzBhYjFlOTRlODA0ZjUyMWQxZDBjZjBkZGFkNQ -O /c/tempLogs/1.txt
+# wget -q --read-timeout=0.0 --waitretry=5 --tries=400 --background https://ipv4.cloudns.net/api/dynamicURL/?q=MzE2MTk0ODoyMjUxMzk2MjI6OTY4MWQyMTRmMzY1NWI4YmFjZTJmMTNjYTA1NWI3ZDQ3ZTNjM2U4YTI4ZTgwNWNiMjVhMTQyYWYzNzFkMmIyZg -O /c/tempLogs/2.txt
+
+
+alias yd='youtube-dl'
+alias yp='yarn pub'
+alias ys='yarn --silent start'
+
+alias npmls='npm ls -g --depth 0'
+alias nodeNoWarning='node.exe --no-warnings %*'
+alias esm='node -r esm $*'
+alias getNodePathPrefix='npm config get prefix'
+
+
+# file paths to be fixed
+alias createNodemon.json='cp /c/additionalPath/nodemon.json .'
+alias create.gitignore='cp /c/additionalPath/.gitignore .'
+alias create.prettierrc.yaml='cp /c/additionalPath/.prettierrc.yaml .'
+alias eslintfix='echo SKIP_PREFLIGHT_CHECK=true >> .env'
