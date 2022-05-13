@@ -2,7 +2,6 @@
   "workbench.colorTheme": "Default Dark+",
   "explorer.confirmDelete": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "files.exclude": {
     "**/node_modules": true,
@@ -99,5 +98,6 @@
   "editor.guides.bracketPairs": "active",
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "editor.tabCompletion": "on",
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "editor.formatOnSave": true
 }

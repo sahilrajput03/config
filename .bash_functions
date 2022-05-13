@@ -447,3 +447,24 @@ Epsilot - 232
 φ  phi lower    Alt 237;      Ω  omega        Alt 234
 "
 }
+
+copySshPublicKeyToTarget (){
+	# ssh-copy-id -i .ssh/id_ed25519 foobar@remote
+	# other way manually copying via `tee` command:
+	# cat ~/.ssh/id_ed25519.pub | ssh user@hostname_or_ip tee .ssh/authorized_keys
+	ssh-copy-id -i $@
+}
+# USAGE:
+# copySshPublicKeyToTarget ~/.ssh/array-archos user@hostname
+# OR you may want to add it to a existing ssh profile (you'll need to add the path same private key file path for that profile later  to make it work automatiacally with `ssh` or `scp` cli in future).
+# copySshPublicKeyToTarget ~/.ssh/array-archos mySshProfile
+
+# markdownToHtml (){
+m2htm (){
+	pandoc -t html "$@" > /tmp/v.htm
+	echo Try opening /tmp/v.htm in your browser now!
+}
+# USAGE:
+# m2htm myFile.md
+# Now open /tmp/v.htm
+#### FYI:Pandoc has 25.5 K github stars. Github: https://github.com/jgm/pandoc

@@ -331,7 +331,7 @@ adbInfo(){
 	echo Some adb commands and aliases ~Sahil
 	echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'
 	echo adb shell # To execute shell in mobile.
-	echo adbRestart # To fix common adb connection error you face every fucking time.
+	echo adbRestart # Fix error of "no permission" issue in `adb devices` command.
 	echo adbDebug # 
 }
 alias adbRestart='sudo adb kill-server; sudo adb start-server'
@@ -513,3 +513,6 @@ alias createNodemon.json='cp /c/additionalPath/nodemon.json .'
 alias create.gitignore='cp /c/additionalPath/.gitignore .'
 alias create.prettierrc.yaml='cp /c/additionalPath/.prettierrc.yaml .'
 alias eslintfix='echo SKIP_PREFLIGHT_CHECK=true >> .env'
+
+alias fg='figlet'
+# Usage: fg I am sahil
