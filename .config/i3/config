@@ -414,6 +414,8 @@ for_window [class="Characters"] floating enable
 ##### for the property values to be passed one of below should be used to identify the window:
 # ERROR: CONFIG: Expected one of these tokens: 'class', 'instance', 'window_role', 'con_id', 'id', 'window_type', 'con_mark', 'title', 'urgent', 'workspace', 'machine', 'floating_from', 'tiling_from', 'tiling', 'floating', 'all', ']'
 #
+# Trying to enable it for my gtk applications:
+for_window [class=".binary"] floating enable
 
 # BELOW FOR COPYQ (TO MAKE IT FLOAT AND ADD A HOTKEY)
 for_window [class="copyq" instance="copyq"] floating enable

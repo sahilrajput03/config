@@ -407,6 +407,16 @@ ts (){
 	# This file will only execute with npmBackup executable.
 }
 
+# Make sure you have gtk4 installed, `sudo pacman -S gtk4`
+gtkmon (){
+	nodemon -w "$@" -x "gcc -o .binary $@ `pkg-config --cflags --libs gtk4` && ./.binary"
+	# source: https://www.gtk.org/docs/getting-started/hello-world
+}
+gmon (){
+	gtkmon $@
+}
+
+
 
 # Blazepack
 alias bp='blazepack'
@@ -468,3 +478,4 @@ m2htm (){
 # m2htm myFile.md
 # Now open /tmp/v.htm
 #### FYI:Pandoc has 25.5 K github stars. Github: https://github.com/jgm/pandoc
+#### Try pandoc playground @ https://pandoc.org/try
