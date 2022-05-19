@@ -165,8 +165,9 @@ function backupConfigFiles {
 }
 
 # Vscode special
-alias backupVSCODESettings='\cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
-alias backupVSCODESettingsDryDiff='diff ~/Documents/github_repos/config/Code/User/settings.json ~/Code/User/settings.json '
+# I have enabled autobacking up of both settings.json and keybindings.json file, yo!!
+# alias backupVSCODESettings='\cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
+# alias backupVSCODESettingsDryDiff='diff ~/Documents/github_repos/config/Code/User/settings.json ~/Code/User/settings.json '
 
 function bkpfstab {
 	cp /etc/fstab $backup_dir
@@ -472,10 +473,25 @@ copySshPublicKeyToTarget (){
 # markdownToHtml (){
 m2htm (){
 	pandoc -t html "$@" > /tmp/v.htm
-	echo Try opening /tmp/v.htm in your browser now!
+	echo File written @ /tmp/v.htm
+	echo Try opening file:///tmp/v.htm in your browser now!
+}
+m2htmWatch (){
+	nodemon -w $@ -x "pandoc -t html $@ > /tmp/v.htm"
+	echo File written @ /tmp/v.htm
+	echo Try opening file:///tmp/v.htm in your browser now!
 }
 # USAGE:
 # m2htm myFile.md
 # Now open /tmp/v.htm
 #### FYI:Pandoc has 25.5 K github stars. Github: https://github.com/jgm/pandoc
 #### Try pandoc playground @ https://pandoc.org/try
+
+# FYI: clang automatically search for .clang-format file in current directory for formatting settings. Yo! src: https://releases.llvm.org/6.0.0/tools/clang/docs/UsersManual.html#configuration-files
+clangFormatWatch () {
+	nodemon -w "$@" -x "clang-format -i $@"
+}
+
+clangFormatWatchAll () {
+	nodemon -e c -x "clang-format -i *"
+}

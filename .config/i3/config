@@ -351,7 +351,7 @@ mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eboot, sh[u]tdown
   bindsym u exec systemctl poweroff;
   bindsym h exec systemctl hibernate; mode "default"
   bindsym s exec systemctl suspend; mode "default"
-  bindsym k exec i3lock; mode "default"
+  bindsym k exec i3lock -i ~/scripts-media/wallpapers/nathan-queloz.png; mode "default"
 
   bindsym Escape mode "default"
   bindsym Return mode "default"

@@ -396,6 +396,7 @@ alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
 alias cd.portableHardDisk='cd /mnt/sdc2'
 alias cd.additionalPath='cd ~/Documents/github_repos/additionalPath/'
 alias cd.test='cd ~/test'
+alias cd.backgrounds='/usr/share/backgrounds/archlinux'
 
 
 # Setup second display

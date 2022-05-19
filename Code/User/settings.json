@@ -4,12 +4,13 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.minimap.enabled": false,
   "files.exclude": {
-    "**/node_modules": true,
-    "**/package-lock.json": true,
+    "**/.binary": true,
     "**/.classpath": true,
+    "**/.factorypath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/node_modules": true,
+    "**/package-lock.json": true
   },
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
@@ -84,7 +85,6 @@
       }
     ]
   },
-  "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
   "window.menuBarVisibility": "toggle",
   "redhat.telemetry.enabled": false,
@@ -100,7 +100,5 @@
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
   "editor.formatOnSave": true,
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  }
+  "window.zoomLevel": 1
 }

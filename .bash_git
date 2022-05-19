@@ -35,14 +35,13 @@ alias gch='git checkout'
 alias gpul='git pull'
 alias gpus='git push'
 # gpulpus
-alias gpulpus='git pull; git push'
+alias gpulpus='gac fast; git pull; git push'
 alias gpp='gpulpus'
 alias gcl='git clone'
 alias gclWithSubmodules='git clone --recurse-submodules -j8'
 #src: https://stackoverflow.com/a/4438292
 
 alias gsh='git show'
-alias gpp='git pull; git push'
 # LEARN: ARCHIVING A GIT REPO:
 # Usage: `garchive myBackupFile.zip main`, src: https://stackoverflow.com/a/55515739/10012446
 alias garchive='git archive --format zip --output'
