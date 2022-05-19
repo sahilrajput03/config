@@ -14,6 +14,7 @@ convert -brightness-contrast -30x-50 $IMAGE1 $IMAGE1
 
 # Add Gaussian blur and re-scale image
 convert -filter Gaussian -resize 25% -resize 400% $IMAGE1 $IMAGE1
+# convert -filter Gaussian -resize 50% -resize 200% $IMAGE1 $IMAGE1
 
 # crop image to two parts, monitor 1 & 2
 # for first monitor of resolution 1920x1080 ~ Sahil
@@ -28,7 +29,8 @@ convert $IMAGE2 $IMAGE3 +append $IMAGE1
 
 i3lock -i $IMAGE1
 
-# rm $IMAGE1 $IMAGE2 $IMAGE3
+# Removing files is necessary else causes undesirable errors
+rm $IMAGE1 $IMAGE2 $IMAGE3
 
 
 ##### others ####
