@@ -35,7 +35,7 @@ i3lock -i $IMAGE1 --no-unlock-indicator
 
 
 # Removing files is necessary else causes undesirable errors
-# rm $IMAGE1 $IMAGE2 $IMAGE3
+rm $IMAGE1 $IMAGE2 $IMAGE3
 
 
 ##### others ####
