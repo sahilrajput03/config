@@ -351,7 +351,13 @@ mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eboot, sh[u]tdown
   bindsym u exec systemctl poweroff;
   bindsym h exec systemctl hibernate; mode "default"
   bindsym s exec systemctl suspend; mode "default"
-  bindsym k exec i3lock -i ~/scripts-media/wallpapers/nathan-queloz.png; mode "default"
+
+  # old simple i3lock
+  # bindsym k exec i3lock -i ~/scripts-media/wallpapers/nathan-queloz.png; mode "default"
+
+  # new i3 custom
+  bindsym k exec ~/scripts/lock-i3.sh; mode "default"
+
   # lock wallpaper has to be the same resolution as the resolution shown by xrandr so that wallpaper fits the screen properly ~Sahil
 
   bindsym Escape mode "default"
