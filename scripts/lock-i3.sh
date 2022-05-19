@@ -6,6 +6,8 @@ IMAGE1=~/.config/i3/i3lock_temp/i3lock1.png
 IMAGE2=~/.config/i3/i3lock_temp/i3lock2.png
 IMAGE3=~/.config/i3/i3lock_temp/i3lock3.png
 
+# To see final version of images IMAGE1, IMAGE2, IMAGE3 you can see one sample in ~/.config/i3/i3lock_temp/for_reference/ folder.
+
 # Get the screenshot, add the blur and lock the screen with it
 scrot $IMAGE1
 
@@ -33,7 +35,7 @@ i3lock -i $IMAGE1 --no-unlock-indicator
 
 
 # Removing files is necessary else causes undesirable errors
-rm $IMAGE1 $IMAGE2 $IMAGE3
+# rm $IMAGE1 $IMAGE2 $IMAGE3
 
 
 ##### others ####
