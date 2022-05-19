@@ -16,7 +16,7 @@ convert -brightness-contrast -30x-50 $IMAGE1 $IMAGE1
 convert -filter Gaussian -resize 25% -resize 400% $IMAGE1 $IMAGE1
 
 # crop image to two parts, monitor 1 & 2
-# for first monitor of resolution 1920x768 ~ Sahil
+# for first monitor of resolution 1920x1080 ~ Sahil
 convert $IMAGE1 -crop 1920x1080+0+0 $IMAGE2
 composite -gravity center $IMAGE $IMAGE2 $IMAGE2
 
