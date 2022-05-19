@@ -27,7 +27,10 @@ composite -gravity center $IMAGE $IMAGE3 $IMAGE3
 
 convert $IMAGE2 $IMAGE3 +append $IMAGE1
 
-i3lock -i $IMAGE1
+# i3lock -i $IMAGE1
+# hide keystores in lock mode
+i3lock -i $IMAGE1 --no-unlock-indicator
+
 
 # Removing files is necessary else causes undesirable errors
 rm $IMAGE1 $IMAGE2 $IMAGE3
