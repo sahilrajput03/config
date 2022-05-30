@@ -15,7 +15,8 @@ scrot $IMAGE1
 convert -brightness-contrast -30x-50 $IMAGE1 $IMAGE1
 
 # Add Gaussian blur and re-scale image
-convert -filter Gaussian -resize 25% -resize 400% $IMAGE1 $IMAGE1
+convert -filter Gaussian -resize 10% -resize 1000% $IMAGE1 $IMAGE1
+# convert -filter Gaussian -resize 25% -resize 400% $IMAGE1 $IMAGE1
 # convert -filter Gaussian -resize 50% -resize 200% $IMAGE1 $IMAGE1
 
 # crop image to two parts, monitor 1 & 2

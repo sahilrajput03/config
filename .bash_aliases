@@ -205,7 +205,6 @@ alias cp='cp -i'
 # I accidentally important files :( once, so its important to use -i for me now on!
 # This allows me know whenever I am accidentally overwriting any existing file, so it'll prompt me before actually doing that. Yo! ~ Missing semester!
 alias visudo='sudo EDITOR=nvim visudo'
-# FYI: Use exa instead of l and ls.
 alias tree='tree -I node_modules'
 alias explorer='pcmanfm'
 alias fm='air pcmanfm'
@@ -228,9 +227,20 @@ alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(dat
 # menus as well, src: https://opensource.com/article/19/7/xclip
 
 alias open-pdf='llpp'
+
+# ls
+# FYI: Use exa instead of l and ls.
 alias l='exa -lh' # ^^ -h is for showing column headers in the long listing format. Source: https://stackoverflow.com/a/46471147/10012446
-alias lsa='ls -a'
 alias ls='exa --color=auto'
+alias lsa='ls -a'
+alias lsmnt='ls /mnt/*'
+alias lsg='ls -a | grep -i'
+##### USAGE (using bare ls command): You may add -l flag to get long list format as well. # alias lsAccessed='\ls -t'
+##### Using exa (although ls is aliased as exa)
+# USAGE: ls- -l  to list in long format:
+alias ls-='exa --sort modified --across -r'
+# -r means reverse order, to see more options of sorting use: `exa --sort` command
+
 alias inw='inotifywait'
 alias dc='docker-compose'
 alias e='exit'
@@ -243,7 +253,6 @@ alias hib='systemctl hibernate'
 alias md='mkdir'
 alias rd='rmdir'
 alias wifi='nmtui'
-alias lsmnt='ls /mnt/*'
 alias rmrf='rm -rf'
 alias ..='cd ..'
 alias up='cd ..'
@@ -326,7 +335,6 @@ alias kernelname='uname -r'
 alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
 # Below aliases helps in searching current directory. -a means to include hidden files as well.
-alias lsg='ls -a | grep -i'
 adbInfo(){
 	echo Some adb commands and aliases ~Sahil
 	echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'
@@ -455,13 +463,6 @@ function clearnTmuxHistoryOfActivePane () {
 alias watchSystemDService='journalctl -fu'
 # Usage: watchSystemDService lemon
 
-# Usage(using bare ls command): You may add -l flag to get long list format as well.
-# alias lsAccessed='\ls -t'
-
-# Using exa (although ls is aliased as exa)
-# Usage: ls- -l  to list in long format:
-alias ls-='exa --sort modified --across -r'
-# -r means reverse order, to see more options of sorting use: `exa --sort` command
 
 
 #### Clear cace of pacman

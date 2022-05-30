@@ -365,6 +365,10 @@ mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eboot, sh[u]tdown
 }
 
 bindsym $mod+x mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eboot, sh[u]tdown, [H]ibernate, [S]uspend, Loc[k]"
+
+# Works pretty cool!
+bindsym $mod+z exec /home/array/scripts/lock-i3.sh
+# bindsym $mod+Ctrl+k exec /home/array/scripts/lock-i3.sh
 # <<<<<<<<<<<<<<<< 
 
 
@@ -431,6 +435,7 @@ bindsym $mod+comma exec copyq toggle
 
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
+
 
 # # TESTING # #
 # bindsym $mod+comma exec "notify-send Hello, i3"
