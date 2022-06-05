@@ -1,10 +1,11 @@
+// example in action: https://github.com/sahilrajput03/learning_sql/blob/main/fso-part13/example/.eslintrc.js
 module.exports = {
 	env: {
 		node: true,
 		commonjs: true,
 		es2021: true,
 		jest: true,
-		// ^ This fixes 🤑︎ `test not defined` and `expect not defined` eslint warnings.
+		// ^ This fixes 🤑︎ `test not defined` and `expect not defined` eslint warnings, else comment the line if you don't need jest.
 	},
 	extends: 'eslint:recommended',
 	parserOptions: {
