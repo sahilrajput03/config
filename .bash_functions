@@ -123,8 +123,8 @@ function backupConfigFiles {
 	\cp $_home/.config/Code/User/keybindings.json $backup_dir/Code/User/
 	echo "Backup of ~/.config/Code/User/keybindings.json file succeeded."
 
-	\cp $_home/Code/User/settings.json $backup_dir/Code/User/
-	echo "Backup of ~/Code/User/settings.json file succeeded."
+	\cp $_home/.config/Code/User/settings.json $backup_dir/Code/User/
+	echo "Backup of ~/.config/Code/User/settings.json file succeeded."
 
 	\cp $_home/.prettierrc.js $backup_dir/
 	echo "Backup of ~/.prettierrc.js file succeeded."
