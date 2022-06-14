@@ -116,8 +116,12 @@ function backupConfigFiles {
 	\cp -r $_home/nvim-sahil $backup_dir/
 	echo "Backup of ~/nvim-sahil directory succeeded."
 
-	\cp $_home/Code/User/keybindings.json $backup_dir/Code/User/
-	echo "Backup of ~/Code/User/keybindings.json file succeeded."
+	# \cp $_home/Code/User/keybindings.json $backup_dir/Code/User/
+	# echo "Backup of ~/Code/User/keybindings.json file succeeded."
+
+	# my vscode's keybindings are updated at different file IDK why so using that instead!
+	\cp $_home/.config/Code/User/keybindings.json $backup_dir/Code/User/
+	echo "Backup of ~/.config/Code/User/keybindings.json file succeeded."
 
 	\cp $_home/Code/User/settings.json $backup_dir/Code/User/
 	echo "Backup of ~/Code/User/settings.json file succeeded."
