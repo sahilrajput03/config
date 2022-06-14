@@ -167,7 +167,7 @@ function backupConfigFiles {
 # Vscode special
 # I have enabled autobacking up of both settings.json and keybindings.json file, yo!!
 # alias backupVSCODESettings='\cp ~/Code/User/settings.json ~/Documents/github_repos/config/Code/User/settings.json'
-# alias backupVSCODESettingsDryDiff='diff ~/Documents/github_repos/config/Code/User/settings.json ~/Code/User/settings.json '
+alias backupVSCODESettingsDryDiff='diff ~/Documents/github_repos/config/Code/User/settings.json ~/Code/User/settings.json '
 
 function bkpfstab {
 	cp /etc/fstab $backup_dir

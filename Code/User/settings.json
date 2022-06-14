@@ -46,6 +46,9 @@
     "editor.formatOnType": true,
     "editor.formatOnSaveMode": "file"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "launch": {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -99,7 +102,8 @@
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
   "editor.formatOnSave": true,
-  "workbench.activityBar.visible": false,
   "svelte.enable-ts-plugin": true,
-  "window.zoomLevel": 2
+  "workbench.activityBar.visible": false,
+  "prettier.enableDebugLogs": true,
+  "window.zoomLevel": 1
 }

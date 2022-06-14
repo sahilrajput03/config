@@ -316,3 +316,5 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 # Now you may browse: https://www.fixedlife.ml/
 # using below command and ssl should work fine!
 # sudo serve -l 443 --ssl-cert $cert --ssl-key $key
+#
+# /mnt/sda2/UnrealEngine-release/Engine/Binaries/Linux/UnrealEditor -opengl4

@@ -306,7 +306,7 @@ alias cwn='cargo watch -c -x run'
 alias ct='cargo watch -c -x test'
 #cargo watch --quiet --clear --exec 'run --quiet'
 alias co='code .'
-alias cor='code -r'
+alias cor='code . -r'
 alias s='npm start'
 alias nr='npm run'
 # autocomplete `nr`
@@ -519,3 +519,11 @@ alias eslintfix='echo SKIP_PREFLIGHT_CHECK=true >> .env'
 
 alias fg='figlet'
 # Usage: fg I am sahil
+
+alias simpleTerminal='st'
+
+# Check for graphics card drivers, src: https://bbs.archlinux.org/viewtopic.php?id=136535
+# and search for `amd` in the output:
+alias checkGraphicsCard='lspci -v'
+
+alias UE4Editor='air ~/Documents/UnrealEngine-4.23.1-release/Engine/Binaries/Linux/UE4Editor'
