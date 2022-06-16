@@ -318,3 +318,5 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 # sudo serve -l 443 --ssl-cert $cert --ssl-key $key
 #
 # /mnt/sda2/UnrealEngine-release/Engine/Binaries/Linux/UnrealEditor -opengl4
+# pulseaudio -k restarts the daemon
+# incase pulseaudio not running, typipng pulseaudio will start it!

@@ -532,3 +532,9 @@ alias simpleTerminal='st'
 alias checkGraphicsCard='lspci -v'
 
 alias UE4Editor='air ~/Documents/UnrealEngine-4.23.1-release/Engine/Binaries/Linux/UE4Editor'
+
+# bluetoothctl
+alias blc='bluetoothctl'
+# CONNECT TO MY AIRDOPES 441 PRO
+alias blcc='blc connect 00:00:AB:CE:16:01'
+alias blcd='blc disconnect'
