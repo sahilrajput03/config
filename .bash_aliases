@@ -312,7 +312,15 @@ alias code="code --user-data-dir=/home/array/.config/Code/"
 
 alias co='code .'
 alias cor='code . -r'
-alias s='npm start'
+# alias s='npm start'
+
+function s () {
+	if [ -f package.json ]; then
+		npm start
+	else
+		echo Nothing to do here.
+	fi
+}
 alias nr='npm run'
 # autocomplete `nr`
 complete -F _complete_alias nr
@@ -538,3 +546,4 @@ alias blc='bluetoothctl'
 # CONNECT TO MY AIRDOPES 441 PRO
 alias blcc='blc connect 00:00:AB:CE:16:01'
 alias blcd='blc disconnect'
+alias blcr='blcd; blcc'
