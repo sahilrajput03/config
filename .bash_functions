@@ -500,3 +500,22 @@ clangFormatWatch () {
 clangFormatWatchAll () {
 	nodemon -e c -x "clang-format -i *"
 }
+
+searchProcess () {
+	if [ $# -eq 0 ]; then
+		echo Please input some text..
+	else
+		ps -aux | grep "$@" | grep -v grep
+	fi
+}
+
+# Beware of killing any random process so ALWAYS USE ABOVE FUNCTION TO DO DRY RUN.
+# # Test by opening a file via `vlc ~/scripts-media/5_minutes_break_music.mp4` and then try getting it via `searchProcess vlc` and when confirmed use, `searchProcessAndKill vlc`
+searchProcessAndKill () {
+	if [ $# -eq 0 ]; then
+		echo Please input some text..
+	else
+		# ps -aux | grep "$@" | grep -v grep | awk '{print $2}' | xargs kill
+		searchProcess "$@" | awk '{print $2}' | xargs kill
+	fi
+}
