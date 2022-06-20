@@ -416,7 +416,12 @@ bindsym Print exec /usr/bin/flameshot gui
 # WM_NAME(STRING) = "Chat"
 # LEARNING: I got above properties from running `xprop` on the "zoom chat" window and then used them in i3 as below.
 # IT WORKED GOOD!
-for_window [class="zoom " title="Chat"] floating enable
+
+# For chat window only
+# for_window [class="zoom " title="Chat"] floating enable
+
+# MAKE ALL ZOOM WINDOWS FLOAT, YIKES! 20 Jun, 2022
+for_window [class="zoom " title=" "] floating enable
 # Below for gnome-characters
 for_window [class="Characters"] floating enable
 # FETCHING VALUES FROM `xprop`

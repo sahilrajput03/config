@@ -519,3 +519,5 @@ searchProcessAndKill () {
 		searchProcess "$@" | awk '{print $2}' | xargs kill
 	fi
 }
+## other native ways:
+# kill $(pgrep vlc)
