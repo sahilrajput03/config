@@ -320,3 +320,6 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 # /mnt/sda2/UnrealEngine-release/Engine/Binaries/Linux/UnrealEditor -opengl4
 # pulseaudio -k restarts the daemon
 # incase pulseaudio not running, typipng pulseaudio will start it!
+#
+# # kdenlive (installed via pacman) // todo; add to archlinux page., ::: Amazing cut video tutorial: https://www.youtube.com/watch?v=JMKRKv2ogKU
+# We ca edit in youtube editor as well: https://youtu.be/4hGe9KmRr4s

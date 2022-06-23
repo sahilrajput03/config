@@ -418,7 +418,7 @@ alias cd.portableHardDisk='cd /mnt/sdc2'
 alias cd.additionalPath='cd ~/Documents/github_repos/additionalPath/'
 alias cd.test='cd ~/test'
 alias cd.backgrounds='/usr/share/backgrounds/archlinux'
-
+alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
