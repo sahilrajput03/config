@@ -12,6 +12,8 @@ alias gbr='git browse'
 alias gcu='git copyUrl'
 alias ggu='git getUrl'
 
+alias gca='git commit --amend'
+
 alias gco='git commit -m'
 alias gch='git checkout'
 # Add autocompletion for gch <TAB> command, yo
