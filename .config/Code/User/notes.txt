@@ -1,0 +1,5 @@
+workbench.action.navigateBackInEditLocations: Back means to go one level up in edit history.
+^^ alt+<
+
+workbench.action.navigateForwardInEditLocations: Forward meant to one level down in edit history.
+^^ alt+>

@@ -547,3 +547,6 @@ alias blc='bluetoothctl'
 alias blcc='blc connect 00:00:AB:CE:16:01'
 alias blcd='blc disconnect'
 alias blcr='blcd; blcc'
+
+alias restartVsftpd='systemctl restart vsftpd.service'
+alias vi.vsftpd='sudo nvim /etc/vsftpd.conf'

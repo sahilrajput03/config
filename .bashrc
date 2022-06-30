@@ -323,3 +323,4 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 #
 # # kdenlive (installed via pacman) // todo; add to archlinux page., ::: Amazing cut video tutorial: https://www.youtube.com/watch?v=JMKRKv2ogKU
 # We ca edit in youtube editor as well: https://youtu.be/4hGe9KmRr4s
+# TODO ADD TO ARCH_install packages list in github:

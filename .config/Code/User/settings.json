@@ -4,6 +4,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.minimap.enabled": false,
   "files.exclude": {
+    "**/__pycache__": true,
     "**/.binary": true,
     "**/.classpath": true,
     "**/.factorypath": true,

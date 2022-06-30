@@ -13,6 +13,7 @@ alias gcu='git copyUrl'
 alias ggu='git getUrl'
 
 alias gca='git commit --amend'
+alias gcaa='git add -A; git commit --amend'
 
 alias gco='git commit -m'
 alias gch='git checkout'
