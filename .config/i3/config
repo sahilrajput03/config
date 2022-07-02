@@ -408,7 +408,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +10% # increase screen brightne
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%- # decrease screen brightness
 
 #Setting flameshot to capture screen on PrintScreen keypress. Src: https://unix.stackexchange.com/a/564211/504112
-bindsym Print exec /usr/bin/flameshot gui
+# OLDER (for flameshot installed via pacman): bindsym Print exec /usr/bin/flameshot gui
+bindsym Print exec /home/array/binaries/Flameshot-12.0.rc1.x86_64.AppImage gui
 
 
 ##### MAKING zoom's chat window float by default.

@@ -550,3 +550,5 @@ alias blcr='blcd; blcc'
 
 alias restartVsftpd='systemctl restart vsftpd.service'
 alias vi.vsftpd='sudo nvim /etc/vsftpd.conf'
+
+alias handbrake='ghb'
