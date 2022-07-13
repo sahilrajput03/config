@@ -38,6 +38,7 @@ alias gl='git log --decorate --graph --oneline -10'
 alias gch='git checkout'
 alias gpul='git pull'
 alias gpus='git push'
+alias gpusf='git push -f'
 # gpulpus
 alias gpulpus='gac fast; git pull; git push'
 alias gpp='gpulpus'
