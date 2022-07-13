@@ -521,3 +521,24 @@ searchProcessAndKill () {
 }
 ## other native ways:
 # kill $(pgrep vlc)
+#
+
+
+# src: https://stackoverflow.com/a/50731756/10012446
+# USAGE: `noderepl filename.js`
+# USAGE: `rpl filename.js`
+noderepl() {
+    FILE_CONTENTS="$(< $1 )"
+    node -i -e "$FILE_CONTENTS"
+}
+
+rpl(){
+	noderepl $@
+}
+
+nvminfo(){
+	echo "SOURCE: nvm install"
+	echo nvm use --lts
+	echo nvm install --lts
+	echo "nvm ls"
+}
