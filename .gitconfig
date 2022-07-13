@@ -30,7 +30,7 @@
   # hub related (these autocomplete too, yo!)
   create = !hub create
   browse = !hub browse
-  copyUrl = !hub browse -c
+  browse-copy-url = !hub browse -c
   getUrl = !hub browse -u
   # Hub Docs: https://hub.github.com/
 

@@ -9,7 +9,7 @@ complete -F _complete_alias g
 ## from file ~/.gitconfig:
 alias gcr='git create'
 alias gbr='git browse'
-alias gcu='git copyUrl'
+alias gbrc='git browse-copy-url'
 alias ggu='git getUrl'
 
 alias gca='git commit --amend'
