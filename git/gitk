@@ -57,8 +57,8 @@ set geometry(main) 636x1022+640+0
 set geometry(state) normal
 set geometry(topwidth) 634
 set geometry(topheight) 255
-set geometry(pwsash0) "612 1"
-set geometry(pwsash1) "616 1"
+set geometry(pwsash0) "591 1"
+set geometry(pwsash1) "611 1"
 set geometry(botwidth) 624
 set geometry(botheight) 755
 set permviews {}

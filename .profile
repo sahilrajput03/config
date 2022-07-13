@@ -7,7 +7,10 @@ alias vi='vim'
 
 # Running workrave, flameshot, copyq (only if installed and nor running already)
 [ "$(type workrave 2> /dev/null)" ] && [ -z "$(pgrep workrave)" ] && (workrave &)
-[ "$(type flameshot 2> /dev/null)" ] && [ -z "$(pgrep flameshot)" ] && (flameshot &)
+# [ "$(type flameshot 2> /dev/null)" ] && [ -z "$(pgrep flameshot)" ] && (flameshot &)
+flameshot=/home/array/binaries/Flameshot-12.0.rc1.x86_64.AppImage
+[ "$(type $flameshot 2> /dev/null)" ] && [ -z "$(pgrep Flameshot)" ] && ($flameshot &)
+# /home/array/binaries/Flameshot-12.0.rc1.x86_64.AppImage
 [ "$(type copyq 2> /dev/null)" ] && [ -z "$(pgrep copyq)" ] && (copyq &)
 # bad_program test (should not cause login execution error)
 [ "$(type bad_program 2> /dev/null)" ] && (bad_program &)

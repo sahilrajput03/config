@@ -437,9 +437,9 @@ alias certbotGenerate='sudo certbot certonly --standalone'
 alias cra='npx create-react-app'
 # Usage: `cra my-react-app`
 ## FYI: If above command fails then try executing `sudo npm i -g create-react-app` first (it solved my issue~Sahil). Src: https://stackoverflow.com/a/55566960/10012446
-
 alias cna='npx create-next-app@latest'
 alias cna_with_typescript='npx create-next-app@latest --ts'
+alias cea='npx create-expo-app'
 
 ##### Jest ####
 alias t='npm run test --'
@@ -452,6 +452,7 @@ alias twd='npm run test:watch:debug --'
 alias ni='npm init -y'
 
 alias diskUsage='df -h'
+alias diskUsageMain="diskUsage | grep 'sdb[4,3]'"
 
 alias zipalign=/opt/android-sdk/build-tools/29.0.3/zipalign
 alias apksigner=/opt/android-sdk/build-tools/29.0.3/apksigner
@@ -552,3 +553,8 @@ alias restartVsftpd='systemctl restart vsftpd.service'
 alias vi.vsftpd='sudo nvim /etc/vsftpd.conf'
 
 alias handbrake='ghb'
+
+alias flameshot=/home/array/binaries/Flameshot-12.0.rc1.x86_64.AppImage
+
+# alias pd='parcel index.html --open'
+alias pd='parcel index.html'

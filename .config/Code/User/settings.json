@@ -6,6 +6,7 @@
   "files.exclude": {
     "**/__pycache__": true,
     "**/.binary": true,
+    "**/.cache": true,
     "**/.classpath": true,
     "**/.factorypath": true,
     "**/.project": true,
@@ -101,10 +102,12 @@
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
-  "editor.formatOnSave": true,
   "svelte.enable-ts-plugin": true,
   "prettier.enableDebugLogs": true,
-  "workbench.activityBar.visible": false,
   "js/ts.implicitProjectConfig.checkJs": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "typescript.preferences.quoteStyle": "double",
+  "javascript.preferences.quoteStyle": "double",
+  "editor.formatOnSave": true,
+  "workbench.activityBar.visible": false
 }
