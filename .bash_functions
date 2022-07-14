@@ -127,6 +127,10 @@ function backupConfigFiles {
 	\cp $_home/.config/Code/User/settings.json $backup_dir/.config/Code/User/
 	echo "Backup of ~/.config/Code/User/settings.json file succeeded."
 
+	# Backup my current vscode extensions list as well:
+	code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/.config/Code/User/MyExtensionInstaller.sh
+	chmod +x $backup_dir/.config/Code/User/MyExtensionInstaller.sh
+
 	\cp $_home/.prettierrc.js $backup_dir/
 	echo "Backup of ~/.prettierrc.js file succeeded."
 
