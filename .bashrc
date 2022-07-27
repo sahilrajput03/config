@@ -324,3 +324,14 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 # # kdenlive (installed via pacman) // todo; add to archlinux page., ::: Amazing cut video tutorial: https://www.youtube.com/watch?v=JMKRKv2ogKU
 # We ca edit in youtube editor as well: https://youtu.be/4hGe9KmRr4s
 # TODO ADD TO ARCH_install packages list in github:
+#
+# ===important===
+#
+# array@arch-os ~$ cat.kernelParams
+# +cat /proc/cmdline
+# BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=9664b533-dc4c-4785-8f96-2e0deba41b49 rw loglevel=3 resume=UUID=899efccc-3a01-48bb-aa44-1de74cc9798a quiet
+# array@arch-os ~$ vi /boot/vmlinuz-linux
+# array@arch-os ~$ ls /boot/
+# EFI  grub  initramfs-linux-fallback.img  initramfs-linux.img  vmlinuz-linux
+#
+# ===important===

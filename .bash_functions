@@ -127,7 +127,7 @@ function backupConfigFiles {
 	\cp $_home/.config/Code/User/settings.json $backup_dir/.config/Code/User/
 	echo "Backup of ~/.config/Code/User/settings.json file succeeded."
 
-	# Backup my current vscode extensions list as well:
+	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
 	code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/.config/Code/User/MyExtensionInstaller.sh
 	chmod +x $backup_dir/.config/Code/User/MyExtensionInstaller.sh
 
@@ -300,17 +300,34 @@ searchTextInFilesRecursively(){
 
 # heroku
 # PLEASE SET APP via `heroku_app=my_app`
-alias h_createProcfile='echo "web: npm start" > Procfile'
+alias h.createProcfile='echo "web: npm start" > Procfile'
+alias h.create='heroku create --region eu'
+# Usage: 
+# h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
+# heroku create --region eu elegant-chat-app
 alias ha='heroku apps'
 alias hl='heroku logs -a $heroku_app'
 alias hlt='heroku logs --tail'
 alias hlo='heroku login'
 alias hre='heroku releases -a $heroku_app'
 alias hro='heroku rollback $@ -a $heroku_app'
+alias hsetNodejs='heroku buildpacks:set heroku/nodejs'
+# FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
 
-hinfo(){
-	# src: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5
+# Usage: heroku.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
+# Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
+heroku.setSubDirectoryBuildpack(){
+	heroku buildpacks:clear
+	heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
+	heroku buildpacks:add heroku/nodejs
+	# heroku config:set PROJECT_PATH=projects/nodejs/frontend
+	heroku config:set PROJECT_PATH=$1
+}
+
+h.info(){
+	echo "Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5"
 	type h_createProcfile
+	type h.create
 	type ha
 	type hl
 	type hlt
@@ -318,12 +335,12 @@ hinfo(){
 	type hlo
 	type hre
 	type hro
-	echo "
-# LEARN: To set nodejs as buildpacks for heroku -
-heroku buildpacks:set heroku/nodejs
-# FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
+	type hsetNodejs	
+	type heroku.setSubDirectoryBuildpack
 }
-
+heroku.info(){
+	h.info
+}
 
 # .eslintrc.js
 create.eslintrc.jsExpressjs () {
@@ -342,10 +359,10 @@ createJsconfig.json () {
 configSearch () {
 	# -i option for case insensitive matches
 	# -n for show line numbers
-	grep -inH "$@" ~/.bashrc
-	grep -inH "$@" ~/.bash_aliases
-	grep -inH "$@" ~/.bash_git
-	grep -inH "$@" ~/.bash_functions
+	grep -inH -A 3 -B 3 "$@" ~/.bashrc 
+	grep -inH -A 3 -B 3 "$@" ~/.bash_aliases
+	grep -inH -A 3 -B 3 "$@" ~/.bash_git
+	grep -inH -A 3 -B 3 "$@" ~/.bash_functions
 }
 
 listAllUsers () {
@@ -546,3 +563,22 @@ nvminfo(){
 	echo nvm install --lts
 	echo "nvm ls"
 }
+
+runUpwork (){
+	cd /opt/Upwork
+	# exec ./upwork 
+	air ./upwork 
+}
+
+searchFileWithExtensionInfo(){
+	echo find . -name *.xlsx
+}
+
+psql.dropTable(){
+	psql -U postgres -c "DROP DATABASE IF EXISTS \"$1\";"
+}
+
+psql.dropAndRecreateTable(){
+	psql -U postgres -c "DROP DATABASE IF EXISTS \"$1\";" -c "CREATE DATABASE \"$1\";"
+}
+

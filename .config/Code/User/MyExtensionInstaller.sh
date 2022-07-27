@@ -1,9 +1,11 @@
 code --install-extension aaron-bond.better-comments
+code --install-extension abusaidm.html-snippets
 code --install-extension adelphes.android-dev-ext
 code --install-extension alexcvzz.vscode-sqlite
 code --install-extension AntonyDalmiere.android-support
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension christian-kohler.path-intellisense
+code --install-extension CodeSandbox-io.codesandbox-projects
 code --install-extension cschlosser.doxdocgen
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension esbenp.prettier-vscode

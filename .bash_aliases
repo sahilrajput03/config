@@ -419,6 +419,8 @@ alias cd.additionalPath='cd ~/Documents/github_repos/additionalPath/'
 alias cd.test='cd ~/test'
 alias cd.backgrounds='/usr/share/backgrounds/archlinux'
 alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
+alias cd.macos='cd /Documents/macOS-Simple-KVM'
+alias cd.rootDocuments='/Documents/'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -452,7 +454,12 @@ alias twd='npm run test:watch:debug --'
 alias ni='npm init -y'
 
 alias diskUsage='df -h'
-alias diskUsageMain="diskUsage | grep 'sdb[4,3]'"
+# alias diskUsageMain="diskUsage | grep 'sdb[4,3]'"
+diskUsageMain() {
+	df -h | head -n1
+	diskUsage | grep 'sdb[4,3]'
+}
+
 
 alias zipalign=/opt/android-sdk/build-tools/29.0.3/zipalign
 alias apksigner=/opt/android-sdk/build-tools/29.0.3/apksigner
@@ -558,3 +565,34 @@ alias flameshot=/home/array/binaries/Flameshot-12.0.rc1.x86_64.AppImage
 
 # alias pd='parcel index.html --open'
 alias pd='parcel index.html'
+
+# src: https://www.cyberciti.biz/faq/linux-get-number-of-cpus-core-command/
+# nproc --all (gives same input as `nproc` though in my case)
+alias getNumberOfCores='nproc'
+
+
+alias network_speed_live='vnstat --live'
+
+alias startMacos='cd /Documents/macOS-Simple-KVM; sudo ./basic.sh'
+
+alias ls.kvmImages='ls /var/lib/libvirt/images'
+alias cd.kvmImages='cd /var/lib/libvirt/images'
+alias so.kvmImages='so /var/lib/libvirt/images'
+
+# alias vi.grub='vi /etc/default/grub'
+# alias cat.kernelParams='cat /proc/cmdline'
+
+vi.grub () {
+	echo +vi /etc/default/grub
+	vi /etc/default/grub
+}
+
+cat.kernelParams () {
+	echo +cat /proc/cmdline 
+	cat /proc/cmdline
+}
+
+lspci.vgaAudio() {
+	echo '+lspci -nn | grep "VGA\|Audio"'
+	lspci -nn | grep "VGA\|Audio"
+}
