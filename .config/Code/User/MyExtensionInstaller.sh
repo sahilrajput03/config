@@ -10,10 +10,12 @@ code --install-extension christian-kohler.path-intellisense
 code --install-extension CodeSandbox-io.codesandbox-projects
 code --install-extension cschlosser.doxdocgen
 code --install-extension dbaeumer.vscode-eslint
+code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension esbenp.prettier-vscode
 code --install-extension fwcd.kotlin
 code --install-extension GitHub.copilot
 code --install-extension jeff-hykin.better-cpp-syntax
+code --install-extension johnpapa.pwa-tools
 code --install-extension josetr.cmake-language-support-vscode
 code --install-extension keyhr.42-c-format
 code --install-extension mathiasfrohlich.Kotlin

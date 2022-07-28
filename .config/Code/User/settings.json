@@ -108,9 +108,9 @@
   "typescript.preferences.quoteStyle": "double",
   "javascript.preferences.quoteStyle": "double",
   "editor.formatOnSave": true,
-  "workbench.activityBar.visible": false,
   "remote.SSH.remotePlatform": {
     "sahilrajput03.codesandbox-template-vite-react.draft---affectionate-fire.csb": "linux"
   },
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {}
 }
