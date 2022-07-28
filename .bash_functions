@@ -306,7 +306,10 @@ alias h.create='heroku create --region eu'
 # h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
 # heroku create --region eu elegant-chat-app
 alias ha='heroku apps'
-alias hl='heroku logs -a $heroku_app'
+alias hl='heroku logs'
+alias hlt='heroku logs --tail'
+alias hla='heroku logs -a $heroku_app'
+alias hlat='heroku logs -a $heroku_app --tail'
 alias hlt='heroku logs --tail'
 alias hlo='heroku login'
 alias hre='heroku releases -a $heroku_app'

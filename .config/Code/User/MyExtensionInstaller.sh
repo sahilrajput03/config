@@ -4,6 +4,8 @@ code --install-extension adelphes.android-dev-ext
 code --install-extension alexcvzz.vscode-sqlite
 code --install-extension AntonyDalmiere.android-support
 code --install-extension bradlc.vscode-tailwindcss
+code --install-extension ChakrounAnas.turbo-console-log
+code --install-extension christian-kohler.npm-intellisense
 code --install-extension christian-kohler.path-intellisense
 code --install-extension CodeSandbox-io.codesandbox-projects
 code --install-extension cschlosser.doxdocgen
