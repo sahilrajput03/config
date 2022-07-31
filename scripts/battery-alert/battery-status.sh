@@ -9,13 +9,15 @@ do
 	if [ $battery_level -ge 95 ]; then
 		notify-send "Battery Full - ${battery_level}%" "Please unplug the charger.\n\nHave a nice day!"
 		# for i in {1..2}; do $(dirname $0)/beepSound.sh; done
-		for i in {1..2}; do paplay /usr/share/sounds/freedesktop/stereo/bell.oga; done
+		# better vv
+		# for i in {1..2}; do paplay /usr/share/sounds/freedesktop/stereo/bell.oga; done
+		# even better vv
 		paplay /home/array/scripts-media/Sounds/7_unplug-charger.wav
 			# List all sounds:
 			# ls /usr/share/sounds/freedesktop/stereo
 			# paplay /usr/share/sounds/freedesktop/stereo/bell.oga
       		# paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-		sleep 660 # i.e., sleep for 11 mins.
+		sleep 300 # i.e., sleep for 5 mins.
 	elif [ $battery_level -le 20 ] && [ $discharging ]; then
 		# echo batttery less than 20... testing only...
 		# LOG:01: This code only executed if battery is discharging ( not plugged in).

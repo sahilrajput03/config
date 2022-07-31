@@ -596,3 +596,8 @@ lspci.vgaAudio() {
 	echo '+lspci -nn | grep "VGA\|Audio"'
 	lspci -nn | grep "VGA\|Audio"
 }
+
+# Source: https://wiki.archlinux.org/title/laptop
+battery-status(){
+	acpi -b | awk -F'[,:%]' '{print $2, $3}'
+}
