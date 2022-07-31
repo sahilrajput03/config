@@ -10,6 +10,7 @@ do
 		notify-send "Battery Full - ${battery_level}%" "Please unplug the charger.\n\nHave a nice day!"
 		# for i in {1..2}; do $(dirname $0)/beepSound.sh; done
 		for i in {1..2}; do paplay /usr/share/sounds/freedesktop/stereo/bell.oga; done
+		paplay /home/array/scripts-media/Sounds/7_unplug-charger.wav
 			# List all sounds:
 			# ls /usr/share/sounds/freedesktop/stereo
 			# paplay /usr/share/sounds/freedesktop/stereo/bell.oga

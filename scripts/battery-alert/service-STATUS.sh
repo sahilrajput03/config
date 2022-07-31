@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -n "$(pgrep -f battery-status)" ]; then
+if [ -n "$(pgrep -f battery-status.sh)" ]; then
 	# IN ABOVE INSTRUCTION: -n means non-zero length string
 	echo Process *ALREAY* running
 else
