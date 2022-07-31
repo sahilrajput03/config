@@ -1,5 +1,5 @@
 echo ran .profile file
-sh /home/array/scripts/battery-alert/start-service.sh &
+sh /home/array/scripts/battery-alert/service-START.sh &
 alias vi='vim'
 . "$HOME/.cargo/env"
 
