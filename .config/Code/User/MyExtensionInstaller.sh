@@ -17,6 +17,7 @@ code --install-extension GitHub.copilot
 code --install-extension jeff-hykin.better-cpp-syntax
 code --install-extension johnpapa.pwa-tools
 code --install-extension josetr.cmake-language-support-vscode
+code --install-extension JuanBlanco.solidity
 code --install-extension keyhr.42-c-format
 code --install-extension mathiasfrohlich.Kotlin
 code --install-extension mongodb.mongodb-vscode
@@ -43,6 +44,7 @@ code --install-extension redhat.java
 code --install-extension redhat.vscode-yaml
 code --install-extension rust-lang.rust
 code --install-extension rust-lang.rust-analyzer
+code --install-extension silvenon.mdx
 code --install-extension svelte.svelte-vscode
 code --install-extension twxs.cmake
 code --install-extension usernamehw.errorlens

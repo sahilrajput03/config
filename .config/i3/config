@@ -423,6 +423,11 @@ for_window [class="zoom " title="Chat"] floating enable
 
 # MAKE ALL ZOOM WINDOWS FLOAT, YIKES! 20 Jun, 2022
 for_window [class="zoom " title=" "] floating enable
+
+# Add this also, 1 August, 2022
+for_window [class="zoom"] floating enable
+# src: https://www.reddit.com/r/i3wm/comments/m27dwc/comment/gqj9bq3/?utm_source=share&utm_medium=web2x&context=3
+
 # Below for gnome-characters
 for_window [class="Characters"] floating enable
 # FETCHING VALUES FROM `xprop`
