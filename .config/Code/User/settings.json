@@ -1,5 +1,4 @@
 {
-  "workbench.colorTheme": "Default Dark+",
   "explorer.confirmDelete": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.minimap.enabled": false,
@@ -113,5 +112,6 @@
   },
   "window.zoomLevel": 2,
   "workbench.colorCustomizations": {},
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "hardhat.telemetry": true
 }

@@ -61,6 +61,7 @@ function backupConfigFiles {
 	# unlias cp
 	# alias cp='/usr/bin/cp'
 	# Using \ before cp to disable alias expansion. src: https://www.cyberciti.biz/faq/bash-shell-temporarily-disable-an-alias/
+	
 
 	crontab -l > $backup_dir/Backup_crontab.txt
 	echo "Backup of crontab entries succeeded."
@@ -85,6 +86,9 @@ function backupConfigFiles {
 
 	\cp -r $_home/.config/flameshot $backup_dir/.config
 	echo "Backup of ~/.config/flameshot/ directory succeeded."
+
+	\cp $_home/.config/boomer/config $backup_dir/.config/boomer/
+	echo "Backup of ~/.config/boomer/config succeeded."
 
 	\cp $_home/.i3status.conf $backup_dir/
 	echo "Backup of ~/.i3status.conf file succeeded."

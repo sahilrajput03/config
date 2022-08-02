@@ -447,6 +447,8 @@ bindsym $mod+comma exec copyq toggle
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
+bindsym $mod+m exec boomer
+
 
 # # TESTING # #
 # bindsym $mod+comma exec "notify-send Hello, i3"
