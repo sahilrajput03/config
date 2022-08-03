@@ -297,6 +297,8 @@ alias vi.ssh='vi ~/.ssh/config'
 alias vi.thoughts='vi $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md'
 alias vi.tmux='vi $_home/.tmux.conf'
 alias vi.wi='vi ~/scripts/wi'
+# Customize windows transparency and radius
+alias vi.picom='sudo vim /etc/xdg/picom.conf'
 # Customizing the system notification
 # Tip: Use restart.dunst to reload dunstrc file and use win+g to send a test notification.
 alias vi.dunst='vi .config/dunst/dunstrc'

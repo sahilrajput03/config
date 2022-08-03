@@ -90,6 +90,9 @@ function backupConfigFiles {
 	\cp $_home/.config/boomer/config $backup_dir/.config/boomer/
 	echo "Backup of ~/.config/boomer/config succeeded."
 
+	\cp $_home/.config/dunst/dunstrc $backup_dir/.config/dunst/
+	echo "Backup of ~/.config/dunst/dunstrc succeeded."
+
 	\cp $_home/.i3status.conf $backup_dir/
 	echo "Backup of ~/.i3status.conf file succeeded."
 

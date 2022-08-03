@@ -206,7 +206,8 @@ bar {
 # ^^ ~sahil, src: https://faq.i3wm.org/question/2718/i3status-on-secondary-monitor-only.1.html
 
 # >>>>>>>>>>>>>>>. GAPS SETUP HERE ~SAHIL~
-#gaps inner 15
+
+gaps inner 5
 #src: https://www.reddit.com/r/i3wm/comments/gxxyv8/i3gaps_how_to_start_with_gaps_by_default/
 
 set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
@@ -397,10 +398,10 @@ client.focused          #4c7899 #ff0066 #ffffff #2e9ef4   #ff0066
 # default_border normal 6
 # normal means show title bar,  followed by size of border width.
 # Hiding title bar
-default_border pixel 2
+default_border pixel 3
 # 3 August, 2022
 # Remove border and title bar: https://www.reddit.com/r/i3wm/comments/87kclz/how_do_i_remove_borders_and_titles/
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 0
 # <<<<<<<<<
 #
 # Sreen brightness controls ~Sahil.
