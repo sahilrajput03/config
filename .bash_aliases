@@ -297,6 +297,13 @@ alias vi.ssh='vi ~/.ssh/config'
 alias vi.thoughts='vi $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md'
 alias vi.tmux='vi $_home/.tmux.conf'
 alias vi.wi='vi ~/scripts/wi'
+# Customizing the system notification
+# Tip: Use restart.dunst to reload dunstrc file and use win+g to send a test notification.
+alias vi.dunst='vi .config/dunst/dunstrc'
+
+
+# https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
+alias restart.dunst='killall dunst'
 
 alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
 alias umountPortableDrive='sudo umount /dev/sdc2'
@@ -601,3 +608,4 @@ lspci.vgaAudio() {
 battery-status(){
 	acpi -b | awk -F'[,:%]' '{print $2, $3}'
 }
+

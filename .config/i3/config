@@ -396,8 +396,11 @@ bindsym $mod+o mode "Open: [q]utebrowser, [c]hrome, [f]irefox."
 client.focused          #4c7899 #ff0066 #ffffff #2e9ef4   #ff0066
 # default_border normal 6
 # normal means show title bar,  followed by size of border width.
+# Hiding title bar
 default_border pixel 2
-# hiding title bar with this code.
+# 3 August, 2022
+# Remove border and title bar: https://www.reddit.com/r/i3wm/comments/87kclz/how_do_i_remove_borders_and_titles/
+for_window [class="^.*"] border pixel 0
 # <<<<<<<<<
 #
 # Sreen brightness controls ~Sahil.
@@ -448,6 +451,9 @@ bindsym $mod+comma exec copyq toggle
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
 bindsym $mod+m exec boomer
+bindsym $mod+g exec notify-send "Title" "Body"
+
+
 
 
 # # TESTING # #
