@@ -327,16 +327,28 @@ alias hsetNodejs='heroku buildpacks:set heroku/nodejs'
 # Usage: heroku.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
 # Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
 heroku.setSubDirectoryBuildpack(){
-	heroku buildpacks:clear
-	heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack
-	heroku buildpacks:add heroku/nodejs
-	# heroku config:set PROJECT_PATH=projects/nodejs/frontend
-	heroku config:set PROJECT_PATH=$1
+	if [ -z "$APP" ]; then
+		echo 'FIRST set the app name with command `APP=myAppName`'
+	else
+		heroku buildpacks:clear -a $APP
+		heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
+		heroku buildpacks:add heroku/nodejs -a $APP
+		# heroku config:set PROJECT_PATH=projects/nodejs/frontend
+		heroku config:set PROJECT_PATH=$1 -a $APP
+	fi
+}
+
+forceSettingVariable() {
+	if [ -z "$APP" ]; then
+		echo 'FIRST set the app name with command `APP=myAppName`'
+	else
+		echo $APP
+	fi
 }
 
 h.info(){
 	echo "Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5"
-	type h_createProcfile
+	type h.createProcfile
 	type h.create
 	type ha
 	type hl
