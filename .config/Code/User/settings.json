@@ -122,5 +122,7 @@
   "hardhat.telemetry": true,
   "workbench.trustedDomains.promptInTrustedWorkspace": true,
   "security.workspace.trust.startupPrompt": "always",
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+  // https://stackoverflow.com/a/64344735/10012446
+  "window.titleBarStyle": "custom"
 }
