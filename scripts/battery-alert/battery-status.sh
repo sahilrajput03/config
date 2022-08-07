@@ -17,8 +17,8 @@ do
 			# ls /usr/share/sounds/freedesktop/stereo
 			# paplay /usr/share/sounds/freedesktop/stereo/bell.oga
       		# paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
-		sleep 300 # i.e., sleep for 5 mins.
-	elif [ $battery_level -le 20 ] && [ $discharging ]; then
+		sleep 600 # i.e., sleep for 10 mins.
+	elif [ $battery_level -le 35 ] && [ $discharging ]; then
 		# echo batttery less than 20... testing only...
 		# LOG:01: This code only executed if battery is discharging ( not plugged in).
       		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"

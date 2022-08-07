@@ -12,9 +12,12 @@ alias gbr='git browse'
 alias gbrc='git browse-copy-url'
 alias ggu='git getUrl'
 
+# Edit Last commit message
 alias gca='git commit --amend'
-alias gcaa='git add -A; git commit --amend'
-alias gcaan='git add -A; git commit --amend --no-edit'
+# git-add-commit-noEdit (THIS IS WHAT YOU NEED MOSTLY)
+alias gacn='git add -A; git commit --amend --no-edit'
+# git-add-commit-message
+alias gacm='git add -A; git commit --amend'
 
 alias gco='git commit -m'
 alias gch='git checkout'

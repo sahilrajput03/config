@@ -430,6 +430,9 @@ for_window [class="zoom " title=" "] floating enable
 
 # Add this also, 1 August, 2022
 for_window [class="zoom"] floating enable
+# -> MAKING METAMASK'S POPUP FLOATABLE, fyi; I inferred below value via: 
+# WM_NAME(UTF8_STRING) = "MetaMask Notification"
+for_window [title="MetaMask"] floating enable
 # src: https://www.reddit.com/r/i3wm/comments/m27dwc/comment/gqj9bq3/?utm_source=share&utm_medium=web2x&context=3
 
 # Below for gnome-characters

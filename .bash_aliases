@@ -445,7 +445,7 @@ echoerr() { echo "$@" 1>&2; }
 alias certbotGenerate='sudo certbot certonly --standalone'
 
 
-alias cra='npx create-react-app'
+alias cra='npx create-react-app@latest'
 # Usage: `cra my-react-app`
 ## FYI: If above command fails then try executing `sudo npm i -g create-react-app` first (it solved my issue~Sahil). Src: https://stackoverflow.com/a/55566960/10012446
 alias cna='npx create-next-app@latest'
@@ -611,3 +611,7 @@ battery-status(){
 	acpi -b | awk -F'[,:%]' '{print $2, $3}'
 }
 
+
+# src: https://www.freecodecamp.org/news/how-to-set-up-the-debugger-for-chrome-extension-in-visual-studio-code-c0b3e5937c01/
+# Very useful to debug react apps coz we can use `Chrome:Attach` debug configuration to open debug in this window only instead of creating new chrome debugging windows on each debug session start from vscode. Yikes!! Also documented on `learn-react` github repo as well.
+alias chrome-debug='google-chrome-stable --remote-debugging-port=9222'

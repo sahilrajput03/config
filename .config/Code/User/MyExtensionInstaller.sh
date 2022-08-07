@@ -41,6 +41,7 @@ code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension NomicFoundation.hardhat-solidity
 code --install-extension polypus74.trusty-rusty-snippets
 code --install-extension pranaygp.vscode-css-peek
+code --install-extension Prisma.prisma
 code --install-extension redhat.java
 code --install-extension redhat.vscode-yaml
 code --install-extension rust-lang.rust
