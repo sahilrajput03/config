@@ -315,13 +315,15 @@ alias cwn='cargo watch -c -x run'
 alias ct='cargo watch -c -x test'
 #cargo watch --quiet --clear --exec 'run --quiet'
 
-alias code="code --user-data-dir=/home/array/.config/Code/"
-# user-data-dir has to be by default ~/.cofig/Code but for some reasong when i launch from cli vscode assumes ~/Code which causes inconsistency i.e., saving multiple settings at different files, FYI: When i launch `code` from dmenu it launches with its settings as ~/.config/Code folder only.
 # Fixed the long time vscode inconsistent settings issue, ~ Sahil
+# user-data-dir has to be by default ~/.cofig/Code but for some reasong when i launch from cli vscode assumes ~/Code which causes inconsistency i.e., saving multiple settings at different files, FYI: When i launch `code` from dmenu it launches with its settings as ~/.config/Code folder only.
+# alias code="code --user-data-dir=/home/array/.config/Code/"
+# alias co='code .'
+# alias cor='code . -r'
 
-alias co='code .'
-alias cor='code . -r'
-# alias s='npm start'
+alias code="echo Please use dmenu to open vscode"
+alias co='echo Please use dmenu to open vscode'
+alias cor='echo Please use demnu to open vscode and files'
 
 function s () {
 	if [ -f package.json ]; then

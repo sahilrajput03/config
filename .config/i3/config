@@ -62,6 +62,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+c exec --no-startup-id code
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -379,9 +380,9 @@ bindsym $mod+z exec /home/array/scripts/lock-i3.sh
 # src: same above source for """"Making Setting up logout, suspend, .. """
 mode "Open: [q]utebrowser, [c]hrome, [f]irefox." {
 
-  bindsym q exec qutebrowser; mode "default"
-  bindsym c exec google-chrome-stable; mode "default"
-  bindsym f exec firefox; mode "default"
+  bindsym q exec --no-startup-id qutebrowser; mode "default"
+  bindsym c exec --no-startup-id google-chrome-stable; mode "default"
+  bindsym f exec --no-startup-id firefox; mode "default"
 
   # Below are to get back to default mode:
   bindsym Escape mode "default"
@@ -456,3 +457,6 @@ bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
 bindsym $mod+m exec boomer
 bindsym $mod+g exec notify-send "Title" "Body"
+
+# !Sahil, learn
+# What is --no-startup-id: https://faq.i3wm.org/question/561/what-is-that-thing-called-no-startup-id/index.html
