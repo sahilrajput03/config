@@ -1,1 +1,1 @@
-code --install-extension Please use dmenu to open vscode --list-extensions
+code --install-extension

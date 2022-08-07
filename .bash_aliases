@@ -321,9 +321,17 @@ alias ct='cargo watch -c -x test'
 # alias co='code .'
 # alias cor='code . -r'
 
-alias code="echo Please use dmenu to open vscode"
-alias co='echo Please use dmenu to open vscode'
-alias cor='echo Please use demnu to open vscode and files'
+# Fix the opening of web links in chrome window instead of opening new window of google-chrome it now opens currently running windows. (Time took: 3.5 hours). Src: https://stackoverflow.com/a/50736123/10012446
+alias code='i3-msg "exec --no-startup-id code"'
+function co(){
+	i3-msg "exec --no-startup-id code $PWD"
+}
+function co(){
+	i3-msg "exec --no-startup-id code $PWD -r"
+}
+
+# alias co='echo Please use dmenu to open vscode'
+# alias cor='echo Please use demnu to open vscode and files'
 
 function s () {
 	if [ -f package.json ]; then
