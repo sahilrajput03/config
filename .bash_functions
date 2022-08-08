@@ -524,6 +524,11 @@ m2htm (){
 	echo File written @ /tmp/v.htm
 	echo Try opening file:///tmp/v.htm in your browser now!
 }
+m2htmA.html (){
+	pandoc -t html "$@" > a.htm
+	echo File written @ a.htm
+	echo Try opening file://$PWD/a.htm in your browser now!
+}
 m2htmWatch (){
 	nodemon -w $@ -x "pandoc -t html $@ > /tmp/v.htm"
 	echo File written @ /tmp/v.htm

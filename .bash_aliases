@@ -326,7 +326,7 @@ alias code='i3-msg "exec --no-startup-id code"'
 function co(){
 	i3-msg "exec --no-startup-id code $PWD"
 }
-function co(){
+function cor(){
 	i3-msg "exec --no-startup-id code $PWD -r"
 }
 
