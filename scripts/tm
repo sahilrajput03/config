@@ -18,5 +18,7 @@ tm () {
 
 	# $* gives all arguments in single string.
 	# Timeout (-t) is set to 15 minutes i.e., 900*1000
-	notify-send -t 900000 "Timer ($timer seconds)" "$*"
+	# notify-send -t 900000 "Timer ($timer seconds)" "$*"
+	notify-send --urgency=CRITICAL -t 900000 "Timer ($timer seconds)" "$*"
+
 }

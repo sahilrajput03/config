@@ -10,7 +10,7 @@
     "**/.factorypath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/node_modulesa": true,
+    "**/node_modules": true,
     "**/package-lock.json": true
   },
   "git.enableSmartCommit": true,

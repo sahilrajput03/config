@@ -37,6 +37,7 @@ code --install-extension ms-vscode.cmake-tools
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.cpptools-extension-pack
 code --install-extension ms-vscode.cpptools-themes
+code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension NomicFoundation.hardhat-solidity
 code --install-extension polypus74.trusty-rusty-snippets
