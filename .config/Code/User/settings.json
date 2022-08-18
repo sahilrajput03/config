@@ -122,5 +122,9 @@
   "hardhat.telemetry": true,
   "workbench.trustedDomains.promptInTrustedWorkspace": true,
   "security.workspace.trust.startupPrompt": "always",
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "window.zoomLevel": 1
 }

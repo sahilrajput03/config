@@ -213,7 +213,14 @@ alias fm='air pcmanfm'
 alias copyFileToClipboard='xclip -sel clip'
 alias pasteFromClipboard='xsel'
 alias pasteFromClipboard2='xclip -o'
-alias paste_png_image='xclip -selection clipboard -t image/png -o > "image-$(date +%c).png"'
+
+# ppng stands for Paste PNG
+alias ppng_image='xclip -selection clipboard -t image/png -o > "image-$(date +%c).png"'
+
+# USAGE: ppng_image0 ss/ss-address-looks-like
+function ppng_image0() {
+	xclip -selection clipboard -t image/png -o > "$1.png"
+}
 # Source: https://unix.stackexchange.com/a/145134/504112
 
 ####NERDY##NOTES####	COPY TO CLIPBOARD WITH: 
@@ -325,6 +332,8 @@ alias ct='cargo watch -c -x test'
 alias code='i3-msg "exec --no-startup-id code"'
 function co(){
 	i3-msg "exec --no-startup-id code $PWD"
+	# If above throws error then simply use `tmuxkill` to kill the tmux session to fix the error as suggested in below issue of i3
+	# https://github.com/i3/i3/issues/3845
 }
 function cor(){
 	i3-msg "exec --no-startup-id code $PWD -r"
@@ -464,8 +473,9 @@ alias cea='npx create-expo-app'
 
 ##### Jest ####
 alias t='npm run test --'
-alias tw='npm run test:watch --'
-alias twa='npm run test:watchAll --'
+alias tw='npm run test-watch --'
+alias tw2='npm run test-watch-2 --'
+alias twa='npm run test-watchAll --'
 
 # For debugging
 alias twd='npm run test:watch:debug --'
@@ -571,9 +581,21 @@ alias UE4Editor='air ~/Documents/UnrealEngine-4.23.1-release/Engine/Binaries/Lin
 # bluetoothctl
 alias blc='bluetoothctl'
 # CONNECT TO MY AIRDOPES 441 PRO
-alias blcc='blc connect 00:00:AB:CE:16:01'
+# Try connecting one time:
+alias blco='blc connect 00:00:AB:CE:16:01'
 alias blcd='blc disconnect'
 alias blcr='blcd; blcc'
+
+# Try connecting until connected
+blcc () {
+	# src: https://stackoverflow.com/a/21982743
+	until blco ;
+	do
+		echo
+		echo TRYING AGAIN...
+		sleep 1 #Intented to give a time-break
+	done
+}
 
 alias restartVsftpd='systemctl restart vsftpd.service'
 alias vi.vsftpd='sudo nvim /etc/vsftpd.conf'
@@ -625,3 +647,14 @@ battery-status(){
 # src: https://www.freecodecamp.org/news/how-to-set-up-the-debugger-for-chrome-extension-in-visual-studio-code-c0b3e5937c01/
 # Very useful to debug react apps coz we can use `Chrome:Attach` debug configuration to open debug in this window only instead of creating new chrome debugging windows on each debug session start from vscode. Yikes!! Also documented on `learn-react` github repo as well.
 alias chrome-debug='google-chrome-stable --remote-debugging-port=9222'
+
+
+function startApiTesting(){
+	while true; do
+		# echo -e "\nRequest @ "; date +"%r";
+		# Not possible to print time bcoz `date` cli is taking time so subsequent requests in next few milliseconds are dropped off.
+		echo -e "HTTP/1.1 200 OK\n" | nc -Nl 8005; echo -e "\n---";
+	done
+}
+
+
