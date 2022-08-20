@@ -662,4 +662,5 @@ function startApiTesting(){
 	done
 }
 
-
+# Shows full program and the path of the program
+alias pgrep-a='pgrep -a'
