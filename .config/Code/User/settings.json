@@ -64,6 +64,7 @@
         "webRoot": "${workspaceFolder}"
       },
       {
+        // Inspiration: https://nextjs.org/docs/advanced-features/debugging
         // Q. What process to attach with this debugger ???
         // ANSWER. Select this setting in the debugger dropdown first then press f5 key (or use the green play button) (use shift+f5 to stop debugger anytime later) in vscode and in command pallete entries or processes you need to select the entry with text `nodemon --inspect app.js` or `nodemon --inspect-brk app.js`. ROCKON!
         "name": "Attach to node|nodemon|nextjsFullstack",
