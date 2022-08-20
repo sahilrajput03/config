@@ -10,8 +10,10 @@ code --install-extension christian-kohler.path-intellisense
 code --install-extension CodeSandbox-io.codesandbox-projects
 code --install-extension cschlosser.doxdocgen
 code --install-extension dbaeumer.vscode-eslint
+code --install-extension DigitalBrainstem.javascript-ejs-support
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension esbenp.prettier-vscode
+code --install-extension formulahendry.auto-rename-tag
 code --install-extension fwcd.kotlin
 code --install-extension GitHub.copilot
 code --install-extension jeff-hykin.better-cpp-syntax

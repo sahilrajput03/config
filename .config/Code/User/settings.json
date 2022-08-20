@@ -57,7 +57,7 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Attach to Chrome",
+        "name": "Attach to Chrome (react/nextjs)",
         "port": 9222,
         "request": "attach",
         "type": "chrome",
@@ -66,7 +66,7 @@
       {
         // Q. What process to attach with this debugger ???
         // ANSWER. Select this setting in the debugger dropdown first then press f5 key (or use the green play button) (use shift+f5 to stop debugger anytime later) in vscode and in command pallete entries or processes you need to select the entry with text `nodemon --inspect app.js` or `nodemon --inspect-brk app.js`. ROCKON!
-        "name": "Attach to nodemon process ~Sahil",
+        "name": "Attach to nodemon/nextjs process ~Sahil",
         "type": "pwa-node",
         "request": "attach",
         // ^^ note that this is a of type attach and we have specified to `restart` via the restart option below to reattch to that process and pick the new processid automatically, yikes!
@@ -96,7 +96,7 @@
     ]
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "window.menuBarVisibility": "toggle",
+  "window.menuBarVisibility": "visible",
   "redhat.telemetry.enabled": false,
   "editor.minimap.maxColumn": 160,
   "editor.wordWrapColumn": 120,
@@ -126,5 +126,6 @@
   "[solidity]": {
     "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   },
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }

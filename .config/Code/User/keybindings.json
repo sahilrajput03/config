@@ -106,5 +106,15 @@
   {
     "key": "alt+right",
     "command": "workbench.action.navigateForwardInEditLocations"
+  },
+  {
+    "key": "alt+r",
+    "command": "-workbench.action.terminal.toggleFindRegex",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+r",
+    "command": "-toggleFindRegex",
+    "when": "editorFocus"
   }
 ]
