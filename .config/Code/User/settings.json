@@ -58,6 +58,7 @@
     "configurations": [
       {
         "name": "Attach to Chrome|react|nextjs",
+        // ~Sahil: You must use a already running debug window of chrome by using command: `chrome-debug` which is my alias for `google-chrome-stable --remote-debugging-port=9222'
         "port": 9222,
         "request": "attach",
         "type": "chrome",
