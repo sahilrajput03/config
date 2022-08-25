@@ -664,3 +664,12 @@ function startApiTesting(){
 
 # Shows full program and the path of the program
 alias pgrep-a='pgrep -a'
+
+
+# USAGE: live-server --port=3001
+alias live-server='live-server --no-browser'
+
+alias cd.jimmy_chae='cd ~/Documents/jimmy-chae/'
+
+alias fes='firebase emulators:start'
+alias fesf='firebase emulators:start --only firestore'

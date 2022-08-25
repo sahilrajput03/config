@@ -7,7 +7,7 @@ module.exports = {
 	// ^ That is defautl false though. Read about it @ https://prettier.io/docs/en/options.html#insert-pragma
 	trailingComma: 'es5',
 	tabWidth: 2,
-	semi: false,
+	semi: true,
 	//  ^^ This is for semicolon.
 
 	singleQuote: true,

@@ -1,134 +1,132 @@
 {
-  "explorer.confirmDelete": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.minimap.enabled": false,
-  "files.exclude": {
-    "**/__pycache__": true,
-    "**/.binary": true,
-    "**/.cache": true,
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/node_modules": true,
-    "**/package-lock.json": true
-  },
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "editor.cursorSmoothCaretAnimation": true,
-  "keyboard.dispatch": "keyCode",
-  "update.mode": "manual",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "explorer.confirmDragAndDrop": false,
-  "editor.inlineSuggest.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": true,
-    "markdown": true
-  },
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "java.imports.gradle.wrapper.checksums": [
-    {
-      "sha256": "e2b82129ab64751fd40437007bd2f7f2afb3c6e41a9198e628650b22d5824a14",
-      "allowed": true
-    }
-  ],
-  "editor.formatOnPaste": true,
-  "prettier.printWidth": 120,
-  "editor.formatOnType": true,
-  "editor.insertSpaces": false,
-  "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer",
-    "editor.tabSize": 4,
-    "editor.detectIndentation": false,
-    "editor.insertSpaces": false,
-    "editor.formatOnType": true,
-    "editor.formatOnSaveMode": "file"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "launch": {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Attach to Chrome|react|nextjs",
-        // ~Sahil: You must use a already running debug window of chrome by using command: `chrome-debug` which is my alias for `google-chrome-stable --remote-debugging-port=9222'
-        "port": 9222,
-        "request": "attach",
-        "type": "chrome",
-        "webRoot": "${workspaceFolder}"
-      },
-      {
-        // Inspiration: https://nextjs.org/docs/advanced-features/debugging
-        // Q. What process to attach with this debugger ???
-        // ANSWER. Select this setting in the debugger dropdown first then press f5 key (or use the green play button) (use shift+f5 to stop debugger anytime later) in vscode and in command pallete entries or processes you need to select the entry with text `nodemon --inspect app.js` or `nodemon --inspect-brk app.js`. ROCKON!
-        "name": "Attach to node|nodemon|nextjsFullstack",
-        "type": "node",
-        "request": "attach",
-        // ^^ note that this is a of type attach and we have specified to `restart` via the restart option below to reattch to that process and pick the new processid automatically, yikes!
-        // Get debugger select-dropdown with f5 key (use shift+f5 to stop debugger) in vscode and select the entry with text nodemon --inspect app.js or nodemon --inspect-brk app.js in the list of processes in there. ROCKON!
-        "processId": "${command:PickProcess}",
-        "restart": true
-        // "envFile": "${workspaceFolder}/.env"
-        // ^^^ This is not required at all when we are using dotenv to load .env file, 1 May, 2022.
-        // Our .env file is loaded simply (no need of cross-env), also the terminal would pick the values of `.env` file once you attach the debugger. Yikes!
-      },
-      {
-        // FYI: ~Sahil, I have put below configuration in my settings.json file so I don't neet to put this manually in any project though.
-        // BUT ^^ Since the remote root could be different so its better recommendation to have project's own launch.json file so it won't mess with other globally editing practises and workdir is mostly project dependent.
-        "name": "Docker: Attach to node|nodemon",
-        // ~Sahil WORKS AUTOATTACH WITH  NODEMON VERY WELL with same commands we used without docker.
-        "type": "node",
-        "request": "attach",
-        "port": 9229,
-        "address": "localhost",
-        "localRoot": "${workspaceFolder}",
-        // IMPORATNT: ALERT: WARNING: LOOK OUT: You would need to change below /mydir to your specified app in you have in the container mounted.
-        "remoteRoot": "/mydir",
-        "protocol": "inspector",
-        // processId is not required for the docker way, and it works without it and restart works very well too!
-        // "processId": "${command:PickProcess}",
-        "restart": true
-      }
-    ]
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "window.menuBarVisibility": "visible",
-  "redhat.telemetry.enabled": false,
-  "editor.minimap.maxColumn": 160,
-  "editor.wordWrapColumn": 120,
-  "task.problemMatchers.neverPrompt": {
-    "shell": true
-  },
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
-  "editor.tabCompletion": "on",
-  "emmet.triggerExpansionOnTab": true,
-  "svelte.enable-ts-plugin": true,
-  "prettier.enableDebugLogs": true,
-  "js/ts.implicitProjectConfig.checkJs": true,
-  "typescript.preferences.quoteStyle": "double",
-  "javascript.preferences.quoteStyle": "double",
-  "editor.formatOnSave": true,
-  "remote.SSH.remotePlatform": {
-    "sahilrajput03.codesandbox-template-vite-react.draft---affectionate-fire.csb": "linux"
-  },
-  "workbench.colorCustomizations": {},
-  "workbench.activityBar.visible": false,
-  "hardhat.telemetry": true,
-  "workbench.trustedDomains.promptInTrustedWorkspace": true,
-  "security.workspace.trust.startupPrompt": "always",
-  "security.workspace.trust.enabled": false,
-  "[solidity]": {
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  },
-  "window.zoomLevel": 1,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+	"explorer.confirmDelete": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.minimap.enabled": false,
+	"files.exclude": {
+		"**/__pycache__": true,
+		"**/.binary": true,
+		"**/.cache": true,
+		"**/.classpath": true,
+		"**/.factorypath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/node_modules": true,
+		"**/package-lock.json": true
+	},
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"editor.cursorSmoothCaretAnimation": true,
+	"keyboard.dispatch": "keyCode",
+	"update.mode": "manual",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"explorer.confirmDragAndDrop": false,
+	"editor.inlineSuggest.enabled": true,
+	"github.copilot.enable": {
+		"*": true,
+		"yaml": false,
+		"plaintext": true,
+		"markdown": true
+	},
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"java.imports.gradle.wrapper.checksums": [
+		{
+			"sha256": "e2b82129ab64751fd40437007bd2f7f2afb3c6e41a9198e628650b22d5824a14",
+			"allowed": true
+		}
+	],
+	"prettier.printWidth": 120,
+	"editor.formatOnType": true,
+	"editor.insertSpaces": false,
+	"[rust]": {
+		"editor.defaultFormatter": "matklad.rust-analyzer",
+		"editor.tabSize": 4,
+		"editor.detectIndentation": false,
+		"editor.insertSpaces": false,
+		"editor.formatOnType": true,
+		"editor.formatOnSaveMode": "file"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"launch": {
+		// Use IntelliSense to learn about possible attributes.
+		// Hover to view descriptions of existing attributes.
+		// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Attach to Chrome|react|nextjs",
+				// ~Sahil: You must use a already running debug window of chrome by using command: `chrome-debug` which is my alias for `google-chrome-stable --remote-debugging-port=9222'
+				"port": 9222,
+				"request": "attach",
+				"type": "chrome",
+				"webRoot": "${workspaceFolder}"
+			},
+			{
+				// Inspiration: https://nextjs.org/docs/advanced-features/debugging
+				// Q. What process to attach with this debugger ???
+				// ANSWER. Select this setting in the debugger dropdown first then press f5 key (or use the green play button) (use shift+f5 to stop debugger anytime later) in vscode and in command pallete entries or processes you need to select the entry with text `nodemon --inspect app.js` or `nodemon --inspect-brk app.js`. ROCKON!
+				"name": "Attach to node|nodemon|nextjsFullstack",
+				"type": "node",
+				"request": "attach",
+				// ^^ note that this is a of type attach and we have specified to `restart` via the restart option below to reattch to that process and pick the new processid automatically, yikes!
+				// Get debugger select-dropdown with f5 key (use shift+f5 to stop debugger) in vscode and select the entry with text nodemon --inspect app.js or nodemon --inspect-brk app.js in the list of processes in there. ROCKON!
+				"processId": "${command:PickProcess}",
+				"restart": true
+				// "envFile": "${workspaceFolder}/.env"
+				// ^^^ This is not required at all when we are using dotenv to load .env file, 1 May, 2022.
+				// Our .env file is loaded simply (no need of cross-env), also the terminal would pick the values of `.env` file once you attach the debugger. Yikes!
+			},
+			{
+				// FYI: ~Sahil, I have put below configuration in my settings.json file so I don't neet to put this manually in any project though.
+				// BUT ^^ Since the remote root could be different so its better recommendation to have project's own launch.json file so it won't mess with other globally editing practises and workdir is mostly project dependent.
+				"name": "Docker: Attach to node|nodemon",
+				// ~Sahil WORKS AUTOATTACH WITH  NODEMON VERY WELL with same commands we used without docker.
+				"type": "node",
+				"request": "attach",
+				"port": 9229,
+				"address": "localhost",
+				"localRoot": "${workspaceFolder}",
+				// IMPORATNT: ALERT: WARNING: LOOK OUT: You would need to change below /mydir to your specified app in you have in the container mounted.
+				"remoteRoot": "/mydir",
+				"protocol": "inspector",
+				// processId is not required for the docker way, and it works without it and restart works very well too!
+				// "processId": "${command:PickProcess}",
+				"restart": true
+			}
+		]
+	},
+	"security.workspace.trust.untrustedFiles": "open",
+	"window.menuBarVisibility": "visible",
+	"redhat.telemetry.enabled": false,
+	"editor.minimap.maxColumn": 160,
+	"editor.wordWrapColumn": 120,
+	"task.problemMatchers.neverPrompt": {
+		"shell": true
+	},
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+	"editor.tabCompletion": "on",
+	"emmet.triggerExpansionOnTab": true,
+	"svelte.enable-ts-plugin": true,
+	"prettier.enableDebugLogs": true,
+	"js/ts.implicitProjectConfig.checkJs": true,
+	"typescript.preferences.quoteStyle": "double",
+	"remote.SSH.remotePlatform": {
+		"sahilrajput03.codesandbox-template-vite-react.draft---affectionate-fire.csb": "linux"
+	},
+	"workbench.colorCustomizations": {},
+	"workbench.activityBar.visible": false,
+	"hardhat.telemetry": true,
+	"workbench.trustedDomains.promptInTrustedWorkspace": true,
+	"security.workspace.trust.startupPrompt": "always",
+	"security.workspace.trust.enabled": false,
+	"[solidity]": {
+		"editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+	},
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "modificationsIfAvailable"
 }
