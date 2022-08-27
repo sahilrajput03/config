@@ -95,7 +95,7 @@
 				"restart": true
 			},
 			{
-				"name": "Python: Attach",
+				"name": "Python: Attach |Debug Flask App",
 				// This is just "Python: Remote Attach" script (no modifications from myside at at all).
 				// You can run below command from external terminal and this task will attach the debugger to vscode, yo!
 				// python -m debugpy --listen 0.0.0.0:5678 -m flask --debug run --host=0.0.0.0
