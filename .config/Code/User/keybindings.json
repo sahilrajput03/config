@@ -1,120 +1,144 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-  {
-    "key": "alt+b",
-    "command": "workbench.action.toggleSidebarVisibility"
-    // Comments here works too
-  },
-  {
-    "key": "ctrl+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "-workbench.action.tasks.build"
-  },
-  {
-    "key": "alt+k alt+s",
-    "command": "workbench.action.openGlobalKeybindings"
-  },
-  {
-    "key": "ctrl+k ctrl+s",
-    "command": "-workbench.action.openGlobalKeybindings"
-  },
-  {
-    "key": "alt+w",
-    "command": "workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "-workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "ctrl+pagedown",
-    "command": "-workbench.action.nextEditor"
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.previousEditor"
-  },
-  {
-    "key": "ctrl+pageup",
-    "command": "-workbench.action.previousEditor"
-  },
-  {
-    "key": "ctrl+shift+alt+enter",
-    "command": "github.copilot.generate",
-    "when": "editorTextFocus && github.copilot.activated"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "explorer.newFile"
-  },
-  {
-    "key": "ctrl+shift+n",
-    "command": "explorer.newFolder"
-  },
-  {
-    "key": "ctrl+alt+r",
-    "command": "workbench.action.tasks.runTask"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "editor.emmet.action.expandAbbreviation",
-    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  },
-  {
-    "key": "tab",
-    "command": "-editor.emmet.action.expandAbbreviation",
-    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+enter",
-    "command": "-github.copilot.generate",
-    "when": "editorTextFocus && github.copilot.activated"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "terminal.focus",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "-workbench.action.togglePanel"
-  },
-  {
-    "key": "ctrl+k ctrl+q",
-    "command": "-workbench.action.navigateToLastEditLocation"
-  },
-  {
-    "key": "alt+right",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "alt+left",
-    "command": "workbench.action.navigateBackInEditLocations"
-  },
-  {
-    "key": "alt+right",
-    "command": "workbench.action.navigateForwardInEditLocations"
-  },
-  {
-    "key": "alt+r",
-    "command": "-workbench.action.terminal.toggleFindRegex",
-    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "alt+r",
-    "command": "-toggleFindRegex",
-    "when": "editorFocus"
-  }
+	{
+		"key": "alt+b",
+		"command": "workbench.action.toggleSidebarVisibility"
+		// Comments here works too
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "-workbench.action.tasks.build"
+	},
+	{
+		"key": "alt+k alt+s",
+		"command": "workbench.action.openGlobalKeybindings"
+	},
+	{
+		"key": "ctrl+k ctrl+s",
+		"command": "-workbench.action.openGlobalKeybindings"
+	},
+	{
+		"key": "alt+w",
+		"command": "workbench.action.closeActiveEditor"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "-workbench.action.closeActiveEditor"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+pagedown",
+		"command": "-workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+pageup",
+		"command": "-workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+shift+alt+enter",
+		"command": "github.copilot.generate",
+		"when": "editorTextFocus && github.copilot.activated"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "ctrl+shift+n",
+		"command": "explorer.newFolder"
+	},
+	{
+		"key": "ctrl+alt+r",
+		"command": "workbench.action.tasks.runTask"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "editor.emmet.action.expandAbbreviation",
+		"when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	},
+	{
+		"key": "tab",
+		"command": "-editor.emmet.action.expandAbbreviation",
+		"when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "-github.copilot.generate",
+		"when": "editorTextFocus && github.copilot.activated"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "terminal.focus",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+k ctrl+q",
+		"command": "-workbench.action.navigateToLastEditLocation"
+	},
+	{
+		"key": "alt+right",
+		"command": "-workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "alt+left",
+		"command": "workbench.action.navigateBackInEditLocations"
+	},
+	{
+		"key": "alt+right",
+		"command": "workbench.action.navigateForwardInEditLocations"
+	},
+	{
+		"key": "alt+r",
+		"command": "-workbench.action.terminal.toggleFindRegex",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "alt+r",
+		"command": "-toggleFindRegex",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+down",
+		// This works amazing, vim live block movement. ~Sahil
+		// FYI: You can select blocks via alt+shift+up/down arrows. ~Sahil
+		"command": "block-travel.jumpDown",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+down",
+		"command": "-block-travel.jumpDown",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+up",
+		// This works amazing, vim live block movement. ~Sahil
+		// FYI: You can select blocks via alt+shift+up/down arrows. ~Sahil
+		"command": "block-travel.jumpUp",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+up",
+		"command": "-block-travel.jumpUp",
+		"when": "editorTextFocus"
+	}
 ]

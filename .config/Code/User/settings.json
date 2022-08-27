@@ -1,7 +1,6 @@
 {
 	"explorer.confirmDelete": false,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.minimap.enabled": false,
 	"files.exclude": {
 		"**/__pycache__": true,
 		"**/.binary": true,
@@ -94,6 +93,27 @@
 				// processId is not required for the docker way, and it works without it and restart works very well too!
 				// "processId": "${command:PickProcess}",
 				"restart": true
+			},
+			{
+				"name": "Python: Attach",
+				// This is just "Python: Remote Attach" script (no modifications from myside at at all).
+				// You can run below command from external terminal and this task will attach the debugger to vscode, yo!
+				// python -m debugpy --listen 0.0.0.0:5678 -m flask --debug run --host=0.0.0.0
+				// To make code not run before attaching to the vscode debugger you can use `--wait-for-client` flag of python. YO ~Sahil
+				// python -m debugpy --wait-for-client --listen 0.0.0.0:5678 -m flask run --host=0.0.0.0
+				"type": "python",
+				"request": "attach",
+				"connect": {
+					"host": "localhost",
+					"port": 5678
+				},
+				"pathMappings": [
+					{
+						"localRoot": "${workspaceFolder}",
+						"remoteRoot": "."
+					}
+				],
+				"justMyCode": true
 			}
 		]
 	},
@@ -127,6 +147,10 @@
 		"editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
 	},
 	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.formatOnSaveMode": "modifications",
+	"editor.minimap.enabled": false,
 	"editor.formatOnSave": true,
-	"editor.formatOnSaveMode": "modificationsIfAvailable"
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	}
 }

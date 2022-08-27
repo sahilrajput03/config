@@ -673,3 +673,34 @@ alias cd.jimmy_chae='cd ~/Documents/jimmy-chae/'
 
 alias fes='firebase emulators:start'
 alias fesf='firebase emulators:start --only firestore'
+
+alias pgrep='pgrep -a'
+
+alias ngrokinfo='echo ngrok http PORT_HERE'
+
+alias fk='flask run'
+# To make our dev server visible on public ips on the network
+alias fkrPublic='flask run --host=0.0.0.0'
+# Below script will the server on file changes and vscode's ("""FYI: saved to my vscode settings""") "Python: Remote Attach" launch's configuration will autoconnect to it:
+alias fkDebug='python -m debugpy --listen 0.0.0.0:5678 -m flask --debug run --host=0.0.0.0'
+# Below script will reload the server on file changes:
+alias fkDebugRaw='flask --debug run'
+
+# Inspired from flask's installation: https://flask.palletsprojects.com/en/2.2.x/installation/#install-flask
+# Awesome flask docs: https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-application
+# Createa venv folder and set it up
+alias pythonSetupEnv='python3 -m venv venv' 
+# Before start working on the project make sure to run this activateEnvironment command.
+alias pythonActivaeEnvironment='. venv/bin/activate'
+alias pythonInstallDependencies='pip install -r requirements.txt'
+# 
+alias pythonCreateRequirementsFileWithFreeze='pip freeze > requirements.txt'
+# Creates only used dependencies in the project (install `pipreqs `pip install pipreqs`
+alias pythonCreateRequirementsFile='pipreqs'
+
+# LEARN `python vs. `python3`
+# $ python --version
+# OUTPUT: Python 3.10.6
+# $ python3 --version
+# OUTPUT: Python 3.10.6
+

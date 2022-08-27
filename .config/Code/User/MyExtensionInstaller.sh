@@ -49,11 +49,13 @@ code --install-extension redhat.java
 code --install-extension redhat.vscode-yaml
 code --install-extension rust-lang.rust
 code --install-extension rust-lang.rust-analyzer
+code --install-extension sashaweiss.block-travel
 code --install-extension silvenon.mdx
 code --install-extension svelte.svelte-vscode
 code --install-extension toba.vsfire
 code --install-extension twxs.cmake
 code --install-extension usernamehw.errorlens
+code --install-extension VisualStudioExptTeam.intellicode-api-usage-examples
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscjava.vscode-java-debug
 code --install-extension vscjava.vscode-java-dependency
