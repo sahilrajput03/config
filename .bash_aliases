@@ -265,7 +265,6 @@ alias ..='cd ..'
 alias up='cd ..'
 # alias ...='source $_home/.bashrc'
 alias ...='exec bash'
-# alias ...c='exec bash'
 alias gr='cd $_home/Documents/github_repos'
 gr="$_home/Documents/github_repos"
 # Usage: echo $gr, ls $gr

@@ -1,26 +1,27 @@
 alias fk='flask run'
-# To make our dev server visible on public ips on the network
-alias fkrPublic='flask run --host=0.0.0.0'
+# To make our dev server(for automatic server restart: PLEASE USE `fk.debug` script) visible on public ips on the network
+alias fk.startProduction='flask run --host=0.0.0.0'
 # Below `debugpy` scripts are inspired from article: https://medium.com/@lassebenninga/how-to-debug-flask-running-in-docker-compose-in-vs-code-ef37f0f516ee
 # Also, vscode uses `debugpy` from its extensions to load vscode python debugger and attach to it for its flask debug scripts. Yo ~Sahil
 # Below script will the server on file changes and vscode's ("""FYI: saved to my vscode settings""") "Python: Remote Attach" launch's configuration will autoconnect to it:
-alias fkDebug='python -m debugpy --listen 0.0.0.0:5678 -m flask --debug run --host=0.0.0.0'
+alias fk.debug='python -m debugpy --listen 0.0.0.0:5678 -m flask --debug run --host=0.0.0.0'
+alias fk.debugWaitForClientDebuggerToAttach='python -m debugpy --wait-for-client --listen 0.0.0.0:5678 -m flask --debug run --host=0.0.0.0'
 # Below script will reload the server on file changes:
-alias fkDebugRaw='flask --debug run'
+alias fk.debugRaw='flask --debug run'
 
 # Inspired from flask's installation: https://flask.palletsprojects.com/en/2.2.x/installation/#install-flask
 # Inspred from Heroku's python project setup: https://devcenter.heroku.com/articles/getting-started-with-python#install-app-dependencies-locally
 # Awesome flask docs: https://flask.palletsprojects.com/en/2.2.x/quickstart/#a-minimal-application
 # Createa venv folder and set it up
-alias pythonSetupEnv='python3 -m venv venv' 
+alias vv.setupEnv='python3 -m venv venv' 
 # FROM HEROKU: python3 -m venv --upgrade-deps venv
 # Before start working on the project make sure to run this activateEnvironment command.
-alias pythonActivaeEnvironment='. venv/bin/activate'
-alias pythonInstallDependencies='pip install -r requirements.txt'
+alias vv.activaeEnvironment='. venv/bin/activate'
+alias vv.installDependencies='pip install -r requirements.txt'
 # 
-alias pythonCreateRequirementsFileWithFreeze='pip freeze > requirements.txt'
+alias freeze.createRequirements.txt='pip freeze > requirements.txt'
 # Creates only used dependencies in the project (install `pipreqs `pip install pipreqs`
-alias pythonCreateRequirementsFile='pipreqs'
+alias pipreqs.createRequirementsFile='pipreqs'
 
 # LEARN `python vs. `python3`
 # $ python --version
