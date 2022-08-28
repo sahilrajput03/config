@@ -309,6 +309,7 @@ alias vi.picom='sudo vim /etc/xdg/picom.conf'
 # Tip: Use restart.dunst to reload dunstrc file and use win+g to send a test notification.
 alias vi.dunst='vi .config/dunst/dunstrc'
 alias vi.python='vi ~/.bash_python'
+alias vi.heroku='vi ~/.bash_heroku'
 
 
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908

@@ -1,4 +1,5 @@
 # heroku
+# I have an alias to edit this file: vi.heroku
 # PLEASE SET APP via `heroku_app=my_app`
 alias h.createProcfile='echo "web: npm start" > Procfile'
 alias h.create='heroku create --region eu'
@@ -14,7 +15,8 @@ alias hlt='heroku logs --tail'
 alias hlo='heroku login'
 alias hre='heroku releases -a $heroku_app'
 alias hro='heroku rollback $@ -a $heroku_app'
-alias hsetNodejs='heroku buildpacks:set heroku/nodejs'
+alias hsetNodejsBuildpack='heroku buildpacks:set heroku/nodejs'
+alias hsetPythonBuildpack='heroku buildpacks:set heroku/python'
 # # Since usig `heroku open` command is opening heroku app's url in new browser (need TODO: to fix `xdg-open` later on).
 # So for now I am copying the url to clipboard simply to open in browser manually. src: https://stackoverflow.com/a/26703011/10012446
 alias hgetUrlToClipboard='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
