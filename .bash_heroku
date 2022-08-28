@@ -1,64 +1,57 @@
-# heroku
-# I have an alias to edit this file: vi.heroku
-# PLEASE SET APP via `heroku_app=my_app`
+# HEROKU ON COCAINE
+# Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5
+# Alias to edit this file: vi.heroku
+
+# Usage: h.setVariable myAppName
+h.setVariable() {
+	APP=$1
+}
+
+# Usage: h.getVariable
+h.getVariable() {
+	if [ -z "$APP" ]; then
+		echo "Set app variable first with:"
+		echo " h.setVariable myAppName"
+		return 1
+	fi
+	echo $APP
+}
+
+
 alias h.createProcfile='echo "web: npm start" > Procfile'
 alias h.create='heroku create --region eu'
 # Usage: 
 # h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
 # heroku create --region eu elegant-chat-app
-alias ha='heroku apps'
-alias hl='heroku logs'
-alias hlt='heroku logs --tail'
-alias hla='heroku logs -a $heroku_app'
-alias hlat='heroku logs -a $heroku_app --tail'
-alias hlt='heroku logs --tail'
-alias hlo='heroku login'
-alias hre='heroku releases -a $heroku_app'
-alias hro='heroku rollback $@ -a $heroku_app'
-alias hsetNodejsBuildpack='heroku buildpacks:set heroku/nodejs'
-alias hsetPythonBuildpack='heroku buildpacks:set heroku/python'
+alias h.a='heroku apps'
+alias h.l='heroku logs'
+alias h.lt='heroku logs --tail'
+alias h.la='heroku logs -a $APP'
+alias h.lta='heroku logs -a $APP --tail'
+alias h.lt='heroku logs --tail'
+alias h.lo='heroku login'
+alias h.re='heroku releases -a $APP'
+# USAGE: h.ro some-version"
+alias h.ro='heroku rollback $@ -a $heroku_app'
+alias h.buildpackNodejs='heroku buildpacks:set heroku/nodejs'
+alias h.buildpackPython='heroku buildpacks:set heroku/python'
 # # Since usig `heroku open` command is opening heroku app's url in new browser (need TODO: to fix `xdg-open` later on).
 # So for now I am copying the url to clipboard simply to open in browser manually. src: https://stackoverflow.com/a/26703011/10012446
-alias hgetUrlToClipboard='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
+alias h.copyUrlToClipboard='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
 # FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
 
-# Usage: heroku.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
+# Usage: h.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
 # Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
-heroku.setSubDirectoryBuildpack(){
+h.setSubDirectoryBuildpack(){
 	if [ -z "$APP" ]; then
 		echo 'FIRST set the app name with command `APP=myAppName`'
-	else
-		heroku buildpacks:clear -a $APP
-		heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
-		heroku buildpacks:add heroku/nodejs -a $APP
-		# heroku config:set PROJECT_PATH=projects/nodejs/frontend
-		heroku config:set PROJECT_PATH=$1 -a $APP
+		return 1
 	fi
-}
 
-forceSettingVariable() {
-	if [ -z "$APP" ]; then
-		echo 'FIRST set the app name with command `APP=myAppName`'
-	else
-		echo $APP
-	fi
-}
-
-h.info(){
-	echo "Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5"
-	type h.createProcfile
-	type h.create
-	type ha
-	type hl
-	type hlt
-	echo "# USAGE: hro some-version"
-	type hlo
-	type hre
-	type hro
-	type hsetNodejs	
-	type heroku.setSubDirectoryBuildpack
-}
-heroku.info(){
-	h.info
+	heroku buildpacks:clear -a $APP
+	heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
+	heroku buildpacks:add heroku/nodejs -a $APP
+	# heroku config:set PROJECT_PATH=projects/nodejs/frontend
+	heroku config:set PROJECT_PATH=$1 -a $APP
 }
 
