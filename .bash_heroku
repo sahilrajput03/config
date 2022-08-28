@@ -18,6 +18,7 @@ h.getVariable() {
 }
 
 
+
 alias h.createProcfile='echo "web: npm start" > Procfile'
 alias h.create='heroku create --region eu'
 # Usage: 
@@ -37,7 +38,10 @@ alias h.buildpackNodejs='heroku buildpacks:set heroku/nodejs'
 alias h.buildpackPython='heroku buildpacks:set heroku/python'
 # # Since usig `heroku open` command is opening heroku app's url in new browser (need TODO: to fix `xdg-open` later on).
 # So for now I am copying the url to clipboard simply to open in browser manually. src: https://stackoverflow.com/a/26703011/10012446
-alias h.copyUrlToClipboard='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
+alias h.copyURL='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
+alias h.copyURLviaVariable='echo https://$APP.herokuapp.com/ | xclip -sel clip'
+
+
 # FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
 
 # Usage: h.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
