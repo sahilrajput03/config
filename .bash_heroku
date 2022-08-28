@@ -2,12 +2,38 @@
 # Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5
 # Alias to edit this file: vi.heroku
 
-# Usage: h.setVariable myAppName
+# Set current project to a heroku app and add heroku remote as well.
+# USAGE: h.setProject myAppName
+# NOTE: Make sure you have current folder initialized as git repository (`git init`)
+# After running below you can use: `git remote -v` and you'll see heroku remote has been added.
+h.setProject(){
+	heroku git:remote -a $1
+}
+
+alias h.createProcfile='echo "web: npm start" > Procfile'
+alias h.create='heroku create --region eu'
+# USAGE: 
+# h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
+# heroku create --region eu elegant-chat-app
+alias h.a='heroku apps'
+alias h.l='heroku logs'
+alias h.lt='heroku logs --tail'
+alias h.lt='heroku logs --tail'
+alias h.lo='heroku login'
+alias h.re='heroku releases'
+alias h.ro='heroku rollback $@'
+alias h.buildpackNodejs='heroku buildpacks:set heroku/nodejs'
+alias h.buildpackPython='heroku buildpacks:set heroku/python'
+
+############################### Using $APP
+# NOTE: YOU MIGHT NOW NEED BELOW because you can set project for current folder by using `h.setProject myAppName`
+#
+# USAGE: h.setVariable myAppName
 h.setVariable() {
 	APP=$1
 }
-
-# Usage: h.getVariable
+#
+# USAGE: h.getVariable
 h.getVariable() {
 	if [ -z "$APP" ]; then
 		echo "Set app variable first with:"
@@ -16,35 +42,29 @@ h.getVariable() {
 	fi
 	echo $APP
 }
-
-
-
-alias h.createProcfile='echo "web: npm start" > Procfile'
-alias h.create='heroku create --region eu'
-# Usage: 
-# h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
-# heroku create --region eu elegant-chat-app
-alias h.a='heroku apps'
-alias h.l='heroku logs'
-alias h.lt='heroku logs --tail'
+#
 alias h.la='heroku logs -a $APP'
 alias h.lta='heroku logs -a $APP --tail'
-alias h.lt='heroku logs --tail'
-alias h.lo='heroku login'
-alias h.re='heroku releases -a $APP'
-# USAGE: h.ro some-version"
-alias h.ro='heroku rollback $@ -a $heroku_app'
-alias h.buildpackNodejs='heroku buildpacks:set heroku/nodejs'
-alias h.buildpackPython='heroku buildpacks:set heroku/python'
-# # Since usig `heroku open` command is opening heroku app's url in new browser (need TODO: to fix `xdg-open` later on).
+alias h.rea='heroku releases -a $APP'
+# USAGE: h.roa some-version"
+alias h.roa='heroku rollback $@ -a $APP'
+############################### Using $APP
+
+# # Since using `heroku open` command is opening heroku app's url in new browser (need TODO: to fix `xdg-open` later on).
 # So for now I am copying the url to clipboard simply to open in browser manually. src: https://stackoverflow.com/a/26703011/10012446
 alias h.copyURL='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
-alias h.copyURLviaVariable='echo https://$APP.herokuapp.com/ | xclip -sel clip'
+h.copyURLviaVariable (){
+	if [ -z "$APP" ]; then
+		echo 'FIRST set the app name with command `APP=myAppName`'
+		return 1
+	fi
 
+	echo "https://$APP.herokuapp.com/" | xclip -sel clip
+}
 
 # FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
 
-# Usage: h.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
+# USAGE: h.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
 # Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
 h.setSubDirectoryBuildpack(){
 	if [ -z "$APP" ]; then
