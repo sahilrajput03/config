@@ -72,6 +72,9 @@ function backupConfigFiles {
 	\cp $_home/.bashrc $backup_dir/
 	echo "Backup of ~/.bashrc succeeded."
 
+	\cp $_home/.ssh/config $backup_dir/.ssh/
+	echo "Backup of ~/.ssh/config succeeded."
+
 	\cp $_home/.profile $backup_dir/
 	echo "Backup of ~/.profile succeeded."
 
