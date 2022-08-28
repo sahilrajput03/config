@@ -1,6 +1,9 @@
-alias fk='flask run'
-# To make our dev server(for automatic server restart: PLEASE USE `fk.debug` script) visible on public ips on the network
-alias fk.startProduction='flask run --host=0.0.0.0'
+#
+# NOTE: Flask produciton server do not refresh on file changes. For automatic server restart  PLEASE USE `fk.debug` script) visible on public ips on the network
+# Start production
+alias fk.startProduction='flask run'
+# Start produciton (accessible from all local addresses)
+alias fk.startProductionPublic='flask run --host=0.0.0.0'
 # Below `debugpy` scripts are inspired from article: https://medium.com/@lassebenninga/how-to-debug-flask-running-in-docker-compose-in-vs-code-ef37f0f516ee
 # Also, vscode uses `debugpy` from its extensions to load vscode python debugger and attach to it for its flask debug scripts. Yo ~Sahil
 # Below script will the server on file changes and vscode's ("""FYI: saved to my vscode settings""") "Python: Remote Attach" launch's configuration will autoconnect to it:
