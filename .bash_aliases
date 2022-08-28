@@ -651,7 +651,7 @@ battery-status(){
 
 # src: https://www.freecodecamp.org/news/how-to-set-up-the-debugger-for-chrome-extension-in-visual-studio-code-c0b3e5937c01/
 # Very useful to debug react apps coz we can use `Chrome:Attach` debug configuration to open debug in this window only instead of creating new chrome debugging windows on each debug session start from vscode. Yikes!! Also documented on `learn-react` github repo as well.
-alias chrome-debug='google-chrome-stable --remote-debugging-port=9222'
+alias chrome-debug='air google-chrome-stable --remote-debugging-port=9222'
 
 
 function startApiTesting(){

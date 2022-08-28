@@ -34,7 +34,7 @@ alias gds='git diff --staged'
 # Usage 3: gds | vi		# To open diff in vim
 
 # A gui tool for viewing git diff (really good as compared to git-cli for viewing diff and commit history - imo ~Sahil)
-alias gitk='gitk'
+alias gitk='air gitk'
 
 # alias gl='git log'
 alias gl='git log --decorate --graph --oneline -10'
