@@ -1,4 +1,5 @@
 #
+# NOTE: For publishing on `https` i.e., secure protocols, refer usage@ https://github.com/sahilrajput03/skype-bot-with-heroku-webhook-for-build-notifications/
 # NOTE: Flask produciton server do not refresh on file changes. For automatic server restart  PLEASE USE `fk.debug` script) visible on public ips on the network
 # Start production
 alias fk.startProduction='flask run'
