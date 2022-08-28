@@ -19,6 +19,8 @@ alias vv.createEnv_step1='python3 -m venv venv'
 alias vv.activaeEnvironment_step2='. venv/bin/activate'
 alias vv.installDependencies_step3='pip install -r requirements.txt'
 # 
+# FYI: Tekena uses `pip freeze` only to create requirements.txt file
+# NOTE: This always *overwrites* previous `requirements.txt` file.
 alias vv.makeRequirements.txt='pip freeze > requirements.txt'
 # Creates only used dependencies in the project (install `pipreqs `pip install pipreqs`
 alias pipreqs.createRequirementsFile='pipreqs'

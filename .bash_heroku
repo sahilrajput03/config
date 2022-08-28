@@ -1,9 +1,10 @@
 # HEROKU ON COCAINE
 # Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5
-# Alias to edit this file: vi.heroku
+# Alias to edit this file: vi.her<TAB>  i.e., `vi.heroku`
 
 # Set current project to a heroku app and add heroku remote as well.
 # USAGE: h.setProject myAppName
+# NOTE: Make sure you have logged in the heroku already. If haven't do it via: `h.lo`
 # NOTE: Make sure you have current folder initialized as git repository (`git init`)
 # After running below you can use: `git remote -v` and you'll see heroku remote has been added.
 h.setProject(){
@@ -11,6 +12,10 @@ h.setProject(){
 }
 
 alias h.createProcfile='echo "web: npm start" > Procfile'
+# USAGE:
+# `h.create` will create app with random name
+# `h.create my-project` will create app with given name on heroku such that app will host on: `my-project.herokuapp.com`
+# HEROKU APP NAME RULES: App name should only contain: lowercase letters, digits and dashes. App name must start and end with a letter.
 alias h.create='heroku create --region eu'
 # USAGE: 
 # h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
@@ -32,12 +37,12 @@ alias h.buildpackPython='heroku buildpacks:set heroku/python'
 h.setVariable() {
 	APP=$1
 }
+SET_APP_VARAIBLE_MESSAGE='Set app variable first with: `h.setVariable myAppName`'
 #
 # USAGE: h.getVariable
 h.getVariable() {
 	if [ -z "$APP" ]; then
-		echo "Set app variable first with:"
-		echo " h.setVariable myAppName"
+		echo $SET_APP_VARAIBLE_MESSAGE
 		return 1
 	fi
 	echo $APP
@@ -55,7 +60,7 @@ alias h.roa='heroku rollback $@ -a $APP'
 alias h.copyURL='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
 h.copyURLviaVariable (){
 	if [ -z "$APP" ]; then
-		echo 'FIRST set the app name with command `APP=myAppName`'
+		echo $SET_APP_VARAIBLE_MESSAGE
 		return 1
 	fi
 
@@ -64,17 +69,43 @@ h.copyURLviaVariable (){
 
 # FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
 
-# USAGE: h.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
+# USAGE: h.setSubDirectoryBuildpackNodejs targetDirectoryRelativeToRepostoryRoot
 # Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
-h.setSubDirectoryBuildpack(){
+h.setSubDirectoryBuildpackNodejs(){
 	if [ -z "$APP" ]; then
-		echo 'FIRST set the app name with command `APP=myAppName`'
+		echo $SET_APP_VARAIBLE_MESSAGE
+		return 1
+	fi
+
+	if [ -z "$1" ]; then
+		echo Please provide the target project directory as argument.
+		echo Example: h.setSubDirectory_ projects/schoolProjects/firstProject
 		return 1
 	fi
 
 	heroku buildpacks:clear -a $APP
 	heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
 	heroku buildpacks:add heroku/nodejs -a $APP
+	# heroku config:set PROJECT_PATH=projects/nodejs/frontend
+	heroku config:set PROJECT_PATH=$1 -a $APP
+}
+
+# USAGE: h.setSubDirectoryBuildpackPython targetDirectoryRelativeToRepostoryRoot
+h.setSubDirectoryBuildpackPython(){
+	if [ -z "$APP" ]; then
+		echo $SET_APP_VARAIBLE_MESSAGE
+		return 1
+	fi
+
+	if [ -z "$1" ]; then
+		echo Please provide the target project directory as argument.
+		echo Example: h.setSubDirectory_ projects/schoolProjects/firstProject
+		return 1
+	fi
+
+	heroku buildpacks:clear -a $APP
+	heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
+	heroku buildpacks:add heroku/python -a $APP
 	# heroku config:set PROJECT_PATH=projects/nodejs/frontend
 	heroku config:set PROJECT_PATH=$1 -a $APP
 }
