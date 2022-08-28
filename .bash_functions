@@ -81,6 +81,9 @@ function backupConfigFiles {
 	\cp $_home/.bash_python $backup_dir/
 	echo "Backup of ~/.bash_python file succeeded."
 
+	\cp $_home/.bash_herkou $backup_dir/
+	echo "Backup of ~/.bash_heroku file succeeded."
+
 	\cp $_home/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
 
@@ -305,66 +308,6 @@ alias grep='grep --color=auto'
 # Search text in files recursively (src: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-bash.md)
 searchTextInFilesRecursively(){
 	grep -r --exclude-dir={node_modules,.idea,.git} --exclude={package-lock.json,yarn.lock,yarn-error.log} "$@" .
-}
-
-
-# heroku
-# PLEASE SET APP via `heroku_app=my_app`
-alias h.createProcfile='echo "web: npm start" > Procfile'
-alias h.create='heroku create --region eu'
-# Usage: 
-# h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
-# heroku create --region eu elegant-chat-app
-alias ha='heroku apps'
-alias hl='heroku logs'
-alias hlt='heroku logs --tail'
-alias hla='heroku logs -a $heroku_app'
-alias hlat='heroku logs -a $heroku_app --tail'
-alias hlt='heroku logs --tail'
-alias hlo='heroku login'
-alias hre='heroku releases -a $heroku_app'
-alias hro='heroku rollback $@ -a $heroku_app'
-alias hsetNodejs='heroku buildpacks:set heroku/nodejs'
-# FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
-
-# Usage: heroku.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
-# Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
-heroku.setSubDirectoryBuildpack(){
-	if [ -z "$APP" ]; then
-		echo 'FIRST set the app name with command `APP=myAppName`'
-	else
-		heroku buildpacks:clear -a $APP
-		heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
-		heroku buildpacks:add heroku/nodejs -a $APP
-		# heroku config:set PROJECT_PATH=projects/nodejs/frontend
-		heroku config:set PROJECT_PATH=$1 -a $APP
-	fi
-}
-
-forceSettingVariable() {
-	if [ -z "$APP" ]; then
-		echo 'FIRST set the app name with command `APP=myAppName`'
-	else
-		echo $APP
-	fi
-}
-
-h.info(){
-	echo "Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5"
-	type h.createProcfile
-	type h.create
-	type ha
-	type hl
-	type hlt
-	echo "# USAGE: hro some-version"
-	type hlo
-	type hre
-	type hro
-	type hsetNodejs	
-	type heroku.setSubDirectoryBuildpack
-}
-heroku.info(){
-	h.info
 }
 
 # .eslintrc.js

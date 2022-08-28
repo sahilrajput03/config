@@ -89,6 +89,7 @@ function showpath_in_terminal(){
 [[ -f $_home/.bash_docker ]] && source $_home/.bash_docker
 [[ -f $_home/scripts/wi ]] && source $_home/scripts/wi
 [[ -f $_home/.bash_python ]] && source $_home/.bash_python
+[[ -f $_home/.bash_heroku ]] && source $_home/.bash_heroku
 
 ####### for kubernetes vvvv ####
 # Used when encrypting (list of public keys separated by comma)
