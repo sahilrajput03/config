@@ -81,7 +81,7 @@ function backupConfigFiles {
 	\cp $_home/.bash_python $backup_dir/
 	echo "Backup of ~/.bash_python file succeeded."
 
-	\cp $_home/.bash_herkou $backup_dir/
+	\cp $_home/.bash_heroku $backup_dir/
 	echo "Backup of ~/.bash_heroku file succeeded."
 
 	\cp $_home/.bash_profile $backup_dir/

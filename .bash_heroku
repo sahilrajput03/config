@@ -1,0 +1,62 @@
+# heroku
+# PLEASE SET APP via `heroku_app=my_app`
+alias h.createProcfile='echo "web: npm start" > Procfile'
+alias h.create='heroku create --region eu'
+# Usage: 
+# h.create elegant-chat-app # THIS EXPANDS TO BELOW COMMAND.
+# heroku create --region eu elegant-chat-app
+alias ha='heroku apps'
+alias hl='heroku logs'
+alias hlt='heroku logs --tail'
+alias hla='heroku logs -a $heroku_app'
+alias hlat='heroku logs -a $heroku_app --tail'
+alias hlt='heroku logs --tail'
+alias hlo='heroku login'
+alias hre='heroku releases -a $heroku_app'
+alias hro='heroku rollback $@ -a $heroku_app'
+alias hsetNodejs='heroku buildpacks:set heroku/nodejs'
+# # Since usig `heroku open` command is opening heroku app's url in new browser (need TODO: to fix `xdg-open` later on).
+# So for now I am copying the url to clipboard simply to open in browser manually. src: https://stackoverflow.com/a/26703011/10012446
+alias hgetUrlToClipboard='heroku info -s | grep web_url | cut -d= -f2 | xclip -sel clip'
+# FYI: You can set this buildpack setting via 'Setings' tab in you heroku panel as well."
+
+# Usage: heroku.setSubDirectoryBuildpack directoryRelativeToRepostoryRoot
+# Docs: https://github.com/sahilrajput03/sahilrajput03/blob/master/learn-deploy.md#heroku
+heroku.setSubDirectoryBuildpack(){
+	if [ -z "$APP" ]; then
+		echo 'FIRST set the app name with command `APP=myAppName`'
+	else
+		heroku buildpacks:clear -a $APP
+		heroku buildpacks:set https://github.com/timanovsky/subdir-heroku-buildpack -a $APP
+		heroku buildpacks:add heroku/nodejs -a $APP
+		# heroku config:set PROJECT_PATH=projects/nodejs/frontend
+		heroku config:set PROJECT_PATH=$1 -a $APP
+	fi
+}
+
+forceSettingVariable() {
+	if [ -z "$APP" ]; then
+		echo 'FIRST set the app name with command `APP=myAppName`'
+	else
+		echo $APP
+	fi
+}
+
+h.info(){
+	echo "Source: https://gist.github.com/sahilrajput03/c44778f281e5f9856827e7c0f264ffa5"
+	type h.createProcfile
+	type h.create
+	type ha
+	type hl
+	type hlt
+	echo "# USAGE: hro some-version"
+	type hlo
+	type hre
+	type hro
+	type hsetNodejs	
+	type heroku.setSubDirectoryBuildpack
+}
+heroku.info(){
+	h.info
+}
+
