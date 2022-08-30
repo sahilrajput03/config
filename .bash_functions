@@ -334,6 +334,8 @@ configSearch () {
 	grep -inH -A 3 -B 3 "$@" ~/.bash_aliases
 	grep -inH -A 3 -B 3 "$@" ~/.bash_git
 	grep -inH -A 3 -B 3 "$@" ~/.bash_functions
+	grep -inH -A 3 -B 3 "$@" ~/.bash_python
+	grep -inH -A 3 -B 3 "$@" ~/.bash_heroku
 }
 
 listAllUsers () {
