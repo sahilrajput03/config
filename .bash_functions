@@ -566,3 +566,12 @@ psql.dropAndRecreateTable(){
 	psql -U postgres -c "DROP DATABASE IF EXISTS \"$1\";" -c "CREATE DATABASE \"$1\";"
 }
 
+# Using parcel bull
+clearParcelCache='rm -rf .cache'
+bull () {
+	echo Tip: Use \`rs\` to manually restart the parcel dev server when you add/remove html/css/js files 🥝︎🥝︎.
+	set -x
+	BINARY_PATH=/home/array/scripts/bull/run_parcel
+	nodemon -x $BINARY_PATH --watch $BINARY_PATH --config nodemon.json
+	trap 'set +x' exit
+}

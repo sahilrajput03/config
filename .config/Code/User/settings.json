@@ -152,5 +152,6 @@
 	"editor.formatOnSave": true,
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python"
-	}
+	},
+	"window.zoomLevel": 1
 }
