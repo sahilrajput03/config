@@ -1,26 +1,19 @@
 // prettier.config.js or .prettierrc.js
 module.exports = {
-	// printWidth: 80,
-	printWidth: 1000,
-	// ^^ Default is 80 characters per line.
-	requirePragma: false,
-	// ^ That is defautl false though. Read about it @ https://prettier.io/docs/en/options.html#insert-pragma
+	// set max characters on a line
+	printWidth: 1000, // default is 80
+	// https://prettier.io/docs/en/options.html#insert-pragma
+	requirePragma: false, // default false
 	trailingComma: 'es5',
 	tabWidth: 2,
-	semi: true,
-	//  ^^ This is for semicolon.
-
+	// disable semicolon (false)
+	semi: false,
+	// use single quote. FYI: It does not work for jsx props key-value pairs
 	singleQuote: true,
-	//  ^^ This rule doesn't specify for jsx.
-
+	// Use single quote for jsx
 	jsxSingleQuote: true,
-	// ^^ This rule specify for jsx only.
-
 	bracketSpacing: false,
 	useTabs: true,
-
-	//  Php formatting options below -
-	braceStyle: '1tbs',
-	//  ^^ this sets the brace style for php formatting like to put on same line.
-	//  Read more about php formatting @ https://github.com/prettier/plugin-php
+	//  PHP FORMATTING: Read more about php formatting @ https://github.com/prettier/plugin-php
+	braceStyle: '1tbs', // sets the brace style for php files to put on same line
 }

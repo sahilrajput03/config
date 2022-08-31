@@ -166,3 +166,5 @@ gitf() {
 	# *IMPORTANT: CONFIG FILE IS SAVED @ ~/gitf_config.json
 }
 
+# Usage: This will merge a particular commit to current branch.
+# git cherrypick <commitYouWantToMerge>

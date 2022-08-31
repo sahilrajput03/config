@@ -1,46 +1,13 @@
 const {exec, execSync} = require('child_process')
 
-// Note: stdio: pipe is to prevent any output getting printed to console directly, yikes!!
+// `stdio: pipe` is to prevent any output getting printed to console
+// `stdio: inherit` is to get output printed to the console directly
 const options = {stdio: 'pipe'}
 
-let list = []
-
 try {
-	let list1 = execSync(`ls *.html`, options).toString()
-	list1 = list1.split('\n').slice(0, -1) // Also remove the last item, i.e., empty string.
-	list.push(...list1)
+	let output = execSync(`ls *.html`, options).toString()
+	console.log('##We got output:', output)
 
-	let list2 = execSync(`ls **/*.html`, options).toString()
-	list2 = list2.split('\n').slice(0, -1)
-	list.push(...list2)
-
-	let list3 = execSync(`ls **/**/*.html`, options).toString()
-	list3 = list3.split('\n').slice(0, -1)
-	list.push(...list3)
-
-	let list4 = execSync(`ls **/**/**/*.html`, options).toString()
-	list4 = list4.split('\n').slice(0, -1)
-	list.push(...list4)
-
-	let list5 = execSync(`ls **/**/**/**/*.html`, options).toString()
-	list5 = list5.split('\n').slice(0, -1)
-	list.push(...list5)
-
-	let list6 = execSync(`ls **/**/**/**/**/*.html`, options).toString()
-	list6 = list6.split('\n').slice(0, -1)
-	list.push(...list6)
-
-	let list7 = execSync(`ls **/**/**/**/**/**/*.html`, options).toString()
-	list7 = list7.split('\n').slice(0, -1)
-	list.push(...list7)
-
-	let list8 = execSync(`ls **/**/**/**/**/**/**/*.html`, options).toString()
-	list8 = list8.split('\n').slice(0, -1)
-	list.push(...list8)
 } catch (error) {
-	// console.log('yikes error.... ~sahil')
+	console.log('##We got error:', error)
 }
-
-list = list.filter((item) => !item.includes('dist/'))
-
-console.log(list)
