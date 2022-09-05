@@ -149,7 +149,6 @@
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"editor.formatOnSaveMode": "modifications",
 	"editor.minimap.enabled": false,
-	"editor.formatOnSave": true,
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python"
 	},

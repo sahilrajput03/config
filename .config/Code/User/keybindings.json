@@ -140,5 +140,13 @@
 		"key": "alt+up",
 		"command": "-block-travel.jumpUp",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+5",
+		"command": "workbench.action.splitEditorRight"
+	},
+	{
+		"key": "ctrl+'",
+		"command": "workbench.action.splitEditorDown"
 	}
 ]
