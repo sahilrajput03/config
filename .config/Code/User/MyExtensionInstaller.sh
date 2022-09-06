@@ -22,6 +22,7 @@ code --install-extension josetr.cmake-language-support-vscode
 code --install-extension JuanBlanco.solidity
 code --install-extension keyhr.42-c-format
 code --install-extension mathiasfrohlich.Kotlin
+code --install-extension mikestead.dotenv
 code --install-extension mongodb.mongodb-vscode
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-dotnettools.vscode-dotnet-runtime
@@ -42,6 +43,7 @@ code --install-extension ms-vscode.cpptools-themes
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension NomicFoundation.hardhat-solidity
+code --install-extension pmndrs.pmndrs
 code --install-extension polypus74.trusty-rusty-snippets
 code --install-extension pranaygp.vscode-css-peek
 code --install-extension Prisma.prisma
