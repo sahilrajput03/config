@@ -53,6 +53,7 @@ code --install-extension rust-lang.rust
 code --install-extension rust-lang.rust-analyzer
 code --install-extension sashaweiss.block-travel
 code --install-extension silvenon.mdx
+code --install-extension styled-components.vscode-styled-components
 code --install-extension svelte.svelte-vscode
 code --install-extension toba.vsfire
 code --install-extension twxs.cmake

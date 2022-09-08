@@ -151,7 +151,5 @@
 	"editor.minimap.enabled": false,
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python"
-	},
-	"window.zoomLevel": -1,
-	"workbench.colorTheme": "poimandres"
+	}
 }
