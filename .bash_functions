@@ -143,6 +143,10 @@ function backupConfigFiles {
 	\cp $_home/.config/Code/User/settings.json $backup_dir/.config/Code/User/
 	echo "Backup of ~/.config/Code/User/settings.json file succeeded."
 
+	# Backup snippets file
+	\cp $_home/.config/Code/User/snippets/QuickSnippets.code-snippets $backup_dir/.config/Code/User/snippets
+	echo "Backup of ~/.config/Code/User/snippets/QuickSnippets.code-snippets file succeeded."
+
 	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
 	\code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/.config/Code/User/MyExtensionInstaller.sh
 	chmod +x $backup_dir/.config/Code/User/MyExtensionInstaller.sh
