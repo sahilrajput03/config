@@ -310,7 +310,7 @@ alias vi.picom='sudo vim /etc/xdg/picom.conf'
 alias vi.dunst='vi .config/dunst/dunstrc'
 alias vi.python='vi ~/.bash_python'
 alias vi.heroku='vi ~/.bash_heroku'
-
+alias mt='mutt'
 
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
 alias restart.dunst='killall dunst'

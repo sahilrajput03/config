@@ -151,5 +151,8 @@
 	"editor.minimap.enabled": false,
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python"
+	},
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
 	}
 }

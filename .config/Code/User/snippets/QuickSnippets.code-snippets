@@ -19,6 +19,12 @@
     "body": ["", "", ""],
     "description": "Log output to console"
   },
+  "useAppData": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "appData",
+    "body": ["const [appData, setAppData] = useAppData()"],
+    "description": "useAppData()"
+  },
   "ejs-html-scripting-templating-with-express": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "ejs",
@@ -453,5 +459,5 @@
       "// Todo: Things will be yellow now."
     ],
     "description": "Comments Prototype from Better Comments ~SahilRajput"
-  }
+  },
 }
