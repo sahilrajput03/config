@@ -399,7 +399,9 @@ client.focused          #4c7899 #ff0066 #ffffff #2e9ef4   #ffffff
 # default_border normal 6
 # normal means show title bar,  followed by size of border width.
 # Hiding title bar
-default_border pixel 4
+# below way stopped working after v4.21 release, src: https://gist.github.com/lirenlin/9892945
+# default_border pixel 4
+for_window [class="^.*"] border pixel 4
 # 3 August, 2022
 # Remove border and title bar: https://www.reddit.com/r/i3wm/comments/87kclz/how_do_i_remove_borders_and_titles/
 # for_window [class="^.*"] border pixel 0

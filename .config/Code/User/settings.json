@@ -138,7 +138,6 @@
 		"sahilrajput03.codesandbox-template-vite-react.draft---affectionate-fire.csb": "linux"
 	},
 	"workbench.colorCustomizations": {},
-	"workbench.activityBar.visible": false,
 	"hardhat.telemetry": true,
 	"workbench.trustedDomains.promptInTrustedWorkspace": true,
 	"security.workspace.trust.startupPrompt": "always",
@@ -154,5 +153,6 @@
 	},
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
-	}
+	},
+	"workbench.activityBar.visible": false
 }

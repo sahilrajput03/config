@@ -111,9 +111,16 @@ gi (){
 	echo + git init $@
 	git init $@
 }
-gb (){
+
+# local branches only
+gbl (){
 	echo + git branch $@
 	git branch $@
+}
+
+gb (){
+	echo + git branch --all $@
+	git branch --all $@
 }
 
 ga (){

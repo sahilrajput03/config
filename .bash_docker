@@ -1,4 +1,7 @@
 
+# get your system architecture
+alias getArchitecture='uname -m'
+
 # Aliases from my back old windows days..
 alias d-c-removeOne_with_id_or_name='docker rm'
 alias d-c-removeOneForcefully_with_id_or_name='docker rm --force'
