@@ -255,7 +255,7 @@ booz(){
 	$_home/scripts/td/s.sh
 }
 # Toggle comment/uncommment to enable/disable booz
-booz
+# booz
 
 ##### Enable autocomplete for kubectl alias
 # complete -F _complete_alias kc # Using something like this we can autocomplete for aliases as well. src: https://unix.stackexchange.com/a/332522/504112

@@ -372,7 +372,6 @@ alias tmuxsource='tmux source-file ~/.tmux.conf'
 alias tmuxkill='pkill tmux' # Use -f to force kill though. Src: https://askubuntu.com/a/868187/702911
 # official way of killing tmux: https://www.codegrepper.com/code-examples/shell/kill+all+tmux+sessions
 alias cl='clear && l'
-alias listInstalledPacmanPackages='pacman -Q'
 alias kernelname='uname -r'
 alias generatesshkeypair='ssh-keygen'
 alias nf='neofetch'
@@ -381,10 +380,13 @@ adbInfo(){
 	echo Some adb commands and aliases ~Sahil
 	echo adb push 'pathToHostFile' 'pathToTargetDeviceDirectory'
 	echo adb shell # To execute shell in mobile.
-	echo adbRestart # Fix error of "no permission" issue in `adb devices` command.
+	echo adb.restart # Fix error of "no permission" issue in `adb devices` command.
+	echo adb.devices # Get Devices
 	echo adbDebug # 
 }
-alias adbRestart='sudo adb kill-server; sudo adb start-server'
+alias adb.restart='sudo adb kill-server; sudo adb start-server'
+alias adb.devices='adb devices'
+
 adbPush(){
 	adb push "$@" /storage/self/primary/DCIM/
 }
@@ -477,6 +479,8 @@ alias cea='npx create-expo-app'
 alias craForce='npx create-react-app my-app --template typescript'
 alias cra=cna
 
+alias cnal='cp -r /home/array/test/PROJECT_POPULATED_BOILERS/cna-ts-2022-9-25/'
+
 ##### Jest ####
 alias t='npm run test --'
 alias tw='npm run test-watch --'
@@ -520,13 +524,16 @@ alias watchSystemDService='journalctl -fu'
 # Usage: watchSystemDService lemon
 
 
+##### PACMAN #####
 
-#### Clear cace of pacman
+alias listInstalledPacmanPackages='pacman -Q'
+
+#### Clear cache of pacman
 ## Cleared 10G of disk space for my usage of less than 6 months ~ 10 May, 2022. ~ Sahil
-alias removeAllPacmanCache='sudo pacman -Sc'
+alias cleanAllPacmanCache='sudo pacman -Sc'
 
 ## Clear user cache
-alias removeUserCache='rm -rf ~/.cache/*'
+alias cleanUserCache='rm -rf ~/.cache/*'
 
 # SRC: https://averagelinuxuser.com/clean-arch-linux/#8-clean-systemd-journal
 ## Limit journalctl logs size: ``
@@ -678,4 +685,5 @@ alias fesf='firebase emulators:start --only firestore'
 alias pgrep='pgrep -a'
 
 alias ngrokinfo='echo ngrok http PORT_HERE'
+
 
