@@ -112,7 +112,7 @@ function backupConfigFiles {
 	echo "Backup of ~/.vim_bash_env succeeded."
 
 	# Prepare to move node_modules to temporary place to avoid copying it
-	TEMP=mktemp -d
+	TEMP=$(mktemp -d)
 	mv /home/array/scripts/bull/node_modules $TEMP
 	\cp -r $_home/scripts $backup_dir/
 	mv $TEMP/node_modules /home/array/scripts/bull/
