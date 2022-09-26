@@ -403,6 +403,11 @@ if [[ $TMUX ]]; then
 fi
 
 
+# IMAGES
+alias findImages="find . -regextype egrep -regex '(.)+\.(jpg|jpeg|png)'"
+alias deleteNestedImages="find . -regextype egrep -regex '(.)+\.(jpg|jpeg|png)' -exec rm {} +"
+# src: https://stackoverflow.com/a/6845117
+
 # amazing: https://stackoverflow.com/a/43561012/10012446
 alias findNodeModules='sudo find . -name 'node_modules' -type d -prune'
 alias deleteNestedNodeModules="sudo find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
