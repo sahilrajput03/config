@@ -34,7 +34,6 @@
 			"allowed": true
 		}
 	],
-	"prettier.printWidth": 120,
 	"editor.formatOnType": true,
 	"editor.insertSpaces": false,
 	"[rust]": {

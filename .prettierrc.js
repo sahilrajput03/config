@@ -1,7 +1,7 @@
 // prettier.config.js or .prettierrc.js
 module.exports = {
 	// set max characters on a line
-	printWidth: 1000, // default is 80
+	printWidth: 120, // default is 80
 	// https://prettier.io/docs/en/options.html#insert-pragma
 	requirePragma: false, // default false
 	trailingComma: 'es5',
