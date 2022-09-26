@@ -111,12 +111,14 @@ function backupConfigFiles {
 	\cp $_home/.vim_bash_env $backup_dir/
 	echo "Backup of ~/.vim_bash_env succeeded."
 
-	# Prepare to move node_modules to temporary place to avoid copying it
+	# MOVE NODE_MODULES TO TEMPORARY PLACE TO AVOID COPYING IT
 	TEMP=$(mktemp -d)
 	mv /home/array/scripts/bull/node_modules $TEMP
+	# Backup scripts directory
 	\cp -r $_home/scripts $backup_dir/
-	mv $TEMP/node_modules /home/array/scripts/bull/
 	echo "Backup of ~/scripts directory succeeded."
+	# MOVE NODE_MODULES BACK TO ITS ORIGINAL PLACE
+	mv $TEMP/node_modules /home/array/scripts/bull/
 
 	\cp $_home/.tmux.conf $backup_dir/
 	echo "Backup of ~/.tmux.conf file succeeded."
