@@ -153,5 +153,5 @@
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
-	"workbench.activityBar.visible": false
+	"window.zoomLevel": -1
 }

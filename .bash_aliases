@@ -41,6 +41,7 @@ yqDeploymentContainerNames() {
 # Usage: yq .spec.template.spec.containers[].name deployment-persistent.yaml
 
 # ---
+alias r='reset'
 alias kns='kubens'
 
 alias bz='booz'
@@ -691,4 +692,4 @@ alias pgrep='pgrep -a'
 
 alias ngrokinfo='echo ngrok http PORT_HERE'
 
-
+alias twc='nr test-watch-compiler'
