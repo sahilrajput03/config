@@ -51,7 +51,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+# Making kitty as default teminal, https://www.reddit.com/r/NixOS/comments/t3pwt4/comment/hytujf2/?utm_source=share&utm_medium=web2x&context=3
+bindsym $mod+Return exec kitty
 
 # kill focused window
 # bindsym $mod+Shift+q exec "tmux kill-window"

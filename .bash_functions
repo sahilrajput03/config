@@ -81,6 +81,9 @@ function backupConfigFiles {
 	\cp $_home/.vimrc $backup_dir/
 	echo "Backup of ~/.vimrc file succeeded."
 	
+	\cp -r $_home/ranger $backup_dir/
+	echo "Backup of ~/ranger folder succeeded."
+	
 	\cp $_home/.bash_python $backup_dir/
 	echo "Backup of ~/.bash_python file succeeded."
 

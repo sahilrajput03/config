@@ -311,7 +311,7 @@ alias vi.picom='sudo vim /etc/xdg/picom.conf'
 alias vi.dunst='vi .config/dunst/dunstrc'
 alias vi.python='vi ~/.bash_python'
 alias vi.heroku='vi ~/.bash_heroku'
-alias vi.ranger='vi ~/.config/ranger/rifle.conf'
+alias vi.ranger='vi ~/ranger/rifle.conf'
 alias mt='mutt'
 
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
@@ -705,11 +705,13 @@ forgetfulApps(){
 	echo "ranger for cli filemanager, alias rr"
 	echo "sxiv - image viewer, alias sx"
 	echo "feh - image viewer, alias fe"
+	echo "llpp - pdf viewer, alias llp"
+	echo "mupdf - pdf viewer, alias mu"
 }
 
 
 alias rr=ranger
 alias sx=sxiv
 alias fe=feh
-
-
+alias llp=llpp
+alias mu=mupdf
