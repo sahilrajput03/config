@@ -311,6 +311,7 @@ alias vi.picom='sudo vim /etc/xdg/picom.conf'
 alias vi.dunst='vi .config/dunst/dunstrc'
 alias vi.python='vi ~/.bash_python'
 alias vi.heroku='vi ~/.bash_heroku'
+alias vi.ranger='vi ~/.config/ranger/rifle.conf'
 alias mt='mutt'
 
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
@@ -458,6 +459,8 @@ alias cd.backgrounds='/usr/share/backgrounds/archlinux'
 alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
 alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
+alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer'
+alias cd.6figurecode='/home/array/test/dapp-6fig-eattheblocks'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -490,7 +493,8 @@ alias cnal='cp -r /home/array/test/PROJECT_POPULATED_BOILERS/cna-ts-2022-9-25/'
 ##### Jest ####
 alias t='npm run test --'
 alias tw='npm run test-watch --'
-alias tw2='npm run test-watch-2 --'
+alias tw2='npm run test-watch2 --'
+alias tw3='npm run test-watch3 --'
 alias twa='npm run test-watchAll --'
 
 # For debugging
@@ -693,3 +697,19 @@ alias pgrep='pgrep -a'
 alias ngrokinfo='echo ngrok http PORT_HERE'
 
 alias twc='nr test-watch-compiler'
+
+forgetfulApps(){
+	echo "mpv for playing video, awesome!, alias mp"
+	echo "qbittorrent for using torrent"
+	echo "pacmanfm for gui filemanager, alias fm"
+	echo "ranger for cli filemanager, alias rr"
+	echo "sxiv - image viewer, alias sx"
+	echo "feh - image viewer, alias fe"
+}
+
+
+alias rr=ranger
+alias sx=sxiv
+alias fe=feh
+
+
