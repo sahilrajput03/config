@@ -706,6 +706,7 @@ forgetfulApps(){
 	echo "sxiv - image viewer, alias sx"
 	echo "feh - image viewer, alias fe"
 	echo
+	# src: https://github.com/xournalpp/xournalpp/
 	echo "xournal - pdf - amazing annotater, alias xo"
 	echo "llpp - pdf viewer, alias llp"
 	echo "mupdf - pdf viewer, alias mu"
