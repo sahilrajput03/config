@@ -44,6 +44,7 @@ code --install-extension ms-vscode.cpptools-extension-pack
 code --install-extension ms-vscode.cpptools-themes
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension ms-vsliveshare.vsliveshare-audio
 code --install-extension NomicFoundation.hardhat-solidity
 code --install-extension pmndrs.pmndrs
 code --install-extension polypus74.trusty-rusty-snippets

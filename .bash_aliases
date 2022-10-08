@@ -459,8 +459,8 @@ alias cd.backgrounds='/usr/share/backgrounds/archlinux'
 alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
 alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
-alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer'
-alias cd.6figurecode='/home/array/test/dapp-6fig-eattheblocks'
+alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/10-99'
+alias cd.6figurecode='/home/array/test/dapp-6fig-eattheblocks/'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -705,6 +705,8 @@ forgetfulApps(){
 	echo "ranger for cli filemanager, alias rr"
 	echo "sxiv - image viewer, alias sx"
 	echo "feh - image viewer, alias fe"
+	echo
+	echo "xournal - pdf - amazing annotater, alias xo"
 	echo "llpp - pdf viewer, alias llp"
 	echo "mupdf - pdf viewer, alias mu"
 }
@@ -715,3 +717,4 @@ alias sx=sxiv
 alias fe=feh
 alias llp=llpp
 alias mu=mupdf
+alias xo=xournalpp
