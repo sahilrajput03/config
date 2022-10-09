@@ -294,8 +294,9 @@ nvmUse () {
 		nvm use
 	fi
 }
-# I am not sure if running nvmUse on terminal launch is a good idea or not, so i am keeping it pending. 
-# nvmUse
+# OLD NOTES: I am not sure if running nvmUse on terminal launch is a good idea or not, so i am keeping it pending. 
+# UPDATE: Try to use this coz I must change my node version to the current folder's .nvmrc's version if launch a terminal on current folder (very common task) using tmux 
+nvmUse
 
 # cd /home/array/Documents/github_repos/devopswithkubernetes
 #

@@ -68,6 +68,7 @@ gi(){
 gac (){
     echo + git add .
     git add .
+    git add -A
 
     echo + git commit -m \'$@\'
     git commit -m "$*" # gac life is amazing
@@ -77,6 +78,7 @@ gac (){
 gacp (){
     echo + git add .
     git add .
+    git add -A
 
     echo + git commit -m \'$@\'
     git commit -m "$*"

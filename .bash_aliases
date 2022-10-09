@@ -714,6 +714,7 @@ forgetfulApps(){
 }
 
 
+alias mp=mpv
 alias rr=ranger
 alias sx=sxiv
 alias fe=feh

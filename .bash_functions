@@ -558,6 +558,9 @@ nvminfo(){
 	echo "SOURCE: nvm install"
 	echo nvm use --lts
 	echo nvm install --lts
+	echo "Install a node version: nvm i 10"
+	echo "Use a specific node version: nvm use 10"
+	echo "Get back current version: nvm use 16"
 	echo "nvm ls"
 }
 

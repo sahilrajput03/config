@@ -59,6 +59,7 @@ code --install-extension silvenon.mdx
 code --install-extension styled-components.vscode-styled-components
 code --install-extension svelte.svelte-vscode
 code --install-extension toba.vsfire
+code --install-extension trufflesuite-csi.truffle-vscode
 code --install-extension twxs.cmake
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.intellicode-api-usage-examples
