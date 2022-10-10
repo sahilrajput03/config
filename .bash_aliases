@@ -495,6 +495,7 @@ alias t='npm run test --'
 alias tw='npm run test-watch --'
 alias tw2='npm run test-watch2 --'
 alias tw3='npm run test-watch3 --'
+alias tw4='npm run test-watch4 --'
 alias twa='npm run test-watchAll --'
 
 # For debugging

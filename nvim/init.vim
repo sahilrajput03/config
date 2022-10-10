@@ -170,6 +170,9 @@ Plug 'prettier/vim-prettier', {
 "   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 
+
+" Install nerdtree
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " I AM DISABLING FORMATTTING ON FILE ON SAVE, FROM NOW ON! 8 APRIL, 2022
@@ -659,7 +662,7 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader>, :set invlist<cr>
 
 " <leader>b shows stats (~Sahil, I modified it, originally <leader>q ).
-nnoremap <leader>b g<c-g> "This is simulating typing c ctrl-g
+nnoremap <leader>e g<c-g> "This is simulating typing g ctrl-g
 
 " ~Sahil (NEWLY ADDED) :: <leader>z closes current buffer.
 " LEARN: <CR> anywhere in this file means <Carriage Return> key.
@@ -897,3 +900,14 @@ set linebreak
 " map gb :!node ./main.js <CR>
 map gb :!node % <CR>
 " src: https://unix.stackexchange.com/a/7853/504112
+"
+
+" new keybindings for nerdTree (explorer for vim editors: https://github.com/preservim/nerdtree)
+"nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
+" ~Sahil, you only need these two bindings to use this new nerdTree explore
+" with power!
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFocus<CR>
