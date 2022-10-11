@@ -904,7 +904,7 @@ map gb :!node % <CR>
 
 " NEW KEYBINDINGS for nerdTree (explorer for vim editors: https://github.com/preservim/nerdtree)
 " You can view all default bindings via: :NERDTree and then press ?
-" FYI: LEARN FUN: Simply press ? in the nerd tree explore and you can see the
+" FYI: LEARN FUN: Simply press ? in the nerd tree explore to toggle 
 " all the shortcuts, yikes!
 "nnoremap <leader>n :NERDTreeFocus<CR>
 "nnoremap <C-n> :NERDTree<CR>
