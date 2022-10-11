@@ -1,7 +1,11 @@
 # Usage: 
 # timer 0 Tea time # This will set 0 seconds timer.
 # source: https://unix.stackexchange.com/a/411094/504112
-tm () {
+
+alias tm='echo Please use tmr instead.'
+alias vi.tmr='vi ~/scripts/tm'
+
+tmr () {
 	i=$1
 	timer=$1
 	while [ $i -gt 0 ]; 
@@ -21,4 +25,8 @@ tm () {
 	# notify-send -t 900000 "Timer ($timer seconds)" "$*"
 	notify-send --urgency=CRITICAL -t 900000 "Timer ($timer seconds)" "$*"
 
+}
+# For using math calculation:  tm $((2*60))
+tmrinfo(){
+	echo "Set a timer for 2 minutes: tmr \$((2*60)) Go take 10 mins rest"
 }
