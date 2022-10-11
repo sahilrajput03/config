@@ -902,7 +902,8 @@ map gb :!node % <CR>
 " src: https://unix.stackexchange.com/a/7853/504112
 "
 
-" new keybindings for nerdTree (explorer for vim editors: https://github.com/preservim/nerdtree)
+" NEW KEYBINDINGS for nerdTree (explorer for vim editors: https://github.com/preservim/nerdtree)
+" You can view all default bindings via: :NERDTree and then press ?
 "nnoremap <leader>n :NERDTreeFocus<CR>
 "nnoremap <C-n> :NERDTree<CR>
 "nnoremap <C-t> :NERDTreeToggle<CR>
