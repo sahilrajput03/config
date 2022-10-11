@@ -709,7 +709,7 @@ forgetfulApps(){
 	echo
 	# src: https://github.com/xournalpp/xournalpp/
 	# stackoverflow ans: https://askubuntu.com/a/1288079/702911
-	echo "xournal - pdf - amazing annotater, alias xo"
+	echo "xournal - pdf - amazing annotater, alias xo . Also see xoInfo to learn xournal."
 	echo "llpp - pdf viewer, alias llp"
 	echo "mupdf - pdf viewer, alias mu"
 }
@@ -722,3 +722,7 @@ alias fe=feh
 alias llp=llpp
 alias mu=mupdf
 alias xo=xournalpp
+
+function xoInfo(){
+	echo "Visit: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#installed-xournal"
+}

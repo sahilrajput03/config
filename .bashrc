@@ -102,10 +102,13 @@ export SOPS_AGE_KEY_FILE=~/sops/age/age.agekey # I RENAMED key.txt to age.agekey
 [[ -f /home/array/Documents/github_repos/devopswithkubernetes/secrets.env ]] && source /home/array/Documents/github_repos/devopswithkubernetes/secrets.env
 ####### for kubernetes ^^^^ ####
 
-learnSops () {
+alias learnSops='echo Use sopsInfo instead.'
+sopsInfo () {
 echo "
 # ENCRYPTION:
 # FOR ENV FILES: sops -e .env > enc.env
+#*UPDATE* You can use sops.env command directly now.
+
 # FOR NAMED ENV FILES: sops -e secrets.env > secrets.enc.env
 # FOR YAML FILES: sops -e secret.yaml > secret.enc.yaml
 
@@ -113,6 +116,8 @@ echo "
 # sops enc.env
 "
 }
+
+alias sops.env='sops -e .env > enc.env'
 
 [ -f ~/scripts/sw ] && source ~/scripts/sw
 [ -f ~/scripts/tm ] && source ~/scripts/tm
