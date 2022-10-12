@@ -613,6 +613,8 @@ noremap <leader>s :Rg<space>
 let g:fzf_layout = { 'down': '~20%' }
 " ~Sahil, below command WORKS GOOD and it is executed only when you type Rg in the command(you
 " you hv shortcut to it with ```<space>s``` as well.
+"
+" I USED THAT COMMAND PREVIOUSLY THOUGH: \   'rg --column --line-number --no-heading --color=always -g "!{**/package-lock.json,**/node_modules/**,**/yarn.lock}" '.shellescape(<q-args>), 1,
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always -g "!{**/package-lock.json,**/node_modules/**,**/yarn.lock}" '.shellescape(<q-args>), 1,
@@ -927,3 +929,6 @@ nnoremap <leader>f :NERDTreeFocus<CR>
 "    the cursor.
 " 4. You can mark positions with m<anyCharacter> and move to that cursor
 "    position using `<characterMapped>
+" 5. You can quit all windows in quick fasion with leader+q but it will exit
+"    without saving any files so better use ctrl+q to close each files individually
+"    and then use leader q to exit vim or use :q simply.
