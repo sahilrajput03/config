@@ -914,3 +914,12 @@ map gb :!node % <CR>
 " with power!
 nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFocus<CR>
+
+" NOTES - rejuvenation:
+" 1. You can use ctrl+w hjkl to move between windows in vim
+" (i.e, also between nerdTree explorer and opened windows as well)
+" 2. You can use gs to unhighligh the searched item
+" 3. You can use `` to move cursor b/w current and last working position of
+"    the cursor.
+" 4. You can mark positions with m<anyCharacter> and move to that cursor
+"    position using `<characterMapped>
