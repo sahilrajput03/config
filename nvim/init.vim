@@ -191,7 +191,11 @@ if has('nvim')
     set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
     set inccommand=nosplit
     " noremap <C-q> :confirm qall<CR> "ORIGINALLY FROM jonhoo.
-    noremap <leader>z :confirm qall<CR>
+    " noremap <leader>z :confirm qall<CR>
+	" Changing to quit all exit all windows without saving files IMO ~Sahil,
+	" 12 Oc, 2022. Making it with q so that its quite identical with ctrl+q
+	" and sounds nice with leader+q to me.
+    noremap <leader>q :confirm qall<CR>
 end
 
 " deal with colors
