@@ -118,7 +118,6 @@
 		]
 	},
 	"security.workspace.trust.untrustedFiles": "open",
-	"window.menuBarVisibility": "visible",
 	"redhat.telemetry.enabled": false,
 	"editor.minimap.maxColumn": 160,
 	"editor.wordWrapColumn": 120,

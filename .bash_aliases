@@ -488,7 +488,20 @@ alias cea='npx create-expo-app'
 alias craForce='npx create-react-app my-app --template typescript'
 alias cra=cna
 
+# use local copy of next app
 alias cnal='cp -r /home/array/test/PROJECT_POPULATED_BOILERS/cna-ts-2022-9-25/'
+
+# VITE TEMPLATES: vanilla, vanilla-ts, vue, vue-ts, react, react-ts, preact, preact-ts, lit, lit-ts, svelte, svelte-ts.
+# Community templates:
+#		a) https://vitejs.dev/guide/#community-templates
+#		b) https://github.com/vitejs/awesome-vite#templates
+function cva(){
+	npm create vite@latest $@ -- --template react-ts
+} 
+
+function cvaJavascript(){
+	npm create vite@latest $@ -- --template react
+} 
 
 ##### Jest ####
 alias t='npm run test --'

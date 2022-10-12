@@ -173,6 +173,8 @@ Plug 'prettier/vim-prettier', {
 
 " Install nerdtree
 Plug 'preservim/nerdtree'
+" Insall solidity syntax highlighter
+Plug 'tomlion/vim-solidity'
 call plug#end()
 
 " I AM DISABLING FORMATTTING ON FILE ON SAVE, FROM NOW ON! 8 APRIL, 2022
