@@ -934,3 +934,16 @@ nnoremap <leader>f :NERDTreeFocus<CR>
 " 5. You can quit all windows in quick fasion with leader+q but it will exit
 "    without saving any files so better use ctrl+q to close each files individually
 "    and then use leader q to exit vim or use :q simply.
+
+" Add new way search so search is sane (ie., no escaping needed for anything)
+" Source: https://vim.fandom.com/wiki/Searching_for_expressions_which_include_slashes#Searching_for_all_characters_as_normal_text
+" WORKS AMAIZNG IE., NOW YOU CAN SEARCH WITH `:SS`  (uppercase) TEXT_HERE AND SEARCH WORKS
+" LIKE MAGIC NOW, (NO ESCAPING NEEDED).
+" ORIGIANL USED SS command:
+" command! -nargs=1 SS let @/ = '\V'.escape(<q-args>, '\')
+" MY VERSION, use only single S to search:
+command! -nargs=1 S let @/ = '\V'.escape(<q-args>, '\')
+" Learn key mappings of vim: https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+" FOR TESTING IF / works:
+" :map / :echo 'Current time is ' . strftime('%c')<CR>
+

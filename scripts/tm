@@ -30,3 +30,20 @@ tmr () {
 tmrinfo(){
 	echo "Set a timer for 2 minutes: tmr \$((2*60)) Go take 10 mins rest"
 }
+
+function tmr.restReminder(){
+	if [ -z "$@" ]; then 
+		echo Please provide number of mins as argument.
+		return
+	fi
+
+	tmr $(($@*60)) Take 10 mins rest, please.
+}
+
+function tmr.coffeeReminder(){
+	if [ -z "$@" ]; then 
+		echo Please provide number of mins as argument.
+		return
+	fi
+	tmr $(($@*60)) Have a coffee, please.
+}
