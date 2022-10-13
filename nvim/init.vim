@@ -947,3 +947,6 @@ command! -nargs=1 S let @/ = '\V'.escape(<q-args>, '\')
 " FOR TESTING IF / works:
 " :map / :echo 'Current time is ' . strftime('%c')<CR>
 
+" close buffer but keep window open: https://stackoverflow.com/a/8585343/10012446
+map <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
+

@@ -459,7 +459,7 @@ alias cd.backgrounds='/usr/share/backgrounds/archlinux'
 alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
 alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
-alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/10-99'
+alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/100-above'
 alias cd.6figurecode='/home/array/test/dapp-6fig-eattheblocks/'
 
 # Setup second display
