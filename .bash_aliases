@@ -312,6 +312,20 @@ alias vi.dunst='vi .config/dunst/dunstrc'
 alias vi.python='vi ~/.bash_python'
 alias vi.heroku='vi ~/.bash_heroku'
 alias vi.ranger='vi ~/ranger/rifle.conf'
+alias vi.nginx='sudo nvim /etc/nginx/nginx.conf'
+
+alias nginx.info='echo You can use vi.nginx, nx.testWatch, nx.test, nx.rWatch=restart-watch-nodemon, nx.r=restart, nx.s=status, nx.k=kill, nx.l=load i.e., start'
+# nginx: r=restart, s=status, k=kill, l=load(start)
+alias nx.r='sudo systemctl restart nginx.service'
+alias nx.rWatch='nodemon -w /etc/nginx/nginx.conf -x "sudo systemctl restart nginx"'
+alias nx.s='sudo systemctl status nginx.service'
+alias nx.l='sudo systemctl start nginx.service'
+alias nx.k='sudo systemctl stop nginx.service'
+alias nx.test='sudo nginx -t'
+alias nx.testWatch='nodemon -w /etc/nginx/nginx.conf -x "sudo nginx -t"'
+
+
+
 alias mt='mutt'
 
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
@@ -738,4 +752,12 @@ alias xo=xournalpp
 
 function xoInfo(){
 	echo "Visit: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#installed-xournal"
+}
+
+
+
+
+# Please provide port as argument to the command:
+function serveSsl(){
+	sudo serve -l $@ --ssl-cert /etc/letsencrypt/archive/mynotifyservice.ddns.net/fullchain1.pem --ssl-key /etc/letsencrypt/archive/mynotifyservice.ddns.net/privkey1.pem
 }

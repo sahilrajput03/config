@@ -154,5 +154,13 @@
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
 	"liveshare.presence": true,
-	"workbench.activityBar.visible": false
+	"workbench.activityBar.visible": false,
+	"css.styleSheets": [
+		"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	],
+	"css.enabledLanguages": [
+		"jsx",
+		"tsx",
+		"html"
+	]
 }

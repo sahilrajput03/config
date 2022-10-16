@@ -2,6 +2,7 @@ code --install-extension aaron-bond.better-comments
 code --install-extension abusaidm.html-snippets
 code --install-extension adelphes.android-dev-ext
 code --install-extension alexcvzz.vscode-sqlite
+code --install-extension AnbuselvanRocky.bootstrap5-vscode
 code --install-extension AntonyDalmiere.android-support
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension ChakrounAnas.turbo-console-log
@@ -12,6 +13,7 @@ code --install-extension cschlosser.doxdocgen
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension DigitalBrainstem.javascript-ejs-support
 code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension ecmel.vscode-html-css
 code --install-extension EditorConfig.EditorConfig
 code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
@@ -58,6 +60,7 @@ code --install-extension sashaweiss.block-travel
 code --install-extension silvenon.mdx
 code --install-extension styled-components.vscode-styled-components
 code --install-extension svelte.svelte-vscode
+code --install-extension thekalinga.bootstrap4-vscode
 code --install-extension toba.vsfire
 code --install-extension trufflesuite-csi.truffle-vscode
 code --install-extension twxs.cmake
