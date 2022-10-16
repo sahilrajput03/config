@@ -1,5 +1,7 @@
 ## Readme
 
+For nginx files, visit: https://github.com/sahilrajput03/nginx
+
 - **Archlinux Notes:** [sahilrajput03/sahilrajput03-file:arch-notes.md](https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md)
 - **PopOS Notes:** [sahilrajput03/my_bin/blob/master/notes/linux-notes.txt](https://github.com/sahilrajput03/my_bin/blob/master/notes/linux-notes.txt)
 - **Standalone binaries:** [sahilrajput03/binaries](https://github.com/sahilrajput03/binaries)
