@@ -1,0 +1,46 @@
+
+# LAST DATE EDITED: 17 OCT, 2022
+
+alias cd.nginx='cd /etc/nginx'
+alias vi.nginx='vi $_home/.bash_nginx'
+
+alias nginxInfo='echo Please see file /home/array/.bash_nginx'
+
+# nginx: rw=restartWatch, tw=testWatch, r=restart, s=status, k=kill, l=load(start), t=test, 
+alias nx.r='sudo systemctl restart nginx.service'
+alias nx.s='sudo systemctl status nginx.service'
+alias nx.l='sudo systemctl start nginx.service'
+alias nx.k='sudo systemctl stop nginx.service'
+alias nx.t='sudo nginx -t'
+
+# FORMAT/Prettify nginx.conf file
+# INSTALL: sudo npm i nginxbeautifier
+# Usage: ng.b myNginxConfigFile
+alias ng.b='nginxbeautifier'
+
+
+# We need to become root `su` so that all vim extensions and syntax highlight can work with nginx, ~Sahil
+vi.nx() {
+	# Learn uid of root user is always 0
+	if [ "$EUID" -ne 0 ]; then echo "Please become root user first via 'su' command. ~Sahil"; return; fi
+
+	nvim /etc/nginx/nginx.conf
+}
+
+# check if user is root: https://stackoverflow.com/a/18216122/10012446
+
+# restart watch
+nx.rw() {
+	# Learn uid of root user is always 0
+	if [ "$EUID" -ne 0 ]; then echo "Please become root user first via 'su' command. ~Sahil"; return; fi
+
+	nodemon -w /etc/nginx/nginx.conf -x "systemctl restart nginx"
+}
+
+# test watch
+nx.tw() {
+	# Learn uid of root user is always 0
+	if [ "$EUID" -ne 0 ]; then echo "Please become root user first via 'su' command. ~Sahil"; return; fi
+
+	nodemon -w /etc/nginx/nginx.conf -x "sudo nginx -t"
+}

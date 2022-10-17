@@ -90,6 +90,9 @@ function backupConfigFiles {
 	\cp $_home/.bash_heroku $backup_dir/
 	echo "Backup of ~/.bash_heroku file succeeded."
 
+	\cp $_home/.bash_nginx $backup_dir/
+	echo "Backup of ~/.bash_nginx file succeeded."
+
 	\cp $_home/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
 
