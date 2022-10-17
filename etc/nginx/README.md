@@ -1,5 +1,11 @@
 # NGINX
 
+Usage of above files:
+
+```bash
+sudo mv anyOfAboveFile /etc/nginx/nginx.conf
+```
+
 - **Quick links of Docs:**
   - Server Block Examples: [Click here](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/)
   - Full Example Configuration: [Click here](https://www.nginx.com/resources/wiki/start/topics/examples/full/)
