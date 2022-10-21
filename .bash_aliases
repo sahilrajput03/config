@@ -463,6 +463,7 @@ alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
 alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/100-above'
 alias cd.6figurecode='/home/array/test/dapp-6fig-eattheblocks/'
+alias cd.resume='cd /home/array/Documents/github_repos/my_bin/resume'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -508,9 +509,11 @@ function cvaJavascript(){
 ##### Jest ####
 alias t='npm run test --'
 alias tw='npm run test-watch --'
+alias tw1='npm run test-watch1 --'
 alias tw2='npm run test-watch2 --'
 alias tw3='npm run test-watch3 --'
 alias tw4='npm run test-watch4 --'
+alias tw5='npm run test-watch5 --'
 alias twa='npm run test-watchAll --'
 
 # For debugging
@@ -749,3 +752,8 @@ function xoInfo(){
 function serveSsl(){
 	sudo serve -l "$@" --ssl-cert /etc/letsencrypt/archive/mynotifyservice.ddns.net/fullchain1.pem --ssl-key /etc/letsencrypt/archive/mynotifyservice.ddns.net/privkey1.pem
 }
+
+# https://jonathanbossenger.com/2020/12/17/obs-studio-linux-virtual-camera/
+# obs activate v4loopback:
+alias obs.activateModprobeV4l2loopback='sudo modprobe v4l2loopback'
+## virtual camera is not showing up in chrome: https://github.com/umlaeute/v4l2loopback/issues/183
