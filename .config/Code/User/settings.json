@@ -162,5 +162,6 @@
 		"jsx",
 		"tsx",
 		"html"
-	]
+	],
+	"window.zoomLevel": -1
 }

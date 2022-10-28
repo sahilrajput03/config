@@ -462,7 +462,6 @@ alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
 alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
 alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/100-above'
-alias cd.6figurecode='/home/array/test/dapp-6fig-eattheblocks/'
 alias cd.resume='cd /home/array/Documents/github_repos/my_bin/resume'
 
 # Setup second display
@@ -756,4 +755,33 @@ function serveSsl(){
 # https://jonathanbossenger.com/2020/12/17/obs-studio-linux-virtual-camera/
 # obs activate v4loopback:
 alias obs.activateModprobeV4l2loopback='sudo modprobe v4l2loopback'
-## virtual camera is not showing up in chrome: https://github.com/umlaeute/v4l2loopback/issues/183
+
+alias cd.blockchain='cd /home/array/test/blockchain'
+
+# Start node on goerli blockchain
+# Expose an HTTP port to listen for requests. This can be configured at startup by passing the --http flag. If no other commands are passed with it, --http will expose the default localhost:8545 port.
+# Providing custom networkId/ChainId: geth --networkid 12345
+alias ge.startGethTurorial='geth --datadir geth-tutorial --goerli --syncmode snap --http'
+# For private network
+alias ge.start='geth --datadir data --networkid 12345 --http'
+
+# 
+# There are three transport protocols that can be used to connect the Javascript environment to Geth:
+# 1. IPC (Inter-Process Communication): Provides unrestricted access to all APIs, but only works when the console is run on the same host as the Geth node.
+# 2. HTTP: By default provides access to the eth, web3 and net method namespaces.
+# 3. Websocket: By default provides access to the eth, web3 and net method namespaces.
+alias ge.attachIpcGethTurorial='geth attach geth-tutorial/geth.ipc'
+alias ge.attachIpc='geth attach data/geth.ipc'
+
+alias ge.newAccountGethTutorial='geth account new --datadir geth-tutorial'
+# alias ge.newAccount='geth account new --datadir data'
+alias ge.newAccount='geth account new --datadir data --password ./my_password.txt'
+
+alias ge.initGethDatabaseWithGenesisFile='geth init --datadir data genesis.json' 
+
+# usage:
+
+function ge.runMemberNode(){
+	k=$(geth attach --exec admin.nodeInfo.enr data/geth.ipc)
+	echo $k | xargs geth --datadir data2 --networkid 12345 --port 30305 --authrpc.port 8546 --bootnodes 
+}

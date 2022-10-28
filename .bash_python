@@ -20,7 +20,7 @@ alias fk.debugRaw='flask --debug run'
 alias vv.createEnv_step1='python3 -m venv venv' 
 # FROM HEROKU: python3 -m venv --upgrade-deps venv
 # Before start working on the project make sure to run this activateEnvironment command.
-alias vv.activaeEnvironment_step2='. venv/bin/activate'
+alias vv.activateEnvironment_step2='. venv/bin/activate'
 alias vv.installDependencies_step3='pip install -r requirements.txt'
 # 
 # FYI: Tekena uses `pip freeze` only to create requirements.txt file
