@@ -785,3 +785,8 @@ function ge.runMemberNode(){
 	k=$(geth attach --exec admin.nodeInfo.enr data/geth.ipc)
 	echo $k | xargs geth --datadir data2 --networkid 12345 --port 30305 --authrpc.port 8546 --bootnodes 
 }
+
+
+# alias importD1ToNode1='geth account import --datadir node1/ privKeys/d1.txt'
+alias importD1ToNode1='geth account import --datadir node1/ --password ./my_password.txt privKeys/d1.txt > a1'
+alias importD1ToNode2='geth account import --datadir node2/ --password ./my_password.txt privKeys/d2.txt > a2'
