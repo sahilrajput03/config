@@ -1,4 +1,14 @@
 
+# # BASIC # #
+#
+# Remove an image and container using ids
+# docker image rm IMAGE_NAME
+# docker rm CONTAINER_ID
+
+# start a stopped container
+# docker start CONTAINER_ID/CONTAINER_NAME
+
+# # # # # # #
 # get your system architecture
 alias getArchitecture='uname -m'
 
@@ -12,9 +22,9 @@ alias d-i-removeOneForcefully_with_RepoNames_or_ImageIds='docker rmi -f'
 alias d-i-run_with_id_or_name='docker run'
 alias d-i-run_with_id_or_name-Detached='docker run -d'
 alias d-i-listAll='docker images'
-alias d-c-listAll='docker ps -as'
-alias d-c-listAll_Only_Ids='docker ps -aq'
-alias d-c-listRunning='docker ps -s'
+alias d-c-listAllContainers='docker ps -as'
+alias d-c-listAllContainers_Only_Ids='docker ps -aq'
+alias d-c-listRunningContainers='docker ps -s'
 
 d-c-removeAllForcefully(){
 	if docker ps -aq | grep ""

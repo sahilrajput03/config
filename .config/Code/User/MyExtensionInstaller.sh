@@ -1,6 +1,7 @@
 code --install-extension aaron-bond.better-comments
 code --install-extension abusaidm.html-snippets
 code --install-extension adelphes.android-dev-ext
+code --install-extension alefragnani.numbered-bookmarks
 code --install-extension alexcvzz.vscode-sqlite
 code --install-extension AnbuselvanRocky.bootstrap5-vscode
 code --install-extension AntonyDalmiere.android-support

@@ -148,5 +148,14 @@
 	{
 		"key": "ctrl+'",
 		"command": "workbench.action.splitEditorDown"
+	},
+	{
+		"key": "alt+left",
+		"command": "workbench.action.navigatePreviousInEditLocations"
+	},
+	{
+		"key": "alt+left",
+		"command": "-workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
 	}
 ]

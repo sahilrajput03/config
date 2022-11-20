@@ -453,7 +453,8 @@ alias cd.sr='cd ~/Documents/github_repos/sahilrajput03/'
 alias cd.wi='cd ~/Documents/github_repos/sahilrajput03/wi/'
 alias cd.config='~/Documents/github_repos/config'
 alias cd.flash='cd /home/array/Documents/github_repos/flash'
-alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
+alias cd.my_bin='cd ~/Documents/github_repos/my_bin/'
+# alias cd.my_bin='cd /mnt/sda3/home/array/i-backup-popos/my_bin'
 alias cd.portableHardDisk='cd /mnt/sdc2'
 alias cd.additionalPath='cd ~/Documents/github_repos/additionalPath/'
 alias cd.test='cd ~/test'
@@ -463,6 +464,7 @@ alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
 alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/100-above'
 alias cd.resume='cd /home/array/Documents/github_repos/my_bin/resume'
+alias cd.slasherFrontend='cd /home/array/test/slasher/slasher-web-frontend/'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -790,3 +792,9 @@ function ge.runMemberNode(){
 # alias importD1ToNode1='geth account import --datadir node1/ privKeys/d1.txt'
 alias importD1ToNode1='geth account import --datadir node1/ --password ./my_password.txt privKeys/d1.txt > a1'
 alias importD1ToNode2='geth account import --datadir node2/ --password ./my_password.txt privKeys/d2.txt > a2'
+
+
+
+alias mongo.start='sudo systemctl start mongodb.service'
+alias mongo.stop='sudo systemctl stop mongodb.service'
+alias mongo.status='sudo systemctl status mongodb.service'
