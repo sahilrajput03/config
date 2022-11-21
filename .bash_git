@@ -115,12 +115,13 @@ gi (){
 }
 
 # local branches only
-gbl (){
+gb (){
 	echo + git branch $@
 	git branch $@
 }
 
-gb (){
+# all branches including remote branches
+gba (){
 	echo + git branch --all $@
 	git branch --all $@
 }

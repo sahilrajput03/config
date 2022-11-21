@@ -198,7 +198,8 @@ function backupConfigFiles {
 	echo "Backup of ~/.qutebrowser/quickmarks file succeeded."
 
 	echo
-	grc 			# Navigate to config repository.
+	grc 			
+	cd.config	    # Navigate to config repository.
 
 	crontab -l > crontab_entries.txt
 	gacp Update. 	# Push changes to github.

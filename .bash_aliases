@@ -269,9 +269,9 @@ alias ...='exec bash'
 alias cd.gr='cd $_home/Documents/github_repos'
 gr="$_home/Documents/github_repos"
 # Usage: echo $gr, ls $gr
-alias grpg='cd $_home/Documents/github_repos/docker-pgadmin4'
-alias grc='cd $_home/Documents/github_repos/config'
-alias grr='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
+alias cd.docketPgadmin='cd $_home/Documents/github_repos/docker-pgadmin4'
+alias cd.config='cd $_home/Documents/github_repos/config'
+alias cd.learningRustByExample='cd $_home/Documents/github_repos/learning_rust/programming-rust-by-example'
 alias ~='cd ~'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
