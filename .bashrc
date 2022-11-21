@@ -231,10 +231,13 @@ exec {BASH_XTRACEFD}>/dev/null
 
 # print something in cyan color: 
 # tput setaf 6; echo hell; tput sgr0
-thought(){
+function thought(){
 	echo -ne $CYAN$BOLD
 	# ce "Thought:" 6
-	echo -n "Thought - "
+	#
+	# Customized for notifications now
+	# echo -n "Thought - "
+	#
 	cat $_home/Documents/github_repos/sahilrajput03/thoughts-principles.md | grep -v -e '^$' | shuf -n1
 	# GREP TIP:
 	# grep -v -e '^$' my_file	# ENSURES THAT ALL EMPTY LINES ARE REMOVED.
