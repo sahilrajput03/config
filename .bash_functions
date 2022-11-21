@@ -203,7 +203,7 @@ function backupConfigFiles {
 	crontab -l > crontab_entries.txt
 	gacp Update. 	# Push changes to github.
 	cd - 			# Return to previous directory.
-	notify-send "backupConfigFiles()" "Life is beautiful"
+	notify-send "backupConfigFiles()" "Life is beautiful" -t 3000
 }
 
 # Vscode special
