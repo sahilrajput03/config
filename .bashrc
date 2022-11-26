@@ -347,3 +347,5 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 # EFI  grub  initramfs-linux-fallback.img  initramfs-linux.img  vmlinuz-linux
 #
 # ===important===
+#
+# echo Use vi.picom to adjust inactive window transparency.

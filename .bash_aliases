@@ -319,8 +319,9 @@ alias mt='mutt'
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
 alias restart.dunst='killall dunst'
 
-alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
-alias umountPortableDrive='sudo umount /dev/sdc2'
+alias mountPortableDrive='sudo mount /dev/sdd2 /mnt/sdd2'
+alias umountPortableDrive='sudo umount /dev/sdd2'
+alias umountForcePortableDrive='sudo umount -f /dev/sdd2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
 alias cw='cargo watch -q -c -x "run -q"'
 alias cwn='cargo watch -c -x run'
@@ -465,6 +466,8 @@ alias cd.rootDocuments='/Documents/'
 alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/100-above'
 alias cd.resume='cd /home/array/Documents/github_repos/my_bin/resume'
 alias cd.slasherFrontend='cd /home/array/test/slasher/slasher-web-frontend/'
+alias cd.dsa='cd /home/array/Documents/github_repos/learn-dsa'
+alias cd.dsaCourse='cd /mnt/sda2/COURSES_COURSES_COURSES/Udemy-JavaScript_Algorithms_and_Data_Structures_Masterclass'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
