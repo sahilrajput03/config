@@ -1,4 +1,4 @@
-// FILE: prettier.config.js or .prettierrc.js // IGNORE FILE: .prettierignore // SCRIPT for `package.json` => "prettier": "prettier --write ."
+// FILE: prettier.config.js or .prettierrc.js // IGNORE FILE: .prettierignore // SCRIPT for `package.json` => "pretty": "prettier --write ."
 module.exports = {
 	// set max characters on a line
 	printWidth: 120, // default is 80
