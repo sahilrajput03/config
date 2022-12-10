@@ -6,6 +6,14 @@ alias tm='echo Please use tmr instead.'
 alias vi.tmr='vi ~/scripts/tm'
 
 tmr () {
+	# WHEN WE tmr RUN WITHOUT ARGUMENTS THEN SHOW HELP
+	if [ -z "$1" ]; then 
+		echo "Examples:"
+		echo "-> 2 Minutes Timer with message: tmr 120 Go take 10 mins rest"
+		echo "-> 2 Minutes Timer with message: tmr \$((2*60)) Go take 10 mins rest"
+		return
+	fi
+
 	i=$1
 	timer=$1
 	while [ $i -gt 0 ]; 
@@ -25,10 +33,6 @@ tmr () {
 	# notify-send -t 900000 "Timer ($timer seconds)" "$*"
 	notify-send --urgency=CRITICAL -t 900000 "Timer ($timer seconds)" "$*"
 
-}
-# For using math calculation:  tm $((2*60))
-tmrinfo(){
-	echo "Set a timer for 2 minutes: tmr \$((2*60)) Go take 10 mins rest"
 }
 
 function tmr.restReminder(){

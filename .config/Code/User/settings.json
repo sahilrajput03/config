@@ -132,7 +132,6 @@
 	"svelte.enable-ts-plugin": true,
 	"prettier.enableDebugLogs": true,
 	"js/ts.implicitProjectConfig.checkJs": true,
-	"typescript.preferences.quoteStyle": "double",
 	"remote.SSH.remotePlatform": {
 		"sahilrajput03.codesandbox-template-vite-react.draft---affectionate-fire.csb": "linux"
 	},
@@ -162,5 +161,6 @@
 		"tsx",
 		"html"
 	],
-	"workbench.activityBar.visible": false
+	"workbench.activityBar.visible": false,
+	"npm-intellisense.importQuotes": "\""
 }

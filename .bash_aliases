@@ -468,6 +468,13 @@ alias cd.resume='cd /home/array/Documents/github_repos/my_bin/resume'
 alias cd.slasherFrontend='cd /home/array/test/slasher/slasher-web-frontend/'
 alias cd.dsa='cd /home/array/Documents/github_repos/learn-dsa'
 alias cd.dsaCourse='cd /mnt/sda2/COURSES_COURSES_COURSES/Udemy-JavaScript_Algorithms_and_Data_Structures_Masterclass'
+alias cd.PeakyBlinders="cd /home/array/Downloads/Peaky\ Blinders\ \(2013-2022\)\ S01-S06\ 720p\ BluRay\ HEVC\ x265\ BONE/Season\ 2"
+alias cd.downloads='cd /mnt/sda2/Downloads/'
+alias cd.downloadsHome='cd ~/Downloads/'
+alias cd.bornIntoBrothels='cd /home/array/Downloads/Born\ Into\ Brothels\ Calcuttas\ Red\ Light\ Kids\ \(2004\)\ [1080p]\ [WEBRip]\ [5.1]\ [YTS.MX]'
+
+
+
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"

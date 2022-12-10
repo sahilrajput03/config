@@ -201,7 +201,7 @@ function backupConfigFiles {
 	cd.config	    # Navigate to config repository.
 
 	crontab -l > crontab_entries.txt
-	gacp Update. 	# Push changes to github.
+	gacpForce Update. 	# Push changes to github.
 	cd - 			# Return to previous directory.
 	notify-send "backupConfigFiles()" "Life is beautiful. Keep up the good work!" -t 3000
 }

@@ -14,6 +14,7 @@ code --install-extension cschlosser.doxdocgen
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension DigitalBrainstem.javascript-ejs-support
 code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension eamodio.gitlens
 code --install-extension ecmel.vscode-html-css
 code --install-extension EditorConfig.EditorConfig
 code --install-extension esbenp.prettier-vscode
@@ -59,6 +60,7 @@ code --install-extension rust-lang.rust
 code --install-extension rust-lang.rust-analyzer
 code --install-extension sashaweiss.block-travel
 code --install-extension silvenon.mdx
+code --install-extension SimonSiefke.svg-preview
 code --install-extension styled-components.vscode-styled-components
 code --install-extension svelte.svelte-vscode
 code --install-extension thekalinga.bootstrap4-vscode
