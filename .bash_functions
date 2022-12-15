@@ -216,10 +216,6 @@ function bkpfstab {
 }
 
 
-function cva {
-	npm init vite "$@" -- --template react
-}
-
 function air {
 	nohup "$@" > /dev/null 2>&1 &
 }

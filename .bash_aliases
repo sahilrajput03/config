@@ -472,8 +472,7 @@ alias cd.PeakyBlinders="cd /home/array/Downloads/Peaky\ Blinders\ \(2013-2022\)\
 alias cd.downloads='cd /mnt/sda2/Downloads/'
 alias cd.downloadsHome='cd ~/Downloads/'
 alias cd.bornIntoBrothels='cd /home/array/Downloads/Born\ Into\ Brothels\ Calcuttas\ Red\ Light\ Kids\ \(2004\)\ [1080p]\ [WEBRip]\ [5.1]\ [YTS.MX]'
-
-
+alias cd.poc-subscriptions-paypal='cd /home/array/test/slasher/poc-subscriptions-paypal'
 
 
 # Setup second display

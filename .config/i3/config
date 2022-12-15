@@ -372,7 +372,10 @@ bindsym $mod+x mode "Have insatiable curiousity. Choose one of - [l]ogout, [r]eb
 
 # Works pretty cool!
 bindsym $mod+z exec /home/array/scripts/lock-i3.sh
-# bindsym $mod+Ctrl+k exec /home/array/scripts/lock-i3.sh
+# Use mod+ctrl+shift+k to kill mostly all bulky apps like chrome, postman, vscode, etc
+bindsym $mod+ctrl+shift+k exec /home/array/scripts/kill-bulky-apps.sh
+# FOR TESTING ABOVE COMMAND WITH SIMPLE NOTIFICATION IF KEYBIDING EXISTS AND MATCHES!
+# bindsym $mod+ctrl+shift+k exec notify-send "Title" "Body"
 # <<<<<<<<<<<<<<<< 
 
 
