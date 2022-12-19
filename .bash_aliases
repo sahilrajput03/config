@@ -319,8 +319,8 @@ alias mt='mutt'
 # https://github.com/dunst-project/dunst/issues/63#issuecomment-35873908
 alias restart.dunst='killall dunst'
 
-alias mountPortableDrive='sudo mount /dev/sdd2 /mnt/sdd2'
-alias umountPortableDrive='sudo umount /dev/sdd2'
+alias mountPortableDrive='sudo mount /dev/sdc2 /mnt/sdc2'
+alias umountPortableDrive='sudo umount /dev/sdc2'
 alias umountForcePortableDrive='sudo umount -f /dev/sdd2'
 alias rxmodmap='setxkbmap -layout us' #src: https://askubuntu.com/a/29609
 alias cw='cargo watch -q -c -x "run -q"'
@@ -352,9 +352,18 @@ function s () {
 	if [ -f package.json ]; then
 		npm start
 	else
-		echo Nothing to do here.
+		echo No package.json file found in current directory.
 	fi
 }
+
+function d () {
+	if [ -f package.json ]; then
+		npm run dev
+	else
+		echo No package.json file found in current directory.
+	fi
+}
+
 alias nr='npm run'
 # autocomplete `nr`
 complete -F _complete_alias nr
@@ -368,7 +377,6 @@ alias nrd='npm run dev'
 alias pomodoro='/home/array/scripts/pomodoro/pomodoro.sh'
 alias xrandr.default='xrandr -s 0'
 alias jn='jupyter notebook'
-alias d='npm run dev'
 alias bp='paplay ~/scripts/beep-sound-8333.wav'
 alias open='xdg-open'
 alias o='xdg-open'
@@ -515,6 +523,12 @@ function cva(){
 function cvaJavascript(){
 	npm create vite@latest $@ -- --template react
 } 
+
+# Usage: csa my-svelte-app
+alias csa='npm create svelte@latest'
+
+alias cd.svelteapp='/home/array/Documents/github_repos/learn-svelte/my-svelte-app'
+
 
 ##### Jest ####
 alias t='npm run test --'

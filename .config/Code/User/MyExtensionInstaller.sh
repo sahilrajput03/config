@@ -21,6 +21,7 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension foxundermoon.shell-format
 code --install-extension fwcd.kotlin
+code --install-extension GitHub.codespaces
 code --install-extension GitHub.copilot
 code --install-extension jeff-hykin.better-cpp-syntax
 code --install-extension johnpapa.pwa-tools
