@@ -6,6 +6,7 @@
 # Fix the LC_ALL used by i3status binary, it was throwing error like 
 # Error: status_command process exited unexpectedly (exit 1)' in i3bar, so below fixes that!.
 LC_ALL="en_US.UTF-8"
+# NOTE: `ss` VARIABLE is used in tmux's configuration to detect that this is my personal laptop and not the server laptop. YO!!
 ss="sahil rajput"
 sb="freakstarrocks"
 ANDROID_SDK_ROOT='/opt/android-sdk'

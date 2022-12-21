@@ -10,6 +10,7 @@
 # echo Welcome to the abode of Sahil Rajput. Have a growing attitude today!
 # echo from ~/.bash_profile
 # echo
-. "$HOME/.cargo/env"
+[[ -f ~/.cargo/env ]] && . ~/.cargo/env
+[[ -f ~/broot/launcher/bash/br ]] && . ~/broot/launcher/bash/br
 
-source /home/array/broot/launcher/bash/br
+
