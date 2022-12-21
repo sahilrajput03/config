@@ -83,14 +83,20 @@ function showpath_in_terminal(){
 # shopt -s expand_aliases source ~/.bash_aliases
 # shopt -s expand_aliases
 # so shopt will expand your aliases in any shell script as well.
-[[ -f $_home/.bash_aliases ]] && source $_home/.bash_aliases
-[[ -f $_home/.bash_git ]] && source $_home/.bash_git
-[[ -f $_home/.bash_functions ]] && source $_home/.bash_functions
-[[ -f $_home/.bash_docker ]] && source $_home/.bash_docker
-[[ -f $_home/scripts/wi ]] && source $_home/scripts/wi
-[[ -f $_home/.bash_python ]] && source $_home/.bash_python
-[[ -f $_home/.bash_heroku ]] && source $_home/.bash_heroku
-[[ -f $_home/.bash_nginx ]] && source $_home/.bash_nginx
+
+# Source script only if file exists
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+include $_home/.bash_aliases
+include $_home/.bash_git
+include $_home/.bash_functions
+include $_home/.bash_docker
+include $_home/scripts/wi
+include $_home/.bash_python
+include $_home/.bash_heroku
+include $_home/.bash_nginx
 
 ####### for kubernetes vvvv ####
 # Used when encrypting (list of public keys separated by comma)
