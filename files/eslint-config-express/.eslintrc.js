@@ -2,9 +2,9 @@
 // TODO: Add usage of airbnb's config used in slasher-new project like.
 // Complete list of rules: https://eslint.org/docs/latest/rules/
 // Eslint Vscode Extension: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+// A rule can be <off, warn or error> OR <0, 1 or 2> respectively
 
 module.exports = {
-	// A rule can be <off, warn or error> OR <0, 1 or 2> respectively
 	env: {
 		node: true,
 		commonjs: true,
