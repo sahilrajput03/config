@@ -1,3 +1,6 @@
+// ALERT: This config file does not seem to work for typescript project
+// ALERT: Use `eslint-config-express-typescript` eslint file for typescript project.
+
 // Example in action: https://github.com/sahilrajput03/learning_sql/blob/main/fso-part13/example/.eslintrc.js
 // TODO: Add usage of airbnb's config used in slasher-new project like.
 // Complete list of rules: https://eslint.org/docs/latest/rules/
