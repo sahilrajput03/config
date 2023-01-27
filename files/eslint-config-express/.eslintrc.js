@@ -1,4 +1,5 @@
 // Example in action: https://github.com/sahilrajput03/learning_sql/blob/main/fso-part13/example/.eslintrc.js
+// TODO: Add usage of airbnb's config used in slasher-new project like.
 // Complete list of rules: https://eslint.org/docs/latest/rules/
 // Eslint Vscode Extension: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
