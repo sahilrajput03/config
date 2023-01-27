@@ -1,11 +1,15 @@
-// example in action: https://github.com/sahilrajput03/learning_sql/blob/main/fso-part13/example/.eslintrc.js
+// Example in action: https://github.com/sahilrajput03/learning_sql/blob/main/fso-part13/example/.eslintrc.js
+// Complete list of rules: https://eslint.org/docs/latest/rules/
+// Eslint Vscode Extension: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
 module.exports = {
+	// A rule can be <off, warn or error> OR <0, 1 or 2> respectively
 	env: {
 		node: true,
 		commonjs: true,
 		es2021: true,
+		// Fix  warnings e.g., `test not defined`, `expect not defined`, etc in test files
 		jest: true,
-		// ^ This fixes 🤑︎ `test not defined` and `expect not defined` eslint warnings, else comment the line if you don't need jest.
 	},
 	extends: 'eslint:recommended',
 	parserOptions: {
@@ -15,15 +19,7 @@ module.exports = {
 		'no-unused-vars': 'off',
 		'default-case': 'warn',
 		semi: 'off',
-		quotes: ['error', 'single', {avoidEscape: true}],
-		//  ^ Thanks to this guy 🤺︎ => : https://github.com/prettier/prettier/issues/973#issuecomment-285768569
+		// https://eslint.org/docs/latest/rules/quotes#avoidescape
+		quotes: ['warn', 'single', {avoidEscape: true}],
 	},
-	// Above rules by ~sahil
-	// A rule can be {off, warn or error} (0, 1 or 2 respectively).
-
-	// # Complete list and the best practise rules in eslint:
-	//  https://eslint.org/docs/rules/)
-	//
-	// # Must install eslint vscode extension: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-	// src: https://github.com/amand33p/reddish/blob/master/server/.eslintrc.json
 }
