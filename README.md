@@ -1,6 +1,6 @@
 ## Readme
 
-TODO: Move `X11` directory to `etc` directoy in this repository. Also update the path for the same folder in `setup-inverted-scrolling-via-user-defined-settings.sh` file as well.
+**TODO:** Move `X11` directory to `etc` directoy in this repository. Also update the path for the same folder in `setup-inverted-scrolling-via-user-defined-settings.sh` file as well.
 
 **Nginx:** [Click here](./etc/nginx/)
 
