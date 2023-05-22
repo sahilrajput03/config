@@ -6,19 +6,20 @@ do
 	discharging=`acpi | grep -o Discharging` # Text Discharging is returned if discharging.
 	# if [ $c1 ]; then echo Yes charging; fi
 
-	if [ $battery_level -ge 95 ]; then
+	if [ $battery_level -ge 82 ]; then
 		notify-send "Battery Full - ${battery_level}%" "Please unplug the charger.\n\nHave a nice day!"
 		# for i in {1..2}; do $(dirname $0)/beepSound.sh; done
 		# better vv
 		# for i in {1..2}; do paplay /usr/share/sounds/freedesktop/stereo/bell.oga; done
 		# even better vv
-		paplay /home/array/scripts-media/Sounds/7_unplug-charger.wav
+		# paplay /home/array/scripts-media/Sounds/7_unplug-charger.wav
+		cvlc --play-and-exit /home/array/scripts-media/Sounds/7_unplug-charger.wav
 			# List all sounds:
 			# ls /usr/share/sounds/freedesktop/stereo
 			# paplay /usr/share/sounds/freedesktop/stereo/bell.oga
       		# paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 		sleep 600 # i.e., sleep for 10 mins.
-	elif [ $battery_level -le 35 ] && [ $discharging ]; then
+	elif [ $battery_level -le 20 ] && [ $discharging ]; then
 		# echo batttery less than 20... testing only...
 		# LOG:01: This code only executed if battery is discharging ( not plugged in).
       		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
