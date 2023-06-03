@@ -1,16 +1,13 @@
 #!/bin/bash
 # src: https://www.2daygeek.com/linux-low-full-charging-discharging-battery-notification/
 
+MINIMUM_LEVEL=14
+MAXIMUM_LEVEL=85
+
 while true; do
 	battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
 	discharging=$(acpi | grep -o Discharging) # Text Discharging is returned if discharging.
-	# echo $discharging
-	MINIMUM_LEVEL=14
-	MAXIMUM_LEVEL=85
-
-	# Helful Logs to check charging and discharging
-	# if [ -z $discharging ]; then echo "Battery is charging"; fi
-	# if [ $discharging ]; then echo "Battery is discharging"; fi
+	# echo $discharging # "Discharging"
 
 	if [ $battery_level -ge $MAXIMUM_LEVEL ] && [ -z $discharging ]; then
 		# Battery is greater than `MAXIMUM_LEVEL` and charging (-z $discharging)
@@ -22,7 +19,6 @@ while true; do
 		# Battery is discharging
 		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
 		for i in {1..3}; do $(dirname $0)/beepSound.sh; done
-		# paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga
 		# Hibernate when battery drops below `MINIMUM_LEVEL`.
 		if [ $battery_level -le $MINIMUM_LEVEL ]; then systemctl hibernate; fi
 	else
@@ -38,9 +34,16 @@ LOG - HAPPY TIME
 done
 
 # NOTES -
+
+# Helful Logs to check charging and discharging
+# if [ -z $discharging ]; then echo "Battery is charging"; fi
+# if [ $discharging ]; then echo "Battery is discharging"; fi
+
+# Sounds and `paplay` usage -
 # for i in {1..2}; do $(dirname $0)/beepSound.sh; done
 # for i in {1..2}; do paplay /usr/share/sounds/freedesktop/stereo/bell.oga; done
 # paplay /home/array/scripts-media/Sounds/7_unplug-charger.wav
+
 # List all sounds:
 # ls /usr/share/sounds/freedesktop/stereo
 # paplay /usr/share/sounds/freedesktop/stereo/bell.oga
