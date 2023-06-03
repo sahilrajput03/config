@@ -4,10 +4,9 @@
 echo @off
 
 if [ -n "$(pgrep -f battery-status.sh)" ]; then
-      	#notify-send "battery-status servce already running..."
-	echo Yes running already, so no need to run again.;
+	#notify-send "battery-status servce already running..."
+	echo "SERVICE IS ALREADY RUNNING."
 else
-	echo Not running so running battery-status script now..;
+	echo "STARTING SCRIPT - battery-status.sh"
 	sh $(dirname $0)/battery-status.sh &
 fi
-
