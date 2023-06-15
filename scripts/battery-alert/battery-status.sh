@@ -6,6 +6,7 @@ MAXIMUM_LEVEL=95
 
 while true; do
 	battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
+	# echo "battery_level: $(acpi -b | grep -P -o '[0-9]+(?=%)')"
 	discharging=$(acpi | grep -o Discharging) # Text Discharging is returned if discharging.
 	# echo $discharging # "Discharging"
 
@@ -16,8 +17,8 @@ while true; do
 		# Sleep for some time:
 		sleep 600
 	elif [ $battery_level -le $MINIMUM_LEVEL ] && [ $discharging ]; then
-		# Battery is discharging
-		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
+		# Battery is discharging (notification timeout -t in milliseconds)
+		notify-send --urgency=CRITICAL -t 25000 "Battery Low" "Level: ${battery_level}%"
 		for i in {1..3}; do $(dirname $0)/beepSound.sh; done
 		# Hibernate when battery drops below `MINIMUM_LEVEL`.
 		if [ $battery_level -le $MINIMUM_LEVEL ]; then systemctl hibernate; fi
