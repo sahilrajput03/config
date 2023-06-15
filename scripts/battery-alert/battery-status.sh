@@ -2,7 +2,7 @@
 # src: https://www.2daygeek.com/linux-low-full-charging-discharging-battery-notification/
 
 MINIMUM_LEVEL=14
-MAXIMUM_LEVEL=85
+MAXIMUM_LEVEL=95
 
 while true; do
 	battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
@@ -15,7 +15,7 @@ while true; do
 		cvlc --play-and-exit /home/array/scripts-media/Sounds/7_unplug-charger.wav
 		# Sleep for some time:
 		sleep 600
-	elif [ $battery_level -le 20 ] && [ $discharging ]; then
+	elif [ $battery_level -le $MINIMUM_LEVEL ] && [ $discharging ]; then
 		# Battery is discharging
 		notify-send --urgency=CRITICAL "Battery Low" "Level: ${battery_level}%"
 		for i in {1..3}; do $(dirname $0)/beepSound.sh; done
