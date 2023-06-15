@@ -8,9 +8,7 @@ BATTERY_FULL_NOTIFICATION_RECHECK_INTERVAL=60 # In seconds
 
 while true; do
 	battery_level=$(acpi -b | grep -P -o '[0-9]+(?=%)')
-	# echo "battery_level: $(acpi -b | grep -P -o '[0-9]+(?=%)')"
 	discharging=$(acpi | grep -o Discharging) # Text Discharging is returned if discharging.
-	# echo $discharging # "Discharging"
 
 	if [ $battery_level -ge $MAXIMUM_LEVEL ] && [ -z $discharging ]; then
 		# Battery is greater than `MAXIMUM_LEVEL` and charging (-z $discharging)
@@ -37,6 +35,12 @@ LOG - HAPPY TIME
 done
 
 # NOTES -
+
+# Battery Percentage
+# echo "$(acpi -b | grep -P -o '[0-9]+(?=%)')"
+
+# Check if battery is discharging
+# echo $(acpi | grep -o Discharging) # "Discharging"
 
 # Helful Logs to check charging and discharging
 # if [ -z $discharging ]; then echo "Battery is charging"; fi
