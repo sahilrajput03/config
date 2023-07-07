@@ -48,7 +48,7 @@ alias code='i3-msg "exec --no-startup-id code"'
 function co() {
 	i3-msg "exec --no-startup-id code $PWD"
 	# If above throws error then simply use `tmuxkill` to kill the tmux session to fix the error as
-	suggested in below issue of i3
+	# suggested in below issue of i3
 	# https://github.com/i3/i3/issues/3845
 }
 function cor() {
@@ -67,8 +67,12 @@ disableKeyboardClit
 disableTrackpad
 
 function backupManjaroCurrent() {
+	echo hell
+	return;
 	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
+	cp /home/array/.profile $BACKUP_DIR
 	cp /home/array/.bashrc $BACKUP_DIR
+	cp /home/array/.bash_profile $BACKUP_DIR
 	cp /home/array/.bash_capacitor $BACKUP_DIR
 	cp /home/array/.gitconfig $BACKUP_DIR
 	cd $BACKUP_DIR
