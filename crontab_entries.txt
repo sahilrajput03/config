@@ -22,4 +22,5 @@
 # the shell is said to be interactive-shell.
 # LEARN: 2. We need to use source so that
 # our functions are visible in current shel environment for cron
-# * * * * * source /home/array/.bashrc; backupManjaroCurrent
+# FOR NOW I AM RUNNING THIS CRON EVERY 4 HOURS TO BACKUP MY CONFIGURATION
+* * */4 * * source /home/array/.bashrc; backupManjaroCurrent
