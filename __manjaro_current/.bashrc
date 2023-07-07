@@ -3,6 +3,7 @@
 
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
+	# boom
 	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
 	cp /home/array/.profile $BACKUP_DIR
 	cp /home/array/.bashrc $BACKUP_DIR
