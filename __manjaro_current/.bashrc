@@ -18,14 +18,14 @@ function backupManjaroCurrent() {
 	cd -
 }
 ##########
-########## INTERACTIVE Shell Code ABOVE
+########## INTERACTIVE Shell (Current Shell) Code  ABOVE
 ##########
 
 # Return simply from here for interactive shells
 [[ $- != *i* ]] && return
 
 ##########
-########## NON-INTERACTIVE Shell Code BELOW
+########## NON-INTERACTIVE Shell (Sub Shell) Code  BELOW
 ##########
 
 ########## Note: Any alias/function defined below will not be accessible to cron even if the .bashrc file is sourced.
