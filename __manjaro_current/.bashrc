@@ -1,7 +1,6 @@
 # bashrc
 #
 
-
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
 	# boom
@@ -19,14 +18,14 @@ function backupManjaroCurrent() {
 	cd -
 }
 ##########
-########## INTERACTIVE Code Above
+########## INTERACTIVE Shell Code Above
 ##########
 
 # Return simply from here for interactive shells
 [[ $- != *i* ]] && return
 
 ##########
-########## NON-INTERACTIVE Code Below
+########## NON-INTERACTIVE Shell Code Below
 ##########
 
 # Set maximum space to 8gb for react server to work for
