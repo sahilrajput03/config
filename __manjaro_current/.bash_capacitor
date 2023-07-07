@@ -1,0 +1,56 @@
+alias vi.capacitor='vi ~/.bash_capacitor'
+
+alias adbRestart='sudo adb kill-server; sudo adb start-server'
+alias adbDevices='adb devices'
+alias adbConnect='adb connect 192.168.18.4:5555'
+alias capLiveReload_RedmiNote5='adbConnect && LIVE_RELOAD=true npx cap sync android && npx cap run android --target 192.168.18.4:5555'
+alias capProd_RedmiNote5='adbConnect && npm run build && npx cap sync android && npx cap run android --target 192.168.18.4:5555'
+
+alias cd.capacitorApk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/debug/'
+# alias cd.capacitorSigned_Aab='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/bundle/release'
+# alias cd.capacitorSigned_Apk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/release'
+export CAPACITOR_ANDROID_STUDIO_PATH=/usr/bin/android-studio
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+
+# For java 17 (required for capacitor v5)
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+# For java 11
+# export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/bin/javac
+# export JRE_HOME=
+# How to check the JAVA_HOME value??
+# Use this command:: readlink -f /usr/bin/javac
+
+# Usage: apkInstall pathToApkFile
+alias apk.install='adb install'
+alias apk.openSlasherApk='adb shell am start -n com.sdei.slasher/com.sdei.slasher.MainActivity'
+alias apk.uninstallSlasherApp='adb uninstall com.sdei.slasher'
+
+SLASHER_DIR='/home/array/test/slasher/slasher-web-frontend'
+
+# gradlew assembleRelease - File Generated `app-release.apk`
+alias cd.app_build_outputs_apk_release="cd $SLASHER_DIR/android/app/build/outputs/apk/release/"
+# Android Studio (signed APK) : `app-release.apk`
+alias cd.app_release="cd $SLASHER_DIR/android/app/release/"
+
+# Tested (Works Fine - Can be completely used instead of using android studio) - APK - `./android/app/build/outputs/apk/release/app-release.apk`
+alias apk.generateSignedReleaseSlasher="$SLASHER_DIR/android/gradlew --project-dir $SLASHER_DIR/android/ assembleRelease --warning-mode=all -Pandroid.injected.signing.store.file="$SLASHER_DIR/Slasher.jks" -Pandroid.injected.signing.store.password=Slasher -Pandroid.injected.signing.key.alias=key0 -Pandroid.injected.signing.key.password=Slasher"
+
+# TESTED (Awesome) - Use `cd.app_build_outputs_apk_release` to get the apk.
+# NOTE: If the install command throws error like failed to match previous version then you must first uninstall the previous slasher-apk version
+apk.fastSlasher_gradlew_assembleRelease___install___open() {
+	# NOTE: No need to uninstall the previous apk of the package_name which we're installing.
+	apk.generateSignedReleaseSlasher
+	sleep 1
+	echo -e "\n ######## ############# ########### \n\n SAHIL: Please select Install option on your device now.\n\n ######## ############# ########### \n"
+	apk.install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
+	apk.openSlasherApk
+}
+# Use below to generate from new build
+apk.fastSlasher_gradlew_assembleRelease___install___openFULL() {
+	cd $SLASHER_DIR
+	npm run build
+	npx cap sync android
+	apk.fastSlasher_gradlew_assembleRelease___install___open
+}
+# Notes - ADB:
+# With Shell - adb shell; am start -n com.package.name/com.package.name.ActivityName
