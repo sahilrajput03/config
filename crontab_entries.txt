@@ -17,8 +17,9 @@
 # * * * * * /home/array/test/telegram-bot-test/req-ratan.sh
 
 
-# Running a function from .bashrc file - You must keep the function definition
-# before the return startement for non-interactive shell because with `source`
-# the shell is said to be interactive-shell. We need to use source so that
+# LEARN: 1. Running a function from .bashrc file - You must keep the function definition
+# before the return startement for non-interactive shell check because with `source`
+# the shell is said to be interactive-shell.
+# LEARN: 2. We need to use source so that
 # our functions are visible in current shel environment for cron
 # * * * * * source /home/array/.bashrc; backupManjaroCurrent
