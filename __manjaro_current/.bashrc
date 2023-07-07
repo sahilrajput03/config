@@ -71,7 +71,7 @@ function backupManjaroCurrent() {
 	cp /home/array/.gitconfig $BACKUP_DIR
 	cd $BACKUP_DIR
 	# Sync github repository
-	git add . && git commit -m "Manual Backup" && git pull && git push
+	git add . && git commit -m "Manual Backup"; git pull && git push
 	# Return to original directory
 	cd -
 }
