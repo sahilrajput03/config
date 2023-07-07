@@ -59,10 +59,12 @@ function cor() {
 bind "set completion-ignore-case on"
 
 # Disable keyboard clit (fix the autolcicking issue when typing on keyboard):
-xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0
-
+alias disableKeyboardClit='xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0'
 # Disable trackpad (in favor of using external mouse)
-xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
+alias disableTrackpad='xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0'
+# Comment/Uncomment below lines to toggle behavior (Tip: You can use same aliases to manually disable them too)
+disableKeyboardClit
+disableTrackpad
 
 function backupManjaroCurrent() {
 	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
@@ -71,7 +73,8 @@ function backupManjaroCurrent() {
 	cp /home/array/.gitconfig $BACKUP_DIR
 	cd $BACKUP_DIR
 	# Sync github repository
-	git add . && git commit -m "Manual Backup"; git pull && git push
+	git add . && git commit -m "Manual Backup"
+	git pull && git push
 	# Return to original directory
 	cd -
 }
