@@ -68,8 +68,12 @@ function backupManjaroCurrent() {
 	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
 	cp /home/array/.bashrc $BACKUP_DIR
 	cp /home/array/.bash_capacitor $BACKUP_DIR
+	cp /home/array/.gitconfig $BACKUP_DIR
 	cd $BACKUP_DIR
+	# Sync github repository
 	git add . && git commit -m "Manual Backup" && git pull && git push
+	# Return to original directory
+	cd -
 }
 
 ## PLEASE ADD MORE CODE ABOVE THIS LINE ONLY SAHIL
