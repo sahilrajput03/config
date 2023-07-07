@@ -18,14 +18,14 @@ function backupManjaroCurrent() {
 	cd -
 }
 ##########
-########## INTERACTIVE Shell Code Above
+########## INTERACTIVE Shell Code ABOVE
 ##########
 
 # Return simply from here for interactive shells
 [[ $- != *i* ]] && return
 
 ##########
-########## NON-INTERACTIVE Shell Code Below
+########## NON-INTERACTIVE Shell Code BELOW
 ##########
 
 ########## (Learn - Interactive and Non-Interactive Shells - https://phoenixnap.com/kb/bashrc-vs-bash-profile)
