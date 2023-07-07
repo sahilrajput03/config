@@ -28,6 +28,8 @@ function backupManjaroCurrent() {
 ########## NON-INTERACTIVE Shell Code Below
 ##########
 
+########## (Learn - Interactive and Non-Interactive Shells - https://phoenixnap.com/kb/bashrc-vs-bash-profile)
+
 # Set maximum space to 8gb for react server to work for
 export NODE_OPTIONS=--max-old-space-size=8192
 
