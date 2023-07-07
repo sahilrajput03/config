@@ -1,6 +1,25 @@
 # bashrc
 #
 
+# NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
+function backupManjaroCurrent() {
+	echo hell
+	return
+	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
+	cp /home/array/.profile $BACKUP_DIR
+	cp /home/array/.bashrc $BACKUP_DIR
+	cp /home/array/.bash_profile $BACKUP_DIR
+	cp /home/array/.bash_capacitor $BACKUP_DIR
+	cp /home/array/.gitconfig $BACKUP_DIR
+	cd $BACKUP_DIR
+	# Sync github repository
+	git add . && git commit -m "Manual Backup"
+	git pull && git push
+	# Return to original directory
+	cd -
+}
+
+# Return simply from here for interactive shells
 [[ $- != *i* ]] && return
 
 # Set maximum space to 8gb for react server to work for
@@ -65,23 +84,6 @@ alias disableTrackpad='xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device
 # Comment/Uncomment below lines to toggle behavior (Tip: You can use same aliases to manually disable them too)
 disableKeyboardClit
 disableTrackpad
-
-function backupManjaroCurrent() {
-	echo hell
-	return;
-	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
-	cp /home/array/.profile $BACKUP_DIR
-	cp /home/array/.bashrc $BACKUP_DIR
-	cp /home/array/.bash_profile $BACKUP_DIR
-	cp /home/array/.bash_capacitor $BACKUP_DIR
-	cp /home/array/.gitconfig $BACKUP_DIR
-	cd $BACKUP_DIR
-	# Sync github repository
-	git add . && git commit -m "Manual Backup"
-	git pull && git push
-	# Return to original directory
-	cd -
-}
 
 ## PLEASE ADD MORE CODE ABOVE THIS LINE ONLY SAHIL
 
