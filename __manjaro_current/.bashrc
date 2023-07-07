@@ -28,6 +28,7 @@ function backupManjaroCurrent() {
 ########## NON-INTERACTIVE Shell Code BELOW
 ##########
 
+########## Note: Any alias/function defined below will not be accessible to cron even if the .bashrc file is sourced.
 ########## (Learn - Interactive and Non-Interactive Shells - https://phoenixnap.com/kb/bashrc-vs-bash-profile)
 
 # Set maximum space to 8gb for react server to work for
