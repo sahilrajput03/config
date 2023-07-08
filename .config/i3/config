@@ -462,6 +462,9 @@ bindsym $mod+comma exec copyq toggle
 # Make Read Aloud popup to open in float mode
 for_window [title="Read Aloud"] floating enable
 
+# Make chrome dev tools float by default (Using regular expression here with `.*`)
+for_window [title="DevTools - .*"] floating enable
+
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
