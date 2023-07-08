@@ -19,7 +19,7 @@ function backupManjaroCurrent() {
 }
 ##########
 ########## NON-INTERACTIVE Shell (Sub Shell) Code  ABOVE
-########## 1
+##########
 
 # Return simply from here for non-interactive shells
 [[ $- != *i* ]] && return
