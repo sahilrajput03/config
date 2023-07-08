@@ -465,6 +465,9 @@ for_window [title="Read Aloud"] floating enable
 # Make chrome dev tools float by default (Using regular expression here with `.*`)
 for_window [title="DevTools - .*"] floating enable
 
+# Make android emulator devices to be float by default (Using regular expression here with `.*`)
+for_window [title="Android Emulator - .*"] floating enable
+
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
