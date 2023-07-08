@@ -459,6 +459,9 @@ for_window [class="copyq" instance="copyq"] floating enable
 bindsym $mod+comma exec copyq toggle
 # ^^ This required system restart to make it work!, src: https://github.com/hluk/CopyQ/issues/1886
 
+# Make Read Aloud popup to open in float mode
+for_window [title="Read Aloud"] floating enable
+
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
