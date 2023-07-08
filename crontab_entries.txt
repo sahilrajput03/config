@@ -18,9 +18,8 @@
 
 
 # LEARN: 1. Running a function from .bashrc file - You must keep the function definition
-# before the return startement for non-interactive (Sub Shell) shell check because with `source`
-# the shell is said to be interactive-shell (Current Shell).
-# LEARN: 2. We need to use source so that
-# our functions are visible in current shel environment for cron
+# before the return startement for non-interactive (Sub Shell) shell check because the
+# command we give to cron is run in a sub shell (which is seems a good thing).
+# LEARN: 2. We need to use source so that our functions are accessible.
 # FOR NOW I AM RUNNING THIS CRON EVERY 4 HOURS TO BACKUP MY CONFIGURATION
 * * */4 * * source /home/array/.bashrc; backupManjaroCurrent
