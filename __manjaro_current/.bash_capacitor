@@ -44,6 +44,7 @@ apk.fastSlasher_gradlew_assembleRelease___install___open() {
 	echo -e "######## ######## Uninstalling app from the device now ######## ########"
 	apk.uninstallSlasherApp
 	echo -e "\n ######## ############# ########### \n\n SAHIL: Please select Install option on your device now.\n\n ######## ############# ########### \n"
+	echo -e "######## ######## Note: If below logs shows app install fails then you must need to check if th phone is unlocked and you check the Install button on the popup on the mobile."
 	apk.install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
 	apk.openSlasherApk
 }
