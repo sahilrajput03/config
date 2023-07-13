@@ -48,7 +48,7 @@ apk.fastSlasher_gradlew_assembleRelease___install___open() {
 	apk.openSlasherApk
 }
 # Use below to generate from new build
-apk.fastSlasher_gradlew_assembleRelease___install___openFULL() {
+apk.fastSlasher_gradlew_assembleRelease___install___open__with__npm__run__build() {
 	cd $SLASHER_DIR
 	npm run build
 	npx cap sync android
