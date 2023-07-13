@@ -73,6 +73,9 @@ alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 # Fix the opening of web links in chrome window instead of opening new window of google-chrome it now opens currently running windows. (Time took: 3.5 hours). Src: https://stackoverflow.com/a/50736123/10012446
 alias code='i3-msg "exec --no-startup-id code"'
 
+# Helpful to get useful info for i3 to make them floatable:
+alias xprop2i3='/home/array/Documents/github_repos/config/scripts/xprop2i3.sh'
+
 function co() {
 	i3-msg "exec --no-startup-id code $PWD"
 	# If above throws error then simply use `tmuxkill` to kill the tmux session to fix the error as
