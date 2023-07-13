@@ -41,7 +41,7 @@ apk.fastSlasher_gradlew_assembleRelease___install___open() {
 	# NOTE: No need to uninstall the previous apk of the package_name which we're installing.
 	apk.generateSignedReleaseSlasher
 	sleep 1
-	echo -e Uninstalling app from the device now
+	echo -e "Uninstalling app from the device now"
 	apk.uninstallSlasherApp
 	echo -e "\n ######## ############# ########### \n\n SAHIL: Please select Install option on your device now.\n\n ######## ############# ########### \n"
 	apk.install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
