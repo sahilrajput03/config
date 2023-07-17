@@ -29,6 +29,7 @@ alias cd.app_build_outputs_apk_release__CLI__GRADLE__SIGNED="cd $SLASHER_DIR/and
 # Android Studio (signed APK) : `app-release.apk`
 alias cd.app_release__ANDROID__STUDIO__SIGNED__APK="cd $SLASHER_DIR/android/app/release/"
 alias cd.app_build_outputs_bundle_release_CAPCITOR='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/debug/'
+# Since capacitor build doesn't produce a working build, so we don't need below aliases for now.
 # alias cd.capacitorSigned_Aab='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/bundle/release'
 # alias cd.capacitorSigned_Apk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/release'
 
