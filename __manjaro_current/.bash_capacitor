@@ -29,7 +29,7 @@ SLASHER_DIR='/home/array/test/slasher/slasher-web-frontend'
 alias cd.app_build_outputs_apk_release="cd $SLASHER_DIR/android/app/build/outputs/apk/release/"
 # Android Studio (signed APK) : `app-release.apk`
 alias cd.app_release="cd $SLASHER_DIR/android/app/release/"
-alias cd.capacitorSigned_Aab="cd $SLASHER_DIR/android/app/build/outputs/bundle/release"
+alias cd.app_build_outputs_bundle_release_CAPCITOR="cd $SLASHER_DIR/android/app/build/outputs/bundle/release"
 alias cd.capacitorSigned_Apk="cd $SLASHER_DIR/android/app/build/outputs/apk/release"
 
 # Tested (Works Fine - Can be completely used instead of using android studio) - APK - `./android/app/build/outputs/apk/release/app-release.apk`
