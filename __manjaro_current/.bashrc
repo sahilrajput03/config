@@ -93,6 +93,17 @@ bind "set completion-ignore-case on"
 alias disableKeyboardClit='xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0'
 # Disable trackpad (in favor of using external mouse)
 alias disableTrackpad='xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0'
+
+function enableAllTrackpadAndKeyboardClit() {
+	xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 1
+	xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 1
+}
+
+function disableAllTrackpadAndKeyboardClit() {
+	xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0
+	xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
+}
+
 # Comment/Uncomment below lines to toggle behavior (Tip: You can use same aliases to manually disable them too)
 disableKeyboardClit
 disableTrackpad
