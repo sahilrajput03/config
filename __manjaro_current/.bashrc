@@ -105,8 +105,8 @@ function disableAllTrackpadAndKeyboardClit() {
 }
 
 # Comment/Uncomment below lines to toggle behavior (Tip: You can use same aliases to manually disable them too)
-disableKeyboardClit
-disableTrackpad
+# disableKeyboardClit
+# disableTrackpad
 
 ## PLEASE ADD MORE CODE ABOVE THIS LINE ONLY SAHIL
 
