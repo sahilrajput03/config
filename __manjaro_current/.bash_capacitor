@@ -6,9 +6,6 @@ alias adbConnect='adb connect 192.168.18.4:5555'
 alias capLiveReload_RedmiNote5='adbConnect && LIVE_RELOAD=true npx cap sync android && npx cap run android --target 192.168.18.4:5555'
 alias capProd_RedmiNote5='adbConnect && npm run build && npx cap sync android && npx cap run android --target 192.168.18.4:5555'
 
-alias cd.capacitorApk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/debug/'
-# alias cd.capacitorSigned_Aab='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/bundle/release'
-# alias cd.capacitorSigned_Apk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/release'
 export CAPACITOR_ANDROID_STUDIO_PATH=/usr/bin/android-studio
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 
@@ -24,6 +21,7 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 alias apk.install='adb install'
 alias apk.openSlasherApk='adb shell am start -n com.sdei.slasher/com.sdei.slasher.MainActivity'
 alias apk.uninstallSlasherApp='adb uninstall com.sdei.slasher'
+alias cd.capacitorApk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/debug/'
 
 SLASHER_DIR='/home/array/test/slasher/slasher-web-frontend'
 
@@ -31,6 +29,8 @@ SLASHER_DIR='/home/array/test/slasher/slasher-web-frontend'
 alias cd.app_build_outputs_apk_release="cd $SLASHER_DIR/android/app/build/outputs/apk/release/"
 # Android Studio (signed APK) : `app-release.apk`
 alias cd.app_release="cd $SLASHER_DIR/android/app/release/"
+alias cd.capacitorSigned_Aab="cd $SLASHER_DIR/android/app/build/outputs/bundle/release"
+alias cd.capacitorSigned_Apk="cd $SLASHER_DIR/android/app/build/outputs/apk/release"
 
 # Tested (Works Fine - Can be completely used instead of using android studio) - APK - `./android/app/build/outputs/apk/release/app-release.apk`
 alias apk.generateSignedReleaseSlasher="$SLASHER_DIR/android/gradlew --project-dir $SLASHER_DIR/android/ assembleRelease --warning-mode=all -Pandroid.injected.signing.store.file="$SLASHER_DIR/Slasher.jks" -Pandroid.injected.signing.store.password=Slasher -Pandroid.injected.signing.key.alias=key0 -Pandroid.injected.signing.key.password=Slasher"
