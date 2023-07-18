@@ -27,7 +27,7 @@ SLASHER_DIR='/home/array/test/slasher/slasher-web-frontend'
 # gradlew assembleRelease - File Generated `app-release.apk`
 alias cd.app__1_build_outputs_apk_release__CLI__GRADLE__SIGNED="cd $SLASHER_DIR/android/app/build/outputs/apk/release/"
 # Android Studio (signed APK) : `app-release.apk`
-alias cd.app__2_release__ANDROID__STUDIO__SIGNED__APK="cd $SLASHER_DIR/android/app/release/"
+alias cd.app__2_release__ANDROID__STUDIO__SIGNED__APK__AND__AAB="cd $SLASHER_DIR/android/app/release/"
 alias cd.app__3_build_outputs_bundle_release_CAPCITOR='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/debug/'
 # Since `capacitor build` command doesn't produce a working build (same issue as Eric faced), so we don't need below aliases for now.
 # alias cd.capacitorSigned_Aab='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/bundle/release'
