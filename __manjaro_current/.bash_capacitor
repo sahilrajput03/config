@@ -33,14 +33,21 @@ alias cd.app__3_build_outputs_bundle_release_CAPCITOR='cd /home/array/test/slash
 # alias cd.capacitorSigned_Aab='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/bundle/release'
 # alias cd.capacitorSigned_Apk='cd /home/array/test/slasher/slasher-web-frontend/android/app/build/outputs/apk/release'
 
-# Tested (Works Fine - Can be completely used instead of using android studio) - APK - `./android/app/build/outputs/apk/release/app-release.apk`
-alias apk.generateSignedReleaseSlasher="$SLASHER_DIR/android/gradlew --project-dir $SLASHER_DIR/android/ assembleRelease --warning-mode=all -Pandroid.injected.signing.store.file="$SLASHER_DIR/Slasher.jks" -Pandroid.injected.signing.store.password=Slasher -Pandroid.injected.signing.key.alias=key0 -Pandroid.injected.signing.key.password=Slasher"
+# APK - `./android/app/build/outputs/apk/release/app-release.apk`
+# Make sure you have defined the variable in /etc/environment file as `SLASHER_ANDROID_SIGNING_KEY_PASSWORD=xxxxxx`
+alias apk.generateSignedApkSlasherAssembleRelease="$SLASHER_DIR/android/gradlew --project-dir $SLASHER_DIR/android/ assembleRelease --warning-mode=all -Pandroid.injected.signing.store.file="$SLASHER_DIR/Slasher.jks" -Pandroid.injected.signing.store.password=Slasher -Pandroid.injected.signing.key.alias=key0 -Pandroid.injected.signing.key.password=$SLASHER_ANDROID_SIGNING_KEY_PASSWORD"
 
-# TESTED (Awesome) - Use `cd.app_build_outputs_apk_release` to get the apk.
+# *New Command: Please use below command to generate signed AAB via cli
+# Starting from Android Gradle Plugin version 3.0.0, the recommended way to build a release version is by using the bundleRelease task instead of assembleRelease.
+# It generate an Android App Bundle (AAB) file, which is the preferred format for distributing Android apps on the Google Play Store.
+alias aab.generateSignedAabSlasherBundleRelease="$SLASHER_DIR/android/gradlew --project-dir $SLASHER_DIR/android/ bundleRelease --warning-mode=all -Pandroid.injected.signing.store.file="$SLASHER_DIR/Slasher.jks" -Pandroid.injected.signing.store.password=Slasher -Pandroid.injected.signing.key.alias=key0 -Pandroid.injected.signing.key.password=$SLASHER_ANDROID_SIGNING_KEY_PASSWORD"
+
+# FOR APK
+# Use `cd.app__1_build_outputs_apk_release__CLI__GRADLE__SIGNED` to get the apk.
 # NOTE: If the install command throws error like failed to match previous version then you must first uninstall the previous slasher-apk version
 apk.fastSlasher_gradlew_assembleRelease___install___open() {
 	# NOTE: No need to uninstall the previous apk of the package_name which we're installing.
-	apk.generateSignedReleaseSlasher
+	apk.generateSignedApkSlasherAssembleRelease
 	sleep 1
 	echo -e "######## ######## Uninstalling app from the device now ######## ########"
 	apk.uninstallSlasherApp
@@ -49,12 +56,32 @@ apk.fastSlasher_gradlew_assembleRelease___install___open() {
 	apk.install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
 	apk.openSlasherApk
 }
-# Use below to generate from new build
+# Use below to generate fresh new build
 apk.fastSlasher_gradlew_assembleRelease___install___open__with__npm__run__build() {
 	cd $SLASHER_DIR
 	npm run build
 	npx cap sync android
 	apk.fastSlasher_gradlew_assembleRelease___install___open
+}
+
+# FOR AAB
+aab.fastSlasher_gradlew_bundleRelease___install___open() {
+	# NOTE: No need to uninstall the previous apk of the package_name which we're installing.
+	aab.generateSignedAabSlasherBundleRelease
+	# sleep 1
+	# echo -e "######## ######## Uninstalling app from the device now ######## ########"
+	# apk.uninstallSlasherApp
+	# echo -e "\n ######## ############# ########### \n\n SAHIL: Please select Install option on your device now.\n\n ######## ############# ########### \n"
+	# echo -e "######## ######## Note: If below logs shows app install fails then you must need to check if th phone is unlocked and you check the Install button on the popup on the mobile."
+	# apk.install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
+	# apk.openSlasherApk
+}
+# Use below to generate fresh new build
+aab.fastSlasher_gradlew_bundleRelease___install___open__with__npm__run__build() {
+	cd $SLASHER_DIR
+	npm run build
+	npx cap sync android
+	aab.fastSlasher_gradlew_bundleRelease___install___open
 }
 # Notes - ADB:
 # With Shell - adb shell; am start -n com.package.name/com.package.name.ActivityName
