@@ -51,6 +51,8 @@ function aab.generateSignedAabSlasherBundleRelease() {
 # Use `cd.app__1apk___build_outputs_apk_release__CLI__GRADLE__SIGNED` to get the apk.
 # NOTE: If the install command throws error like failed to match previous version then you must first uninstall the previous slasher-apk version
 apk.fastSlasher_gradlew_assembleRelease___install___open() {
+	cd $SLASHER_DIR
+	npx cap sync android
 	# NOTE: No need to uninstall the previous apk of the package_name which we're installing.
 	apk.generateSignedApkSlasherAssembleRelease
 	sleep 1
@@ -65,19 +67,19 @@ apk.fastSlasher_gradlew_assembleRelease___install___open() {
 apk.fastSlasher_gradlew_assembleRelease___install___open__with__npm__run__build() {
 	cd $SLASHER_DIR
 	npm run build
-	npx cap sync android
 	apk.fastSlasher_gradlew_assembleRelease___install___open
 }
 
 # FOR AAB
 aab.fastSlasher_gradlew_bundleRelease___install___open() {
+	cd $SLASHER_DIR
+	npx cap sync android
 	aab.generateSignedAabSlasherBundleRelease
 }
 # Use below to generate fresh new build
 aab.fastSlasher_gradlew_bundleRelease___install___open__with__npm__run__build() {
 	cd $SLASHER_DIR
 	npm run build
-	npx cap sync android
 	aab.fastSlasher_gradlew_bundleRelease___install___open
 }
 # Notes - ADB:
