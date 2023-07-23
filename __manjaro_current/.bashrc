@@ -73,6 +73,12 @@ alias vi.bashrc='vi ~/.bashrc'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 # Fix the opening of web links in chrome window instead of opening new window of google-chrome it now opens currently running windows. (Time took: 3.5 hours). Src: https://stackoverflow.com/a/50736123/10012446
 alias code='i3-msg "exec --no-startup-id code"'
+function sudoCode() {
+	# Does not work
+	# i3-msg "exec --no-startup-id sudo \code --no-sandbox --user-data-dir=/home/array/.config/Code/ $1"
+	# Below works (23 July, 23) (Note: I also added additional extensions directory as well)
+	sudo \code $1 --no-sandbox --user-data-dir=/home/array/.config/Code/ --extensions-dir=/home/array/.vscode/extensions
+}
 
 # Helpful to get useful info for i3 to make them floatable:
 alias xprop2i3='/home/array/Documents/github_repos/config/scripts/xprop2i3.sh'
