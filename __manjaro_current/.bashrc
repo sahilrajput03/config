@@ -71,6 +71,9 @@ alias red='redshift -P -O'
 alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert'
 alias vi.bashrc='vi ~/.bashrc'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
+alias blc='bluetoothctl'
+# Connecting to Airdopes 441P: 00:00:AB:CE:16:01
+# Use this command in the subshell: `connect 00:00:AB:CE:16:01`
 # Fix the opening of web links in chrome window instead of opening new window of google-chrome it now opens currently running windows. (Time took: 3.5 hours). Src: https://stackoverflow.com/a/50736123/10012446
 alias code='i3-msg "exec --no-startup-id code"'
 function sudoCode() {
