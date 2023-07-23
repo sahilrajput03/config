@@ -55,7 +55,8 @@ bind -x '"\C-l": clear; tmux clear-history'
 
 # some aliases
 alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING='git push --force origin $(git branch --show-current):deploy/staging'
-alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
+# alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
+alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
 alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
 alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
 alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
