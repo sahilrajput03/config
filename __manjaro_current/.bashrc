@@ -76,7 +76,7 @@ alias code='i3-msg "exec --no-startup-id code"'
 function sudoCode() {
 	# Does not work
 	# i3-msg "exec --no-startup-id sudo \code --no-sandbox --user-data-dir=/home/array/.config/Code/ $1"
-	# Below works (23 July, 23) (Note: I also added additional extensions directory as well)
+	# Below works (23 July, 2023) (Note: I also added additional extensions directory as well)
 	sudo \code $1 --no-sandbox --user-data-dir=/home/array/.config/Code/ --extensions-dir=/home/array/.vscode/extensions
 }
 
