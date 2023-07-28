@@ -1,5 +1,11 @@
-alias vi.capacitor='vi ~/.bash_capacitor'
+alias vi.capacitor='echo Please use co.capacitor from now on.'
+alias co.capacitor='code ~/.bash_capacitor'
 
+# Usage: adb.connectWirelessPocofoneM4 <PORT>
+# Example: adb.connectWirelessPocofoneM4 38429
+function adb.connectWirelessPocofoneM4() {
+	adb connect 192.168.18.49:$1
+}
 alias adbRestart='sudo adb kill-server; sudo adb start-server'
 alias adbDevices='adb devices'
 alias adbConnect='adb connect 192.168.18.4:5555'
