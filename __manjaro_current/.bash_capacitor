@@ -1,12 +1,16 @@
 alias vi.capacitor='echo Please use co.capacitor from now on.'
 alias co.capacitor='code ~/.bash_capacitor'
 
+alias adbRestart='sudo adb kill-server; sudo adb start-server'
 # Usage: adb.connectWirelessPocofoneM4 <PORT>
 # Example: adb.connectWirelessPocofoneM4 38429
+# NOTE: If you are unabe to connect then you must use `adbRestart` command first.
+# ===============================================================================
 function adb.connectWirelessPocofoneM4() {
+	# We are restarting adb server because most times its needed to successfully connect to device for me.
+	adbRestart
 	adb connect 192.168.18.49:$1
 }
-alias adbRestart='sudo adb kill-server; sudo adb start-server'
 alias adbDevices='adb devices'
 alias adbConnect='adb connect 192.168.18.4:5555'
 alias capLiveReload_RedmiNote5='adbConnect && LIVE_RELOAD=true npx cap sync android && npx cap run android --target 192.168.18.4:5555'
