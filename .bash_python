@@ -35,3 +35,4 @@ alias pipreqs.createRequirementsFile='pipreqs'
 # $ python3 --version
 # OUTPUT: Python 3.10.6
 
+alias upgradePip='pip install --upgrade pip'
