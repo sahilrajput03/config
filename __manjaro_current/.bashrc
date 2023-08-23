@@ -60,6 +60,8 @@ alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git b
 alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
 alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
 alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
+alias slasherStartDocker='fixdocker.sockPermissionIssue && docker compose --file docker-compose.devtest.yml up --build'
+
 alias nr='npm run'
 alias ...='exec bash'
 alias e='exit'
