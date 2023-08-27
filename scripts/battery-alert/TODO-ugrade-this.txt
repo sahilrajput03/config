@@ -1,0 +1,4 @@
+Make these scripts into one script i.e,
+battery-status.sh start
+battery-status.sh kill
+battery-status.sh status
