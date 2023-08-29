@@ -162,5 +162,13 @@
 		"html"
 	],
 	"workbench.activityBar.visible": false,
-	"npm-intellisense.importQuotes": "\""
+	"npm-intellisense.importQuotes": "\"",
+	"eslint.options": {
+		"overrideConfig": {
+			"rules": {
+				"no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
+			}
+		}
+	}
+
 }
