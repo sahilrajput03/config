@@ -38,7 +38,7 @@ alias cd.app__1apk___build_outputs_apk_release__CLI__GRADLE__SIGNED="cd $SLASHER
 alias cd.app__2aab___build_outputs_bundle_release__CLI__GRADLE__SIGNED="cd $SLASHER_DIR/android/app/build/outputs/bundle/release"
 # Android Studio (signed APK) : `app-release.apk`
 alias cd.app__3_release__ANDROID__STUDIO__SIGNED__APK__AND__AAB="cd $SLASHER_DIR/android/app/release/"
-alias cd.app__4_build_outputs_bundle_release_CAPCITOR="cd $SLASHER_DIR/android/app/build/outputs/apk/debug/"
+alias cd.app__4_build_outputs_bundle_release_CAPCITOR_OR_ANDROID_STUDIO-non-signed-apk="cd $SLASHER_DIR/android/app/build/outputs/apk/debug/"
 # Since `capacitor build` command doesn't produce a working build (same issue as Eric faced), so we don't need below aliases for now.
 # alias cd.capacitorSigned_Aab="cd $SLASHER_DIR/android/app/build/outputs/bundle/release"
 # alias cd.capacitorSigned_Apk="cd $SLASHER_DIR/android/app/build/outputs/apk/release"
