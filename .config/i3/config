@@ -471,6 +471,12 @@ for_window [title="Android Emulator - .*"] floating enable
 # Make alert popup for chrome google calendar as float
 for_window [instance="crx_hkhggnncdpfibdhinjiegagmopldibha"] floating enable
 
+# Make anydesk windows floating (necessary to make it work, 11 Aug, 2023)
+for_window [instance="anydesk"] floating enable
+
+# Make paypal checkout window to be float by default (Using regular expression here with `.*`)
+for_window [title="PayPal Checkout - Choose a way to pay - .*"] floating enable
+
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
