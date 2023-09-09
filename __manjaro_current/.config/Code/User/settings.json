@@ -138,7 +138,6 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "gitlens.views.commitDetails.files.layout": "list",
-  "diffEditor.ignoreTrimWhitespace": false,
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
