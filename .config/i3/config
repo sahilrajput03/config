@@ -475,7 +475,11 @@ for_window [instance="crx_hkhggnncdpfibdhinjiegagmopldibha"] floating enable
 for_window [instance="anydesk"] floating enable
 
 # Make paypal checkout window to be float by default (Using regular expression here with `.*`)
-for_window [title="PayPal Checkout - Choose a way to pay - .*"] floating enable
+# for_window [title="PayPal Checkout - Choose a way to pay - .*"] floating enable
+for_window [title="PayPal.*"] floating enable
+
+# Make virt manager (kvm)
+for_window [instance="virt-manager"] floating enable
 
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
