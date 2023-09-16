@@ -14,7 +14,7 @@ function backupManjaroCurrent() {
 	cd $BACKUP_DIR
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
-	git pull && git push
+	git pull --no-edit && git push
 	# Return to original directory
 	cd -
 }
@@ -92,17 +92,20 @@ function sudoCode() {
 alias xprop2i3='/home/array/Documents/github_repos/config/scripts/xprop2i3.sh'
 
 alias co.bashrc='co ~/.bashrc'
-alias co.timetracking='cor ~/test/slasher/time-tracking-sahil.txt'
-alias co.i3config='cor ~/.i3/config'
+alias co.timetracking='co ~/test/slasher/time-tracking-sahil.txt'
+alias co.i3config='co ~/.i3/config'
 
-function co.() {
-	i3-msg "exec --no-startup-id code $PWD"
+function co() {
+	if [ -z "$1" ]; then
+		echo hello world
+
+		i3-msg "exec --no-startup-id code $PWD"
+		return
+	fi
+	i3-msg "exec --no-startup-id code $@"
 	# If above throws error then simply use `tmuxkill` to kill the tmux session to fix the error as
 	# suggested in below issue of i3
 	# https://github.com/i3/i3/issues/3845
-}
-function co() {
-	i3-msg "exec --no-startup-id code $1"
 }
 function cor() {
 	i3-msg "exec --no-startup-id code -r $1"
