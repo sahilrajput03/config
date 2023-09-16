@@ -12,6 +12,10 @@ function backupManjaroCurrent() {
 	cp /home/array/.gitconfig $BACKUP_DIR
 	cp -r /home/array/.i3 $BACKUP_DIR
 	cd $BACKUP_DIR
+
+	crontab -l >$BACKUP_DIR/crontab_entries.txt
+	echo "Backup of crontab entries succeeded."
+
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
 	git pull --no-edit && git push
