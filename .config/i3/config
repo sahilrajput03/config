@@ -481,6 +481,9 @@ for_window [title="PayPal.*"] floating enable
 # Make virt manager (kvm)
 for_window [instance="virt-manager"] floating enable
 
+# Make arandr float
+for_window [instance="arandr"] floating enable
+
 #### ADDING GLOBAL HOT KEY FOR SNIPPY #### ~Sahil (directly from my_bin from popos config files).
 bindsym $mod+period exec ~/Documents/github_repos/config/snippy
 
