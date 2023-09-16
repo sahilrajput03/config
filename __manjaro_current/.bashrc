@@ -1,4 +1,4 @@
-# bashrc
+# .bashrc
 #
 
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
