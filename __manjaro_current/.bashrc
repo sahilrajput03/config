@@ -4,12 +4,13 @@
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
 	# boom
-	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current/"
+	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current"
 	cp /home/array/.profile $BACKUP_DIR
 	cp /home/array/.bashrc $BACKUP_DIR
 	cp /home/array/.bash_profile $BACKUP_DIR
 	cp /home/array/.bash_capacitor $BACKUP_DIR
 	cp /home/array/.gitconfig $BACKUP_DIR
+	cp /home/array/.i3/config $BACKUP_DIR/i3-config-file
 	cd $BACKUP_DIR
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
@@ -63,6 +64,7 @@ alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
 alias slasherStartDocker='fixdocker.sockPermissionIssue && docker compose --file docker-compose.devtest.yml up --build'
 
 alias nr='npm run'
+alias ..='cd ..'
 alias ...='exec bash'
 alias e='exit'
 alias vi.all_are_moved_to_vscode_via_co.__here__='echo Happy migrating to vscode.'
