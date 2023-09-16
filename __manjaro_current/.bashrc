@@ -65,8 +65,6 @@ alias slasherStartDocker='fixdocker.sockPermissionIssue && docker compose --file
 alias nr='npm run'
 alias ...='exec bash'
 alias e='exit'
-alias co.bashrc='co ~/.bashrc'
-alias co.timetracking='co ~/test/slasher/time-tracking-sahil.txt'
 alias vi.all_are_moved_to_vscode_via_co.__here__='echo Happy migrating to vscode.'
 alias s='BROWSER=none npm start'
 alias c='clear'
@@ -91,14 +89,21 @@ function sudoCode() {
 # Helpful to get useful info for i3 to make them floatable:
 alias xprop2i3='/home/array/Documents/github_repos/config/scripts/xprop2i3.sh'
 
-function co() {
+alias co.bashrc='co ~/.bashrc'
+alias co.timetracking='cor ~/test/slasher/time-tracking-sahil.txt'
+alias co.i3config='cor ~/.i3/config'
+
+function co.() {
 	i3-msg "exec --no-startup-id code $PWD"
 	# If above throws error then simply use `tmuxkill` to kill the tmux session to fix the error as
 	# suggested in below issue of i3
 	# https://github.com/i3/i3/issues/3845
 }
+function co() {
+	i3-msg "exec --no-startup-id code $1"
+}
 function cor() {
-	i3-msg "exec --no-startup-id code $PWD -r"
+	i3-msg "exec --no-startup-id code -r $1"
 }
 
 # Enable case-insensitive approach when doing tab complete in bash: src: https://askubuntu.com/a/1081444/702911
