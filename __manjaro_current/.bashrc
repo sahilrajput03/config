@@ -10,7 +10,7 @@ function backupManjaroCurrent() {
 	cp /home/array/.bash_profile $BACKUP_DIR
 	cp /home/array/.bash_capacitor $BACKUP_DIR
 	cp /home/array/.gitconfig $BACKUP_DIR
-	cp /home/array/.i3/config $BACKUP_DIR/i3-config-file
+	cp -r /home/array/.i3 $BACKUP_DIR
 	cd $BACKUP_DIR
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
@@ -61,6 +61,8 @@ alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git b
 alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
 alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
 alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
+alias cd.config='cd ~/Documents/github_repos/config/'
+
 alias slasherStartDocker='fixdocker.sockPermissionIssue && docker compose --file docker-compose.devtest.yml up --build'
 
 alias nr='npm run'
