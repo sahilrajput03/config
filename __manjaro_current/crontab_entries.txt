@@ -10,5 +10,6 @@
 # command we give to cron is run in a sub shell (which is seems a good thing).
 # LEARN: 2. We need to use source so that our functions are accessible.
 # FOR NOW I AM RUNNING THIS CRON EVERY 2 HOURS TO BACKUP MY CONFIGURATION
-# 0 */2 * * * source /home/array/.bashrc; backupManjaroCurrent
-* * * * * source /home/array/.bashrc; backupManjaroCurrent
+0 */2 * * * source /home/array/.bashrc; backupManjaroCurrent
+# (for debugging only - running every minute)
+# * * * * * source /home/array/.bashrc; backupManjaroCurrent
