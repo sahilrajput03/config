@@ -276,3 +276,5 @@ ex() {
 	fi
 }
 source /usr/share/nvm/init-nvm.sh
+
+PATH=~/.console-ninja/.bin:$PATH
