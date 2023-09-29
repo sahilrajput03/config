@@ -278,3 +278,6 @@ ex() {
 source /usr/share/nvm/init-nvm.sh
 
 PATH=~/.console-ninja/.bin:$PATH
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
