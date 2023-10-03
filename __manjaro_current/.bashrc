@@ -78,7 +78,7 @@ alias vi.all_are_moved_to_vscode_via_co.__here__='echo Happy migrating to vscode
 alias s='BROWSER=none npm start'
 alias c='clear'
 alias r='reset'
-alias red='redshift -P -O'
+# Usage: red TEMPERATUR, e.g., red 1000, red 25000
 alias red='redshift -P -O'
 alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
