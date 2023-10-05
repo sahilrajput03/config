@@ -1,0 +1,469 @@
+{
+  // UPDATE: USE global executeable, `snippush` to push the changed files to github.
+  // UPDATE: USE sp in command line from fish shell to go to snippets directory JUST TO KNOW and then use `e` to open file exporer there :)
+  // Also, use `go` to browse repo fast via command line by first opening snippets directory LOL, via sp.
+  //
+  // UPDATE: USE sr-magic snippet to get relevant snippets from es7 snippets(a snippet exetension for vscode).
+  //
+  // SAHIL RAJPUT:==>  Use back ticks for clg in snippets coz we don't want ot escape them that way..
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "hello-world": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "helloWorld",
+    "body": ["console.log('Hello world!');"],
+    "description": "Log output to console"
+  },
+  "hello-world-two-lines": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "helloWorldTwoLines",
+    "body": ["console.log('Hello,');", "console.log('world (line2)!');"],
+    "description": "Log output to console"
+  },
+  "useAppData": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "appData",
+    "body": ["const [appData, setAppData] = useAppData()"],
+    "description": "useAppData()"
+  },
+  "ejs-html-scripting-templating-with-express": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "ejs",
+    "body": ["<%$1%>"],
+    "description": "Log output to console"
+  },
+  "Generate random number function": {
+    // from mdn -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-RandomNum",
+    "body": [
+      "const getRandomInt = () => Math.floor(Math.random() * Math.floor(max));",
+      "// console.log(getRandomInt(15));//This will give us random number, either of these number 0,1,2,3,...,13,14."
+    ],
+    "description": "Random number"
+  },
+  "Generate random number(FROM RANGE) function": {
+    // from mdn -> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-WithRangeRandomNum",
+    "body": [
+      "const getRandomArbitrary = (min, max) => Math.floor(Math.random() * (max - min) + min);",
+      "// console.log(getRandomArbitrary(8, 12));//This will give us random number from these numbers 8,9,10,11."
+    ],
+    "description": "Random number from range"
+  },
+  "React native log": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-rnLog",
+    "body": ["console.warn(JSON.stringify(${1: someObject}, null, 2));"],
+    "description": "Log output to console"
+  },
+  "Arrow callback": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-arr",
+    "body": ["($1) => $2"],
+    "description": "arrow function callback"
+  },
+  "global 'require' for elint": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-eslint-global-require",
+    "body": [
+      "/* global require module process */",
+      "// Though you SHOULD just set env to node in eslintrc file.",
+      "src: 'https://stackoverflow.com/questions/50894000/eslint-process-is-not-defined'"
+    ],
+    "description": "Disables require no-undef warinng for require."
+  },
+  "dollarBracket": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "d",
+    "body": ["${$1}"],
+    "description": "Dollar brackets"
+  },
+  "React Native inline style": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-native-style",
+    "body": ["style={[style.$1]}"],
+    "description": "React Native inline style"
+  },
+  "My qucik console.log, Yikess!!": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "col",
+    "body": ["console.log($1)"],
+    "description": "My qucik console.log, Yikess!!"
+  },
+  "My qucik console.warn, Yikess!!": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "cow",
+    "body": ["console.warn('$1')"],
+    "description": "My qucik console.log, Yikess!!"
+  },
+  "My qucik console.error, Yikess!!": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "coe",
+    "body": ["console.error('$1')"],
+    "description": "My qucik console.log, Yikess!!"
+  },
+  "Express Secure Server ": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-expressSecureTemplate",
+    "body": [
+      "const fs = require('fs');",
+      "const https = require('https')",
+      "const express = require('express')",
+      "const key = fs.readFileSync('./mySslConfig/key.pem'), cert = fs.readFileSync('./mySslConfig/cert.pem');",
+      "const app = express(), port = 3000;",
+      "const server = https.createServer({ key: key, cert: cert }, app)",
+      "",
+      "app.get('/', (req, res) => {",
+      "\tres.send('<p style=\"color: orange\">Hello World2!</p>')",
+      "})",
+      "",
+      "server.listen(port, () => {",
+      "\t// This (callback) is only run at the start of the server, and will not execute when requesting any route.",
+      "\tconsole.log(`INFO: Express server @ http: //localhost:`, port)",
+      "})",
+      "// _____ Toggle via gutter to fold below comments.",
+      "\t// Note: You need to browse: httpS://localhost:3000/",
+      "\t// src: https://medium.com/@nitinpatel_20236/how-to-create-an-https-server-on-localhost-using-express-366435d61f28",
+      "\t// _____",
+      "\t// command1: openssl req -x509 -newkey rsa:2048 -keyout keytmp.pem -out cert.pem -days 365",
+      "\t// Generates the cert.pem and keytmp.pem file.(Setting password is must)",
+      "\t// _____",
+      "\t// command2: openssl rsa -in keytmp.pem -out key.pem",
+      "\t// Generates the key.pem file."
+    ],
+    "description": "Log output to console"
+  },
+  "Express Server": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-expressTemplate",
+    "body": [
+      // Official express docs example.
+      "const express = require('express'), app = express(), port = 3001",
+      "",
+      "app.get('/', (req, res) => {",
+      "\tres.send('<p style=\"color: orange\">Hello World!</p>')",
+      "})",
+      "",
+      "app.listen(port, () => {",
+      "\t// This (callback) is only run at the start of the server, and will not execute when requesting any route.",
+      "  console.log(`INFO: Express server @ http: //localhost:`, port)",
+      "})",
+      ""
+    ],
+    "description": "Log output to console"
+  },
+  "Terminal Spacer": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-spacer-terminal",
+    "body": ["for (let i = 0; i < 10; i++) { console.log('\\n')};"],
+    "description": "Log output to console"
+  },
+  "asyncFucntion": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-async-Function",
+    "body": ["async function ${1:Optional}(${2:param}) {", "\t$3", "}"],
+    "description": "Log output to console"
+  },
+  "React hot loader check!!": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-hotLoaderCheck",
+    "body": [
+      "export default function App() {",
+      "\tconst [state, setState] = React.useState(0);",
+      "\tlet myStyle = { textAlign: \"center\" };",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<h1 style={myStyle} onClick={() => setState(state + 6)}>Click me to increment</h1>",
+      "\t\t\t<h2 style={myStyle}>{state}</h2></div>",
+      "\t);",
+      "}"
+    ],
+    "description": "Log output to console"
+  },
+  "Line spacer 4": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-break-console",
+    "body": ["console.log('____________________________________________');"],
+    "description": "Log output to console"
+  },
+  "Line spacer 3": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-breaker-bold",
+    "body": ["// ========================="],
+    "description": "Log output to console"
+  },
+  "Line spacer 2": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-breaker-light",
+    "body": ["// --------------------------------------------------------"],
+    "description": "Log output to console"
+  },
+  "Line spacer": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-breaker",
+    "body": ["// ────────────────────────────────────────────────────────"],
+    "description": "Log output to console"
+  },
+  "Console log": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-l",
+    "body": ["console.log(`${1: variable} (${2: placeIdentifier}) ==>`, $1);", ""],
+    "description": "Log output to console"
+  },
+  "OtherSnippetsEs7": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-magic",
+    "body": [
+      "// imd => import {  } from 'module'",
+      "// rce => Will simply make react class component.",
+      "// rconst => Will simply add state for class component.",
+      "// rfce => Will simply make a functional component with all necessary imports.",
+      "// rafce => Will simply make arrow function component with all necessary imports.",
+      "// rfcredux => Will simply make react component with redux setup.",
+      "// rfcreduxp => Will simply make react component with redux setup with prop types.",
+      "// imp => import moduleName from 'module'",
+      "// imn => import 'module'",
+      "// imr => import * as alias from 'module'",
+      "// imr => import React",
+      "// imrd => import ReactDOM",
+      "// imrs => import React,useState",
+      "// imrse => import React,useState,useEffect",
+      "// imrn => import moduleName form react-native",
+      "// imbrc => import Route,Switch,NavLink,Link from 'react-router-dom'",
+      "// imbrr => import Route from 'react-router-dom'",
+      "// imbrs => import Switch from 'react-router-dom'",
+      "// usestate => useState snippet",
+      ""
+    ],
+    "description": "Log output to console"
+  },
+  "Promise all": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-promiseAll",
+    "body": ["let results = await Promise.all([", "  fetch(url1),", "  fetch(url2),", "]);"],
+    "description": "Log output to console"
+  },
+  "Execute Command": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-executeCommand",
+    "body": [
+      "const { exec } = require('child_process');",
+      "exec('${1:someCommand}', (error, stdout, stderr) => {",
+      "\tconsole.log(`\\n••••••STDERR ==>`, stderr);",
+      "\tconsole.log(`••••••STDOUT==>`, stdout);",
+      "\tif (error) return console.error(`••••••ERROR ==>`, error);",
+      "\t//Do something below on successful execution(error being falsy).",
+      "\t// Use stdout to make something from output, on successful execution of the command.",
+      "\t$2",
+      "})",
+      ""
+    ],
+    "description": "Log output to console"
+  },
+  "Read a file": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-readFile",
+    "body": [
+      "const fs = require(\"fs\")",
+      "fs.readFile(__dirname + '/${1:fileName.txt}', 'utf8', function (err, fileContent) {",
+      "\tif (err) {",
+      "\t\treturn console.log(`File not found.`);",
+      "\t}",
+      "\tconsole.log(`••••••CONTENT OF FILE ==> `, fileContent)",
+      "\t${3://  Use `fileContent` here to access file data.}}",
+      "})",
+      "$0"
+    ],
+    "description": "Log output to console"
+  },
+  "Write to file": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-writeFile",
+    "body": [
+      "fs = require('fs');",
+      "const dataToWrite = ${1:`Line1\\nLine2\\nLine3`}",
+      "fs.writeFile(__dirname + '/${2:fileName.txt}', dataToWrite, 'utf8', (err) => (err) && console.log(`Writing to file failed with err =>`, err))",
+      "$3"
+    ],
+    "description": "Log output to console"
+  },
+  "Promise Variable": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-promiseVar",
+    "body": [
+      "const valueReceived = new Promise((res, rej) => {",
+      "\t$1",
+      "\t$2",
+      "\t// Use resolve and reject calls inside callbacks or some promise.",
+      "\tres()",
+      "\trej()",
+      "})"
+    ],
+    "description": "Log output to console"
+  },
+  "Promise Variable with await": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-awaitPromiseVar",
+    "body": [
+      "const valueReceived = await new Promise((res, rej) => {",
+      "\t// You  must use valueReceived inside of async function to make await work.",
+      "\t$1",
+      "\t$2",
+      "\t// Use resolve and reject calls inside callbacks or some promise.",
+      "\tres()",
+      "\trej()",
+      "})"
+    ],
+    "description": "Log output to console"
+  },
+  "Async for await of": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-async-ForAwaitOf",
+    "body": ["(async function () {", "\tfor await (let item of ${1:someArray}) {}", "\t$2", "\t$3", "})();"],
+    "description": "Log output to console"
+  },
+  "For await of": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-forawaitof",
+    "body": ["for await (let num of ${1:someArray}) {", "\t$2", "\t$3", "};"],
+    "description": "Log output to console"
+  },
+  "Promise returning fuction": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-prf",
+    "body": ["const $1 = ($2) => {", "\treturn new Promise((res, rej) => {", "\t\t$3", "\t\tres()", "\t\trej()", "\t})", "}"],
+    "description": "Log output to console"
+  },
+  "Arrow Function": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-arrfunction",
+    "body": ["const $1 = () => {", "\t$0", "\treturn \"\"", "}"],
+    "description": "Log output to console"
+  },
+  "Elint VanillaJS Disable no-unused vars for  File": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-js-nounusedvars-eslint",
+    "body": ["/* eslint-disable no-unused-vars */"],
+    "description": "Log output to console"
+  },
+  "Elint Typescript Disable no-unused vars for File": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-ts-nounusedvars-eslint",
+    "body": ["/* eslint-disable @typescript-eslint/no-unused-vars */"],
+    "description": "Log output to console"
+  },
+  "Elint Disable eslint for File": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-eslintdisable",
+    "body": ["/* eslint-disable */"],
+    "description": "Log output to console"
+  },
+  "live debug": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-livedebug",
+    "body": ["<div style={{textAlign: 'left'}}>", "  <pre>", "    <b>|--Debugging Area(LIVE)--|</b>", "    <br />", "    {JSON.stringify(state, null, 2)}", "  </pre>", "</div>"],
+    "description": "Log output to console"
+  },
+  "React Componet": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-reactcomponent",
+    "body": ["export const $1 = ({ $2 }) => {", "\t$0", "\treturn (", "\t\t<div>", "\t\t\t", "\t\t</div>", "\t)", "}"],
+    "description": "Log output to console"
+  },
+  "Js Doc": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-docsjs",
+    "body": ["/**", " * $0", " */"],
+    "description": "Log output to console"
+  },
+  "Jsx Doc": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-docsjsx",
+    "body": ["{/**", "\t* $0", "\t*/}"],
+    "description": "Log output to console"
+  },
+  "Immediately Invoked Function": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-iif",
+    "body": [
+      "// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
+      "(function () {",
+      "\tvar aName = \"Barry\";",
+      "\t$1",
+      "})();"
+    ],
+    "description": "Immediately Invoked Function"
+  },
+  "Immediately Invoked Function Variable": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-iif-variable",
+    "body": ["let result = (function () {", "\t// * Function body here.", "\tlet name", "\t$1", "\treturn name;", "})();"],
+    "description": "Immediately Invoked Function Variable"
+  },
+  "Immediately Invoked Async Function": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-iif-async",
+    "body": [
+      "// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
+      "(async function () {",
+      "\tvar aName =  await Promise.resolve(`Bary`);",
+      "\t$1",
+      "})();"
+    ],
+    "description": "Immediately Invoked Function"
+  },
+  "Immediately Invoked Async Function with Prmoise": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-iif-async-promise",
+    "body": [
+      "// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
+      "(async function () {",
+      "\tvar valueReceived = await new Promise((resolve, reject) => {",
+      "\t\t// Define callback below, and call resolve and reject in that.",
+      "\t$1",
+      "\t});",
+      "\t// Use `valueReceived` below, like console.log(`So, we get the value as ==>`, valueReceived);",
+      "\t$2",
+      "})();"
+    ],
+    "description": "Log output to console"
+  },
+  "Immediately Invoked Async Function with Prmoise Example": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-iif-async-promiseEg",
+    "body": [
+      "// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
+      "(async function () {",
+      "\tlet valueReceived = await new Promise((resolve, reject) => {",
+      "\t\t// Define callback below, and call resolve and reject in that.",
+      "\t\tsetTimeout(() => {",
+      "\t\t\tresolve(\"Yikkesss\")",
+      "\t\t\t// or reject('Nikess')",
+      "\t\t}, 1000)",
+      "\t});",
+      "\t// Use \"valueReceived\" below, like console.log(`So, we get the value as ==>`, valueReceived);",
+      "\tconsole.log(`So, we get the value as ==>`, valueReceived)",
+      "})()"
+    ],
+    "description": "Log output to console"
+  },
+  "Comments Prototype from Better Comments ~SahilRajput": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "sr-commentshint",
+    "body": [
+      "// Just normal comment.",
+      "// ? Things would be cooler now.",
+      "// ! Things will be alert now.",
+      "// * Things would be succeess now.",
+      "// Todo: Things will be yellow now."
+    ],
+    "description": "Comments Prototype from Better Comments ~SahilRajput"
+  },
+}
