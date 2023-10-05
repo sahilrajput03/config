@@ -16,22 +16,22 @@ function backupManjaroCurrent() {
 	crontab -l >$backup_dir/crontab_entries.txt
 	echo "Backup of crontab entries succeeded."
 
-	# Vscode config files
+	# VSCODE CONFIG FILES
 	vs_code_config_directory=".config/Code/User"
 	# Make sure `$vs_code_config_directory` directory exists in $backup_dir directory
 	mkdir -p $backup_dir/$vs_code_config_directory
-	
+	#
 	\cp $_home/$vs_code_config_directory/keybindings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/$vs_code_config_directory/keybindings.json file succeeded."
-
+	# 
 	\cp $_home/$vs_code_config_directory/settings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/$vs_code_config_directory/settings.json file succeeded."
-
+	# 
 	# Backup snippets file
 	mkdir -p $backup_dir/$vs_code_config_directory/snippets
 	\cp $_home/$vs_code_config_directory/snippets/QuickSnippets.code-snippets $backup_dir/$vs_code_config_directory/snippets
 	echo "Backup of ~/$vs_code_config_directory/snippets/QuickSnippets.code-snippets file succeeded."
-
+	# 
 	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
 	\code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
 	chmod +x $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
