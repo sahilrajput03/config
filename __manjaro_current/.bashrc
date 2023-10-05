@@ -1,9 +1,31 @@
 # .bashrc
 #
 
+_home=/home/array # Did coz I'll source this file in sudo as well.
+vsCodeConfigDirectory=".config/Code/User"
+
+function k1() {
+	backup_dir="/home/array/Documents/github_repos/config/__manjaro_current"
+	# my vscode's keybindings are updated at different file IDK why so using that instead!
+	mkdir -p 
+	
+	\cp $_home/$vsCodeConfigDirectory/keybindings.json $backup_dir/$vsCodeConfigDirectory/
+	echo "Backup of ~/$vsCodeConfigDirectory/keybindings.json file succeeded."
+
+	# \cp $_home/$vsCodeConfigDirectory/settings.json $backup_dir/$vsCodeConfigDirectory/
+	# echo "Backup of ~/$vsCodeConfigDirectory/settings.json file succeeded."
+
+	# Backup snippets file
+	# \cp $_home/$vsCodeConfigDirectory/snippets/QuickSnippets.code-snippets $backup_dir/$vsCodeConfigDirectory/snippets
+	# echo "Backup of ~/$vsCodeConfigDirectory/snippets/QuickSnippets.code-snippets file succeeded."
+
+	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
+	# \code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/$vsCodeConfigDirectory/MyExtensionInstaller.sh
+	# chmod +x $backup_dir/$vsCodeConfigDirectory/MyExtensionInstaller.sh
+}
+
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
-	# boom
 	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current"
 	cp /home/array/.profile $BACKUP_DIR
 	cp /home/array/.bashrc $BACKUP_DIR
