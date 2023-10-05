@@ -3,6 +3,8 @@
 
 _home=/home/array # Did coz I'll source this file in sudo as well.
 backup_dir="/home/array/Documents/github_repos/config/__manjaro_current"
+# VSCODE CONFIG FILES
+vs_code_config_directory=".config/Code/User"
 
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
@@ -16,8 +18,6 @@ function backupManjaroCurrent() {
 	crontab -l >$backup_dir/crontab_entries.txt
 	echo "Backup of crontab entries succeeded."
 
-	# VSCODE CONFIG FILES
-	vs_code_config_directory=".config/Code/User"
 	# Make sure `$vs_code_config_directory` directory exists in $backup_dir directory
 	mkdir -p $backup_dir/$vs_code_config_directory
 	#
