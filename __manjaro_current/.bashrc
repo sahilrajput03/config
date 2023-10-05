@@ -2,42 +2,41 @@
 #
 
 _home=/home/array # Did coz I'll source this file in sudo as well.
-
-function k1() {
-	backup_dir="/home/array/Documents/github_repos/config/__manjaro_current"
-	vsCodeConfigDirectory=".config/Code/User"
-	# Make sure `$vsCodeConfigDirectory` directory exists in $backup_dir directory
-	mkdir -p $backup_dir/$vsCodeConfigDirectory
-	
-	\cp $_home/$vsCodeConfigDirectory/keybindings.json $backup_dir/$vsCodeConfigDirectory/
-	echo "Backup of ~/$vsCodeConfigDirectory/keybindings.json file succeeded."
-
-	\cp $_home/$vsCodeConfigDirectory/settings.json $backup_dir/$vsCodeConfigDirectory/
-	echo "Backup of ~/$vsCodeConfigDirectory/settings.json file succeeded."
-
-	# Backup snippets file
-	mkdir -p $backup_dir/$vsCodeConfigDirectory/snippets
-	\cp $_home/$vsCodeConfigDirectory/snippets/QuickSnippets.code-snippets $backup_dir/$vsCodeConfigDirectory/snippets
-	echo "Backup of ~/$vsCodeConfigDirectory/snippets/QuickSnippets.code-snippets file succeeded."
-
-	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
-	\code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/$vsCodeConfigDirectory/MyExtensionInstaller.sh
-	chmod +x $backup_dir/$vsCodeConfigDirectory/MyExtensionInstaller.sh
-}
+backup_dir="/home/array/Documents/github_repos/config/__manjaro_current"
 
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
-	BACKUP_DIR="/home/array/Documents/github_repos/config/__manjaro_current"
-	cp /home/array/.profile $BACKUP_DIR
-	cp /home/array/.bashrc $BACKUP_DIR
-	cp /home/array/.bash_profile $BACKUP_DIR
-	cp /home/array/.bash_capacitor $BACKUP_DIR
-	cp /home/array/.gitconfig $BACKUP_DIR
-	cp -r /home/array/.i3 $BACKUP_DIR
-	crontab -l >$BACKUP_DIR/crontab_entries.txt
-	cd $BACKUP_DIR
+	cp /home/array/.profile $backup_dir
+	cp /home/array/.bashrc $backup_dir
+	cp /home/array/.bash_profile $backup_dir
+	cp /home/array/.bash_capacitor $backup_dir
+	cp /home/array/.gitconfig $backup_dir
+	cp -r /home/array/.i3 $backup_dir
 
+	crontab -l >$backup_dir/crontab_entries.txt
 	echo "Backup of crontab entries succeeded."
+
+	# Vscode config files
+	vs_code_config_directory=".config/Code/User"
+	# Make sure `$vs_code_config_directory` directory exists in $backup_dir directory
+	mkdir -p $backup_dir/$vs_code_config_directory
+	
+	\cp $_home/$vs_code_config_directory/keybindings.json $backup_dir/$vs_code_config_directory/
+	echo "Backup of ~/$vs_code_config_directory/keybindings.json file succeeded."
+
+	\cp $_home/$vs_code_config_directory/settings.json $backup_dir/$vs_code_config_directory/
+	echo "Backup of ~/$vs_code_config_directory/settings.json file succeeded."
+
+	# Backup snippets file
+	mkdir -p $backup_dir/$vs_code_config_directory/snippets
+	\cp $_home/$vs_code_config_directory/snippets/QuickSnippets.code-snippets $backup_dir/$vs_code_config_directory/snippets
+	echo "Backup of ~/$vs_code_config_directory/snippets/QuickSnippets.code-snippets file succeeded."
+
+	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
+	\code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
+	chmod +x $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
+
+	cd $backup_dir
 
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
