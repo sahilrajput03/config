@@ -26,6 +26,8 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 # How to check the JAVA_HOME value??
 # Use this command:: readlink -f /usr/bin/javac
 
+# INFO: My android sdk path: /home/array/Android/Sdk
+
 # Usage: apkInstall pathToApkFile
 alias apk.install='adb install'
 alias apk.openSlasherApk='adb shell am start -n com.sdei.slasher/com.sdei.slasher.MainActivity'
