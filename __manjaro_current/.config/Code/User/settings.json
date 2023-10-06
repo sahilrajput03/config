@@ -170,6 +170,6 @@
 		},
 		"mdb.confirmRunAll": false,
 		"mdb.confirmDeleteDocument": false,
-		"window.zoomLevel": 2,
+		"window.zoomLevel": 1,
 		"diffEditor.renderSideBySide": false
 }
