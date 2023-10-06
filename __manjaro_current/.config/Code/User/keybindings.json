@@ -22,7 +22,7 @@
     "command": "-workbench.action.openGlobalKeybindings"
   },
   {
-    "key": "alt+w",
+    "key": "ctrl+w",
     "command": "workbench.action.closeActiveEditor"
   },
   {
@@ -105,5 +105,15 @@
     "key": "ctrl+2",
     "command": "-numberedBookmarks.jumpToBookmark2",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
   }
 ]
