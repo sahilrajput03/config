@@ -27,7 +27,7 @@
   },
   "useAppData": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "appData",
+    "prefix": "useAppDataSnippet",
     "body": ["const [appData, setAppData] = useAppData()"],
     "description": "useAppData()"
   },
@@ -338,7 +338,15 @@
   "Promise returning fuction": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "sr-prf",
-    "body": ["const $1 = ($2) => {", "\treturn new Promise((res, rej) => {", "\t\t$3", "\t\tres()", "\t\trej()", "\t})", "}"],
+    "body": [
+      "const $1 = ($2) => {",
+      "\treturn new Promise((res, rej) => {",
+      "\t\t$3",
+      "\t\tres()",
+      "\t\trej()",
+      "\t})",
+      "}"
+    ],
     "description": "Log output to console"
   },
   "Arrow Function": {
@@ -368,7 +376,15 @@
   "live debug": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "sr-livedebug",
-    "body": ["<div style={{textAlign: 'left'}}>", "  <pre>", "    <b>|--Debugging Area(LIVE)--|</b>", "    <br />", "    {JSON.stringify(state, null, 2)}", "  </pre>", "</div>"],
+    "body": [
+      "<div style={{textAlign: 'left'}}>",
+      "  <pre>",
+      "    <b>|--Debugging Area(LIVE)--|</b>",
+      "    <br />",
+      "    {JSON.stringify(state, null, 2)}",
+      "  </pre>",
+      "</div>"
+    ],
     "description": "Log output to console"
   },
   "React Componet": {
@@ -404,7 +420,14 @@
   "Immediately Invoked Function Variable": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "sr-iif-variable",
-    "body": ["let result = (function () {", "\t// * Function body here.", "\tlet name", "\t$1", "\treturn name;", "})();"],
+    "body": [
+      "let result = (function () {",
+      "\t// * Function body here.",
+      "\tlet name",
+      "\t$1",
+      "\treturn name;",
+      "})();"
+    ],
     "description": "Immediately Invoked Function Variable"
   },
   "Immediately Invoked Async Function": {
@@ -465,5 +488,5 @@
       "// Todo: Things will be yellow now."
     ],
     "description": "Comments Prototype from Better Comments ~SahilRajput"
-  },
+  }
 }
