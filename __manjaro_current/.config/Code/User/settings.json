@@ -171,6 +171,5 @@
 		"mdb.confirmRunAll": false,
 		"mdb.confirmDeleteDocument": false,
 		"window.zoomLevel": 3,
-		"diffEditor.renderSideBySide": false,
-		"workbench.activityBar.visible": false
+		"diffEditor.renderSideBySide": false
 }
