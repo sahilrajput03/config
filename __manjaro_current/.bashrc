@@ -103,6 +103,8 @@ alias c='clear'
 alias r='reset'
 # Usage: red TEMPERATUR, e.g., red 1000, red 25000
 alias red='redshift -P -O'
+# Use `redReset` to reset
+alias redReset='redshift -x'
 alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 alias blc='bluetoothctl'
