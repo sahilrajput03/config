@@ -252,6 +252,9 @@ for_window [instance="virt-manager"] floating enable
 # Make arandr float
 for_window [instance="arandr"] floating enable
 
+# Make pcmanfm float
+for_window [instance="pcmanfm"] floating enable
+
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
