@@ -90,6 +90,8 @@ alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
 alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
 alias cd.config='cd ~/Documents/github_repos/config/'
 alias gs='git status'
+alias listServices='systemctl --type=service | cat'
+
 
 alias slasherStartDocker='fixdocker.sockPermissionIssue && docker compose --file docker-compose.devtest.yml up --build'
 
