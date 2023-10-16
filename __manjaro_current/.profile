@@ -3,6 +3,7 @@ sh /home/array/Documents/github_repos/config/scripts/battery-alert/service-START
 
 # Setup extended support for `monitor-extends-laptop` arandr profile
 [ -f /home/array/Documents/github_repos/config/arandr-profiles/monitor-extends-laptop.sh ] && source /home/array/Documents/github_repos/config/arandr-profiles/monitor-extends-laptop.sh
+[ -f /usr/bin/aw-qt ] && /usr/bin/aw-qt &
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR=/usr/bin/vim
