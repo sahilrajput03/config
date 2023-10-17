@@ -85,15 +85,17 @@ bind -x '"\C-l": clear; tmux clear-history'
 alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING='git push --force origin $(git branch --show-current):deploy/staging'
 alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
-alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
+# No longer needed to fix sock permission on each boot, check: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#setup-softwares-quickly--_please_keep_this_post-_top
+# alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
 alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
 alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
 alias cd.config='cd ~/Documents/github_repos/config/'
 alias gs='git status'
-alias listServices='systemctl --type=service | cat'
+alias listServicesSahil='systemctl --type=service | grep sahil--'
+alias listServicesSahilFiles='ls -l /etc/systemd/system/ | grep sahil--'
 
 
-alias slasherStartDocker='fixdocker.sockPermissionIssue && docker compose --file docker-compose.devtest.yml up --build'
+alias slasherStartDocker='docker compose --file docker-compose.devtest.yml up --build'
 
 alias nr='npm run'
 alias ..='cd ..'
