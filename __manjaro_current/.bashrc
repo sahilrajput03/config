@@ -308,3 +308,7 @@ PATH=~/.console-ninja/.bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# deno
+export DENO_INSTALL="/home/array/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
