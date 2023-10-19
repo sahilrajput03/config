@@ -91,3 +91,5 @@
   new = green bold
 [log]
 	date = local
+[safe]
+	directory = /opt/flutter
