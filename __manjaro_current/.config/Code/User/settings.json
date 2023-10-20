@@ -171,5 +171,16 @@
 		"mdb.confirmRunAll": false,
 		"mdb.confirmDeleteDocument": false,
 		"diffEditor.renderSideBySide": false,
-		"window.zoomLevel": 2
+		"window.zoomLevel": 1,
+		"[dart]": {
+			"editor.formatOnSave": true,
+			"editor.formatOnType": true,
+			"editor.rulers": [
+				80
+			],
+			"editor.selectionHighlight": false,
+			"editor.suggestSelection": "first",
+			"editor.tabCompletion": "onlySnippets",
+			"editor.wordBasedSuggestions": false
+		}
 }

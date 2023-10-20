@@ -9,6 +9,8 @@ code --install-extension ChakrounAnas.turbo-console-log
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension christian-kohler.path-intellisense
 code --install-extension CodeSandbox-io.codesandbox-projects
+code --install-extension Dart-Code.dart-code
+code --install-extension Dart-Code.flutter
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension DigitalBrainstem.javascript-ejs-support
 code --install-extension dsznajder.es7-react-js-snippets
