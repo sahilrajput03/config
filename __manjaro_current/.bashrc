@@ -96,6 +96,7 @@ alias listServicesSahilFiles='ls -l /etc/systemd/system/ | grep sahil--'
 
 
 alias slasherStartDocker='docker compose --file docker-compose.devtest.yml up --build'
+alias restartSlasherDockerService='systemctl restart sahil--slasher-mongodb-docker.service'
 
 alias nr='npm run'
 alias ..='cd ..'
