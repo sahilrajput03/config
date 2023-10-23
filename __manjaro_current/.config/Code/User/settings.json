@@ -171,7 +171,6 @@
 		"mdb.confirmRunAll": false,
 		"mdb.confirmDeleteDocument": false,
 		"diffEditor.renderSideBySide": false,
-		"window.zoomLevel": 1,
 		"[dart]": {
 			"editor.formatOnSave": true,
 			"editor.formatOnType": true,
