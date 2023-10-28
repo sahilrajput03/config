@@ -182,5 +182,5 @@
 			"editor.tabCompletion": "onlySnippets",
 			"editor.wordBasedSuggestions": false
 		},
-		"window.zoomLevel": 3
+		"window.zoomLevel": 1
 }
