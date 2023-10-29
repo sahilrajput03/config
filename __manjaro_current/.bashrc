@@ -85,11 +85,19 @@ bind -x '"\C-l": clear; tmux clear-history'
 alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING='git push --force origin $(git branch --show-current):deploy/staging'
 alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
+
 # No longer needed to fix sock permission on each boot, check: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#setup-softwares-quickly--_please_keep_this_post-_top
 # alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
+
 alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
 alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
-alias slasher.testEverything='npm run test; npm run test:e2e-core; npm run test:e2e-gateway'
+alias slasher.test-everything='npm run test; npm run test:e2e-core; npm run test:e2e-gateway'
+
+# Usage of below: command <movies.service.spec, movies.service.spec, get-all-movies.e2e-spec, etc
+alias slasher.test-service='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-config.json --testTimeout 600000 --runInBand --watch'
+alias slasher.test-e2e-core='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-e2e-core-config.json --testTimeout 600000  --runInBand --watch'
+alias slasher.test-e2e-gatewayy='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-e2e-gateway-config.json --testTimeout 600000 --runInBand --watch'
+
 alias cd.config='cd ~/Documents/github_repos/config/'
 alias gs='git status'
 alias listServicesSahil='systemctl --type=service | grep sahil--'
