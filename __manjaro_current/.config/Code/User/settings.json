@@ -182,5 +182,6 @@
 			"editor.tabCompletion": "onlySnippets",
 			"editor.wordBasedSuggestions": false
 		},
-		"window.zoomLevel": 2
+		"window.zoomLevel": 2,
+		"debug.autoExpandLazyVariables": true
 }
