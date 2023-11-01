@@ -97,6 +97,7 @@ alias slasher.test-everything='npm run test; npm run test:e2e-core; npm run test
 alias slasher.test-service='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-config.json --testTimeout 600000 --runInBand --watch'
 alias slasher.test-e2e-core='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-e2e-core-config.json --testTimeout 600000  --runInBand --watch'
 alias slasher.test-e2e-gatewayy='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-e2e-gateway-config.json --testTimeout 600000 --runInBand --watch'
+alias updateSlasherStagingDbIpAddress='node /home/array/test/slasher/slasher-db-access/service-to-update-ip-slasher-db-access/update-ip-on-staging.js'
 
 alias cd.config='cd ~/Documents/github_repos/config/'
 alias gs='git status'
