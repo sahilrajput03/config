@@ -183,7 +183,6 @@
 			"editor.wordBasedSuggestions": false
 		},
 		"debug.autoExpandLazyVariables": true,
-		"window.zoomLevel": 2,
 		"editor.formatOnSave": true,
 		"eslint.format.enable": true
 }
