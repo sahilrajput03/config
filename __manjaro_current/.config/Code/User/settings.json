@@ -96,10 +96,10 @@
 	// Below settings are for slasher project's eslint auto-fix all problems on file save.
 	// Format setting for `typescript`, `typescriptreact`, `javascript`, javascriptreact
 	"[typescript]": {
-		"editor.formatOnSave": true,
+		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
-			"source.fixAll.eslint": true,
-			"source.addMissingImports": true
+			"source.fixAll.eslint": false,
+			"source.addMissingImports": false
 		},
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
@@ -183,5 +183,7 @@
 			"editor.wordBasedSuggestions": false
 		},
 		"debug.autoExpandLazyVariables": true,
-		"window.zoomLevel": 2
+		"window.zoomLevel": 2,
+		"editor.formatOnSave": true,
+		"eslint.format.enable": true
 }
