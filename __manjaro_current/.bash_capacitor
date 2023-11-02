@@ -29,8 +29,13 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 # INFO: My android sdk path: /home/array/Android/Sdk
 
-# Usage: apkInstall pathToApkFile
-alias apk.install='adb install'
+# Usage: `apkInstall pathToApkFile`
+apk.install() {
+	adbRestart
+	adb install $1
+}
+# Deprecated in favor of above function
+# alias apk.install='adb install'
 alias apk.openSlasherApk='adb shell am start -n com.sdei.slasher/com.sdei.slasher.MainActivity'
 alias apk.uninstallSlasherApp='adb uninstall com.sdei.slasher'
 
@@ -59,7 +64,7 @@ function aab.generateSignedAabSlasherBundleRelease() {
 	$SLASHER_DIR/android/gradlew --project-dir $SLASHER_DIR/android/ bundleRelease --warning-mode=all -Pandroid.injected.signing.store.file="$SLASHER_DIR/Slasher.jks" -Pandroid.injected.signing.store.password=Slasher -Pandroid.injected.signing.key.alias=key0 -Pandroid.injected.signing.key.password=$SLASHER_ANDROID_SIGNING_KEY_PASSWORD
 }
 
-# FOR APK
+########################## FOR APK
 # Use `cd.app__1apk___build_outputs_apk_release__CLI__GRADLE__SIGNED` to get the apk.
 # NOTE: If the install command throws error like failed to match previous version then you must first uninstall the previous slasher-apk version
 apk.fastSlasher_gradlew_assembleRelease___install___open() {
@@ -72,7 +77,7 @@ apk.fastSlasher_gradlew_assembleRelease___install___open() {
 	apk.uninstallSlasherApp
 	echo -e "\n ######## ############# ########### \n\n SAHIL: Please select Install option on your device now.\n\n ######## ############# ########### \n"
 	echo -e "######## ######## Note: If below logs shows app install fails then you must need to check if th phone is unlocked and you check the Install button on the popup on the mobile."
-	apk.install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
+	adb install $SLASHER_DIR/android/app/build/outputs/apk/release/app-release.apk
 	apk.openSlasherApk
 }
 # Use below to generate fresh new build
@@ -82,7 +87,7 @@ apk.fastSlasher_gradlew_assembleRelease___install___open__with__npm__run__build(
 	apk.fastSlasher_gradlew_assembleRelease___install___open
 }
 
-# FOR AAB
+########################## FOR AAB
 aab.fastSlasher_gradlew_bundleRelease___install___open() {
 	cd $SLASHER_DIR
 	npx cap sync android
