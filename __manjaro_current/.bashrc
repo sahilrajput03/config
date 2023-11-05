@@ -24,17 +24,17 @@ function backupManjaroCurrent() {
 	#
 	\cp $_home/$vs_code_config_directory/keybindings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/$vs_code_config_directory/keybindings.json file succeeded."
-	# 
+	#
 	\cp $_home/$vs_code_config_directory/settings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/$vs_code_config_directory/settings.json file succeeded."
-	# 
+	#
 	# Backup snippets file
 	mkdir -p $backup_dir/$vs_code_config_directory/snippets
 	\cp $_home/$vs_code_config_directory/snippets/QuickSnippets.code-snippets $backup_dir/$vs_code_config_directory/snippets
 	echo "Backup of ~/$vs_code_config_directory/snippets/QuickSnippets.code-snippets file succeeded."
-	# 
+	#
 	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
-	\code --list-extensions | xargs -L 1 echo code --install-extension > $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
+	\code --list-extensions | xargs -L 1 echo code --install-extension >$backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
 	chmod +x $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
 
 	cd $backup_dir
@@ -83,8 +83,11 @@ bind -x '"\C-l": clear; tmux clear-history'
 
 # some aliases
 alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING='git push --force origin $(git branch --show-current):deploy/staging'
-alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
-# alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
+alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING_SKIP_TESTS='git push --force origin $(git branch --show-current):deploy/staging-skiptests'
+# alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
+# alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION_SKIP_TESTS='git push --force origin $(git branch --show-current):deploy/prod-skiptests'
+alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
+alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION_SKIP_TESTS='echo Please use with care, and you may enable it from your bash config file now. Happy deployment.'
 
 # No longer needed to fix sock permission on each boot, check: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#setup-softwares-quickly--_please_keep_this_post-_top
 # alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
@@ -103,7 +106,6 @@ alias cd.config='cd ~/Documents/github_repos/config/'
 alias gs='git status'
 alias listServicesSahil='systemctl --type=service | grep sahil--'
 alias listServicesSahilFiles='ls -l /etc/systemd/system/ | grep sahil--'
-
 
 alias slasherStartDocker='docker compose --file docker-compose.devtest.yml up --build'
 alias restartSlasherDockerService='systemctl restart sahil--slasher-mongodb-docker.service'
