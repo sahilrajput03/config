@@ -109,7 +109,7 @@
 			"source.fixAll.eslint": true,
 			"source.addMissingImports": true
 		},
-		"editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 
 	"[javascript]": {
