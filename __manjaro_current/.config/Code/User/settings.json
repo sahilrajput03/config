@@ -109,7 +109,7 @@
 			"source.fixAll.eslint": true,
 			"source.addMissingImports": true
 		},
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
 
 	"[javascript]": {
