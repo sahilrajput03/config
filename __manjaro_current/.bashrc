@@ -126,6 +126,9 @@ alias redReset='redshift -x'
 alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 alias blc='bluetoothctl'
+alias pt='npx playwright test --project=chromium'
+alias pth='npx playwright test --headed --project=chromium'
+alias ptd='npx playwright test --project=chromium --debug'
 # Connecting to Airdopes 441P: 00:00:AB:CE:16:01
 # Use this command in the subshell: `connect 00:00:AB:CE:16:01`
 # Fix the opening of web links in chrome window instead of opening new window of google-chrome it now opens currently running windows. (Time took: 3.5 hours). Src: https://stackoverflow.com/a/50736123/10012446
@@ -144,6 +147,7 @@ alias xprop2i3='/home/array/Documents/github_repos/config/scripts/xprop2i3.sh'
 alias co.bashrc='co ~/.bashrc'
 alias co.timetracking='co ~/test/slasher/time-tracking-sahil.txt'
 alias co.i3config='co ~/.i3/config'
+alias xo='xournalpp'
 
 function co() {
 	if [ -z "$1" ]; then
