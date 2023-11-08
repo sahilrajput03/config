@@ -31,6 +31,7 @@ code --install-extension mongodb.mongodb-vscode
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-dotnettools.vscode-dotnet-runtime
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-playwright.playwright
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
