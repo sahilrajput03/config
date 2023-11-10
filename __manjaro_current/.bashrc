@@ -129,8 +129,17 @@ alias blc='bluetoothctl'
 alias pt='npx playwright test --project=chromium'
 alias pth='npx playwright test --headed --project=chromium'
 alias ptd='npx playwright test --project=chromium --debug'
+# ❤️  Playwright watch script: source: https://github.com/microsoft/playwright/issues/21960#issuecomment-1483604692
+alias ptw='PWTEST_WATCH=1 npx playwright test --project=chromium'
+# ❤️  Playwright watch script with UI mode
+alias ptu='npx playwright test --project=chromium --ui'
+# MY UN-OFFICIAL WAY (NO NEED TO USE BELOW NODEMON `npm scripts` at all)
+# "watch": "nodemon -e spec.ts -x 'npx playwright test --project=chromium'",
+# "watch-headed": "nodemon -e spec.ts -x 'npx playwright test --headed --project=chromium' -w tests"
+
 # Connecting to Airdopes 441P: 00:00:AB:CE:16:01
 # Use this command in the subshell: `connect 00:00:AB:CE:16:01`
+
 # Fix the opening of web links in chrome window instead of opening new window of google-chrome it now opens currently running windows. (Time took: 3.5 hours). Src: https://stackoverflow.com/a/50736123/10012446
 alias code='i3-msg "exec --no-startup-id code"'
 function sudoCode() {
