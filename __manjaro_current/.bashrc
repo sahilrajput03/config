@@ -126,8 +126,11 @@ alias redReset='redshift -x'
 alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 alias blc='bluetoothctl'
+
+# Playwright Aliases
 alias pt='npx playwright test --project=chromium'
 alias pth='npx playwright test --headed --project=chromium'
+# LEARN: Open `Playwright Inspector` ((helpful in debugging & step by step execution))
 alias ptd='npx playwright test --project=chromium --debug'
 # ❤️  Playwright watch script: source: https://github.com/microsoft/playwright/issues/21960#issuecomment-1483604692
 alias ptw='PWTEST_WATCH=1 npx playwright test --project=chromium'
