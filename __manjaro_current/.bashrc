@@ -187,10 +187,11 @@ alias disableTrackpad='xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device
 
 function enableAllTrackpadAndKeyboardClit() {
 	echo
-	echo Please get a habit of using the external mouse only. It would be much better.
+	# echo Please get a habit of using the external mouse only. It would be much better.
 	echo
-	# xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 1
-	# xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 1
+	xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 1
+	xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 1
+	echo Please disable this ASAP because using trackpad is not good for health. LOL!!
 }
 
 function disableAllTrackpadAndKeyboardClit() {
