@@ -128,26 +128,27 @@ alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 alias blc='bluetoothctl'
 
 ########## Playwright Aliases and Functions ##########
-# *DEPRECATED in favor of watch mode with nodemon
+# 1. ❤️ CLI Only
 alias pt='npx playwright test --project=chromium'
-
-# ❤️  Playwright watch script: source: https://github.com/microsoft/playwright/issues/21960#issuecomment-1483604692
+#   Playwright watch script: source: https://github.com/microsoft/playwright/issues/21960#issuecomment-1483604692
 alias ptw='PWTEST_WATCH=1 npx playwright test --project=chromium'
 # *ALTERNATE using nodemon
 function ptw2() {
 	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium $@"
 	# nodemon -e spec.ts -w tests -x "echo $@"
 }
-
-# (Shit 🤢🤢: Seems some problem with ui mode at the time)  Playwright watch script with UI mode
+# 2. 🤢 PLAYWRIGHT UI MODE: ⚠️⚠️Seems some problem with ui mode at the time⚠️⚠️
+# TIP: UI mode does provide watching script out of the box as well using th `eye` icon in GUI
 alias ptu='npx playwright test --project=chromium --ui'
-# ❤️ PLAYWRIGHT HEADED MODE + Using `await page.pause()` #
-alias pth='npx playwright test --headed --project=chromium'
-function pthw2() {
+#
+# 3. ❤️ PLAYWRIGHT HEADED MODE + Using `await page.pause()` #
+alias pthOnce='npx playwright test --headed --project=chromium'
+# 🚀🚀🚀🚀🚀🚀 Use `pth` all the time because DX with awesome with ❤️ `await page.pause()`
+function pth() {
 	nodemon -e spec.ts -w tests -x "npx playwright test --headed --project=chromium $@"
 	# nodemon -e spec.ts -w tests -x "echo $@"
 }
-# ❤️ PLAYWRIGHT DEBUG MODE #
+# 3. ❤️ PLAYWRIGHT DEBUG MODE #
 # LEARN: Open `Playwright Inspector` ((helpful in debugging & step by step execution))
 # *DEPRECATED in favor of watch mode with nodemon
 # alias ptd='npx playwright test --project=chromium --debug'

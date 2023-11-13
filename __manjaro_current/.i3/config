@@ -256,11 +256,22 @@ for_window [instance="arandr"] floating enable
 # Make pcmanfm float
 for_window [instance="pcmanfm"] floating enable
 
-# Make playwright browser float
+# LEARN-SAHIL: To change to a specific workspace, use the workspace command, followed by the number or name of the workspace.
+# Pass the optional flag --no-auto-back-and-forth to disable [workspace_auto_back_and_forth] for this specific call only.
+
+# ********** PLAYWRIGHT **********
 for_window [instance="code-url-handler .*"] floating enable
-for_window [instance="chromium-browser\ \(\/tmp\/playwright_.*"] floating enable
+# *Playwright Chromium Browser*
+# LEARN: WARN: WARN: Do not try to use specific playwright's chromium browser using a regex like below as I tried to 3 hours and it did not work consistently. 
+# for_window [instance="chromium-browser\ \(\/tmp\/playwright_.*"] floating enable, move to workspace $ws3, workspace --no-auto-back-and-forth $ws3
+for_window [title="about:blank - Chromium"] move to workspace $ws3
+# 
 for_window [title="Playwright Test"] floating enable
-for_window [title="Playwright Inspector"] floating enable
+# *Playwright Inspector Windows*
+# LEARN: MOVE INSPECTOR WINDOW TO $ws3 AND AND SWITCH TO WORKSPACE 3 (via: `workspace --no-auto-back-and-forth $ws3` )
+for_window [title="Playwright Inspector"] floating enable, move absolute position 1315px 200px, move to workspace $ws3, workspace --no-auto-back-and-forth $ws3
+# LEARN: MOVE INSPECTOR WINDOW TO $ws3
+# for_window [title="Playwright Inspector"] floating enable, move absolute position 1315px 200px, move to workspace $ws3
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus

@@ -185,6 +185,5 @@
 		"debug.autoExpandLazyVariables": true,
 		"editor.formatOnSave": true,
 		"eslint.format.enable": true,
-		"window.zoomLevel": 1,
-		"workbench.activityBar.visible": false
+		"window.zoomLevel": 1
 }
