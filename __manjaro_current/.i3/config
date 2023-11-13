@@ -260,6 +260,7 @@ for_window [instance="pcmanfm"] floating enable
 for_window [instance="code-url-handler .*"] floating enable
 for_window [instance="chromium-browser\ \(\/tmp\/playwright_.*"] floating enable
 for_window [title="Playwright Test"] floating enable
+for_window [title="Playwright Inspector"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
