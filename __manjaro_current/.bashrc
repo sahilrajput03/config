@@ -127,18 +127,35 @@ alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
 alias blc='bluetoothctl'
 
-# Playwright Aliases
+########## Playwright Aliases and Functions ##########
+# *DEPRECATED in favor of watch mode with nodemon
 alias pt='npx playwright test --project=chromium'
-alias pth='npx playwright test --headed --project=chromium'
-# LEARN: Open `Playwright Inspector` ((helpful in debugging & step by step execution))
-alias ptd='npx playwright test --project=chromium --debug'
+
 # ❤️  Playwright watch script: source: https://github.com/microsoft/playwright/issues/21960#issuecomment-1483604692
 alias ptw='PWTEST_WATCH=1 npx playwright test --project=chromium'
-# ❤️  Playwright watch script with UI mode
+# *ALTERNATE using nodemon
+function ptw2() {
+	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium $@"
+	# nodemon -e spec.ts -w tests -x "echo $@"
+}
+
+# (Shit 🤢🤢: Seems some problem with ui mode at the time)  Playwright watch script with UI mode
 alias ptu='npx playwright test --project=chromium --ui'
-# MY UN-OFFICIAL WAY (NO NEED TO USE BELOW NODEMON `npm scripts` at all)
-# "watch": "nodemon -e spec.ts -x 'npx playwright test --project=chromium'",
-# "watch-headed": "nodemon -e spec.ts -x 'npx playwright test --headed --project=chromium' -w tests"
+# ❤️ PLAYWRIGHT HEADED MODE + Using `await page.pause()` #
+alias pth='npx playwright test --headed --project=chromium'
+function pthw2() {
+	nodemon -e spec.ts -w tests -x "npx playwright test --headed --project=chromium $@"
+	# nodemon -e spec.ts -w tests -x "echo $@"
+}
+# ❤️ PLAYWRIGHT DEBUG MODE #
+# LEARN: Open `Playwright Inspector` ((helpful in debugging & step by step execution))
+# *DEPRECATED in favor of watch mode with nodemon
+# alias ptd='npx playwright test --project=chromium --debug'
+function ptd() {
+	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium --debug $@"
+	# nodemon -e spec.ts -w tests -x "echo $@"
+}
+########## ##########
 
 # Connecting to Airdopes 441P: 00:00:AB:CE:16:01
 # Use this command in the subshell: `connect 00:00:AB:CE:16:01`
