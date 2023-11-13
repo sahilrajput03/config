@@ -157,7 +157,7 @@ function ptd() {
 	# nodemon -e spec.ts -w tests -x "echo $@"
 }
 # 5. ❤️ Playwright Reprot of Last Test #
-alias ptr='npx playwright show-report'
+alias psr='npx playwright show-report'
 # 6. Delete previous test video reording
 alias ptremovePrevioustTestVideo='rm -rf test-results/*'
 ########## ##########
