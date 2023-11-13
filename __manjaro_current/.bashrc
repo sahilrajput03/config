@@ -156,7 +156,10 @@ function ptd() {
 	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium --debug $@"
 	# nodemon -e spec.ts -w tests -x "echo $@"
 }
-# 5. ❤️ Playwright Reprot of Last Test #
+# 5. ❤️ Playwright Report of Last Test #
+# TIP: Always keep running below server in separate terminal thus you can disable
+# opening report opening after each test execute by setting in playwright.config.ts file:
+# by setting this: `reporter: [['html', { open: 'never' }] ],`
 alias psr='npx playwright show-report'
 # 6. Delete previous test video reording
 alias ptremovePrevioustTestVideo='rm -rf test-results/*'
