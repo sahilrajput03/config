@@ -269,9 +269,9 @@ for_window [title="about:blank - Chromium"] move to workspace $ws3
 for_window [title="Playwright Test"] floating enable
 # *Playwright Inspector Windows*
 # LEARN: MOVE INSPECTOR WINDOW TO $ws3 AND AND SWITCH TO WORKSPACE 3 (via: `workspace --no-auto-back-and-forth $ws3` )
-for_window [title="Playwright Inspector"] floating enable, move absolute position 1315px 200px, move to workspace $ws3, workspace --no-auto-back-and-forth $ws3
-# LEARN: MOVE INSPECTOR WINDOW TO $ws3
-# for_window [title="Playwright Inspector"] floating enable, move absolute position 1315px 200px, move to workspace $ws3
+# for_window [title="Playwright Inspector"] floating enable, move absolute position 1315px 200px, move to workspace $ws3, workspace --no-auto-back-and-forth $ws3
+# LEARN: MOVE INSPECTOR WINDOW TO $ws3 but do *not* switch to workspace `n`
+for_window [title="Playwright Inspector"] floating enable, move absolute position 1315px 200px, move to workspace $ws3
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus

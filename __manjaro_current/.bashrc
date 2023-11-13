@@ -148,7 +148,7 @@ function pth() {
 	nodemon -e spec.ts -w tests -x "npx playwright test --headed --project=chromium $@"
 	# nodemon -e spec.ts -w tests -x "echo $@"
 }
-# 3. ❤️ PLAYWRIGHT DEBUG MODE #
+# 4. ❤️ PLAYWRIGHT DEBUG MODE #
 # LEARN: Open `Playwright Inspector` ((helpful in debugging & step by step execution))
 # *DEPRECATED in favor of watch mode with nodemon
 # alias ptd='npx playwright test --project=chromium --debug'
@@ -156,6 +156,10 @@ function ptd() {
 	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium --debug $@"
 	# nodemon -e spec.ts -w tests -x "echo $@"
 }
+# 5. ❤️ Playwright Reprot of Last Test #
+alias ptr='npx playwright show-report'
+# 6. Delete previous test video reording
+alias ptremovePrevioustTestVideo='rm -rf test-results/*'
 ########## ##########
 
 # Connecting to Airdopes 441P: 00:00:AB:CE:16:01
