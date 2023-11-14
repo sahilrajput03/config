@@ -19,6 +19,18 @@
     "body": ["console.log('Hello world!');"],
     "description": "Log output to console"
   },
+  "mongoose-object-id-type": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "objectIdMongoose",
+    "body": ["new mongoose.Types.ObjectId()"],
+    "description": "Generate random ObjectId"
+  },
+  "mongoose-object-id": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "objectIdTypeMongoose",
+    "body": ["mongoose.Schema.Types.ObjectId"],
+    "description": "Typescript type of ObjectId"
+  },
   "hello-world-two-lines": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "helloWorldTwoLines",
