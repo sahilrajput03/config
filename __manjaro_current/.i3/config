@@ -29,6 +29,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminal
+# Using kitty terminal now ~ Sahil
+# bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
