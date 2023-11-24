@@ -85,9 +85,9 @@ bind -x '"\C-l": clear; tmux clear-history'
 # *LEARN: In slasher project the default deployment on staging and production are without tests.
 alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING='git push --force origin $(git branch --show-current):deploy/staging'
 # alias slasherDEPLOY_CURRENT_BRACH_TO_STAGING_SKIP_TESTS='git push --force origin $(git branch --show-current):deploy/staging-skiptests'
-# alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
+alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git branch --show-current):deploy/prod'
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION_SKIP_TESTS='git push --force origin $(git branch --show-current):deploy/prod-skiptests'
-alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
+# alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION_SKIP_TESTS='echo Please use with care, and you may enable it from your bash config file now. Happy deployment.'
 
 # No longer needed to fix sock permission on each boot, check: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#setup-softwares-quickly--_please_keep_this_post-_top
