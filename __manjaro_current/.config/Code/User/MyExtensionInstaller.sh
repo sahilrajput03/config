@@ -21,6 +21,7 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension foxundermoon.shell-format
 code --install-extension fwcd.kotlin
+code --install-extension Gruntfuggly.todo-tree
 code --install-extension johnpapa.pwa-tools
 code --install-extension josetr.cmake-language-support-vscode
 code --install-extension JuanBlanco.solidity
