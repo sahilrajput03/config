@@ -177,6 +177,5 @@
 		},
 		"debug.autoExpandLazyVariables": true,
 		"editor.formatOnSave": true,
-		"eslint.format.enable": true,
-		"window.zoomLevel": 1
+		"eslint.format.enable": true
 }
