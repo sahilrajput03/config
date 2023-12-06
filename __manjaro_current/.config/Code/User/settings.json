@@ -178,5 +178,5 @@
 		"debug.autoExpandLazyVariables": true,
 		"editor.formatOnSave": true,
 		"eslint.format.enable": true,
-		"window.zoomLevel": 1
+		"window.zoomLevel": 2
 }
