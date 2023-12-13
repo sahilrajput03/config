@@ -6,6 +6,10 @@ backup_dir="/home/array/Documents/github_repos/config/__manjaro_current"
 # VSCODE CONFIG FILES
 vs_code_config_directory=".config/Code/User"
 
+searchTextInFilesRecursively() {
+	grep --color=auto -r --exclude-dir={node_modules,.idea,.git} "$@" .
+}
+
 # NOTE: This function must be defined above the `return` statement below where we don't execute .bashrc file for interactive shells i.e., when we do `source myFile.sh`
 function backupManjaroCurrent() {
 	cp /home/array/.profile $backup_dir
@@ -89,6 +93,9 @@ alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION='git push --force origin $(git b
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION_SKIP_TESTS='git push --force origin $(git branch --show-current):deploy/prod-skiptests'
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION="echo Please use with care, and you may enable it from your bash config file now. Happy deployment."
 # alias slasherDEPLOY_CURRENT_BRACH_TO_PRODUCTION_SKIP_TESTS='echo Please use with care, and you may enable it from your bash config file now. Happy deployment.'
+
+alias findNodeModules='find . -name 'node_modules' -type d -prune'
+alias deleteNestedNodeModules="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
 # No longer needed to fix sock permission on each boot, check: https://github.com/sahilrajput03/sahilrajput03/blob/master/arch-notes.md#setup-softwares-quickly--_please_keep_this_post-_top
 # alias fixdocker.sockPermissionIssue='sudo chmod 666 /var/run/docker.sock'
