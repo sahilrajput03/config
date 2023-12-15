@@ -105,6 +105,7 @@ alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
 alias slasher.test-everything='npm run test; npm run test:e2e-core; npm run test:e2e-gateway'
 alias cd.bscl-backend='cd /home/array/test/lucify/bscl-backend-project/backend'
 alias cd.bscl-frontend='cd /home/array/test/lucify/bscl-frontend'
+alias cd.bscl-frontend-new='cd /home/array/test/lucify/bscl-frontend-new'
 alias cd.hotelx-backend='cd /home/array/test/lucify/Hotel-X-backend'
 alias cd.hotelx-frontend='cd /home/array/test/lucify/Hotel-X-frontend'
 
