@@ -102,7 +102,7 @@
 			"source.fixAll.eslint": true,
 			"source.addMissingImports": true
 		},
-		"editor.defaultFormatter": "vscode.typescript-language-features"
+		"editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
 	},
 
 	"[javascript]": {
