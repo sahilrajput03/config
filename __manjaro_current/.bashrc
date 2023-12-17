@@ -108,6 +108,7 @@ alias cd.bscl-frontend='cd /home/array/test/lucify/bscl-frontend'
 alias cd.bscl-frontend-new='cd /home/array/test/lucify/bscl-frontend-new'
 alias cd.hotelx-backend='cd /home/array/test/lucify/Hotel-X-backend'
 alias cd.hotelx-frontend='cd /home/array/test/lucify/Hotel-X-frontend'
+alias cd.aws-course='cd /home/array/Downloads-youtube-dl-gui/aws-tutorials'
 
 # Usage of below: command <movies.service.spec, movies.service.spec, get-all-movies.e2e-spec, etc
 alias slasher.test-service='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-config.json --testTimeout 600000 --runInBand --watch'
