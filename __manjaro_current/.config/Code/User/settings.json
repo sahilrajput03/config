@@ -178,6 +178,6 @@
 		"debug.autoExpandLazyVariables": true,
 		"editor.formatOnSave": true,
 		"eslint.format.enable": true,
-		"window.zoomLevel": 1,
-		"cloudcode.duetAI.project": "my-project-oct-2023-401411"
+		"cloudcode.duetAI.project": "my-project-oct-2023-401411",
+		"window.zoomLevel": 1
 }
