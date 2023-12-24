@@ -23,6 +23,7 @@ code --install-extension foxundermoon.shell-format
 code --install-extension fwcd.kotlin
 code --install-extension googlecloudtools.cloudcode
 code --install-extension Gruntfuggly.todo-tree
+code --install-extension Jackardios.vscode-css-to-tailwindcss
 code --install-extension johnpapa.pwa-tools
 code --install-extension josetr.cmake-language-support-vscode
 code --install-extension JuanBlanco.solidity
