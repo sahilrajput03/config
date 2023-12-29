@@ -138,7 +138,41 @@ alias red='redshift -P -O'
 alias redReset='redshift -x'
 alias cd.battery-alert='cd ~/Documents/github_repos/config/scripts/battery-alert'
 alias cd.apkNativeProject='cd app/build/outputs/apk/debug/'
-alias blc='bluetoothctl'
+
+# bluetoothctl
+alias btc='bluetoothctl'
+alias btcd='btc disconnect'
+
+# Connect to AIRDOPES 441 PRO
+alias btc1_='btc connect 00:00:AB:CE:16:01'
+alias btc1r='btc disconnect; btc1_'
+
+# Connect to Boat Stone 650
+alias btc2_='btc connect 18:E1:73:D2:B9:A2'
+alias btc2r='btc disconnect; btc2_'
+
+# Try connecting until connected
+btc1 () {
+	# src: https://stackoverflow.com/a/21982743
+	until btc1_ ;
+	do
+		echo
+		echo TRYING AGAIN...
+		sleep 1 # Intented to give a time-break
+	done
+}
+
+# Try connecting until connected
+btc2 () {
+	# src: https://stackoverflow.com/a/21982743
+	until btc2_ ;
+	do
+		echo
+		echo TRYING AGAIN...
+		sleep 1 # Intented to give a time-break
+	done
+}
+
 
 ########## Playwright Aliases and Functions ##########
 # 1. ❤️ CLI Only
