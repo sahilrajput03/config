@@ -645,21 +645,34 @@ alias checkGraphicsCard='lspci -v'
 alias UE4Editor='air ~/Documents/UnrealEngine-4.23.1-release/Engine/Binaries/Linux/UE4Editor'
 
 # bluetoothctl
-alias blc='bluetoothctl'
-# CONNECT TO MY AIRDOPES 441 PRO
-# Try connecting one time:
-alias blco='blc connect 00:00:AB:CE:16:01'
-alias blcd='blc disconnect'
-alias blcr='blcd; blcc'
+alias btc='bluetoothctl'
+# Connect to Airdopes 441 PRO
+alias btc1_='btc connect 00:00:AB:CE:16:01'
+alias btc1r='btc disconnect; btc1_'
+
+# Connect to Boat Stone 650
+alias btc2_='btc connect 18:E1:73:D2:B9:A2'
+alias btc2r='btc disconnect; btc2_'
 
 # Try connecting until connected
-blcc () {
+btc1 () {
 	# src: https://stackoverflow.com/a/21982743
-	until blco ;
+	until btc1_ ;
 	do
 		echo
 		echo TRYING AGAIN...
-		sleep 1 #Intented to give a time-break
+		sleep 1 # Intented to give a time-break
+	done
+}
+
+# Try connecting until connected
+btc2 () {
+	# src: https://stackoverflow.com/a/21982743
+	until btc2_ ;
+	do
+		echo
+		echo TRYING AGAIN...
+		sleep 1 # Intented to give a time-break
 	done
 }
 
