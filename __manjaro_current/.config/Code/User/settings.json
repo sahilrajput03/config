@@ -8,8 +8,7 @@
     "**/.factorypath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/node_modules": true,
-    "**/package-lock.json": true
+    "**/node_modules": true
   },
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
