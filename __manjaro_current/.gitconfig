@@ -1,6 +1,8 @@
 [user]
 	email = sahilrajput03@gmail.com
 	name = Sahil Rajput
+	# email = codelinter@example.com
+	# name = Code Linter
 [init]
 	defaultBranch = main
 [push]
