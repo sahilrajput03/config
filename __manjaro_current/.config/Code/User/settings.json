@@ -171,7 +171,7 @@
   "debug.autoExpandLazyVariables": true,
   "eslint.format.enable": true,
   "cloudcode.duetAI.project": "my-project-oct-2023-401411",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   // Fix tailwind error in css files:
   //      Error: Unknown at rule @applycss(unknownAtRules)
   "css.lint.unknownAtRules": "ignore"
