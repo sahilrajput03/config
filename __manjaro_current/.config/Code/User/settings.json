@@ -174,5 +174,5 @@
   // Fix tailwind error in css files:
   //      Error: Unknown at rule @applycss(unknownAtRules)
   "css.lint.unknownAtRules": "ignore",
-  "window.zoomLevel": 3
+  "window.zoomLevel": 2
 }
