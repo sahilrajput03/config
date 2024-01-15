@@ -173,5 +173,6 @@
   "cloudcode.duetAI.project": "my-project-oct-2023-401411",
   // Fix tailwind error in css files:
   //      Error: Unknown at rule @applycss(unknownAtRules)
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "window.zoomLevel": 1
 }
