@@ -17,6 +17,7 @@ function backupManjaroCurrent() {
 	cp /home/array/.bash_profile $backup_dir
 	cp /home/array/.bash_capacitor $backup_dir
 	cp /home/array/.gitconfig $backup_dir
+	cp /home/array/.ssh/config $backup_dir/.ssh/
 	cp -r /home/array/.i3 $backup_dir
 	cp /home/array/.i3status.conf $backup_dir
 
