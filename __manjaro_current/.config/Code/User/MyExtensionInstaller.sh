@@ -1,5 +1,4 @@
 code --install-extension aaron-bond.better-comments
-code --install-extension abusaidm.html-snippets
 code --install-extension adelphes.android-dev-ext
 code --install-extension alefragnani.numbered-bookmarks
 code --install-extension alexcvzz.vscode-sqlite
@@ -46,7 +45,6 @@ code --install-extension ms-vscode-remote.remote-ssh-edit
 code --install-extension ms-vscode.live-server
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
-code --install-extension ms-vsliveshare.vsliveshare-audio
 code --install-extension NomicFoundation.hardhat-solidity
 code --install-extension pmndrs.pmndrs
 code --install-extension polypus74.trusty-rusty-snippets
@@ -57,12 +55,12 @@ code --install-extension redhat.java
 code --install-extension redhat.vscode-yaml
 code --install-extension rust-lang.rust-analyzer
 code --install-extension sashaweiss.block-travel
-code --install-extension silvenon.mdx
 code --install-extension SimonSiefke.svg-preview
 code --install-extension styled-components.vscode-styled-components
 code --install-extension svelte.svelte-vscode
 code --install-extension toba.vsfire
 code --install-extension trufflesuite-csi.truffle-vscode
+code --install-extension unifiedjs.vscode-mdx
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.intellicode-api-usage-examples
 code --install-extension VisualStudioExptTeam.vscodeintellicode

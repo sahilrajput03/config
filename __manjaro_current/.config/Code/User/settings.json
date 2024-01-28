@@ -89,8 +89,8 @@
   "[typescript]": {
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": false,
-      "source.addMissingImports": false
+      "source.fixAll.eslint": "never",
+      "source.addMissingImports": "never"
     },
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -166,7 +166,7 @@
     "editor.selectionHighlight": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": "off"
   },
   "debug.autoExpandLazyVariables": true,
   "eslint.format.enable": true,
@@ -174,5 +174,11 @@
   // Fix tailwind error in css files:
   //      Error: Unknown at rule @applycss(unknownAtRules)
   "css.lint.unknownAtRules": "ignore",
-  "window.zoomLevel": 2
+  "window.zoomLevel": 2,
+  "[javascript][javascriptreact][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.addMissingImports": "explicit"
+    }
+  }
 }
