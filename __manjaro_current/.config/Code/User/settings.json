@@ -81,7 +81,7 @@
   "turboConsoleLog.insertEnclosingFunction": false,
   "turboConsoleLog.logMessageSuffix": "?",
   "turboConsoleLog.quote": "'",
-  "console-ninja.featureSet": "Pro",
+  "console-ninja.featureSet": "Community",
   "editor.tabSize": 2,
   "terminal.integrated.env.linux": {},
   // Below settings are for slasher project's eslint auto-fix all problems on file save.
