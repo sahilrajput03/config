@@ -109,6 +109,7 @@ alias cd.bscl-frontend='cd /home/array/test/lucify/deprecated-bscl-frontend'
 alias cd.bscl-frontend-new='cd /home/array/test/lucify/bscl-frontend-new'
 alias cd.zeno-backend='cd /home/array/test/lucify/zeno-backend'
 alias cd.zeno-frontend='cd /home/array/test/lucify/zeno-frontend'
+alias cd.zeno-capacitor-template='cd /home/array/test/lucify/capacitor-template'
 alias cd.aws-course='cd /home/array/Downloads-youtube-dl-gui/aws-tutorials'
 
 # Usage of below: command <movies.service.spec, movies.service.spec, get-all-movies.e2e-spec, etc
