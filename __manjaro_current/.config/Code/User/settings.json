@@ -174,7 +174,7 @@
   // Fix tailwind error in css files:
   //      Error: Unknown at rule @applycss(unknownAtRules)
   "css.lint.unknownAtRules": "ignore",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "[javascript][javascriptreact][typescriptreact]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
