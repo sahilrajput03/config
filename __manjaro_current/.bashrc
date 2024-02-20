@@ -107,6 +107,7 @@ alias slasher.test-everything='npm run test; npm run test:e2e-core; npm run test
 alias cd.bscl-backend='cd /home/array/test/lucify/deprecated-bscl-backend-project/backend'
 alias cd.bscl-frontend='cd /home/array/test/lucify/deprecated-bscl-frontend'
 alias cd.bscl-frontend-new='cd /home/array/test/lucify/bscl-frontend-new'
+alias cd.lucify='cd /home/array/test/lucify'
 alias cd.zeno-backend='cd /home/array/test/lucify/zeno-backend'
 alias cd.zeno-frontend='cd /home/array/test/lucify/zeno-frontend'
 alias cd.zeno-capacitor-template='cd /home/array/test/lucify/capacitor-template'
