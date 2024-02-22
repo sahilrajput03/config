@@ -178,5 +178,6 @@
       "source.fixAll.eslint": "explicit",
       "source.addMissingImports": "explicit"
     }
-  }
+  },
+  "window.zoomLevel": 2
 }
