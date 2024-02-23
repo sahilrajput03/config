@@ -19,3 +19,9 @@ flameshot=/usr/bin/flameshot
 pkill aw-server # killing aw-server is necessary otherwise logout and login shows a error and activity watcher does not work as expected. ~ Sahil
 awQt=/usr/bin/aw-qt
 [ "$(type $awQt 2>/dev/null)" ] && [ -z "$(pgrep aw-qt)" ] && ($awQt &)
+
+date >> ~/logs.txt
+# Disable keyboard clit @ LOGIN TIME
+xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0
+# Disable trackpad (in favor of using external mouse) @ LOGIN TIME
+xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0

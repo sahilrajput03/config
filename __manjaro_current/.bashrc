@@ -274,10 +274,6 @@ function disableAllTrackpadAndKeyboardClit() {
 	xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
 }
 
-# Comment/Uncomment below lines to toggle behavior (Tip: You can use same aliases to manually disable them too)
-disableKeyboardClit
-disableTrackpad
-
 ## PLEASE ADD MORE CODE ABOVE THIS LINE ONLY SAHIL
 
 # ------ old manjaro based bash code ----------
