@@ -22,6 +22,6 @@ awQt=/usr/bin/aw-qt
 
 date >> ~/logs.txt
 # Disable keyboard clit @ LOGIN TIME
-xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0
+# xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0
 # Disable trackpad (in favor of using external mouse) @ LOGIN TIME
-xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
+# xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
