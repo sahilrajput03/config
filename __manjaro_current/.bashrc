@@ -81,7 +81,7 @@ function enableTmux() {
 		# Config file @ ~/.tmux.conf
 	fi
 }
-enableTmux
+# enableTmux
 # Enable tmux based clear screen with ctrl+l in shell: (This is free from non-tmux errors too).
 # Source: https://unix.stackexchange.com/a/29239/504112
 bind -x '"\C-l": clear; tmux clear-history'
@@ -417,7 +417,7 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # Environment Paths (Sahil)
 console_ninja_path=~/.console-ninja/.bin
-deno_path="/home/array/.deno"
-ruby_path=".local/share/gem/ruby/3.0.0/bin/"
+deno_path=/home/array/.deno
+ruby_path=/home/array/.local/share/gem/ruby/3.0.0/bin
 
 export PATH="$console_ninja_path:$deno_path/bin:$ruby_path:$PATH"
