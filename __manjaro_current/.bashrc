@@ -411,11 +411,13 @@ ex() {
 }
 source /usr/share/nvm/init-nvm.sh
 
-PATH=~/.console-ninja/.bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
-# deno
-export DENO_INSTALL="/home/array/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# Environment Paths (Sahil)
+console_ninja_path=~/.console-ninja/.bin
+deno_path="/home/array/.deno"
+ruby_path=".local/share/gem/ruby/3.0.0/bin/"
+
+export PATH="$console_ninja_path:$deno_path/bin:$ruby_path:$PATH"
