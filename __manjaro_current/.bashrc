@@ -81,7 +81,7 @@ function enableTmux() {
 		# Config file @ ~/.tmux.conf
 	fi
 }
-# enableTmux
+enableTmux
 # Enable tmux based clear screen with ctrl+l in shell: (This is free from non-tmux errors too).
 # Source: https://unix.stackexchange.com/a/29239/504112
 bind -x '"\C-l": clear; tmux clear-history'
