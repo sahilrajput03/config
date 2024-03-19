@@ -133,6 +133,7 @@ alias ...='exec bash'
 alias e='exit'
 alias vi.all_are_moved_to_vscode_via_co.__here__='echo Happy migrating to vscode.'
 alias s='BROWSER=none npm start'
+alias d='npm run dev'
 alias c='clear'
 alias r='reset'
 # Usage: red TEMPERATUR, e.g., red 1000, red 25000
@@ -421,3 +422,5 @@ deno_path=/home/array/.deno
 ruby_path=/home/array/.local/share/gem/ruby/3.0.0/bin
 
 export PATH="$console_ninja_path:$deno_path/bin:$ruby_path:$PATH"
+
+PATH=~/.console-ninja/.bin:$PATH
