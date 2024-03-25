@@ -61,6 +61,7 @@ code --install-extension SimonSiefke.svg-preview
 code --install-extension styled-components.vscode-styled-components
 code --install-extension svelte.svelte-vscode
 code --install-extension toba.vsfire
+code --install-extension tomoki1207.pdf
 code --install-extension trufflesuite-csi.truffle-vscode
 code --install-extension unifiedjs.vscode-mdx
 code --install-extension usernamehw.errorlens
