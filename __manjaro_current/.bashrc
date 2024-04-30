@@ -423,4 +423,3 @@ ruby_path=/home/array/.local/share/gem/ruby/3.0.0/bin
 
 export PATH="$console_ninja_path:$deno_path/bin:$ruby_path:$PATH"
 
-PATH=~/.console-ninja/.bin:$PATH

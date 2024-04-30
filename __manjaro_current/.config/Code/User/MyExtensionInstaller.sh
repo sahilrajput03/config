@@ -75,7 +75,6 @@ code --install-extension vscjava.vscode-java-test
 code --install-extension vscjava.vscode-maven
 code --install-extension vscjava.vscode-spring-initializr
 code --install-extension vsls-contrib.gistfs
-code --install-extension WallabyJs.console-ninja
 code --install-extension WallabyJs.quokka-vscode
 code --install-extension wix.glean
 code --install-extension wix.vscode-import-cost
