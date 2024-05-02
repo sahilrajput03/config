@@ -2,38 +2,49 @@
 # # BASIC # #
 #
 
+#### CONTAINERS ####
+
+# - Create and start a new docker container (`docker run` is an alias of `docker container run`)
+# docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+# Run in detached mode (note the `-d` in below command)
+# docker run -d [OPTIONS] IMAGE [COMMAND] [ARG...]
+
 # Run hello world image
 # docker run --user $RANDOM:$RANDOM hello-world
 
-#### Container ####
-# 1. Remove container
+# - Stop container
+# docker stop CONTAINER_ID__OR__CONTAINER_NAME
+
+# - Remove container
 # docker rm CONTAINER_ID__OR__CONTAINER_NAME
 
-# 2. Remove container forcefully
+# - Remove container forcefully
 # docker rm --force CONTAINER_ID__OR__CONTAINER_NAME
 
-# 3. Start a already stopped container
+# - Start a already stopped container
 # docker start CONTAINER_ID__OR__CONTAINER_NAME
 
 #### Image ####
 
-# 1. Remove an image
+# - Remove an image
 # docker image rm IMAGE_ID__OR__IMAGE_NAME
 
-# 2 .Run command inside a container
+# - Run command in a container
 # docker exec
 
-# # # # # # #
-# get your system architecture
+# - Remove images using repository names or image ids
+# docker rmi
+
+# - Forcefully remove images using repository names or image ids
+# docker rmi -f
+
+#############
+
+# Get your system architecture
 alias getArchitecture='uname -m'
 
-# Aliases from my back old windows days..
-alias d-c-runCommandInside=''
-alias d-c-stopOne_with_id_or_na='docker stop'
-alias d-i-removeOne_with_RepoNames_or_ImageIds='docker rmi'
-alias d-i-removeOneForcefully_with_RepoNames_or_ImageIds='docker rmi -f'
-alias d-i-run_with_id_or_name='docker run'
-alias d-i-run_with_id_or_name-Detached='docker run -d'
+# Aliases
 alias d-i-listAll='docker images'
 alias d-c-listAllContainers='docker ps -as'
 alias d-c-listAllContainers_Only_Ids='docker ps -aq'
