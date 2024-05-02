@@ -6,7 +6,7 @@
 # docker rm CONTAINER_ID__OR__CONTAINER_NAME
 
 # start a stopped container
-# docker start CONTAINER_ID/CONTAINER_NAME
+# docker start CONTAINER_ID__OR__CONTAINER_NAME
 
 # # # # # # #
 # get your system architecture
