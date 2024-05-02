@@ -6,10 +6,10 @@
 # - Create and start a new docker container (`docker run` is an alias of `docker container run`)
 # docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
-# Run in detached mode (note the `-d` in below command)
+# - Run in detached mode (note the `-d` in below command)
 # docker run -d [OPTIONS] IMAGE [COMMAND] [ARG...]
 
-# Run hello world image
+# - Run hello world image
 # docker run --user $RANDOM:$RANDOM hello-world
 
 # - Stop container
