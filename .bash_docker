@@ -1,21 +1,34 @@
 
 # # BASIC # #
 #
-# Remove an image and container using ids
-# docker image rm IMAGE_ID__OR__IMAGE_NAME
+
+# Run hello world image
+# docker run --user $RANDOM:$RANDOM hello-world
+
+#### Container ####
+# 1. Remove container
 # docker rm CONTAINER_ID__OR__CONTAINER_NAME
 
-# start a stopped container
+# 2. Remove container forcefully
+# docker rm --force CONTAINER_ID__OR__CONTAINER_NAME
+
+# 3. Start a already stopped container
 # docker start CONTAINER_ID__OR__CONTAINER_NAME
+
+#### Image ####
+
+# 1. Remove an image
+# docker image rm IMAGE_ID__OR__IMAGE_NAME
+
+# 2 .Run command inside a container
+# docker exec
 
 # # # # # # #
 # get your system architecture
 alias getArchitecture='uname -m'
 
 # Aliases from my back old windows days..
-alias d-c-removeOne_with_id_or_name='docker rm'
-alias d-c-removeOneForcefully_with_id_or_name='docker rm --force'
-alias d-c-runCommandInside='docker exec'
+alias d-c-runCommandInside=''
 alias d-c-stopOne_with_id_or_na='docker stop'
 alias d-i-removeOne_with_RepoNames_or_ImageIds='docker rmi'
 alias d-i-removeOneForcefully_with_RepoNames_or_ImageIds='docker rmi -f'
