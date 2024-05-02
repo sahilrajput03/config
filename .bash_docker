@@ -24,11 +24,11 @@
 
 #### IMAGE ####
 
-# - Remove an image
-# docker image rm IMAGE_ID__OR__IMAGE_NAME
-
 # - Run command in a container
 # docker exec
+
+# - Remove an image
+# docker image rm IMAGE_ID__OR__IMAGE_NAME
 
 # - Remove images using repository names or image ids
 # docker rmi
