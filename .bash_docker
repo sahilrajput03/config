@@ -22,7 +22,7 @@
 # - Start a already stopped container
 # docker start CONTAINER_ID__OR__CONTAINER_NAME
 
-#### Image ####
+#### IMAGE ####
 
 # - Remove an image
 # docker image rm IMAGE_ID__OR__IMAGE_NAME
