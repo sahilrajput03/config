@@ -2,8 +2,8 @@
 # # BASIC # #
 #
 # Remove an image and container using ids
-# docker image rm IMAGE_NAME
-# docker rm CONTAINER_ID_OR_CONTAINER_NAME
+# docker image rm IMAGE_ID__OR__IMAGE_NAME
+# docker rm CONTAINER_ID__OR__CONTAINER_NAME
 
 # start a stopped container
 # docker start CONTAINER_ID/CONTAINER_NAME
