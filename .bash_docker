@@ -1,6 +1,4 @@
 
-# # BASIC # #
-
 #### CONTAINERS ####
 
 # - Create and start a new docker container (`docker run` is an alias of `docker container run`)
