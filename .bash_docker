@@ -1,43 +1,4 @@
 
-#### CONTAINERS ####
-
-# - Create and start a new docker container (`docker run` is an alias of `docker container run`)
-# docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-#
-# - Run in detached mode (note the `-d` in below command)
-# docker run -d [OPTIONS] IMAGE [COMMAND] [ARG...]
-#
-# - Run hello world image
-# docker run --user $RANDOM:$RANDOM hello-world
-#
-# - Stop container
-# docker stop CONTAINER_ID__OR__CONTAINER_NAME
-#
-# - Remove container
-# docker rm CONTAINER_ID__OR__CONTAINER_NAME
-#
-# - Remove container forcefully
-# docker rm --force CONTAINER_ID__OR__CONTAINER_NAME
-#
-# - Start a already stopped container
-# docker start CONTAINER_ID__OR__CONTAINER_NAME
-
-#### IMAGE ####
-
-# - Run command in a container
-# docker exec
-#
-# - Remove an image
-# docker image rm IMAGE_ID__OR__IMAGE_NAME
-#
-# - Remove images using repository names or image ids
-# docker rmi
-#
-# - Forcefully remove images using repository names or image ids
-# docker rmi -f
-
-#############
-
 # Get your system architecture
 alias getArchitecture='uname -m'
 
