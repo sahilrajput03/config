@@ -1,14 +1,24 @@
 
+# Please keep this file sync manually with `github.com/sahilrajput03/config/blob/main/.bashrc`
+
+alias d='docker'
+
 # Get your system architecture
 alias getArchitecture='uname -m'
 
 # Aliases
-alias d-i-listAll='docker images'
-alias d-c-listAllContainers='docker ps -as'
-alias d-c-listAllContainers_Only_Ids='docker ps -aq'
-alias d-c-listRunningContainers='docker ps -s'
+alias dimg-listAll='docker images'
 
-d-c-removeAllForcefully(){
+# In `docker ps`: 
+# -a, --all			Show all containers (default shows just running)
+# -q, --quiet		Only display container IDs
+# -s, --size		Display total file sizes
+
+alias dcon-listAll='docker ps -as'
+alias dcon-listAllOnly_Ids='docker ps -aq'
+alias dcon-listRunning='docker ps -s'
+
+dcon-removeAllForcefully(){
 	if docker ps -aq | grep ""
 	then
 		docker rm -f $(docker ps -aq)
@@ -17,7 +27,7 @@ d-c-removeAllForcefully(){
 		echo "#My Log: There are no containers."
 	fi
 }
-d-c-removeAllGracefully(){
+dcon-removeAllGracefully(){
 	if docker ps -aq | grep ""
 	then
 		docker rm $(docker ps -aq)
@@ -26,14 +36,14 @@ d-c-removeAllGracefully(){
 		echo "#My Log: There are no containers."
 	fi
 }
-d-c-killRunning(){
+dcon-killAllRunning(){
 	if [ $(docker ps -q) ]; then
 		docker kill $(docker ps -q)
 	else
 		echo "#My Log: No containers are running right now. ~ Unknown guy"
 	fi
 }
-d-i-removeAllForcefully(){
+dimg-removeAllForcefully(){
 	if [ "$(docker images -q)" ]; then
 		docker rmi -f $(docker images -q)
 		echo "#My Log: Removed all above images."
@@ -41,7 +51,7 @@ d-i-removeAllForcefully(){
 		echo "#My Log: No images are present locally. ~ Unknown Guy"
 	fi
 }
-d-i-removeAllGracefully(){
+dimg-removeAllGracefully(){
 	if [ "$(docker images -q)" ]; then
 		docker rmi $(docker images -q)
 		echo "#My Log: Removed all above images."
