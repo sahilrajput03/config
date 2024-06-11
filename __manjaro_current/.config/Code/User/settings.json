@@ -180,6 +180,6 @@
     }
   },
   "git.autofetchPeriod": 10,
-  "window.zoomLevel": 1,
-  "workbench.startupEditor": "readme"
+  "workbench.startupEditor": "readme",
+  "window.zoomLevel": -1
 }
