@@ -181,5 +181,10 @@
   },
   "git.autofetchPeriod": 10,
   "workbench.startupEditor": "readme",
-  "window.zoomLevel": 2
+  "window.zoomLevel": 2,
+  "svelte.enable-ts-plugin": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "editor.formatOnSave": true
 }
