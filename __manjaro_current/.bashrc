@@ -156,10 +156,9 @@ alias btc2_='btc connect 18:E1:73:D2:B9:A2'
 alias btc2r='btc disconnect; btc2_'
 
 # Try connecting until connected
-btc1 () {
+btc1() {
 	# src: https://stackoverflow.com/a/21982743
-	until btc1_ ;
-	do
+	until btc1_; do
 		echo
 		echo TRYING AGAIN...
 		sleep 1 # Intented to give a time-break
@@ -167,16 +166,14 @@ btc1 () {
 }
 
 # Try connecting until connected
-btc2 () {
+btc2() {
 	# src: https://stackoverflow.com/a/21982743
-	until btc2_ ;
-	do
+	until btc2_; do
 		echo
 		echo TRYING AGAIN...
 		sleep 1 # Intented to give a time-break
 	done
 }
-
 
 ########## Playwright Aliases and Functions ##########
 # 1. ❤️ CLI Only
@@ -274,6 +271,8 @@ function disableAllTrackpadAndKeyboardClit() {
 	xinput -set-prop "DELL08B8:00 0488:121F Mouse" "Device Enabled" 0
 	xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
 }
+# Enabling this by default
+disableAllTrackpadAndKeyboardClit
 
 ## PLEASE ADD MORE CODE ABOVE THIS LINE ONLY SAHIL
 
@@ -422,4 +421,3 @@ deno_path=/home/array/.deno
 ruby_path=/home/array/.local/share/gem/ruby/3.0.0/bin
 
 export PATH="$console_ninja_path:$deno_path/bin:$ruby_path:$PATH"
-
