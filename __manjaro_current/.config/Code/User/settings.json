@@ -187,7 +187,7 @@
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "editor.formatOnSave": true,
-  "C_Cpp.clang_format_fallbackStyle": "\"{ BasedOnStyle: Google, IndentWidth: 4 }\"",
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   }
