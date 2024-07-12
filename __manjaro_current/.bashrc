@@ -423,5 +423,5 @@ ruby_path=/home/array/.local/share/gem/ruby/3.0.0/bin
 export PATH="$console_ninja_path:$deno_path/bin:$ruby_path:$PATH"
 
 cppmon() {
-	nodemon -q -e cpp -x "g++ $* -o binary && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
+	nodemon -q -e cpp -x "g++ $* -o binary && sleep 0.2 && ./binary || exit 0" # We exit with zero coz we don't want nodemon to stop even when the program throws a non zero return code(i.e., compiler throws exception).
 }
