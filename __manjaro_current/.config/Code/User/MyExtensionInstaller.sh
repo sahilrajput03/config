@@ -44,6 +44,10 @@ code --install-extension ms-toolsai.jupyter-renderers
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-ssh
 code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension ms-vscode.cmake-tools
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.cpptools-extension-pack
+code --install-extension ms-vscode.cpptools-themes
 code --install-extension ms-vscode.live-server
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
@@ -63,6 +67,7 @@ code --install-extension svelte.svelte-vscode
 code --install-extension toba.vsfire
 code --install-extension tomoki1207.pdf
 code --install-extension trufflesuite-csi.truffle-vscode
+code --install-extension twxs.cmake
 code --install-extension unifiedjs.vscode-mdx
 code --install-extension usernamehw.errorlens
 code --install-extension VisualStudioExptTeam.intellicode-api-usage-examples
