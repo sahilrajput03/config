@@ -115,5 +115,34 @@
     "key": "ctrl+w",
     "command": "-workbench.action.closeGroup",
     "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+shift+.",
+    "command": "-breadcrumbs.focusAndSelect",
+    "when": "breadcrumbsPossible && breadcrumbsVisible"
+  },
+  {
+    // By Sahil: *Unbind* default (unconditional) using "minus" (-) before command
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    // By Sahil: Move focus to the SideBar if not (!) there
+    "key": "ctrl+0",
+    "when": "!sideBarFocus",
+    "command": "workbench.action.focusSideBar"
+  },
+  // By Sahil: Move focus to editor and close sidebar
+  {
+    "key": "ctrl+0",
+    "when": "!sideBarFocus",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        // commands to run in sequence
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
   }
 ]
