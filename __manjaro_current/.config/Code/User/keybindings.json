@@ -126,23 +126,32 @@
     "key": "ctrl+0",
     "command": "-workbench.action.focusSideBar"
   },
+  // SAHIL: Learn running multiple commands in sequence
+  // ==================================================
   {
     // By Sahil: Move focus to the SideBar if not (!) there
     "key": "ctrl+0",
     "when": "!sideBarFocus",
-    "command": "workbench.action.focusSideBar"
-  },
-  // SAHIL: Learn running multiple commands in sequence
-  // ==================================================
-  // By Sahil: Move focus to editor and close sidebar
-  {
-    "key": "ctrl+0",
-    "when": "!sideBarFocus",
+    // "command": "workbench.action.focusSideBar"
     "command": "runCommands",
     "args": {
       "commands": [
         // commands to run in sequence
-        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusSideBar",
+        // Note from Sahil: Duplicate command is required otherwise sidebar doesn't get keyboard focus
+        "workbench.action.focusSideBar"
+      ]
+    }
+  },
+  // By Sahil: Move focus to editor and close sidebar
+  {
+    "key": "ctrl+0",
+    "when": "sideBarFocus",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        // commands to run in sequence
+        "workbench.action.closeSidebar",
         "workbench.action.focusActiveEditorGroup"
       ]
     }
