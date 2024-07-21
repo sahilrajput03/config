@@ -132,6 +132,8 @@
     "when": "!sideBarFocus",
     "command": "workbench.action.focusSideBar"
   },
+  // SAHIL: Learn running multiple commands in sequence
+  // ==================================================
   // By Sahil: Move focus to editor and close sidebar
   {
     "key": "ctrl+0",
