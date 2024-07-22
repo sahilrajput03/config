@@ -1,4 +1,8 @@
 
+
+_home=/home/array
+backup_dir=/home/array/Documents/github_repos/config
+vs_code_config_directory=".config/Code/User"
 #
 mdcd(){
 	mkdir $@
@@ -50,9 +54,6 @@ function Sudo {
         fi
 }
 
-backup_dir=/home/array/Documents/github_repos/config
-_home=/home/array
-
 # Notice the extra s in the backupConfigFiless <- here.
 alias backupConfigFiless='backupConfigFiles 1> /dev/null 2> /dev/null'
 function backupConfigFiles {
@@ -75,6 +76,9 @@ function backupConfigFiles {
 	\cp $_home/.ssh/config $backup_dir/.ssh/
 	echo "Backup of ~/.ssh/config succeeded."
 
+	\cp -r /home/array/.i3 $backup_dir
+	echo "Backup of ~/.i3 directory succeeded."
+
 	\cp $_home/.profile $backup_dir/
 	echo "Backup of ~/.profile succeeded."
 
@@ -95,6 +99,9 @@ function backupConfigFiles {
 
 	\cp $_home/.bash_profile $backup_dir/
 	echo "Backup of ~/.bash_profile succeeded."
+
+	\cp $_home/.bash_capacitor $backup_dir
+	echo "Backup of ~/.bash_capacitor succeeded."
 
 	\cp -r $_home/.config/i3 $backup_dir/.config
 	echo "Backup of ~/.config/i3 directory succeeded."
@@ -149,14 +156,14 @@ function backupConfigFiles {
 	### echo "Backup of ~/Code/User/keybindings.json file succeeded."
 
 	# my vscode's keybindings are updated at different file IDK why so using that instead!
-	\cp $_home/.config/Code/User/keybindings.json $backup_dir/.config/Code/User/
-	echo "Backup of ~/.config/Code/User/keybindings.json file succeeded."
+	\cp $_home/$vs_code_config_directory/keybindings.json $backup_dir/$vs_code_config_directory/
+	echo "Backup of ~/$vs_code_config_directory/keybindings.json file succeeded."
 
-	\cp $_home/.config/Code/User/settings.json $backup_dir/.config/Code/User/
+	\cp $_home/$vs_code_config_directory/settings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/.config/Code/User/settings.json file succeeded."
 
 	# Backup snippets file
-	\cp $_home/.config/Code/User/snippets/QuickSnippets.code-snippets $backup_dir/.config/Code/User/snippets
+	\cp $_home/$vs_code_config_directory/snippets/QuickSnippets.code-snippets $backup_dir/$vs_code_config_directory/snippets
 	echo "Backup of ~/.config/Code/User/snippets/QuickSnippets.code-snippets file succeeded."
 
 	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
@@ -198,11 +205,18 @@ function backupConfigFiles {
 	echo "Backup of ~/.qutebrowser/quickmarks file succeeded."
 
 	echo
-	cd.config	    # Navigate to config repository.
+	echo "Navigating to $_home/Documents/github_repos/config"
+	cd $_home/Documents/github_repos/config	    # Navigate to config repository.
 
-	crontab -l > crontab_entries.txt
-	gacpForce Update. 	# Push changes to github.
-	cd - 			# Return to previous directory.
+	crontab -l >$backup_dir/crontab_entries.txt
+	echo "Backup of crontab entries succeeded."
+
+	# Sync github repository
+	git add . && git commit -m "Automatic Backup Via Cron"
+	git pull --no-edit && git push
+	
+	# Return to previous directory.
+	cd -
 	notify-send "backupConfigFiles()" "Life is beautiful. Keep up the good work!" -t 3000
 }
 

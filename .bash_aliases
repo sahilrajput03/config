@@ -275,6 +275,7 @@ alias cd.learningRustByExample='cd $_home/Documents/github_repos/learning_rust/p
 alias ~='cd ~'
 alias cdreact-fetch2='cd /mnt/sda5/githubrepos/npmjs_packages/react-fetch2'
 alias resume='cd /mnt/sda3/home/array/my_bin/resume'
+alias co.i3config='co ~/.i3/config'
 alias v='nvim'
 alias vi='nvim'
 alias vi.sudo='sudo nvim'
@@ -469,19 +470,38 @@ alias cd.additionalPath='cd ~/Documents/github_repos/additionalPath/'
 alias cd.test='cd ~/test'
 alias cd.backgrounds='/usr/share/backgrounds/archlinux'
 alias cd.obsRecorded='cd /mnt/sda2/obs-recorded/'
-alias cd.macos='cd /Documents/macOS-Simple-KVM'
 alias cd.rootDocuments='/Documents/'
 alias cd.6figure='/mnt/sda2/COURSES_COURSES_COURSES/BLOCKCHAIN-6-figures-blockchain-developer/100-above'
 alias cd.resume='cd /home/array/Documents/github_repos/my_bin/resume'
-alias cd.slasherFrontend='cd /home/array/test/slasher/slasher-web-frontend/'
 alias cd.dsa='cd /home/array/Documents/github_repos/learn-dsa'
 alias cd.dsaCourse='cd /mnt/sda2/COURSES_COURSES_COURSES/Udemy-JavaScript_Algorithms_and_Data_Structures_Masterclass'
-alias cd.PeakyBlinders="cd /home/array/Downloads/Peaky\ Blinders\ \(2013-2022\)\ S01-S06\ 720p\ BluRay\ HEVC\ x265\ BONE/Season\ 2"
-alias cd.downloads='cd /mnt/sda2/Downloads/'
-alias cd.downloadsHome='cd ~/Downloads/'
 alias cd.bornIntoBrothels='cd /home/array/Downloads/Born\ Into\ Brothels\ Calcuttas\ Red\ Light\ Kids\ \(2004\)\ [1080p]\ [WEBRip]\ [5.1]\ [YTS.MX]'
 alias cd.poc-subscriptions-paypal='cd /home/array/test/slasher/poc-subscriptions-paypal'
 
+alias cd.slasherfrontend='cd ~/test/slasher/slasher-web-frontend'
+alias cd.slasherbackend='cd ~/test/slasher/slasher-web-new'
+alias slasher.test-everything='npm run test; npm run test:e2e-core; npm run test:e2e-gateway'
+alias cd.bscl-backend='cd /home/array/test/lucify/deprecated-bscl-backend-project/backend'
+alias cd.bscl-frontend='cd /home/array/test/lucify/deprecated-bscl-frontend'
+alias cd.bscl-frontend-new='cd /home/array/test/lucify/bscl-frontend-new'
+alias cd.lucify='cd /home/array/test/lucify'
+alias cd.zeno-backend='cd /home/array/test/lucify/zeno-backend'
+alias cd.zeno-frontend='cd /home/array/test/lucify/zeno-frontend'
+alias cd.zeno-capacitor-template='cd /home/array/test/lucify/capacitor-template'
+alias cd.aws-course='cd /home/array/Downloads-youtube-dl-gui/aws-tutorials'
+
+# Usage of below: command <movies.service.spec, movies.service.spec, get-all-movies.e2e-spec, etc
+alias slasher.test-service='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-config.json --testTimeout 600000 --runInBand --watch'
+alias slasher.test-e2e-core='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-e2e-core-config.json --testTimeout 600000  --runInBand --watch'
+alias slasher.test-e2e-gatewayy='node --inspect -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config ./test/jest-e2e-gateway-config.json --testTimeout 600000 --runInBand --watch'
+alias updateSlasherStagingDbIpAddress='node /home/array/test/slasher/slasher-db-access/service-to-update-ip-slasher-db-access/update-ip-on-staging.js'
+
+alias gs='git status'
+alias listServicesSahil='systemctl --type=service | grep sahil--'
+alias listServicesSahilFiles='ls -l /etc/systemd/system/ | grep sahil--'
+
+alias slasherStartDocker='docker compose --file docker-compose.devtest.yml up --build'
+alias restartSlasherDockerService='systemctl restart sahil--slasher-mongodb-docker.service'
 
 # Setup second display
 alias setupSecondDisplay="xrandr --output HDMI1 --auto --left-of eDP1"
@@ -675,6 +695,45 @@ btc2 () {
 		sleep 1 # Intented to give a time-break
 	done
 }
+
+
+########## Playwright Aliases and Functions ##########
+# 1. ❤️ CLI Only
+alias pt='npx playwright test --project=chromium'
+#   Playwright watch script: source: https://github.com/microsoft/playwright/issues/21960#issuecomment-1483604692
+alias ptw='PWTEST_WATCH=1 npx playwright test --project=chromium'
+# *ALTERNATE using nodemon
+function ptw2() {
+	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium $@"
+	# nodemon -e spec.ts -w tests -x "echo $@"
+}
+# 2. 🤢 PLAYWRIGHT UI MODE: ⚠️⚠️Seems some problem with ui mode at the time⚠️⚠️
+# TIP: UI mode does provide watching script out of the box as well using th `eye` icon in GUI
+alias ptu='npx playwright test --project=chromium --ui'
+#
+# 3. ❤️ PLAYWRIGHT HEADED MODE + Using `await page.pause()` #
+alias pthOnce='npx playwright test --headed --project=chromium'
+# 🚀🚀🚀🚀🚀🚀 Use `pth` all the time because DX with awesome with ❤️ `await page.pause()`
+function pth() {
+	nodemon -e spec.ts -w tests -x "npx playwright test --headed --project=chromium $@"
+	# nodemon -e spec.ts -w tests -x "echo $@"
+}
+# 4. ❤️ PLAYWRIGHT DEBUG MODE #
+# LEARN: Open `Playwright Inspector` ((helpful in debugging & step by step execution))
+# *DEPRECATED in favor of watch mode with nodemon
+# alias ptd='npx playwright test --project=chromium --debug'
+function ptd() {
+	nodemon -e spec.ts -w tests -x "npx playwright test --project=chromium --debug $@"
+	# nodemon -e spec.ts -w tests -x "echo $@"
+}
+# 5. ❤️ Playwright Report of Last Test #
+# TIP: Always keep running below server in separate terminal thus you can disable
+# opening report opening after each test execute by setting in playwright.config.ts file:
+# by setting this: `reporter: [['html', { open: 'never' }] ],`
+alias psr='npx playwright show-report'
+# 6. Delete previous test video reording
+alias ptremovePrevioustTestVideo='rm -rf test-results/*'
+########## ##########
 
 alias restartVsftpd='systemctl restart vsftpd.service'
 alias vi.vsftpd='sudo nvim /etc/vsftpd.conf'

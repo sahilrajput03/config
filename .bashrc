@@ -4,10 +4,21 @@
 # ~/.bashrc, `realpath .bashrc` ouputs `/home/array/.bashrc`.
 #sahil: `rc` as suffix of .bashrc file name means `run commands`.
 
+# NOTE: I have sourced this file in root shell's .bashrc file as well i.e., `/root/.bashrc` ~Sahil. And that file is invoked when we login to root user i.e., `su`. It'll load all your aliases and functions in root shell as well that you enjoy in your non-root shells.
+
+##########
+########## NON-INTERACTIVE Shell (Sub Shell) Code  ABOVE
+##########
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# I have sourced this file in root shell's .bashrc file as well i.e., `/root/.bashrc` ~Sahil. And that file is invoked when we login to root user i.e., `su`. It'll load all your aliases and functions in root shell as well that you enjoy in your non-root shells.
+##########
+########## INTERACTIVE Shell (Current Sub Shell) Code  BELOW
+##########
+
+########## Note: Any alias/function defined below will not be accessible to cron even if the .bashrc file is sourced.
+########## (Learn - Interactive and Non-Interactive Shells - https://phoenixnap.com/kb/bashrc-vs-bash-profile)
 
 ### Variables
 # --------
@@ -19,14 +30,13 @@ ps1_format='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\03
 # Source of below PS1: https://superuser.com/a/60563/776589
 ps1_format_show_current_dir_only='\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\$ '
 
-#This is pretty good though
+# This is pretty good though
 # export PS1=$ps1_format 
 
 export PS1=$ps1_format_show_current_dir_only
 _home=/home/array # Did coz I'll source this file in sudo as well.
 
 # TIP: Move any executable file to `~/.local/bin/` directory, we can use it as a cli tool.
-export PATH=$PATH:~/.local/bin
 export EDITOR=/usr/bin/nvim
 export HISTSIZE=5000000 	# Increasing the history saving capacity to 50 lakhs.
 export HISTFILESIZE=5000000	# Increasing the history saving capacity to 50 lakhs. Source: https://www.redhat.com/sysadmin/history-command
@@ -42,7 +52,8 @@ PROMPT_COMMAND="${PROMPT_COMMAND:-:} ; history -a"
 ################ TIP: echo $PROMPT_COMMAND to know its value in bash.##############
 ### Avoid duplicates in $HISTFILE: (works good, but it helps to see repeated command to see the chronological order):
 # export HISTCONTROL=ignoredups:erasedups
-### Appent to $HISTFILE as soon any command is run:
+
+### Appent to $HISTFILE as soon any command is run: (Enable history appending instead of overwriting.  #139609)
 shopt -s histappend
 # src(histappend, prompt_command): https://askubuntu.com/a/339925/702911
 
@@ -97,6 +108,7 @@ include $_home/scripts/wi
 include $_home/.bash_python
 include $_home/.bash_heroku
 include $_home/.bash_nginx
+include $_home/.bash_capacitor
 
 ####### for kubernetes vvvv ####
 # Used when encrypting (list of public keys separated by comma)
@@ -355,3 +367,11 @@ key=/etc/letsencrypt/live/www.fixedlife.ml/privkey.pem
 # ===important===
 #
 # echo Use vi.picom to adjust inactive window transparency.
+
+# Environment Paths (Sahil)
+export bun_path="$HOME/.bun/bin"
+console_ninja_path=~/.console-ninja/.bin
+deno_path=/home/array/.deno/bin
+ruby_path=/home/array/.local/share/gem/ruby/3.0.0/bin
+
+export PATH="$PATH:~/.local/bin:$bun_path:$console_ninja_path:$deno_path:$ruby_path"

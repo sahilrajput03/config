@@ -1,4 +1,4 @@
-echo ran .profile file
+echo Note from Sahil ==== Running ~/.profile file ===
 sh /home/array/scripts/battery-alert/service-START.sh &
 alias vi='vim'
 . "$HOME/.cargo/env"
