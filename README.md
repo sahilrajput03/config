@@ -12,3 +12,7 @@
 - **Windows Setup:** [sahilrajput03/additionalPath](https://github.com/sahilrajput03/additionalPath)
 
 Thankyou!
+
+## Todo: Sort netmax notes of linux in google doc probably (2025)
+
+They are located in directory named `linux_notes_netmax`.
