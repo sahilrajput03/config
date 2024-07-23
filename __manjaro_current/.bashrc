@@ -50,6 +50,7 @@ function backupManjaroCurrent() {
 	# Return to original directory
 	cd -
 }
+
 ##########
 ########## NON-INTERACTIVE Shell (Sub Shell) Code  ABOVE
 ##########
