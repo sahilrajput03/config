@@ -434,3 +434,4 @@ include() {
 
 # Run arandr profile settings for samsund-extends-laptop screen.
 include /home/array/Documents/github_repos/config/arandr-profiles/samsung-monitor-extends-laptop.sh
+
