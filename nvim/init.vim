@@ -1,13 +1,22 @@
-" Fish doesn't play all that well with others
-" ~ SAHIL: Read the shortcuts of language server usage below:
-" My notes: C-n/p to search down and up in the autocomplete suggestions list.
-" EXIT LSP DEFINITIONS WITH ctrl+o ~with Ratanjeet.
+" SAHIL NOTES
+" ===========
+" You can use C-n/p to search down and up in the autocomplete suggestions list.
+"
+"
+" LSP (Language Server Protocol)
+" ------------------------------
+" Exit LSP definitions with ctrl+o
 " Enable completion triggered by <c-x><c-o>
 " :h lsp
 " :LspInstall tsserver "Src: https://youtu.be/tOjVHXaUrzo
+"
+"
+" Create multiple empty lines (Tags: #new line, #empty line)
+" Press `o` or `O` and the use `Enter` key.
+"
+"
+"
 "..CODE STARTS HERE..
-"
-"
 
 " ------- ALERT ALERT ALERT ALERT ALERT ALERT -------
 " WHILE INSTALLING ON SOME OTHER SYSTEM, you may need to copy nvim directory
