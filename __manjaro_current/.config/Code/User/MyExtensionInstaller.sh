@@ -21,6 +21,7 @@ code --install-extension formulahendry.auto-rename-tag
 code --install-extension foxundermoon.shell-format
 code --install-extension fwcd.kotlin
 code --install-extension github.vscode-github-actions
+code --install-extension google.geminicodeassist
 code --install-extension googlecloudtools.cloudcode
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension Jackardios.vscode-css-to-tailwindcss
