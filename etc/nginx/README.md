@@ -4,6 +4,7 @@
   - Server Block Examples: [Click here](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/)
   - Full Example Configuration: [Click here](https://www.nginx.com/resources/wiki/start/topics/examples/full/)
   - Reverse Proxy: [Click here](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+  - Reverse proxy with `express-http-proxy` (npm library): [sahilrajput03/reverseProxy](https://github.com/sahilrajput03/reverseProxy)
 
 - **Usage of above files:**
 
