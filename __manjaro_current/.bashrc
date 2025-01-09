@@ -53,7 +53,7 @@ function backupManjaroCurrent() {
 
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
-	# git pull --no-edit && git push
+	git pull --no-edit && git push
 	# Return to original directory
 	cd -
 }
