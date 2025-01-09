@@ -8,6 +8,7 @@
   - ❤️ **`.bash_nginx` file for aliases, bash functions and auto restart (load) CLIs:** [Click here](https://github.com/sahilrajput03/config/blob/main/.bash_nginx)
   - Learn about ProxyJump: [Click here](https://www.infoworld.com/article/3619278/proxyjump-is-safer-than-ssh-agent-forwarding.html) (You can check Eric's explanation too from skype).
   - ⭐ Interesting Things to do with nginx (ChatGPT): [Click here](https://chatgpt.com/c/677fdfb9-89c4-8007-a355-33dbbf330d9b)
+  - ⭐ Forward proxy server vs. rever proxy server? Be Concise and give examples to differentiate: [Click here](https://claude.ai/chat/34205123-6f1a-4d78-86b4-f979564b9d77)
 
 - **Usage of above files:**
 
