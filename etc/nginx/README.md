@@ -5,7 +5,7 @@
   - Full Example Configuration: [Click here](https://www.nginx.com/resources/wiki/start/topics/examples/full/)
   - Reverse Proxy: [Click here](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
   - Reverse proxy with `express-http-proxy` (npm library): [sahilrajput03/reverseProxy](https://github.com/sahilrajput03/reverseProxy)
-  - `.bash_nginx` file for aliases, bash functions and auto restart (load) CLIs: [Click here](https://github.com/sahilrajput03/config/blob/0c8f9b061ea2176d283666d502e941e7e997c362/.bash_nginx)
+  - ❤️ **`.bash_nginx` file for aliases, bash functions and auto restart (load) CLIs:** [Click here](https://github.com/sahilrajput03/config/blob/main/.bash_nginx)
 
 - **Usage of above files:**
 
@@ -17,7 +17,6 @@
   - Usage: `ng.b myFile`
   - Installation: `sudo npm install -g nginxbeautifier`. FYI: ng.b is alias in *.bash_aliases* file `alias ng.b='nginxbeautifier'`.
 
-- **All aliases and functions related to nginx:** [Click here](https://github.com/sahilrajput03/config/blob/main/.bash_nginx)
 
 # (Forward) Proxy Server vs. Reverse Proxy Server
 
