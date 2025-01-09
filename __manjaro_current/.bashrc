@@ -1,8 +1,9 @@
 # .bashrc
 #
 
+_config_repo=/home/array/Documents/github_repos/config
 _home=/home/array # Did coz I'll source this file in sudo as well.
-backup_dir="/home/array/Documents/github_repos/config/__manjaro_current"
+backup_dir="$_config_repo/__manjaro_current"
 # VSCODE CONFIG FILES
 vs_code_config_directory=".config/Code/User"
 
@@ -15,29 +16,35 @@ function backupManjaroCurrent() {
 	cp /home/array/.profile $backup_dir
 	cp /home/array/.bashrc $backup_dir
 	cp /home/array/.bash_profile $backup_dir
-	cp /home/array/.bash_capacitor $backup_dir
-	cp /home/array/.gitconfig $backup_dir
-	cp /home/array/.ssh/config $backup_dir/.ssh/
+
 	cp -r /home/array/.i3 $backup_dir
 	cp /home/array/.i3status.conf $backup_dir
 
-	crontab -l >$backup_dir/crontab_entries.txt
-	echo "Backup of crontab entries succeeded."
+	# You never need to backup this file because now I'm importing from repository code directly in the end of this file.
+	# cp /home/array/.bash_capacitor $backup_dir
+
+	# You never need to backup this file because now I'm using symmlink to the file in the repository code directly.
+	# cp /home/array/.gitconfig $backup_dir
+
+	# You never need to backup ssh config file because now I'm importing from repository code directly.
+	# cp /home/array/.ssh/config $backup_dir/.ssh/
+
+	# !! TO CHECK HERE>>>>>>
+	# crontab -l >$backup_dir/crontab_entries.txt
+	# echo "Backup of crontab entries succeeded."
 
 	# Make sure `$vs_code_config_directory` directory exists in $backup_dir directory
 	mkdir -p $backup_dir/$vs_code_config_directory
-	#
 	\cp $_home/$vs_code_config_directory/keybindings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/$vs_code_config_directory/keybindings.json file succeeded."
-	#
 	\cp $_home/$vs_code_config_directory/settings.json $backup_dir/$vs_code_config_directory/
 	echo "Backup of ~/$vs_code_config_directory/settings.json file succeeded."
-	#
+
 	# Backup snippets file
 	mkdir -p $backup_dir/$vs_code_config_directory/snippets
 	\cp $_home/$vs_code_config_directory/snippets/QuickSnippets.code-snippets $backup_dir/$vs_code_config_directory/snippets
 	echo "Backup of ~/$vs_code_config_directory/snippets/QuickSnippets.code-snippets file succeeded."
-	#
+
 	# Backup my current vscode extensions list as well. Src: https://stackoverflow.com/a/49398449/10012446
 	\code --list-extensions | xargs -L 1 echo code --install-extension >$backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
 	chmod +x $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
@@ -46,7 +53,7 @@ function backupManjaroCurrent() {
 
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"
-	git pull --no-edit && git push
+	# git pull --no-edit && git push
 	# Return to original directory
 	cd -
 }
@@ -228,11 +235,14 @@ function sudoCode() {
 }
 
 # Helpful to get useful info for i3 to make them floatable:
-alias xprop2i3='/home/array/Documents/github_repos/config/scripts/xprop2i3.sh'
+alias xprop2i3="$_config_repo/scripts/xprop2i3.sh"
 
 alias co.bashrc='co ~/.bashrc'
 alias co.timetracking='co ~/test/slasher/time-tracking-sahil.txt'
 alias co.i3config='co ~/.i3/config'
+alias co.ssh="co $_config_repo/.ssh/config"
+alias co.capacitor="co $_config_repo/.bash_capacitor"
+
 alias xo='xournalpp'
 
 function co() {
@@ -431,7 +441,8 @@ cppmon() {
 include() {
 	[[ -f "$1" ]] && source "$1"
 }
+include $_home/.bash_nginx
+include $_config_repo/.bash_capacitor
 
 # Run arandr profile settings for samsund-extends-laptop screen.
-include /home/array/Documents/github_repos/config/arandr-profiles/samsung-monitor-extends-laptop.sh
-
+# include $_config_repo/arandr-profiles/samsung-monitor-extends-laptop.sh
