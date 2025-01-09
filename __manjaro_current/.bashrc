@@ -29,7 +29,7 @@ function backupManjaroCurrent() {
 	# You never need to backup ssh config file because now I'm importing from repository code directly.
 	# cp /home/array/.ssh/config $backup_dir/.ssh/
 
-	crontab -l >$backup_dir/crontab_entries.txt
+	crontab -l >$_config_repo/crontab_entries.txt
 	echo "Backup of crontab entries succeeded."
 
 	# Make sure `$vs_code_config_directory` directory exists in $backup_dir directory
