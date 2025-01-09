@@ -24,7 +24,7 @@ SO Answer: [Click here](https://stackoverflow.com/a/366212/10012446)
 
 Another Article: [Click here](https://www.strongdm.com/blog/difference-between-proxy-and-reverse-proxy)
 
-tldr; They both do almost the same work i.e., acti between client and server.
+tldr; They both do almost the same work i.e., act between client and server.
 
 crux: `forward (X --> Y) --> Z, reverse: X --> (Y --> Z)`
 
