@@ -18,7 +18,7 @@
 
 - **All aliases and functions related to nginx:** [Click here](https://github.com/sahilrajput03/config/blob/main/.bash_nginx)
 
-- Proxy server vs. reverse proxy server?
+# (Forward) Proxy Server vs. Reverse Proxy Server
 
 SO Answer: [Click here](https://stackoverflow.com/a/366212/10012446)
 
