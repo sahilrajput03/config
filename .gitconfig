@@ -1,3 +1,6 @@
+# Note to Sahil: Create a symlink to repository's file using below command:
+#  ln -s ~/Documents/github_repos/config/.gitconfig ~/.gitconfig
+
 [user]
 	email = sahilrajput03@gmail.com
 	name = Sahil Rajput

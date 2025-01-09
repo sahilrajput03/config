@@ -1,5 +1,3 @@
-alias co.capacitor='code ~/.bash_capacitor'
-
 alias adbRestart='sudo adb kill-server; sudo adb start-server'
 # Usage: adb.connectWirelessPocofoneM4 <PORT>
 # Example: adb.connectWirelessPocofoneM4 38429
