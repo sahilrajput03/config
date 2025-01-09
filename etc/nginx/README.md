@@ -7,6 +7,7 @@
   - Reverse proxy with `express-http-proxy` (npm library): [sahilrajput03/reverseProxy](https://github.com/sahilrajput03/reverseProxy)
   - ❤️ **`.bash_nginx` file for aliases, bash functions and auto restart (load) CLIs:** [Click here](https://github.com/sahilrajput03/config/blob/main/.bash_nginx)
   - Learn about ProxyJump: [Click here](https://www.infoworld.com/article/3619278/proxyjump-is-safer-than-ssh-agent-forwarding.html) (You can check Eric's explanation too from skype).
+  - ⭐ Interesting Things to do with nginx (ChatGPT): [Click here](https://chatgpt.com/c/677fdfb9-89c4-8007-a355-33dbbf330d9b)
 
 - **Usage of above files:**
 
