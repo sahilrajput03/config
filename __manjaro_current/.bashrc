@@ -23,10 +23,12 @@ function backupManjaroCurrent() {
 	# You never need to backup this file because now I'm importing from repository code directly in the end of this file.
 	# cp /home/array/.bash_capacitor $backup_dir
 
+	# Creating symlink ln -s mySourceDirectory/file targetDirectory/newSymmlinkFile
+
 	# You never need to backup this file because now I'm using symmlink to the file in the repository code directly.
 	# cp /home/array/.gitconfig $backup_dir
 
-	# You never need to backup ssh config file because now I'm importing from repository code directly.
+	# You never need to backup this file because now I'm using symmlink to the file in the repository code directly.
 	# cp /home/array/.ssh/config $backup_dir/.ssh/
 
 	crontab -l >$_config_repo/crontab_entries.txt
