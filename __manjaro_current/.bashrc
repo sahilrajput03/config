@@ -48,7 +48,7 @@ function backupManjaroCurrent() {
 	\code --list-extensions | xargs -L 1 echo code --install-extension >$backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
 	chmod +x $backup_dir/$vs_code_config_directory/MyExtensionInstaller.sh
 
-	cd $backup_dir
+	cd $backup_dir/..
 
 	# Sync github repository
 	git add . && git commit -m "Automatic Backup Via Cron"

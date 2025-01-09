@@ -1,9 +1,16 @@
-# This file is located at /var/spool/cron/array
+# This file is located at /var/spool/cron/array (boom1)
 
+
+# LEARN: 1. Running a function from .bashrc file - You must keep the function definition
+# before the return startement for non-interactive (Sub Shell) shell check because the
+# command we give to cron is run in a sub shell (which is seems a good thing).
+#
+# Debugging - Run every minute
+# * * * * * source /home/array/.bashrc; backupManjaroCurrent
+#
 # LEARN: 2. We need to use source so that our functions are accessible.
 # FOR NOW I AM RUNNING THIS CRON EVERY 2 HOURS TO BACKUP MY CONFIGURATION
 0 */2 * * * source /home/array/.bashrc; backupManjaroCurrent
-
 
 ### Disabled cron jobs ####
 
@@ -24,14 +31,6 @@
 
 
 # * * * * * /home/array/test/telegram-bot-test/req-ratan.sh
-
-
-# LEARN: 1. Running a function from .bashrc file - You must keep the function definition
-# before the return startement for non-interactive (Sub Shell) shell check because the
-# command we give to cron is run in a sub shell (which is seems a good thing).
-
-# Debugging - Run every minute
-# * * * * * source /home/array/.bashrc; backupManjaroCurrent
 
 # Run every minute
 # * * * * * date >> ~/my-cron-task-log.txt
