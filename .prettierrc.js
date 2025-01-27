@@ -1,5 +1,7 @@
 // Learn Prettier: https://docs.google.com/document/d/1T-VclkyzwAxoJ519c5P9xRrn0ZjRtQF-Ueu1GviMJYo/edit?tab=t.0
-// FILE: prettier.config.js or .prettierrc.js // IGNORE FILE: .prettierignore // SCRIPT for `package.json` => "pretty": "prettier --write ."
+// FILE: prettier.config.js or .prettierrc.js
+// IGNORE FILE: .prettierignore
+// NPM SCRIPT for `package.json` => "pretty": "prettier --write ."
 module.exports = {
 	// set max characters on a line
 	printWidth: 120, // default is 80
