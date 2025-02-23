@@ -245,6 +245,8 @@ alias co.ssh="co $_config_repo/.ssh/config"
 alias co.capacitor="co $_config_repo/.bash_capacitor"
 
 alias xo='xournalpp'
+# Using nohup so that pcmanfm detaches from current terminal session and frees the terminal
+alias pcmanfm="nohup pcmanfm &"
 
 function co() {
 	if [ -z "$1" ]; then
@@ -284,7 +286,7 @@ function disableAllTrackpadAndKeyboardClit() {
 	xinput -set-prop "DELL08B8:00 0488:121F Touchpad" "Device Enabled" 0
 }
 # Enabling this by default
-disableAllTrackpadAndKeyboardClit
+# disableAllTrackpadAndKeyboardClit
 
 ## PLEASE ADD MORE CODE ABOVE THIS LINE ONLY SAHIL
 
