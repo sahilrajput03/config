@@ -442,7 +442,11 @@ cppmon() {
 
 # Source script only if file exists
 include() {
-	[[ -f "$1" ]] && source "$1"
+	if [[ -f "$1" ]]; then
+		source "$1"
+	else
+		echo "File not found: $1"
+	fi
 }
 include $_home/.bash_nginx
 include $_config_repo/.bash_capacitor
