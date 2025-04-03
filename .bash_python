@@ -19,7 +19,7 @@ alias fk.debugRaw='flask --debug run'
 # Createa venv folder and set it up
 alias vv.createEnv_step1='python3 -m venv venv' 
 # FROM HEROKU: python3 -m venv --upgrade-deps venv
-# Before start working on the project make sure to run this activateEnvironment command.
+# Before start working on the project make sure to run this activateEnvironment command. (To deactivate later you can simply run `deactivate` command)
 alias vv.activateEnvironment_step2='. venv/bin/activate'
 alias vv.installDependencies_step3='pip install -r requirements.txt'
 # 
